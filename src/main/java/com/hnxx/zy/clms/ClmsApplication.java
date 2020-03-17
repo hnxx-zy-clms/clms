@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 项目启动类
  * @Author: fusheng
- * @Data: 2020/3/17 13:09
+ * @Data: 2020/3/17 13:09  ---  14:56   完成了项目的基本构建
  */
 
 @SpringBootApplication
