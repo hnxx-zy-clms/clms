@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import java.io.Serializable;
  */
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Xxx implements Serializable {
 
     /**
@@ -28,5 +30,34 @@ public class Xxx implements Serializable {
      * 1. 实体类主键统一使用 Integer 包装类
      * 2. 使用包装类的好处，当我们不想给这个属性设置值的时候，我们可以给一个null值（前提是数据库字段为空）
      */
-    private Integer id;
+
+    /**
+     * xx id
+     */
+    private Integer xxId;
+    /**
+     * xx 名字
+     */
+    private String xxName;
+    /**
+     * 创建时间
+     */
+    private String createdTime;
+    /**
+     * 更新时间
+     */
+    private String updateTime;
+    /**
+     * 乐观锁
+     */
+    private Integer version;
+    /**
+     * 是否启用，0否1是 默认1
+     */
+    private Integer isEnabled;
+
+    /**
+     * 是否删除，0否1是 默认0
+     */
+    private Integer isDeleted;
 }

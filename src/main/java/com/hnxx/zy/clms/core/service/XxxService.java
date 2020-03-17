@@ -11,9 +11,21 @@ import com.hnxx.zy.clms.core.entity.Xxx;
 public interface XxxService {
 
     /**
-     * 通过id获取Xxx实体
-     * @param id
+     * 保存
+     * @param xxx
      */
-    void getXxxById(Integer id);
+    void save(Xxx xxx);
 
+    /**
+     * 修改
+     * @param xxx
+     */
+    void update(Xxx xxx);
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    Xxx getById(Integer id);
 }

@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.XxxMapper;
 import com.hnxx.zy.clms.core.service.XxxService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,17 @@ public class XxxServiceImpl implements XxxService {
     private XxxMapper xxxMapper;
 
     @Override
-    public void getXxxById(Integer id) {
-        xxxMapper.getById(id);
+    public void save(Xxx xxx) {
+        xxxMapper.save(xxx);
+    }
+
+    @Override
+    public void update(Xxx xxx) {
+        xxxMapper.update(xxx);
+    }
+
+    @Override
+    public Xxx getById(Integer id) {
+        return xxxMapper.getById(id);
     }
 }
