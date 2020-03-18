@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.sql.JDBCType;
+import java.util.List;
 
 /**
  *  1. @Mapper 使用的是 MyBatis 的 Bean
@@ -23,26 +24,30 @@ import java.sql.JDBCType;
 public interface XxxMapper {
 
     /**
-     * 定义通用查询映射结果
+     * 查询所有[后台查询]
+     * @return
      */
-    // @Results(
-    //         id = "BaseResultMap",
-    //         value = {
-    //                 @Result(column = "xx_id", property = "xxId"),
-    //                 @Result(column = "xx_name", property = "xxName"),
-    //                 @Result(column = "created_time", property = "createdTime"),
-    //                 @Result(column = "update_time", property = "updateTime"),
-    //                 @Result(column = "version", property = "version"),
-    //                 @Result(column = "is_enabled", property = "isEnabled"),
-    //                 @Result(column = "is_deleted", property = "isDeleted")
-    //         }
-    // )
+    @Select("select * from cl_xx")
+    @Results(
+            id = "BaseResultMap",
+            value = {
+                    @Result(column = "xx_id", property = "xxId"),
+                    @Result(column = "xx_name", property = "xxName"),
+                    @Result(column = "created_time", property = "createdTime"),
+                    @Result(column = "update_time", property = "updateTime"),
+                    @Result(column = "version", property = "version"),
+                    @Result(column = "is_enabled", property = "isEnabled"),
+                    @Result(column = "is_deleted", property = "isDeleted")
+            }
+    )
+    List<Xxx> getAll();
 
     /**
      * 保存
      * @param xxx
      */
-    @Insert("insert into cl_xx(xx_name) values(#{xxName})")
+    @Insert("insert into cl_xx(xx_name) values (#{xxName})")
+    @Options(keyColumn = "xx_id", keyProperty = "xxId")
     void save(Xxx xxx);
 
     /**
@@ -56,7 +61,15 @@ public interface XxxMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_xx where xx_id = #{id}")
-    // @ResultMap("BaseResultMap")
+    @Select("select * from cl_xx where xx_id = #{id} and is_deleted = 0")
+    @ResultMap("BaseResultMap")
     Xxx getById(Integer id);
+
+    /**
+     * 根据id删除(逻辑删除，对于重要的信息一律采用逻辑删除)
+     * @param id
+     */
+    @Update("update cl_xx set is_deleted = 1 where xx_id = #{id}")
+    void deleteById(Integer id);
+
 }

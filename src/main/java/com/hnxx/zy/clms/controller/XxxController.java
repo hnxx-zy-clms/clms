@@ -12,6 +12,8 @@ import com.hnxx.zy.clms.core.service.XxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  *  1. Xxx 为实体类名称 例如：UserController, ArticleController
  *  2. @RestController 用于返回数据 Json 格式, @Controller 用于返回视图模型
@@ -26,6 +28,16 @@ public class XxxController {
     private XxxService xxxService;
 
     /**
+     * 查询所有
+     * @return
+     */
+    @GetMapping("/list")
+    public Result<List<Xxx>> list(){
+        List<Xxx> xxxList = xxxService.getAll();
+        return new Result<>(xxxList);
+    }
+
+    /**
      * 保存
      * @param xxx
      * @return
@@ -37,15 +49,26 @@ public class XxxController {
     }
 
     /**
+     * 根据id删除
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/delete/{id}")
+    public Result<Object> delete(@PathVariable("id") Integer id){
+        xxxService.deleteById(id);
+        return new Result<>("删除成功!");
+    }
+
+    /**
      * 修改
      * @param xxx
      * @return
      */
-   // @PutMapping("/update")
-   //  public Result<Object> update(@RequestBody Xxx xxx){
-   //      xxxService.update(xxx);
-   //      return new Result<>("修改成功!");
-   // }
+   @PutMapping("/update")
+    public Result<Object> update(@RequestBody Xxx xxx){
+        xxxService.update(xxx);
+        return new Result<>("修改成功!");
+   }
 
     /**
      * 根据id查询

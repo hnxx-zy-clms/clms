@@ -8,7 +8,16 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.core.entity.Xxx;
 
+import java.util.List;
+
 public interface XxxService {
+
+    /**
+     * 查询所有
+     * @return
+     */
+    List<Xxx> getAll();
+
 
     /**
      * 保存
@@ -28,4 +37,11 @@ public interface XxxService {
      * @return
      */
     Xxx getById(Integer id);
+
+    /**
+     * 根据id删除
+     * @param id
+     */
+    void deleteById(Integer id);
+
 }
