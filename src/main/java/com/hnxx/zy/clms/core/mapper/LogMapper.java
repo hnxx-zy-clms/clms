@@ -20,7 +20,7 @@ public interface LogMapper {
      * 保存日志信息
      * @param logger
      */
-    @Insert("insert into bl_log(\n" +
+    @Insert("insert into cl_log(\n" +
             "            log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip\n" +
             "        ) values (\n" +
             "            #{logUrl}, #{logParams}, #{logStatus},  #{logMessage}, #{logMethod}, #{logTime},\n" +

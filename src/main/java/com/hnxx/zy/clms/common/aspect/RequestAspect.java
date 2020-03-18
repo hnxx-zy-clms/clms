@@ -67,7 +67,7 @@ public class RequestAspect {
         long time = System.currentTimeMillis() - startTime;
         log.info("耗时 : {}", time);
         Log logger = ThreadLocalContext.get().getLogger();
-        // logger.setLogTime(time);
+        logger.setLogTime(time);
         return ob;
     }
 
@@ -82,7 +82,7 @@ public class RequestAspect {
         log.info("返回值:{}", JSON.toJSONString(ret));
         Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogResult(result);
-        // logService.save(logger);
+        logService.save(logger);
     }
 
     /**
@@ -99,7 +99,7 @@ public class RequestAspect {
         logger.setLogMessage(exception);
         logger.setLogTime(0L);
         // 发生异常走异常通知
-        // logService.save(logger);
+        logService.save(logger);
     }
 
     /**
