@@ -312,3 +312,103 @@
 2020-03-18 12:18:37.514 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[Xxx(xxId=null, xxName=测试模型2, createdTime=null, updateTime=null, version=null, isEnabled=null, isDeleted=null)]
 2020-03-18 12:18:37.684 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 180
 2020-03-18 12:18:37.774 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"保存成功!"}
+2020-03-18 12:28:21.640 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/get/1
+2020-03-18 12:28:21.641 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-03-18 12:28:21.642 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 12:28:21.644 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.update
+2020-03-18 12:28:21.645 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-03-18 12:28:23.754 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 2114
+2020-03-18 12:28:23.755 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"操作成功！"}
+2020-03-18 12:28:28.436 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/get/2
+2020-03-18 12:28:28.437 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-03-18 12:28:28.437 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 12:28:28.438 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.update
+2020-03-18 12:28:28.439 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[2]
+2020-03-18 12:28:28.521 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 85
+2020-03-18 12:28:28.522 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"操作成功！"}
+2020-03-18 12:28:33.412 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/get/5
+2020-03-18 12:28:33.412 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-03-18 12:28:33.413 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 12:28:33.413 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.update
+2020-03-18 12:28:33.414 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[5]
+2020-03-18 12:28:33.506 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 94
+2020-03-18 12:28:33.513 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"data":{"createdTime":"2020-03-18 10:32:24","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 10:32:24","version":1,"xxId":5,"xxName":"测试模型1"},"msg":"操作成功！"}
+2020-03-18 12:28:49.998 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/save
+2020-03-18 12:28:49.999 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : POST
+2020-03-18 12:28:49.999 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 12:28:50.000 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.save
+2020-03-18 12:28:50.000 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[Xxx(xxId=null, xxName=xxx, createdTime=null, updateTime=null, version=null, isEnabled=null, isDeleted=null)]
+2020-03-18 12:28:50.108 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 110
+2020-03-18 12:28:50.109 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"保存成功!"}
+2020-03-18 12:28:57.018 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/save
+2020-03-18 12:28:57.018 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : POST
+2020-03-18 12:28:57.019 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 12:28:57.020 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.save
+2020-03-18 12:28:57.020 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[Xxx(xxId=null, xxName=xxxxxxx, createdTime=null, updateTime=null, version=null, isEnabled=null, isDeleted=null)]
+2020-03-18 12:28:57.145 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 126
+2020-03-18 12:28:57.145 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"保存成功!"}
+2020-03-18 16:32:25.729 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 3344 (started by 25610 in G:\【卓越班第一项目组】\【班务管理系统】\clms)
+2020-03-18 16:32:25.788 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-18 16:32:26.252 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 16:32:26.252 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 16:32:43.545 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-18 16:32:43.584 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 16:32:43.588 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-18 16:32:43.590 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 16:32:43.905 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-18 16:32:43.907 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 17654 ms
+2020-03-18 16:32:44.447 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-18 16:32:49.839 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-18 16:32:51.436 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 16:32:51.979 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-18 16:32:52.046 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 16:32:52.103 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 16:32:52.107 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 32.923 seconds (JVM running for 39.759)
+2020-03-18 16:33:21.951 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 16:33:21.954 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-03-18 16:33:21.974 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-03-18 16:33:22.041 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/get/1
+2020-03-18 16:33:22.050 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-03-18 16:33:22.056 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 16:33:22.058 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.update
+2020-03-18 16:33:22.059 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-03-18 16:33:22.580 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 540
+2020-03-18 16:33:22.776 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"操作成功！"}
+2020-03-18 16:35:15.763 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/list
+2020-03-18 16:35:15.764 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-03-18 16:35:15.765 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 16:35:15.765 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.list
+2020-03-18 16:35:15.767 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[]
+2020-03-18 16:35:15.852 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 89
+2020-03-18 16:35:15.862 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"data":[{"createdTime":"2020-03-17 22:22:57","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:12","version":1,"xxId":1,"xxName":"测试模型1"},{"createdTime":"2020-03-18 10:06:34","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:23","version":1,"xxId":3,"xxName":"测试模型3"},{"createdTime":"2020-03-18 10:32:13","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:32","version":1,"xxId":4,"xxName":"测试模型4"},{"createdTime":"2020-03-18 10:32:24","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:36","version":1,"xxId":5,"xxName":"测试模型5"},{"createdTime":"2020-03-18 10:32:31","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:38","version":1,"xxId":6,"xxName":"测试模型6"},{"createdTime":"2020-03-18 11:20:50","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:41","version":1,"xxId":7,"xxName":"测试模型7"},{"createdTime":"2020-03-18 11:55:58","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:46","version":1,"xxId":8,"xxName":"测试模型8"},{"createdTime":"2020-03-18 12:15:33","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:50","version":1,"xxId":9,"xxName":"测试模型9"},{"createdTime":"2020-03-18 12:16:27","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:34:57","version":1,"xxId":10,"xxName":"测试模型10"},{"createdTime":"2020-03-18 12:17:05","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:35:00","version":1,"xxId":11,"xxName":"测试模型11"},{"createdTime":"2020-03-18 12:18:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 16:35:05","version":1,"xxId":12,"xxName":"测试模型12"},{"createdTime":"2020-03-18 12:28:47","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 12:28:47","version":1,"xxId":13,"xxName":"xxx"},{"createdTime":"2020-03-18 12:28:54","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-18 12:28:54","version":1,"xxId":14,"xxName":"xxxxxxx"}],"msg":"操作成功！"}
+2020-03-18 16:35:30.349 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/delete/13
+2020-03-18 16:35:30.350 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : DELETE
+2020-03-18 16:35:30.351 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 16:35:30.352 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.delete
+2020-03-18 16:35:30.352 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[13]
+2020-03-18 16:35:30.470 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 121
+2020-03-18 16:35:30.471 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"删除成功!"}
+2020-03-18 16:35:35.781 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:113 -请求地址 : /xxx/delete/14
+2020-03-18 16:35:35.783 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:114 -请求方式 : DELETE
+2020-03-18 16:35:35.784 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-03-18 16:35:35.785 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:119 -方法 : com.hnxx.zy.clms.controller.XxxController.delete
+2020-03-18 16:35:35.785 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:121 -请求参数：[14]
+2020-03-18 16:35:35.922 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:68 -耗时 : 141
+2020-03-18 16:35:35.924 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:82 -返回值:{"code":200,"msg":"删除成功!"}
+2020-03-18 20:05:27.244 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 11472 (started by 25610 in G:\【卓越班第一项目组】\【班务管理系统】\clms)
+2020-03-18 20:05:27.250 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-18 20:05:27.367 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 20:05:27.368 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 20:05:31.731 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-18 20:05:31.750 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 20:05:31.752 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-18 20:05:31.754 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 20:05:31.982 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-18 20:05:31.983 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 4614 ms
+2020-03-18 20:05:32.310 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-18 20:05:37.663 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-18 20:05:38.660 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 20:05:39.506 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-18 20:05:39.564 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 20:05:39.600 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 20:05:39.604 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 15.081 seconds (JVM running for 18.596)

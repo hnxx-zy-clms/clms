@@ -7,7 +7,7 @@
        * main
            * java (com.hnxx.zy.clms)
                * [common] 公共层
-                   * aspect AOP
+                   * aspect AOP 切面
                    * config 配置类
                        * XxxConfig : 模版配置类
                    * enums 枚举

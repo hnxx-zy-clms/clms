@@ -39,6 +39,7 @@ public class RequestAspect {
     private LogService logService;
 
     /**
+     * @Pointcut 切点 指定那些文件需要 AOP
      * 两个..代表所有子目录，最后括号里的两个..代表所有参数
      */
     @Pointcut("execution( * com.hnxx.zy.*.controller..*(..))")
@@ -46,7 +47,9 @@ public class RequestAspect {
     }
 
     /**
-     * 方法执行之前调用
+     * 前置通知：方法执行之前调用
+     * 在目标方法执行前后实施增强，可以应用于权限管理等功能
+     * 此处用于记录请求的参数和请求内容
      */
     @Before("logPointCut()")
     public void doBefore(JoinPoint joinPoint) throws Exception {
@@ -60,10 +63,16 @@ public class RequestAspect {
         printRequestLog(joinPoint, request, uri);
     }
 
+    /**
+     * * @Around 环绕通知
+     */
     @Around("logPointCut()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
+        // System.currentTimeMillis 获取系统当前时间
         long startTime = System.currentTimeMillis();
+        // pjp.proceed() 执行目标方法 可以理解为对业务方法的模拟
         Object ob = pjp.proceed();
+        // 计算目标方法运行时间
         long time = System.currentTimeMillis() - startTime;
         log.info("耗时 : {}", time);
         Log logger = ThreadLocalContext.get().getLogger();
@@ -72,8 +81,9 @@ public class RequestAspect {
     }
 
     /**
-     * 后置通知
-     * 没有发生异常
+     * 后置通知 没有发生异常 （在发生异常的情况下不执行此通知）
+     * @AfterReturning 会直接获取对应切面方法的返回值，可以对这个返回值进行进一步处理（不能改变）
+     * 此处用于返回日志请求结果 LogResult
      * @param ret
      */
     @AfterReturning(returning = "ret", pointcut = "logPointCut()")
@@ -86,7 +96,7 @@ public class RequestAspect {
     }
 
     /**
-     * 异常通知
+     * 异常通知 处理程序中未处理的异常
      * 发生异常
      * @param joinPoint
      * @param e
