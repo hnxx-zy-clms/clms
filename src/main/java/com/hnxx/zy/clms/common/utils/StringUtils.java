@@ -3,6 +3,13 @@
  * @Author: code-fusheng
  * @Date: 2020/3/18 11:18
  * Description: 增强String工具类
+ * 1. 此工具类为 org.apache.commons.lang3.StringUtils 的增强实现
+ * 2. 操作对象为java.lang.String类型的对象，是jdk提供的String类型操作的补充，保证null安全
+ * 3. public static boolean isEmpty(String str) 判断某字符串是否为空，为空的标准 str==null或str.length()==0
+ * 4. public static boolean isNotEmpty(String str) 判断某字符串是否非空，等于!isEmpty(String str)
+ * 5. public static boolean isBlank(String str) 判断某字符串是否为空或长度为0或由空白符(whitespace)构成
+ * 6. public static boolean isNotBlank(String str) 判断某字符串是否不为空且长度不为0且不由空白符(whitespace)构成，等于!isBlank(String str)
+ * 详情参考博客 https://www.cnblogs.com/zhaoyan001/p/6599477.html
  */
 package com.hnxx.zy.clms.common.utils;
 

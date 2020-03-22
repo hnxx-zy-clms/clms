@@ -56,6 +56,7 @@ public interface XxxMapper {
      * 修改
      * @param xxx
      */
+    @Select("")
     void update(Xxx xxx);
 
     /**

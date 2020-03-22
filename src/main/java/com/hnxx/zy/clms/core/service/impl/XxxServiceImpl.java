@@ -16,8 +16,8 @@ import java.util.List;
 
 /**
  * 1. 统一在业务逻辑接口出标注 @Service
- * 2. 在 ServiceImpl 业务逻辑接口实现类的方法前面不需要加注释
- * @author fusheng
+ *  * 2. 在 ServiceImpl 业务逻辑接口实现类的方法前面不需要加注释
+ *  * @author fusheng
  */
 
 @Service

@@ -1,7 +1,7 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://175.24.45.179/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+      url: jdbc:mysql://175.24.45.179/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: sa123
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,3 +15,5 @@ spring:
       minEvictableIdleTimeMillis: 300000
 server:
   port: 8080
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml

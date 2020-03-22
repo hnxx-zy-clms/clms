@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hnxx.zy.clms.core.mapper.LogMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hnxx.zy.clms.core.entity.Log">
+        <id column="log_id" property="logId"/>
+        <result column="log_url" property="logUrl"/>
+        <result column="log_params" property="logParams"/>
+        <result column="log_status" property="logStatus"/>
+        <result column="log_message" property="logMessage"/>
+        <result column="log_method" property="logMethod"/>
+        <result column="log_time" property="logTime"/>
+        <result column="log_result" property="logResult"/>
+        <result column="log_ip" property="logIp"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        log_id, log_url, log_params, log_status, log_message,
+        log_method, log_time, log_result, log_ip, created_time
+    </sql>
+    <!-- 保存 -->
+    <insert id="save" parameterType="com.hnxx.zy.clms.core.entity.Log">
+        insert into cl_log(
+            log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip
+        ) values (
+            #{logUrl}, #{logParams}, #{logStatus},  #{logMessage}, #{logMethod}, #{logTime},
+            #{logResult}, #{logIp}
+        )
+    </insert>
+    <!-- 分页查询 -->
+    <select id="getByPage" resultMap="BaseResultMap" parameterType="com.hnxx.zy.clms.common.utils.Page">
+        select
+        log_id, log_url, log_params, log_status, log_message,
+        log_method, log_time, log_result, log_ip, created_time
+        from cl_log
+        <where>
+            <if test="params.logUrl!=null and params.logUrl!=''">
+                and log_url = #{params.logUrl}
+            </if>
+            <if test="params.logStatus!=null">
+                and log_status = #{params.logStatus}
+            </if>
+            <if test="params.logMethod!=null and params.logMethod!=''">
+                and log_method = #{params.logMethod}
+            </if>
+            <if test="params.logIp!=null and params.logIp!=''">
+                and log_ip = #{params.logIp}
+            </if>
+        </where>
+        <if test="sortColumn!=null and sortColumn!=''">
+            order by ${sortColumn} ${sortMethod}
+        </if>
+        limit #{index}, #{pageSize}
+    </select>
+    <!-- 统计总数 -->
+    <select id="getCountByPage" resultType="java.lang.Integer" parameterType="com.hnxx.zy.clms.common.utils.Page">
+        select
+        count(*)
+        from cl_log
+        <where>
+            <if test="params.logUrl!=null and params.logUrl!=''">
+                and log_url = #{params.logUrl}
+            </if>
+            <if test="params.logStatus!=null">
+                and log_status = #{params.logStatus}
+            </if>
+            <if test="params.logMethod!=null and params.logMethod!=''">
+                and log_method = #{params.logMethod}
+            </if>
+            <if test="params.logIp!=null and params.logIp!=''">
+                and log_ip = #{params.logIp}
+            </if>
+        </where>
+    </select>
+
+    <!-- 根据id删除 -->
+    <delete id="deleteById">
+        delete from cl_log
+        where log_id = #{id}
+    </delete>
+    <!-- 根据id集合删除 -->
+    <delete id="deleteByIds">
+        delete from cl_log
+        where log_id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

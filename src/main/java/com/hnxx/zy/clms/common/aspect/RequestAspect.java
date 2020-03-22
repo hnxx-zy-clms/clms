@@ -64,7 +64,11 @@ public class RequestAspect {
     }
 
     /**
-     * * @Around 环绕通知
+     * @Around 环绕通知
+     * pjp 是 JoinPoint 的子接口，表示可以执行目标方法
+     * 1。必须是Object类型的返回值
+     * 2. 必须要接收一个参数
+     * 3. 必须使用 throw Throwable
      */
     @Around("logPointCut()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
