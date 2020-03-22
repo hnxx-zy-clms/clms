@@ -2,7 +2,7 @@
  * @FileName: ThreadLocalContext
  * @Author: code-fusheng
  * @Date: 2020/3/18 10:42
- * Description: 本地线程全局变量
+ * Description: 本地线程变量
  */
 package com.hnxx.zy.clms.common.utils;
 
