@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Author: fusheng
  * @Data: 2020/3/17 13:09  --- 2020/3/21 20:30  code-fusheng 完成了项目的基本构建
  * @Data: 2020/3/21 21:34  --- 2020/3/21 22:21  code-fusheng 完成了 Article 实体类编写
- * @Data:
+ * @Data: 2020/3/22 10:43  --- 2020/3/22 19:28  code-fusheng 完成了 ArticleType 相关操作的编写(待完善)
  */
 
 @SpringBootApplication

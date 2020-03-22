@@ -6,9 +6,11 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Article {
 
     /**
@@ -79,7 +81,7 @@ public class Article {
     /**
      * 是否启用（0否1是 默认1）
      */
-    private Integer isEnable;
+    private Integer isEnabled;
 
     /**
      * 是否删除（0否1是 默认0）

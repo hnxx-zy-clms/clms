@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hnxx.zy.clms.core.mapper.ArticleMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hnxx.zy.clms.core.entity.Article">
+        <id property="articleId" column="article_id"/>
+        <result property="articleTitle" column="article_title"/>
+        <result property="articleAuthor" column="article_author"/>
+        <result property="articleImage" column="article_image"/>
+        <result property="articleContent" column="article_content"/>
+        <result property="articleGood" column="article_good"/>
+        <result property="articleRead" column="article_read"/>
+        <result property="articleCollection" column="article_collection"/>
+        <result property="articleType" column="article_type"/>
+        <result property="articleComment" column="article_comment"/>
+        <result property="articleSource" column="article_source"/>
+        <result property="createdTime" column="created_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="isEnabled" column="is_enabled"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <result property="version" column="version"/>
+    </resultMap>
+    <!-- 通用查询列 -->
+    <sql id="Base_Column_list">
+        article_id, article_title, article_author, article_image, article_content,
+        article_good, article_read, article_collection, article_type, article_comment,
+        article_source, created_time, update_time, is_enabled, is_deleted, version
+    </sql>
+    <!-- 保存 -->
+    <insert id="save" parameterType="com.hnxx.zy.clms.core.entity.Article">
+        insert into cl_article(
+            article_title, article_author, article_image, article_content, article_type, article_source
+        ) values (
+            #{articleTitle}, #{articleAuthor}, #{articleImage}, #{articleContent}, #{articleType}, #{articleSource}
+        )
+    </insert>
+</mapper>
