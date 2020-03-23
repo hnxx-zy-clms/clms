@@ -553,3 +553,646 @@ Caused by: com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be 
 2020-03-23 16:01:32.008 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
 2020-03-23 16:01:32.011 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/disable/1(String), [1](String), 1(Integer), null, PUT(String), 181(Long), {"code":200,"msg":"弃用成功"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-23 16:01:32.100 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 17:47:09.109 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 17:53:51.523 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 17:54:48.350 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 17:54:48.419 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 17:54:48.671 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 17:54:48.678 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 17:54:48.680 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 17:54:48.686 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 17:54:48.898 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 17:54:48.908 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 743(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 17:54:49.381 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 17:55:18.881 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 17:55:30.130 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 17:55:30.236 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 17:55:30.353 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 17:55:30.358 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 17:55:30.360 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 17:55:30.364 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 17:55:30.513 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 17:55:30.519 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 397(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 17:55:30.693 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 17:57:54.802 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 17:58:10.443 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 17:58:25.519 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 17:58:25.572 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 17:58:25.643 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 17:58:25.651 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 17:58:25.652 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 17:58:25.654 DEBUG [http-nio-8080-exec-2]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 17:58:25.876 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 17:58:25.882 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 309(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 17:58:26.092 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:00:59.465 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 18:01:25.362 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 18:01:44.043 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select article_id, article_title, article_author, article_image, article_content, article_good, article_read, article_collection, article_type, article_comment, article_source, created_time, update_time, is_enabled, is_deleted, version from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 18:01:44.097 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 18:01:44.152 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 18:01:44.165 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 18:01:44.167 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 4(Integer)
+2020-03-23 18:01:44.381 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 6
+2020-03-23 18:01:44.526 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:01:44.530 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 1(Integer), null, PUT(String), 465(Long), {"code":200,"msg":"启用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:01:44.709 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:01:49.812 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select article_id, article_title, article_author, article_image, article_content, article_good, article_read, article_collection, article_type, article_comment, article_source, created_time, update_time, is_enabled, is_deleted, version from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 18:01:49.814 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 18:01:49.819 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 18:01:49.827 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 18:01:49.830 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 0(Integer), 5(Integer)
+2020-03-23 18:01:50.040 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 6
+2020-03-23 18:01:50.052 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:01:50.056 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/disable/1(String), [1](String), 1(Integer), null, PUT(String), 245(Long), {"code":200,"msg":"弃用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:01:50.250 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:18:49.869 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 18:19:17.942 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-23 18:19:17.991 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章n(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 1(Integer), null
+2020-03-23 18:19:18.214 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:19:18.374 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:19:18.378 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章n, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), null, POST(String), 336(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:19:18.755 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:19:28.205 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 18:19:28.208 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-23 18:19:28.279 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 18:19:28.318 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:19:28.320 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/get/2(String), [2](String), 1(Integer), null, GET(String), 114(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":0,"articleTitle":"修改测试文章2","articleType":2,"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-23 18:01:49","version":4},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:19:28.463 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:19:56.870 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:19:56.873 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 2(Integer)
+2020-03-23 18:19:57.423 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:19:57.425 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$15a6961d.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$7297267.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:19:57.856 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:21:34.363 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:21:34.366 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), http:www.baidu.com(String), 1(Integer), 2(Integer)
+2020-03-23 18:21:34.424 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -<==    Updates: 0
+2020-03-23 18:21:34.472 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:21:34.475 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=http:www.baidu.com, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 1(Integer), null, PUT(String), 76(Long), {"code":200,"msg":"更新成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:21:34.743 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:24:39.562 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:24:39.564 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 2(Integer)
+2020-03-23 18:24:39.578 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:24:39.580 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$15a6961d.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$7297267.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:24:39.780 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:27:52.845 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:27:52.847 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 2(Integer)
+2020-03-23 18:27:52.868 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:27:52.870 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$15a6961d.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$7297267.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:27:52.947 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:29:19.768 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 18:29:28.137 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_source = ?, article_comment = ?where article_id = ? and version = ? 
+2020-03-23 18:29:28.219 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), null, 0(Integer), 1(Integer), 2(Integer)
+2020-03-23 18:29:28.451 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:29:28.457 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$920658cc.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$d319bf4a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 2' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:29:28.755 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:30:19.545 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 18:30:29.843 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:30:29.923 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 6(Integer)
+2020-03-23 18:30:30.210 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:30:30.219 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=6)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:30:30.488 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:36:02.989 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:36:02.992 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 6(Integer)
+2020-03-23 18:36:03.010 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:36:03.016 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=6)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:36:03.182 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:36:39.474 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:36:39.476 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), null, 1(Integer), 6(Integer)
+2020-03-23 18:36:39.523 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:36:39.525 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=6)](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:36:39.589 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:37:09.287 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1, article_title = ?, article_author = ? ,article_image = ? ,article_content = ?,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ?, article_comment = ? ,article_source = ?where article_id = ? and version = ? 
+2020-03-23 18:37:09.289 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), 未知(String), 1(Integer), 6(Integer)
+2020-03-23 18:37:09.766 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -<==    Updates: 1
+2020-03-23 18:37:10.052 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:37:10.060 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=未知, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=6)](String), 1(Integer), null, PUT(String), 492(Long), {"code":200,"msg":"更新成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:37:10.204 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:58:49.715 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-23 18:58:49.717 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章n(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 1(Integer), null
+2020-03-23 18:58:49.772 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:58:49.773 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章n, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 0(Integer), org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'article_source' cannot be null
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.save-Inline
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'article_source' cannot be null
+; Column 'article_source' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'article_source' cannot be null
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.save(ArticleServiceImpl.java:32)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.save(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.save(ArticleController.java:35)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.save(<generated>)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'article_source' cannot be null
+(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:58:49.897 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:59:31.298 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-23 18:59:31.301 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章n(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 1(Integer), null
+2020-03-23 18:59:31.554 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 18:59:31.564 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 18:59:31.566 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章n, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+(String), POST(String), 272(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 18:59:31.663 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:00:20.160 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-23 19:00:20.162 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章n(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 1(Integer), null
+2020-03-23 19:00:20.561 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:00:20.573 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:00:20.576 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章n, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.update-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.update(ArticleServiceImpl.java:51)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$ecd813ee.update(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.update(ArticleController.java:57)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$96032d3a.update(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'article_id = 1 and version = 6' at line 1
+(String), POST(String), 421(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:00:20.844 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:02:13.387 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:02:31.812 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-23 19:02:31.865 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章n+1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 1(Integer), null
+2020-03-23 19:02:31.958 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:02:32.195 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:02:32.200 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章n+1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), null, POST(String), 255(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:02:32.423 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:03:46.247 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1 ,article_title = ? ,article_author = ? ,article_content = ? ,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ? ,article_comment = ? ,article_source = ? where article_id = ? and version = ? 
+2020-03-23 19:03:46.250 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), 未知(String), 1(Integer), 7(Integer)
+2020-03-23 19:03:46.513 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -<==    Updates: 1
+2020-03-23 19:03:46.577 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:03:46.582 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=未知, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=7)](String), 1(Integer), null, PUT(String), 411(Long), {"code":200,"msg":"更新成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:03:46.759 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:05:36.150 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.deleteById.debug:159 -==>  Preparing: update cl_article set is_deleted = ? where article_id = ? 
+2020-03-23 19:05:36.152 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.deleteById.debug:159 -==> Parameters: 1(Integer), 1(Integer)
+2020-03-23 19:05:36.275 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.deleteById.debug:159 -<==    Updates: 1
+2020-03-23 19:05:36.320 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:05:36.322 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/delete/1(String), [1](String), 1(Integer), null, DELETE(String), 136(Long), {"code":200,"msg":"删除成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:05:36.405 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:05:41.310 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 19:05:41.311 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 19:05:41.364 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 19:05:41.373 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 19:05:41.374 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 19:05:41.392 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 19:05:41.423 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:05:41.425 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 138(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":10,"articleRead":0,"articleTitle":"测试文章n+1","articleType":1,"createdTime":"2020-03-23 19:02:31","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 19:02:31","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":9,"articleRead":0,"articleTitle":"测试文章n","articleType":1,"createdTime":"2020-03-23 19:00:20","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 19:00:20","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":8,"articleRead":0,"articleTitle":"测试文章n","articleType":1,"createdTime":"2020-03-23 18:59:31","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 18:59:31","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":7,"articleRead":0,"articleSource":"https://www.baidu.com/","articleTitle":"测试文章n","articleType":1,"createdTime":"2020-03-23 18:19:17","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 18:35:14","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":9,"totalPage":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:05:41.537 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:05:46.020 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 19:05:46.022 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:05:46.025 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 0
+2020-03-23 19:05:46.045 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:05:46.047 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 0(Integer), 	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.enableById(ArticleServiceImpl.java:87)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$86c93e2b.enableById(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.enable(ArticleController.java:98)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$86cc1043.enable(<generated>)
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:05:46.114 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:10:11.333 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 19:10:11.334 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:10:11.339 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 19:10:11.347 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 19:10:11.349 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 8(Integer)
+2020-03-23 19:10:11.463 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 10
+2020-03-23 19:10:11.471 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:10:11.473 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 1(Integer), null, PUT(String), 142(Long), {"code":200,"msg":"启用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:10:11.543 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:10:14.480 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 19:10:14.482 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:10:14.487 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 19:10:14.496 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 19:10:14.498 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 9(Integer)
+2020-03-23 19:10:14.669 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 10
+2020-03-23 19:10:14.679 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 19:10:14.680 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 1(Integer), null, PUT(String), 203(Long), {"code":200,"msg":"启用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:10:14.762 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:17:27.303 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:17:55.868 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log order by created_time desc limit ?, ? 
+2020-03-23 19:17:55.912 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 19:17:56.060 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 19:17:56.074 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log 
+2020-03-23 19:17:56.076 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 19:17:56.336 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 19:17:56.473 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:17:56.479 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 575(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-23 19:10:14","logId":140,"logIp":"0:0:0:0:0:0:0:1","logMethod":"PUT","logParams":"[1]","logResult":"{\"code\":200,\"msg\":\"启用成功\"}","logStatus":1,"logTime":203,"logUrl":"/article/enable/1"},{"createdTime":"2020-03-23 19:10:11","logId":139,"logIp":"0:0:0:0:0:0:0:1","logMethod":"PUT","logParams":"[1]","logResult":"{\"code\":200,\"msg\":\"启用成功\"}","logStatus":1,"logTime":142,"logUrl":"/article/enable/1"},{"createdTime":"2020-03-23 19:05:46","logId":138,"logIp":"0:0:0:0:0:0:0:1","logMessage":"\tat com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.enableById(ArticleServiceImpl.java:87)\n\tat com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)\n\tat com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$86c93e2b.enableById(<generated>)\n\tat com.hnxx.zy.clms.controller.ArticleController.enable(ArticleController.java:98)\n\tat com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$86cc1043.enable(<generated>)\n","logMethod":"PUT","logParams":"[1]","logStatus":0,"logTime":0,"logUrl":"/article/enable/1"},{"createdTime":"2020-03-23 19:05:41","logId":137,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logResult":"{\"code\":200,\"data\":{\"currentPage\":1,\"index\":0,\"list\":[{\"articleAuthor\":\"code-fusheng\",\"articleCollection\":0,\"articleComment\":0,\"articleContent\":\"这是code-fsheng写的测试文章1的内容，关于文章的测试\",\"articleGood\":0,\"articleId\":10,\"articleRead\":0,\"articleTitle\":\"测试文章n+1\",\"articleType\":1,\"createdTime\":\"2020-03-23 19:02:31\",\"isDeleted\":0,\"isEnabled\":1,\"updateTime\":\"2020-03-23 19:02:31\",\"version\":1},{\"articleAuthor\":\"code-fusheng\",\"articleCollection\":0,\"articleComment\":0,\"articleContent\":\"这是code-fsheng写的测试文章1的内容，关于文章的测试\",\"articleGood\":0,\"articleId\":9,\"articleRead\":0,\"articleTitle\":\"测试文章n\",\"articleType\":1,\"createdTime\":\"2020-03-23 19:00:20\",\"isDeleted\":0,\"isEnabled\":1,\"updateTime\":\"2020-03-23 19:00:20\",\"version\":1},{\"articleAuthor\":\"code-fusheng\",\"articleCollection\":0,\"articleComment\":0,\"articleContent\":\"这是code-fsheng写的测试文章1的内容，关于文章的测试\",\"articleGood\":0,\"articleId\":8,\"articleRead\":0,\"articleTitle\":\"测试文章n\",\"articleType\":1,\"createdTime\":\"2020-03-23 18:59:31\",\"isDeleted\":0,\"isEnabled\":1,\"updateTime\":\"2020-03-23 18:59:31\",\"version\":1},{\"articleAuthor\":\"code-fusheng\",\"articleCollection\":0,\"articleComment\":0,\"articleContent\":\"这是code-fsheng写的测试文章1的内容，关于文章的测试\",\"articleGood\":0,\"articleId\":7,\"articleRead\":0,\"articleSource\":\"https://www.baidu.com/\",\"articleTitle\":\"测试文章n\",\"articleType\":1,\"createdTime\":\"2020-03-23 18:19:17\",\"isDeleted\":0,\"isEnabled\":1,\"updateTime\":\"2020-03-23 18:35:14\",\"version\":1}],\"pageSize\":4,\"params\":{},\"sortColumn\":\"created_time\",\"sortMethod\":\"desc\",\"totalCount\":9,\"totalPage\":3},\"msg\":\"操作成功！\"}","logStatus":1,"logTime":138,"logUrl":"/article/getByPage"}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":104,"totalPage":26},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:17:56.589 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:18:09.170 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: dlete from cl_log where log_id ? 
+2020-03-23 19:18:09.172 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 2(Integer)
+2020-03-23 19:18:09.464 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:18:09.468 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/2(String), [2](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 2' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 2' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 2' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f3fd1f44.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 2' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:18:09.747 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:18:22.200 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: dlete from cl_log where log_id ? 
+2020-03-23 19:18:22.202 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 3(Integer)
+2020-03-23 19:18:22.217 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:18:22.221 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/3(String), [3](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 3' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 3' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 3' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f3fd1f44.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 3' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:18:22.313 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:18:27.521 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: dlete from cl_log where log_id ? 
+2020-03-23 19:18:27.523 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 11(Integer)
+2020-03-23 19:18:27.537 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:18:27.540 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/11(String), [11](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 11' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 11' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 11' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f3fd1f44.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 11' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:18:27.630 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:18:43.081 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: dlete from cl_log where log_id ? 
+2020-03-23 19:18:43.082 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 37(Integer)
+2020-03-23 19:18:43.096 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:18:43.099 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/37(String), [37](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f3fd1f44.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:18:43.322 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:19:52.233 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:20:03.853 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: dlete from cl_log where log_id ? 
+2020-03-23 19:20:03.895 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 37(Integer)
+2020-03-23 19:20:04.149 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:20:04.156 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/37(String), [37](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$20c9bf5d.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dlete from cl_log where log_id 37' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:20:04.232 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:22:36.873 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:22:47.422 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: delete from cl_log where log_id ? 
+2020-03-23 19:22:47.556 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 37(Integer)
+2020-03-23 19:22:47.819 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:22:47.826 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/37(String), [37](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '37' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '37' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '37' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$7910cbb.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '37' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:22:48.161 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:23:22.540 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: delete from cl_log where log_id ? 
+2020-03-23 19:23:22.541 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 57(Integer)
+2020-03-23 19:23:22.557 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:23:22.559 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/57(String), [57](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$7910cbb.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:23:22.625 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:23:52.834 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:23:52.836 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/deleteByIds(String), [[1, 3, 4]](String), 0(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'list' not found. Available parameters are [ids, param1]
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteByIds(LogServiceImpl.java:63)
+	at com.hnxx.zy.clms.controller.LogController.deleteByIds(LogController.java:72)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$7910cbb.deleteByIds(<generated>)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'list' not found. Available parameters are [ids, param1]
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:23:52.890 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:25:05.163 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:25:16.522 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: delete from cl_log where log_id ? 
+2020-03-23 19:25:16.604 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 57(Integer)
+2020-03-23 19:25:16.814 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:25:16.821 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/57(String), [57](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+### The error may involve com.hnxx.zy.clms.core.mapper.LogMapper.deleteById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+	at com.hnxx.zy.clms.core.service.impl.LogServiceImpl.deleteById(LogServiceImpl.java:54)
+	at com.hnxx.zy.clms.controller.LogController.delete(LogController.java:61)
+	at com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$454ef284.delete(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '57' at line 1
+(String), DELETE(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:25:17.027 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:26:22.793 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:26:33.323 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==>  Preparing: delete from cl_log where log_id = ? 
+2020-03-23 19:26:33.506 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -==> Parameters: 57(Integer)
+2020-03-23 19:26:33.682 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.deleteById.debug:159 -<==    Updates: 1
+2020-03-23 19:26:33.940 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:26:33.949 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/delete/57(String), [57](String), 1(Integer), null, DELETE(String), 481(Long), {"code":200,"msg":"删除成功!"}(String), 127.0.0.1(String)
+2020-03-23 19:26:34.151 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:26:48.681 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==>  Preparing: delete from cl_log where log_id in ( ? , ? ) 
+2020-03-23 19:26:48.682 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==> Parameters: 78(Integer), 89(Integer)
+2020-03-23 19:26:48.789 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -<==    Updates: 2
+2020-03-23 19:26:48.801 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:26:48.804 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/deleteByIds(String), [[78, 89]](String), 1(Integer), null, PUT(String), 189(Long), {"code":200,"msg":"删除成功！"}(String), 127.0.0.1(String)
+2020-03-23 19:26:49.000 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:26:57.364 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==>  Preparing: delete from cl_log where log_id in ( ? , ? , ? ) 
+2020-03-23 19:26:57.366 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==> Parameters: 1(Integer), 2(Integer), 3(Integer)
+2020-03-23 19:26:57.370 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -<==    Updates: 0
+2020-03-23 19:26:57.380 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:26:57.383 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/deleteByIds(String), [[1, 2, 3]](String), 1(Integer), null, PUT(String), 23(Long), {"code":200,"msg":"删除成功！"}(String), 127.0.0.1(String)
+2020-03-23 19:26:57.514 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:28:36.239 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:46:38.359 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:47:52.276 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_type where type_name = ? and is_deleted = 0 
+2020-03-23 19:47:52.320 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==> Parameters: Spring Boot(String)
+2020-03-23 19:47:52.416 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -<==      Total: 1
+2020-03-23 19:47:52.443 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:47:52.448 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/save(String), [ArticleType(typeId=null, typeName=Spring Boot, typeCount=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 0(Integer), com.hnxx.zy.clms.common.exception.ClmsException: 该文章分类已经存在!
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.save(ArticleTypeServiceImpl.java:35)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.save(ArticleTypeController.java:32)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$8f02a92f.save(<generated>)
+(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:47:52.626 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:48:04.283 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_type wherewhere type_id ? and is_deleted = 0 
+2020-03-23 19:48:04.285 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-23 19:48:04.446 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:48:04.449 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/2(String), [2](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id 2 and is_deleted = 0' at line 1
+### The error may exist in com/hnxx/zy/clms/core/mapper/ArticleTypeMapper.java (best guess)
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id 2 and is_deleted = 0' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id 2 and is_deleted = 0' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.getById(ArticleTypeServiceImpl.java:47)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.getById(ArticleTypeController.java:43)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$8f02a92f.getById(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id 2 and is_deleted = 0' at line 1
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:48:04.534 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:49:21.008 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:49:41.254 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_type wherewhere type_id = ? and is_deleted = 0 
+2020-03-23 19:49:41.296 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-23 19:49:41.464 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:49:41.471 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/2(String), [2](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id = 2 and is_deleted = 0' at line 1
+### The error may exist in com/hnxx/zy/clms/core/mapper/ArticleTypeMapper.java (best guess)
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id = 2 and is_deleted = 0' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id = 2 and is_deleted = 0' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.getById(ArticleTypeServiceImpl.java:47)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.getById(ArticleTypeController.java:43)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$51d0eb84.getById(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type_id = 2 and is_deleted = 0' at line 1
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:49:41.531 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:50:19.084 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:50:40.412 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_typewhere type_id = ? and is_deleted = 0 
+2020-03-23 19:50:40.455 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-23 19:50:40.666 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:50:40.672 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/2(String), [2](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 2 and is_deleted = 0' at line 1
+### The error may exist in com/hnxx/zy/clms/core/mapper/ArticleTypeMapper.java (best guess)
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 2 and is_deleted = 0' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 2 and is_deleted = 0' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.getById(ArticleTypeServiceImpl.java:47)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.getById(ArticleTypeController.java:43)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$13403c7b.getById(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 2 and is_deleted = 0' at line 1
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:50:40.809 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:50:49.066 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-03-23 19:50:49.067 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-03-23 19:50:49.116 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 5
+2020-03-23 19:50:49.346 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:50:49.353 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), [](String), 1(Integer), null, GET(String), 66(Long), {"code":200,"data":[{"typeCount":0,"typeId":1,"typeName":"软件工程"},{"typeCount":0,"typeId":2,"typeName":"C++"},{"typeCount":0,"typeId":3,"typeName":"Java"},{"typeCount":0,"typeId":4,"typeName":"Python"},{"typeCount":0,"typeId":5,"typeName":"Spring Boot"}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:50:49.460 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:50:55.866 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==>  Preparing: select * from cl_article_type where is_deleted = 0 
+2020-03-23 19:50:55.868 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==> Parameters: 
+2020-03-23 19:50:55.880 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -<==      Total: 5
+2020-03-23 19:50:55.900 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:50:55.902 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getAll(String), [](String), 1(Integer), null, GET(String), 57(Long), {"code":200,"data":[{"createdTime":"2020-03-22 14:23:28","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":1,"typeName":"软件工程","updateTime":"2020-03-22 19:28:05","version":8},{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19","version":3},{"createdTime":"2020-03-22 14:23:53","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":3,"typeName":"Java","updateTime":"2020-03-22 14:23:53","version":1},{"createdTime":"2020-03-22 14:24:07","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":4,"typeName":"Python","updateTime":"2020-03-22 14:24:07","version":1},{"createdTime":"2020-03-22 19:26:04","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":5,"typeName":"Spring Boot","updateTime":"2020-03-22 19:26:04","version":1}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:50:56.086 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:51:19.140 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_typewhere type_id = ? and is_deleted = 0 
+2020-03-23 19:51:19.142 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:51:19.158 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:51:19.160 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/1(String), [1](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+### The error may exist in com/hnxx/zy/clms/core/mapper/ArticleTypeMapper.java (best guess)
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.getById(ArticleTypeServiceImpl.java:47)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.getById(ArticleTypeController.java:43)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$13403c7b.getById(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:51:19.285 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:53:47.560 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:54:03.574 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_typewhere type_id = ? and is_deleted = 0 
+2020-03-23 19:54:03.652 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:54:04.040 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:54:04.054 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/1(String), [1](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+### The error may exist in com/hnxx/zy/clms/core/mapper/ArticleTypeMapper.java (best guess)
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById-Inline
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.getById(ArticleTypeServiceImpl.java:47)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.getById(ArticleTypeController.java:43)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$e9249fc.getById(<generated>)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 and is_deleted = 0' at line 1
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:54:04.284 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:55:38.899 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:56:39.168 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-23 19:56:39.221 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:56:39.327 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 19:56:39.579 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:56:39.584 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/1(String), [1](String), 1(Integer), null, GET(String), 261(Long), {"code":200,"data":{"createdTime":"2020-03-22 14:23:28","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":1,"typeName":"软件工程","updateTime":"2020-03-22 19:28:05","version":8},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:56:39.662 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:57:02.299 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 19:58:17.503 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -==>  Preparing: update cl_article_type set version = version + 1 ,type_name = ? where type_id = ? and version = ? 
+2020-03-23 19:58:17.544 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -==> Parameters: 软件工程+(String), 1(Integer), 8(Integer)
+2020-03-23 19:58:17.767 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -<==    Updates: 1
+2020-03-23 19:58:17.934 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:58:17.937 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/update(String), [ArticleType(typeId=1, typeName=软件工程+, typeCount=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=8)](String), 1(Integer), null, PUT(String), 379(Long), {"code":200,"msg":"修改成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:58:18.124 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:58:39.889 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -==>  Preparing: update cl_article_type set is_deleted = 1 where type_id = ? 
+2020-03-23 19:58:39.891 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:58:40.014 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -<==    Updates: 1
+2020-03-23 19:58:40.066 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:58:40.068 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/delete/1(String), [1](String), 1(Integer), null, DELETE(String), 139(Long), {"code":200,"msg":"删除成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:58:40.314 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:58:57.480 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-23 19:58:57.482 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:58:57.539 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 19:58:57.555 DEBUG [http-nio-8080-exec-4]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==>  Preparing: update cl_article_type set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 19:58:57.559 DEBUG [http-nio-8080-exec-4]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 9(Integer)
+2020-03-23 19:58:57.630 DEBUG [http-nio-8080-exec-4]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -<==    Updates: 5
+2020-03-23 19:58:57.670 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:58:57.673 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/enable/1(String), [1](String), 1(Integer), null, PUT(String), 170(Long), {"code":200,"msg":"已启用!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:58:57.740 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 19:59:53.870 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-23 19:59:53.872 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 19:59:53.877 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 19:59:53.892 DEBUG [http-nio-8080-exec-6]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==>  Preparing: update cl_article_type set version = version + 1, is_enabled = ? and version = ? 
+2020-03-23 19:59:53.894 DEBUG [http-nio-8080-exec-6]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-03-23 19:59:54.204 DEBUG [http-nio-8080-exec-6]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -<==    Updates: 5
+2020-03-23 19:59:54.213 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 19:59:54.215 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/disable/1(String), [1](String), 1(Integer), null, PUT(String), 347(Long), {"code":200,"msg":"已弃用!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 19:59:54.294 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 20:02:27.424 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
