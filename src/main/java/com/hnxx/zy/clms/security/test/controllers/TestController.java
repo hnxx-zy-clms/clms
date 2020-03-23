@@ -3,6 +3,8 @@ package com.hnxx.zy.clms.security.test.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @program: clms
@@ -11,13 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @create: 2020-03-18 12:12
  **/
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @Controller
 public class TestController {
 
-    @GetMapping("/login")
-    public String showLogin() {
-        return "login.html";
-    }
+//    @PostMapping("/login")
+//    public String showLogin() {
+//        return "login.html";
+//    }
 
 }

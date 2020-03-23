@@ -23,7 +23,7 @@ import java.util.Collection;
  *Security 注册用户类
  */
 
-@Service("userDetailsService")
+//@Service("userDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired

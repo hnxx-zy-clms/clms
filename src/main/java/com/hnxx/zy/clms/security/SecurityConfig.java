@@ -34,8 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
+//    @Autowired
+//    private CustomUserDetailsService userDetailsService;
 
 
     @Bean
@@ -43,37 +43,39 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtAuthTokenFilter();
     }
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+//    @Bean
+//    @Override
+//    public AuthenticationManager authenticationManagerBean() throws Exception {
+//        return super.authenticationManagerBean();
+//    }
 
-    @Override
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-                .userDetailsService(userDetailsService);
-    }
+//    @Override
+//    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+//        authenticationManagerBuilder
+//                .userDetailsService(userDetailsService);
+//    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-                // 如果有允许匿名的url，填在下面
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                //设置登录方式
-                .formLogin().loginPage("/login")
-               // 自定义登录成功和失败处理
-                .successHandler(customAuthenticationSuccessHandler)
-                .failureHandler(customAuthenticationFailureHandler)
-                .and()
-                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//        http.authorizeRequests()
+//                // 如果有允许匿名的url，填在下面
+//                .antMatchers("/login").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                //设置登录方式
+//                .formLogin().loginPage("/login")
+//               // 自定义登录成功和失败处理
+//                .successHandler(customAuthenticationSuccessHandler)
+//                .failureHandler(customAuthenticationFailureHandler)
+//                .and()
+//                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//        // 关闭CSRF跨域,开发和测试时较方便，上线时需要开启
+//        http.cors().and().csrf().disable();
+        http.csrf().disable().authorizeRequests().anyRequest().permitAll().and().logout().permitAll();
 
-        // 关闭CSRF跨域,开发和测试时较方便，上线时需要开启
-        http.cors().and().csrf().disable();
     }
 
     @Override
