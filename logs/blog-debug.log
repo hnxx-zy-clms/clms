@@ -1196,3 +1196,21 @@ Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta
 2020-03-23 19:59:54.215 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/disable/1(String), [1](String), 1(Integer), null, PUT(String), 347(Long), {"code":200,"msg":"已弃用!"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-23 19:59:54.294 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
 2020-03-23 20:02:27.424 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 21:58:39.976 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:01:18.787 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:01:46.786 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:01:53.183 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-23 22:02:52.154 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:04:08.144 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:05:12.235 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:05:42.805 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:05:47.807 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-23 22:06:13.997 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from sysuser where username=? 
+2020-03-23 22:06:14.051 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: 123(String)
+2020-03-23 22:06:14.090 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-23 22:06:30.515 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from sysuser where username=? 
+2020-03-23 22:06:30.517 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: 123(String)
+2020-03-23 22:06:30.520 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-23 22:06:30.806 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 22:06:30.811 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@51f36918]]](String), 1(Integer), null, GET(String), 36(Long), {"code":404,"msg":"访问连接不存在"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 22:06:30.826 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1

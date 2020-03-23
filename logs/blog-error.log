@@ -5932,3 +5932,116 @@ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check th
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2020-03-23 21:58:45.553 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 21:58:46.045 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:01:22.797 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:01:23.159 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:01:54.070 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field commissionMapper in com.hnxx.zy.clms.core.service.impl.CommissionImpl required a bean of type 'com.hnxx.zy.clms.core.mapper.CommissionMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.core.mapper.CommissionMapper' in your configuration.
+
+2020-03-23 22:02:55.586 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:02:55.833 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:04:13.092 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:04:13.396 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:05:15.384 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:05:15.632 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+

@@ -9337,3 +9337,271 @@ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check th
 2020-03-23 20:02:34.926 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
 2020-03-23 20:02:34.955 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
 2020-03-23 20:02:34.958 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.928 seconds (JVM running for 12.866)
+2020-03-23 21:58:39.969 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 13252 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 21:58:39.976 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 21:58:39.977 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 21:58:40.109 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 21:58:40.112 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 21:58:40.114 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 21:58:40.115 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 21:58:44.919 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 21:58:44.969 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 21:58:44.970 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 21:58:44.971 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 21:58:45.206 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 21:58:45.209 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 5082 ms
+2020-03-23 21:58:45.553 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 21:58:45.612 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 21:58:45.654 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-23 21:58:45.677 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 21:58:46.045 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:01:18.777 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 16908 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:01:18.787 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:01:18.788 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:01:18.959 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:01:18.961 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:01:18.964 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:01:18.965 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:01:22.238 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:01:22.260 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:01:22.262 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:01:22.264 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:01:22.467 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:01:22.468 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3502 ms
+2020-03-23 22:01:22.797 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:01:22.835 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 22:01:22.866 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-23 22:01:22.884 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 22:01:23.159 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:01:46.774 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 7584 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:01:46.786 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:01:46.789 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:01:46.976 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:01:46.977 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:01:46.980 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:01:46.981 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:01:50.148 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:01:50.166 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:01:50.167 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:01:50.168 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:01:50.327 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:01:50.328 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3346 ms
+2020-03-23 22:01:50.920 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 22:01:52.686 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 22:01:53.183 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-23 22:01:53.706 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'commissionController': Unsatisfied dependency expressed through field 'commissionService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'commissionImpl': Unsatisfied dependency expressed through field 'commissionMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.core.mapper.CommissionMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:01:53.717 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-03-23 22:01:53.722 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 22:01:53.777 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 22:01:54.070 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field commissionMapper in com.hnxx.zy.clms.core.service.impl.CommissionImpl required a bean of type 'com.hnxx.zy.clms.core.mapper.CommissionMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.core.mapper.CommissionMapper' in your configuration.
+
+2020-03-23 22:02:52.145 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 16596 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:02:52.154 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:02:52.157 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:02:52.326 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:02:52.327 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:02:52.328 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:02:52.329 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:02:55.224 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:02:55.236 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:02:55.237 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:02:55.238 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:02:55.349 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:02:55.350 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3021 ms
+2020-03-23 22:02:55.586 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:02:55.619 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 22:02:55.643 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-23 22:02:55.656 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 22:02:55.833 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:04:08.132 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 15592 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:04:08.144 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:04:08.145 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:04:08.388 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:04:08.389 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:04:08.390 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:04:08.391 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:04:12.443 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:04:12.455 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:04:12.456 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:04:12.457 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:04:12.742 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:04:12.744 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 4346 ms
+2020-03-23 22:04:13.092 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:04:13.136 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 22:04:13.166 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-23 22:04:13.182 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 22:04:13.396 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:05:12.228 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 15992 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:05:12.235 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:05:12.243 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:05:12.435 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:05:12.436 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:05:12.437 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:05:12.437 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:05:14.979 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:05:14.993 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:05:14.994 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:05:14.994 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:05:15.163 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:05:15.164 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2726 ms
+2020-03-23 22:05:15.384 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-03-23 22:05:15.413 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 22:05:15.433 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-23 22:05:15.446 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 22:05:15.632 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userMapper in com.hnxx.zy.clms.security.test.services.Impl.UserSeviceImpl required a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hnxx.zy.clms.security.test.mappers.UserMapper' in your configuration.
+
+2020-03-23 22:05:42.795 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-NNVETA6 with PID 13316 (D:\新建文件夹\clms\target\classes started by Nile in D:\新建文件夹\clms)
+2020-03-23 22:05:42.805 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 22:05:42.808 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 22:05:43.031 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-03-23 22:05:43.032 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in D:\tools\repo\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/D:/tools/repo/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-03-23 22:05:43.034 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 22:05:43.035 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 22:05:45.867 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 22:05:45.883 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:05:45.884 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 22:05:45.885 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 22:05:46.015 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 22:05:46.016 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2980 ms
+2020-03-23 22:05:46.336 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 22:05:47.438 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 22:05:47.807 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-23 22:05:48.507 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-23 22:05:48.508 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-03-23 22:05:49.102 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7239a566, org.springframework.security.web.context.SecurityContextPersistenceFilter@148b826b, org.springframework.security.web.header.HeaderWriterFilter@341881fd, org.springframework.web.filter.CorsFilter@6ad37f53, org.springframework.security.web.authentication.logout.LogoutFilter@7ff3e9ea, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@3702436e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ef66024, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@286c5e45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1365c684, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35af546, org.springframework.security.web.session.SessionManagementFilter@1cd25892, org.springframework.security.web.access.ExceptionTranslationFilter@18c4058d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@bc45178]
+2020-03-23 22:05:49.235 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 22:05:49.737 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-23 22:05:49.802 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 22:05:49.834 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 22:05:49.839 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.822 seconds (JVM running for 11.685)
+2020-03-23 22:06:08.440 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-23 22:06:08.440 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-03-23 22:06:08.467 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 26 ms
+2020-03-23 22:06:13.997 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from sysuser where username=? 
+2020-03-23 22:06:14.051 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: 123(String)
+2020-03-23 22:06:14.090 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-23 22:06:30.515 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from sysuser where username=? 
+2020-03-23 22:06:30.517 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: 123(String)
+2020-03-23 22:06:30.520 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-23 22:06:30.761 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /error
+2020-03-23 22:06:30.770 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : GET
+2020-03-23 22:06:30.776 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 22:06:30.782 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-03-23 22:06:30.784 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@51f36918]]]
+2020-03-23 22:06:30.795 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 36
+2020-03-23 22:06:30.799 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":404,"msg":"访问连接不存在"}
+2020-03-23 22:06:30.806 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-23 22:06:30.811 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@51f36918]]](String), 1(Integer), null, GET(String), 36(Long), {"code":404,"msg":"访问连接不存在"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 22:06:30.826 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1

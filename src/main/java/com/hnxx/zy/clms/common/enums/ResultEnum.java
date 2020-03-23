@@ -1,13 +1,13 @@
+package com.hnxx.zy.clms.common.enums;
+
+import lombok.Getter;
+
 /**
  * @FileName: ResultEnum
  * @Author: code-fusheng
  * @Date: 2020/3/17 20:43
  * Description: 返回结果枚举
  */
-package com.hnxx.zy.clms.common.enums;
-
-import lombok.Getter;
-
 @Getter
 public enum  ResultEnum {
     /**
@@ -24,8 +24,12 @@ public enum  ResultEnum {
     PARAMS_ERROR(401,"参数错误！"),
     PARAMS_NULL_ERROR(402,"参数为空错误！"),
     DATA_NOT_FOUND(403,"查询失败！"),
+    NOT_LOGIN(410, "账号未登陆！"),
+    FORBIDDEN(403,"无权限，禁止访问"),
+    UNAUTHORIZED(501,"未授权"),
+    INTERNAL_SERVER_ERROR(500,"服务器故障"),
+    NOT_FOUND(404,"访问连接不存在")
 
-    NOT_LOGIN(410, "账号未登陆！")
 
     ;
 
