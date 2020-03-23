@@ -3825,3 +3825,645 @@ org.apache.ibatis.reflection.ReflectionException: There is no getter for propert
 2020-03-22 19:28:05.797 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
 2020-03-22 19:28:05.799 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/enable/1(String), [1](String), 1(Integer), null, PUT(String), 167(Long), {"code":200,"msg":"已启用!"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-22 19:28:05.957 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:26:33.942 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 20584 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:26:33.951 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:26:33.952 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:26:34.039 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:26:34.040 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:26:35.863 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:26:35.872 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:26:35.873 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:26:35.874 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:26:35.976 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:26:35.976 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 1936 ms
+2020-03-23 15:26:36.106 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:26:37.944 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:26:38.714 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 15:26:39.155 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-23 15:26:39.202 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:26:39.228 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 15:26:39.232 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 6.641 seconds (JVM running for 9.151)
+2020-03-23 15:31:02.945 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 12276 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:31:02.950 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:31:02.952 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:31:03.075 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:31:03.075 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:31:05.594 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:31:05.608 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:31:05.610 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:31:05.610 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:31:05.728 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:31:05.729 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2653 ms
+2020-03-23 15:31:05.881 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:31:07.410 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:31:07.674 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestAspect': Unsatisfied dependency expressed through field 'logService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+2020-03-23 15:31:07.681 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-03-23 15:31:07.684 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 15:31:07.701 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 15:31:07.711 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:826 -Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestAspect': Unsatisfied dependency expressed through field 'logService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hnxx.zy.clms.ClmsApplication.main(ClmsApplication.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 61 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$87cb13a8.CGLIB$sqlSessionFactory$1(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$87cb13a8$$FastClassBySpringCGLIB$$940f9865.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$87cb13a8.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:872)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:844)
+	at org.apache.ibatis.session.Configuration.addMappedStatement(Configuration.java:668)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:302)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:351)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:134)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:741)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.bindMapperForNamespace(XMLMapperBuilder.java:413)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 75 common frames omitted
+2020-03-23 15:31:48.966 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 14584 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:31:48.972 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:31:48.973 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:31:49.079 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:31:49.080 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:31:50.945 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:31:50.959 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:31:50.961 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:31:50.962 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:31:51.078 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:31:51.079 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 1989 ms
+2020-03-23 15:31:51.231 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:31:53.101 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:31:53.378 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestAspect': Unsatisfied dependency expressed through field 'logService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+2020-03-23 15:31:53.384 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-03-23 15:31:53.389 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-03-23 15:31:53.405 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-23 15:31:53.420 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:826 -Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestAspect': Unsatisfied dependency expressed through field 'logService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hnxx.zy.clms.ClmsApplication.main(ClmsApplication.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logServiceImpl': Unsatisfied dependency expressed through field 'logMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logMapper' defined in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\com\hnxx\zy\clms\core\mapper\LogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 61 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]'; nested exception is java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e052b36a.CGLIB$sqlSessionFactory$0(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e052b36a$$FastClassBySpringCGLIB$$134bc932.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e052b36a.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Mapped Statements collection already contains value for com.hnxx.zy.clms.core.mapper.ArticleMapper.update
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:872)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:844)
+	at org.apache.ibatis.session.Configuration.addMappedStatement(Configuration.java:668)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:302)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parseStatement(MapperAnnotationBuilder.java:351)
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:134)
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72)
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:741)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.bindMapperForNamespace(XMLMapperBuilder.java:413)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 75 common frames omitted
+2020-03-23 15:33:50.908 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 11732 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:33:50.916 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:33:50.918 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:33:51.210 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:33:51.211 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:33:53.603 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:33:53.617 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:33:53.618 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:33:53.619 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:33:53.781 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:33:53.782 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2569 ms
+2020-03-23 15:33:53.943 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:33:55.784 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:33:56.594 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 15:33:57.012 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-23 15:33:57.055 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:33:57.080 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 15:33:57.086 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 7.958 seconds (JVM running for 11.172)
+2020-03-23 15:34:06.842 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-23 15:34:06.844 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-03-23 15:34:06.975 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 130 ms
+2020-03-23 15:34:07.297 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /log/getByPage
+2020-03-23 15:34:07.310 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:34:07.315 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:34:07.318 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.LogController.getByPage
+2020-03-23 15:34:07.318 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]
+2020-03-23 15:34:07.465 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log order by created_time desc limit ?, ? 
+2020-03-23 15:34:07.589 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 15:34:07.677 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 15:34:07.689 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log 
+2020-03-23 15:34:07.691 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 15:34:07.968 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 15:34:07.971 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 674
+2020-03-23 15:34:08.202 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-23 14:35:59","logId":105,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'logUrl' not found. Available parameters are [params, param1]\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$743cfea4.getByPage(<generated>)\nCaused by: org.apache.ibatis.binding.BindingException: Parameter 'logUrl' not found. Available parameters are [params, param1]\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:30:14","logId":104,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'logUrl' in 'class com.hnxx.zy.clms.common.utils.Page'\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f315e888.getByPage(<generated>)\nCaused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'logUrl' in 'class com.hnxx.zy.clms.common.utils.Page'\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:29:08","logId":103,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sortColumn' not found. Available parameters are [params, param1]\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$14d0e429.getByPage(<generated>)\nCaused by: org.apache.ibatis.binding.BindingException: Parameter 'sortColumn' not found. Available parameters are [params, param1]\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:28:54","logId":102,"logIp":"0:0:0:0:0:0:0:1","logMethod":"PUT","logParams":"[[1, 3, 4]]","logResult":"{\"code\":200,\"msg\":\"删除成功！\"}","logStatus":1,"logTime":47,"logUrl":"/log/deleteByIds"}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":69,"totalPage":18},"msg":"操作成功！"}
+2020-03-23 15:34:08.209 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:34:08.214 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 674(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-23 14:35:59","logId":105,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'logUrl' not found. Available parameters are [params, param1]\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$743cfea4.getByPage(<generated>)\nCaused by: org.apache.ibatis.binding.BindingException: Parameter 'logUrl' not found. Available parameters are [params, param1]\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:30:14","logId":104,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'logUrl' in 'class com.hnxx.zy.clms.common.utils.Page'\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$f315e888.getByPage(<generated>)\nCaused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'logUrl' in 'class com.hnxx.zy.clms.common.utils.Page'\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:29:08","logId":103,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sortColumn' not found. Available parameters are [params, param1]\n\tat com.hnxx.zy.clms.core.service.impl.LogServiceImpl.getByPage(LogServiceImpl.java:40)\n\tat com.hnxx.zy.clms.controller.LogController.getByPage(LogController.java:50)\n\tat com.hnxx.zy.clms.controller.LogController$$FastClassBySpringCGLIB$$c69edd99.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.LogController$$EnhancerBySpringCGLIB$$14d0e429.getByPage(<generated>)\nCaused by: org.apache.ibatis.binding.BindingException: Parameter 'sortColumn' not found. Available parameters are [params, param1]\n","logMethod":"POST","logParams":"[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]","logStatus":0,"logTime":0,"logUrl":"/log/getByPage"},{"createdTime":"2020-03-23 14:28:54","logId":102,"logIp":"0:0:0:0:0:0:0:1","logMethod":"PUT","logParams":"[[1, 3, 4]]","logResult":"{\"code\":200,\"msg\":\"删除成功！\"}","logStatus":1,"logTime":47,"logUrl":"/log/deleteByIds"}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":69,"totalPage":18},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:34:08.663 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:34:25.680 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /log/getByPage
+2020-03-23 15:34:25.681 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:34:25.681 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:34:25.682 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.LogController.getByPage
+2020-03-23 15:34:25.683 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=asc)]
+2020-03-23 15:34:25.690 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log order by created_time asc limit ?, ? 
+2020-03-23 15:34:25.692 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 15:34:25.699 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 15:34:25.706 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log 
+2020-03-23 15:34:25.708 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 15:34:25.711 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 15:34:25.713 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 33
+2020-03-23 15:34:25.714 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-22 12:04:47","logId":37,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.springframework.dao.DataIntegrityViolationException: \n### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.save-Inline\n### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n\tat com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.save(ArticleServiceImpl.java:23)\n\tat com.hnxx.zy.clms.controller.ArticleController.save(ArticleController.java:32)\n\tat com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$210ce6f9.save(<generated>)\nCaused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logStatus":0,"logTime":0,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:06:08","logId":38,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":141,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:16:29","logId":39,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章2, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=2, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":2134,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:59:37","logId":40,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章3, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章3的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=2, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":351,"logUrl":"/article/save"}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"asc","totalCount":70,"totalPage":18},"msg":"操作成功！"}
+2020-03-23 15:34:25.720 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:34:25.724 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=asc)](String), 1(Integer), null, POST(String), 33(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-22 12:04:47","logId":37,"logIp":"0:0:0:0:0:0:0:1","logMessage":"org.springframework.dao.DataIntegrityViolationException: \n### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.save-Inline\n### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n\tat com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.save(ArticleServiceImpl.java:23)\n\tat com.hnxx.zy.clms.controller.ArticleController.save(ArticleController.java:32)\n\tat com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)\n\tat com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)\n\tat com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$210ce6f9.save(<generated>)\nCaused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'article_author' at row 1\n","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logStatus":0,"logTime":0,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:06:08","logId":38,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=1, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":141,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:16:29","logId":39,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章2, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=2, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":2134,"logUrl":"/article/save"},{"createdTime":"2020-03-22 12:59:37","logId":40,"logIp":"0:0:0:0:0:0:0:1","logMethod":"POST","logParams":"[Article(articleId=null, articleTitle=测试文章3, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章3的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=2, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnable=null, isDeleted=null, version=null)]","logResult":"{\"code\":200,\"msg\":\"添加成功！\"}","logStatus":1,"logTime":351,"logUrl":"/article/save"}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"asc","totalCount":70,"totalPage":18},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:34:25.996 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:36:47.528 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/getByPage
+2020-03-23 15:36:47.529 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:36:47.532 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:36:47.533 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-03-23 15:36:47.535 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]
+2020-03-23 15:36:47.630 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: 
+2020-03-23 15:36:47.839 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:36:47.842 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 0(Integer), org.springframework.dao.TransientDataAccessResourceException: 
+### Error querying database.  Cause: java.sql.SQLException: SQL String cannot be empty
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage
+### Cause: java.sql.SQLException: SQL String cannot be empty
+; SQL String cannot be empty; nested exception is java.sql.SQLException: SQL String cannot be empty
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.getByPage(ArticleServiceImpl.java:71)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$f61bda73.getByPage(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.getByPage(ArticleController.java:82)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$47a8632d.getByPage(<generated>)
+Caused by: java.sql.SQLException: SQL String cannot be empty
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be empty
+(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:36:47.956 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:36:48.032 ERROR [http-nio-8080-exec-5]o.a.c.c.C.[Tomcat].[localhost].[/].[dispatcherServlet].log:175 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.TransientDataAccessResourceException: 
+### Error querying database.  Cause: java.sql.SQLException: SQL String cannot be empty
+### The error may exist in file [G:\Code_fusheng\【班务管理系统】\clms\target\classes\mapper\ArticleMapper.xml]
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage
+### The error occurred while executing a query
+### SQL: 
+### Cause: java.sql.SQLException: SQL String cannot be empty
+; SQL String cannot be empty; nested exception is java.sql.SQLException: SQL String cannot be empty] with root cause
+com.mysql.cj.exceptions.WrongArgumentException: SQL String cannot be empty
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.AbstractPreparedQuery.checkNullOrEmptyQuery(AbstractPreparedQuery.java:163)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:215)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.<init>(ClientPreparedStatement.java:193)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getInstance(ClientPreparedStatement.java:134)
+	at com.mysql.cj.jdbc.ConnectionImpl.clientPrepareStatement(ConnectionImpl.java:678)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1655)
+	at com.mysql.cj.jdbc.ConnectionImpl.prepareStatement(ConnectionImpl.java:1575)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:572)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:929)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:568)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy128.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy87.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy96.getByPage(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy97.getByPage(Unknown Source)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.getByPage(ArticleServiceImpl.java:71)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$f61bda73.getByPage(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.getByPage(ArticleController.java:82)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$47a8632d.getByPage(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-03-23 15:38:04.261 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 18912 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:38:04.272 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:38:04.273 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:38:04.369 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:38:04.370 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:38:06.450 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:38:06.467 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:38:06.469 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:38:06.470 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:38:06.603 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:38:06.603 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2233 ms
+2020-03-23 15:38:06.728 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:38:08.226 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:38:08.999 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 15:38:09.546 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-23 15:38:09.598 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:38:09.630 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 15:38:09.634 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 6.407 seconds (JVM running for 8.516)
+2020-03-23 15:38:13.999 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-23 15:38:14.001 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-03-23 15:38:14.024 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-03-23 15:38:14.177 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/getByPage
+2020-03-23 15:38:14.179 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:38:14.186 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:38:14.189 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-03-23 15:38:14.191 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]
+2020-03-23 15:38:14.324 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 15:38:14.391 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 15:38:14.497 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 15:38:14.516 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 15:38:14.522 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 15:38:14.534 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 15:38:14.541 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 365
+2020-03-23 15:38:14.721 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}
+2020-03-23 15:38:14.728 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:38:14.731 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 365(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:38:14.827 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:39:05.231 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/getByPage
+2020-03-23 15:39:05.232 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:39:05.233 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:39:05.235 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-03-23 15:39:05.236 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=asc)]
+2020-03-23 15:39:05.244 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time asc limit ?, ? 
+2020-03-23 15:39:05.246 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 15:39:05.255 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 15:39:05.257 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 15:39:05.259 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 15:39:05.261 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 15:39:05.265 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 34
+2020-03-23 15:39:05.266 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":1,"articleRead":0,"articleTitle":"修改测试文章1","articleType":2,"createdTime":"2020-03-22 12:06:08","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:44:49","version":2},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":0,"articleTitle":"修改测试文章2","articleType":2,"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:32:01","version":2},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"asc","totalCount":6,"totalPage":2},"msg":"操作成功！"}
+2020-03-23 15:39:05.272 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:39:05.274 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=asc)](String), 1(Integer), null, POST(String), 34(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":1,"articleRead":0,"articleTitle":"修改测试文章1","articleType":2,"createdTime":"2020-03-22 12:06:08","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:44:49","version":2},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":0,"articleTitle":"修改测试文章2","articleType":2,"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:32:01","version":2},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"asc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:39:05.351 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:39:49.517 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/getByPage
+2020-03-23 15:39:49.518 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : POST
+2020-03-23 15:39:49.519 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:39:49.520 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-03-23 15:39:49.520 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)]
+2020-03-23 15:39:49.531 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 order by created_time desc limit ?, ? 
+2020-03-23 15:39:49.533 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-23 15:39:49.541 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-23 15:39:49.543 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-03-23 15:39:49.544 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-03-23 15:39:49.547 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-23 15:39:49.551 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 34
+2020-03-23 15:39:49.553 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}
+2020-03-23 15:39:49.561 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:39:49.564 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 34(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":6,"articleRead":0,"articleTitle":"测试文章xx","articleType":1,"createdTime":"2020-03-23 14:12:16","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 14:12:16","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":5,"articleRead":0,"articleTitle":"测试文章x","articleType":1,"createdTime":"2020-03-23 13:53:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-23 13:53:37","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":0,"articleId":4,"articleRead":0,"articleTitle":"测试文章2","articleType":1,"createdTime":"2020-03-22 21:21:35","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 21:21:35","version":1},{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章3的内容，关于文章的测试","articleGood":0,"articleId":3,"articleRead":0,"articleTitle":"测试文章3","articleType":2,"createdTime":"2020-03-22 12:59:37","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:59:37","version":1}],"pageSize":4,"params":{},"sortColumn":"created_time","sortMethod":"desc","totalCount":6,"totalPage":2},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:39:49.653 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:40:17.761 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /articleType/getAll
+2020-03-23 15:40:17.762 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : GET
+2020-03-23 15:40:17.762 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 15:40:17.764 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getAll
+2020-03-23 15:40:17.764 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[]
+2020-03-23 15:40:17.777 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==>  Preparing: select type_id, type_name, type_count, created_time, update_time, is_enabled, is_deleted from cl_article_type where is_deleted = 0 
+2020-03-23 15:40:17.778 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==> Parameters: 
+2020-03-23 15:40:17.936 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -<==      Total: 5
+2020-03-23 15:40:17.937 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 176
+2020-03-23 15:40:17.942 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"data":[{"createdTime":"2020-03-22 14:23:28","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":1,"typeName":"软件工程","updateTime":"2020-03-22 19:28:05"},{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19"},{"createdTime":"2020-03-22 14:23:53","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":3,"typeName":"Java","updateTime":"2020-03-22 14:23:53"},{"createdTime":"2020-03-22 14:24:07","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":4,"typeName":"Python","updateTime":"2020-03-22 14:24:07"},{"createdTime":"2020-03-22 19:26:04","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":5,"typeName":"Spring Boot","updateTime":"2020-03-22 19:26:04"}],"msg":"操作成功！"}
+2020-03-23 15:40:17.951 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 15:40:17.951 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getAll(String), [](String), 1(Integer), null, GET(String), 176(Long), {"code":200,"data":[{"createdTime":"2020-03-22 14:23:28","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":1,"typeName":"软件工程","updateTime":"2020-03-22 19:28:05"},{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19"},{"createdTime":"2020-03-22 14:23:53","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":3,"typeName":"Java","updateTime":"2020-03-22 14:23:53"},{"createdTime":"2020-03-22 14:24:07","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":4,"typeName":"Python","updateTime":"2020-03-22 14:24:07"},{"createdTime":"2020-03-22 19:26:04","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":5,"typeName":"Spring Boot","updateTime":"2020-03-22 19:26:04"}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 15:40:18.072 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 15:59:02.123 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on DESKTOP-UFFICG8 with PID 1260 (started by 25610 in G:\Code_fusheng\【班务管理系统】\clms)
+2020-03-23 15:59:02.133 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-23 15:59:02.140 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-03-23 15:59:02.376 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 15:59:02.384 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 15:59:06.394 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-03-23 15:59:06.406 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:59:06.407 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-03-23 15:59:06.408 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 15:59:06.557 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-03-23 15:59:06.558 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 4172 ms
+2020-03-23 15:59:06.817 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-03-23 15:59:08.801 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-03-23 15:59:10.027 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 15:59:11.170 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-03-23 15:59:11.245 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 15:59:11.278 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 15:59:11.281 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 11.033 seconds (JVM running for 13.519)
+2020-03-23 16:00:49.222 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-23 16:00:49.224 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-03-23 16:00:49.262 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 36 ms
+2020-03-23 16:00:49.319 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/enable/1
+2020-03-23 16:00:49.321 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : PUT
+2020-03-23 16:00:49.328 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 16:00:49.330 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.enable
+2020-03-23 16:00:49.331 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[1]
+2020-03-23 16:00:49.379 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select article_id, article_title, article_author, article_image, article_content, article_good, article_read, article_collection, article_type, article_comment, article_source, created_time, update_time, is_enabled, is_deleted, version from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 16:00:49.412 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 16:00:49.468 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 16:00:49.485 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? where article_id = ? and version = ? 
+2020-03-23 16:00:49.487 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 1(Integer), 2(Integer)
+2020-03-23 16:00:49.672 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 1
+2020-03-23 16:00:49.675 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 357
+2020-03-23 16:00:49.795 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"msg":"启用成功"}
+2020-03-23 16:00:49.800 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 16:00:49.805 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 1(Integer), null, PUT(String), 357(Long), {"code":200,"msg":"启用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 16:00:49.985 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-23 16:01:31.818 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:127 -请求地址 : /article/disable/1
+2020-03-23 16:01:31.819 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:128 -请求方式 : PUT
+2020-03-23 16:01:31.819 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:131 -IP : 0:0:0:0:0:0:0:1
+2020-03-23 16:01:31.820 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:133 -方法 : com.hnxx.zy.clms.controller.ArticleController.disable
+2020-03-23 16:01:31.821 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:135 -请求参数：[1]
+2020-03-23 16:01:31.828 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select article_id, article_title, article_author, article_image, article_content, article_good, article_read, article_collection, article_type, article_comment, article_source, created_time, update_time, is_enabled, is_deleted, version from cl_article where article_id = ? and is_deleted = 0 
+2020-03-23 16:01:31.830 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-23 16:01:31.835 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-23 16:01:31.843 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? where article_id = ? and version = ? 
+2020-03-23 16:01:31.845 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 0(Integer), 1(Integer), 3(Integer)
+2020-03-23 16:01:31.997 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 1
+2020-03-23 16:01:31.999 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:81 -耗时 : 181
+2020-03-23 16:01:32.000 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:96 -返回值:{"code":200,"msg":"弃用成功"}
+2020-03-23 16:01:32.008 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log( log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-03-23 16:01:32.011 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/disable/1(String), [1](String), 1(Integer), null, PUT(String), 181(Long), {"code":200,"msg":"弃用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-23 16:01:32.100 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
