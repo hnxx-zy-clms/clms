@@ -34,4 +34,9 @@ public class RegistrationImpl implements RegistrationService {
     public List<Registration> getRegisListByDate(String date) {
         return registrationMapper.getRegisListByDate(date);
     }
+
+    @Override
+    public void deleteRegis(Integer id) {
+        registrationMapper.deleteRegis(id);
+    }
 }

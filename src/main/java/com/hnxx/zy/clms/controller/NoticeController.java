@@ -1,11 +1,10 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.service.NoticeService;
-import org.apache.commons.logging.LogFactory;
-import org.apache.ibatis.annotations.Delete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,24 +28,12 @@ public class NoticeController {
     private NoticeService noticeService;
 
     /**
-     * 获取所有通知
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping("/noticelist/{id}")
-    public Result getAllNotice(@PathVariable("id") Integer id) {
-        List<Notice> notice = noticeService.getAllNotice(id);
-        return new Result<>(notice);
-    }
-
-    /**
      * 设置已读
      *
      * @param notice
      * @return
      */
-    @PostMapping("/changeread")
+    @PostMapping("/changeRead")
     public Result changeRead(@RequestBody Notice notice) {
         notice.setIfRead(true);
         noticeService.setChange(notice);
@@ -59,8 +46,8 @@ public class NoticeController {
      * @param notice
      * @return
      */
-    @PostMapping("/savenotice")
-    public Result saveNotice(@RequestBody Notice notice) {
+    @PostMapping("/save")
+    public Result save(@RequestBody Notice notice) {
         noticeService.save(notice);
         return new Result<>(ResultEnum.SUCCESS);
     }
@@ -71,10 +58,25 @@ public class NoticeController {
      * @param id
      * @return
      */
-    @DeleteMapping("/delnotice/{id}")
-    public Result delNotice(@PathVariable("id") Integer id) {
+    @PutMapping("/delete/{id}")
+    public Result delete(@PathVariable("id") Integer id) {
         noticeService.delNotice(id);
         return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     * 分页获取通知
+     *
+     * @param page
+     * @param id
+     * @return
+     */
+    @GetMapping("getByPage/{id}")
+    public Result<Page> getByPage(@RequestBody Page page, @PathVariable("id") Integer id) {
+        page.setIndex(page.getIndex());
+        page = noticeService.getByPage(page, id);
+        return new Result<>(page);
+
     }
 
 
