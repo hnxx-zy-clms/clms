@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.mapper.NoticeMapper;
 import com.hnxx.zy.clms.core.service.NoticeService;
@@ -21,11 +22,6 @@ public class NoticeServiceImpl implements NoticeService {
     private NoticeMapper noticeMapper;
 
     @Override
-    public List<Notice> getAllNotice(Integer id) {
-        return noticeMapper.getAllNotice(id);
-    }
-
-    @Override
     public void setChange(Notice notice) {
         noticeMapper.setChange(notice);
     }
@@ -38,5 +34,15 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public void delNotice(Integer id) {
         noticeMapper.delNotice(id);
+    }
+
+    @Override
+    public Page<Notice> getByPage(Page<Notice> page, Integer id) {
+        List<Notice> notices = noticeMapper.getByPage(page, id);
+        page.setList(notices);
+
+        int totalCount = noticeMapper.getCountByPage();
+        page.setTotalCount(totalCount);
+        return page;
     }
 }

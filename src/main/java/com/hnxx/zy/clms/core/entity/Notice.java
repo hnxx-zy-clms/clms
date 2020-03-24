@@ -44,11 +44,20 @@ public class Notice implements Serializable {
      */
     private String noticeTitle;
 
+    /**
+     * 是否删除
+     */
+    private Boolean isDeleted;
 
     /**
      * 用户id
      */
     private Integer userId;
+
+    /**
+     * 创建者姓名
+     */
+    private String userName;
 
     /**
      * 是否启用：1是0否
