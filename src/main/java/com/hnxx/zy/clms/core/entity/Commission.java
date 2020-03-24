@@ -30,11 +30,6 @@ public class Commission implements Serializable {
     private Integer userId;
 
     /**
-     * 是否删除
-     */
-    private Boolean isDeleted;
-
-    /**
      * 代办内容
      */
     private String comContent;

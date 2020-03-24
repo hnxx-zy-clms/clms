@@ -32,7 +32,16 @@ public enum StateEnum {
      * 请求访问状态枚举
      */
     REQUEST_SUCCESS(1, "请求正常"),
-    REQUEST_ERROR(0, "请求异常")
+    REQUEST_ERROR(0, "请求异常"),
+
+    /**
+     * 评论类型枚举
+     */
+    ARTICLE_COMMENT(0,"文章的评论"),
+    COMMENT_COMMENT(1,"评论的评论"),
+    QUESTION_COMMENT(2,"问题的评论"),
+    ANSWER_COMMENT(3,"答疑的评论")
+
     ;
 
     /**

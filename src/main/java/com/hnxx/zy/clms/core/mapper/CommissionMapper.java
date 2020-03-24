@@ -13,19 +13,14 @@ import java.util.List;
  * @desc:
  */
 public interface CommissionMapper {
-
     /**
      * 插入用户今日代办
-     *
-     * @param commission
      */
     @Insert("insert into cl_commission(user_id,com_content,is_did) values(#{commission.userId},#{commission.comContent},0) ")
     void saveCommission(@Param("commission") Commission commission);
 
     /**
      * 设置代办为已完成
-     *
-     * @param id
      */
     @Update("update cl_commission set is_did=1 where com_id=#{id}")
     void setDid(Integer id);
@@ -35,7 +30,7 @@ public interface CommissionMapper {
      *
      * @param id
      */
-    @Update("update cl_commission set is_deleted=1 where com_id=#{id}")
+    @Delete("delete from cl_commission where com_id=#{id}")
     void deletecom(Integer id);
 
     /**

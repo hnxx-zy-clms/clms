@@ -98,7 +98,7 @@ public class Page<T> implements Serializable {
     }
 
     public String getSortMethod(String sortMethod){
-        // 判断nsortMethod是否为空或长度为0或有空白字符串构成
+        // 判断sortMethod是否为空或长度为0或有空白字符串构成
         // 对于制表符、换行符、换页符和回车符StringUtils.isBlank()均识为空白符
         if(StringUtils.isBlank(sortMethod)){
             return "asc";

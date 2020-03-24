@@ -32,20 +32,20 @@ public class CommissionController {
      * @param commission
      * @return
      */
-    @PostMapping("/saveCommission")
+    @PostMapping("/savecommission")
     public Result saveCommission(@RequestBody Commission commission) {
         commissionService.saveCommission(commission);
-        return new Result("保存成功");
+        return new Result(ResultEnum.SUCCESS);
     }
 
     /**
-     * 将代办状态设置为已完成
+     * 完成今日代办
      *
      * @param id
      * @return
      */
-    @PutMapping("/setIsDo/{id}")
-    public Result setIsDo(@PathVariable("id") Integer id) {
+    @PutMapping("/setdid/{id}")
+    public Result setDid(@PathVariable("id") Integer id) {
         commissionService.setDid(id);
         return new Result(ResultEnum.SUCCESS);
     }
@@ -56,10 +56,10 @@ public class CommissionController {
      * @param id
      * @return
      */
-    @PutMapping("/deleteCommission/{id}")
+    @DeleteMapping("/deletecom/{id}")
     public Result deleteCom(@PathVariable("id") Integer id) {
         commissionService.deleteCom(id);
-        return new Result("删除成功");
+        return new Result(ResultEnum.SUCCESS);
     }
 
     /**
@@ -69,7 +69,7 @@ public class CommissionController {
      * @param time
      * @return
      */
-    @GetMapping("/getCommissionByIdAndTime/{id}/{time}")
+    @GetMapping("/getcom/{id}/{time}")
     public Result getComByIdAndTime(@PathVariable("id") Integer id, @PathVariable("time") String time) {
         List<Commission> commissions = commissionService.getComByIdAndTime(id, time);
         return new Result<>(commissions);

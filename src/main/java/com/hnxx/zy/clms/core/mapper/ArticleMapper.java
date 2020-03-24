@@ -92,8 +92,8 @@ public interface ArticleMapper {
      */
     @Select("<script>" +
             "        select * from cl_article\n" +
-            "        where is_deleted = 0\n" +
-            "        <if test=\"params.blogTitle!=null and params.blogTitle!=''\">\n" +
+            "        where is_deleted = 0 and article_author = #{params.articleAuthor}\n" +
+            "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +

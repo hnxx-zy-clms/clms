@@ -76,7 +76,7 @@ public class XxxController {
      * @return
      */
    @GetMapping("/get/{id}")
-    public  Result<Xxx> update(@PathVariable("id") Integer id){
+    public Result<Xxx> get(@PathVariable("id") Integer id){
        Xxx xxx = xxxService.getById(id);
        return new Result<>(xxx);
    }

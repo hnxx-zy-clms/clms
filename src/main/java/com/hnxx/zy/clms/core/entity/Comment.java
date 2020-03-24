@@ -10,10 +10,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ArticleComment implements Serializable {
+public class Comment implements Serializable {
 
     private static final long serialVersionUID = -7292491729846673669L;
 
@@ -48,6 +50,11 @@ public class ArticleComment implements Serializable {
     private String commentTime;
 
     /**
+     * 评论类型
+     */
+    private Integer commentType;
+
+    /**
      * 是否启用（0否1是 默认1）
      */
     private Integer isEnabled;
@@ -57,4 +64,13 @@ public class ArticleComment implements Serializable {
      */
     private Integer isDeleted;
 
+    /**
+     * 父级id
+     */
+    private Integer pid;
+
+    /**
+     * 评论列表
+     */
+    private List<Comment> commentList = new ArrayList<>();
 }

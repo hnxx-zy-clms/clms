@@ -78,7 +78,7 @@ public class ArticleController {
     public Result<Page<Article>> getByPage(@RequestBody Page<Article> page) {
         String sortColumn = page.getSortColumn();
         if (StringUtils.isNotBlank(sortColumn)) {
-            String[] sortColumns = {"article_good", "article_read", "article_collection", "article_type", "article_comment", "created_time", "update_time"};
+            String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_type", "article_comment", "created_time", "update_time"};
             List<String> sortList = Arrays.asList(sortColumns);
             if (!sortList.contains(sortColumn.toLowerCase())) {
                 return new Result<>(ResultEnum.PARAMS_ERROR.getCode(), "参数错误！");
