@@ -12,6 +12,11 @@ import lombok.Data;
 public class SysUser {
 
     /**
+     * 用户ID
+     */
+    private  String userID;
+
+    /**
      * 用户名
      */
     private  String userName;
@@ -23,5 +28,6 @@ public class SysUser {
      *权限信息：0 1 2
      */
     private String userPositionId;
+
 
 }

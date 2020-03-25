@@ -29,11 +29,20 @@ public class ReportController {
      */
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Report report){
-
         reportService.save(report);
         return new Result<>("添加成功");
     }
 
+    /**
+     * 更新报告
+     * @param report
+     * @return
+     */
+    @PostMapping("/update")
+    public Result<Object> update(@RequestBody Report report){
+        reportService.update(report);
+        return new Result<>("更新成功");
+    }
 
 
 
