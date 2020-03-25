@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Data: 2020/3/23 12:15  --- 2020/3/23 20:01  code-fusheng 完成了 Mybatis xml 转 注解(新增下划线--驼峰转换配置)
  * @Data: 2020/3/23 11:01  --- 2020/3/24 01:01  peng44 完成了security的基本配置
  * @Data: 2020/3/24 9:34   --- 2020/3/25 01:02  code-fusheng 完成了 评论的开发
+ * @Data: 2020/3/25 8:37   --- 2020/3/25 16:09  code-fusheng 完成了点赞功能的开发(功能缺陷)
  */
 
 @SpringBootApplication
