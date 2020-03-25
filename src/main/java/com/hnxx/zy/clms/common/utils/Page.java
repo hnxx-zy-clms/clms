@@ -73,7 +73,7 @@ public class Page<T> implements Serializable {
      * 获取当前页 头溢出 当前当前页数小于1时，赋值为1
      * @return
      */
-    private Integer getCurrentPage0(){
+    private Integer getCurrentPage(){
         if(currentPage < 1){
             return 1;
         }

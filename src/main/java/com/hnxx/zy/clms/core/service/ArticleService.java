@@ -53,4 +53,11 @@ public interface ArticleService {
      * @param id
      */
     void disableById(Integer id);
+
+    /**
+     * 根据id阅读 增加阅读量
+     * @param id
+     * @return
+     */
+    Article readById(Integer id);
 }

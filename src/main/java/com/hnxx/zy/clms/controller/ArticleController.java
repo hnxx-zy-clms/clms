@@ -110,5 +110,15 @@ public class ArticleController {
         return new Result<>("弃用成功");
     }
 
+    /**
+     * 根据id阅读文章
+     * @param id
+     * @return
+     */
+    @GetMapping("/read/{id}")
+    public Result<Article> read(@PathVariable("id") Integer id){
+        Article article = articleService.readById(id);
+        return new Result<>(article);
+    }
 
 }

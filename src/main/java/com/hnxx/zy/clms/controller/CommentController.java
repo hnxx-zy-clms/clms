@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.service.CommentService;
@@ -40,6 +41,17 @@ public class CommentController {
     public Result<Comment> get(@PathVariable("id") Integer id){
         Comment comment = commentService.getById(id);
         return new Result<>(comment);
+    }
+
+    /**
+     * 通过id获取文章的评论列表
+     * @param id
+     * @return
+     */
+    @GetMapping("/getList/{id}")
+    public Result<List<Comment>> getList(@PathVariable("id") Integer id){
+        List<Comment> commentList = commentService.getListById(id);
+        return new Result<>(commentList);
     }
 
     /**

@@ -11,6 +11,8 @@ import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.CommentService;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +80,7 @@ public class CommentServiceImpl implements CommentService {
      * @param id
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void deleteById(Integer id) {
         // 先查询校验 在删除
         Comment comment = commentMapper.getById(id);
@@ -91,6 +94,42 @@ public class CommentServiceImpl implements CommentService {
             commentMapper.deleteByPid(pid);
         }
         commentMapper.deleteById(id);
+    }
+
+    /**
+     * 根据id查询文章评论列表
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Comment> getListById(Integer id) {
+        List<Comment> commentList = commentMapper.getCommentByAid(id);
+        for(Comment comment : commentList){
+            int pid = comment.getCommentId();
+            comment.setCommentCount(getCountByCid(pid));
+        }
+        return commentList;
+    }
+
+
+    /**
+     * 根据文章id获取文章评论的总量
+     * @param aid
+     * @return
+     */
+    int getCountByAid(int aid){
+        int comment1 = commentMapper.getCountByAid(aid);
+        return comment1;
+    }
+
+    /**
+     * 通过评论id获取评论的评论量
+     * @param pid
+     * @return
+     */
+    int getCountByCid(int pid){
+        int comment2 = commentMapper.getCountByCid(pid);
+        return comment2;
     }
 
 
