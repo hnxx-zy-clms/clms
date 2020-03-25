@@ -54,6 +54,11 @@ public class Task implements Serializable {
     private Boolean isDid;
 
     /**
+     * 是否删除
+     */
+    private Boolean isDeleted;
+
+    /**
      * 用户id
      */
     private Integer userId;
@@ -62,5 +67,10 @@ public class Task implements Serializable {
      * 回复内容
      */
     private String replyContent;
+
+    /**
+     * 用户姓名
+     */
+    private String userName;
 
 }

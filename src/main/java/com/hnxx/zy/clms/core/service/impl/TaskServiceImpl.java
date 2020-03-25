@@ -1,5 +1,7 @@
 package com.hnxx.zy.clms.core.service.impl;
 
+import afu.org.checkerframework.checker.oigj.qual.O;
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Task;
 import com.hnxx.zy.clms.core.mapper.TaskMapper;
 import com.hnxx.zy.clms.core.service.TaskService;
@@ -31,12 +33,43 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> getAllListByUserId(Integer id) {
-        return taskMapper.getAllListByUserId(id);
+    public Task getTaskReply(Integer taskid, Integer userid) {
+        return taskMapper.getTaskReply(taskid, userid);
     }
 
     @Override
-    public Task getTaskReply(Integer taskid, Integer userid) {
-        return taskMapper.getTaskReply(taskid, userid);
+    public Page<Task> getAllTaskByPage(Page<Task> task) {
+        List<Task> tasks = taskMapper.getAllTaskByPage(task);
+        task.setList(tasks);
+
+        int totalCount = taskMapper.getCountByPage();
+        task.setTotalCount(totalCount);
+        return task;
+
+    }
+
+    @Override
+    public Page<Task> getTaskSituation(Page<Task> task, Integer id) {
+        List<Task> tasks = taskMapper.getTaskSituation(task, id);
+        task.setList(tasks);
+
+        int totalCount = taskMapper.getSituationCountByPage();
+        task.setTotalCount(totalCount);
+        return task;
+    }
+
+    @Override
+    public void deleteTask(Integer id) {
+        taskMapper.deleteTask(id);
+    }
+
+    @Override
+    public Page<Task> getByPage(Page<Task> task, Integer id) {
+        List<Task> tasks = taskMapper.getByPage(task, id);
+        task.setList(tasks);
+
+        int totalCount = taskMapper.getCountByPage();
+        task.setTotalCount(totalCount);
+        return task;
     }
 }

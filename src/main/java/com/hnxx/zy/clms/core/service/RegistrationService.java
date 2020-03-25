@@ -38,4 +38,11 @@ public interface RegistrationService {
      */
     List<Registration> getRegisListByDate(String date);
 
+    /**
+     * 取消签到
+     *
+     * @param id
+     */
+    void deleteRegis(Integer id);
+
 }

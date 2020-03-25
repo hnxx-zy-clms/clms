@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.core.entity.Commission;
 import com.hnxx.zy.clms.core.entity.Registration;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,15 +13,22 @@ import java.util.List;
  * @version: 1.0
  * @desc:
  */
+@Mapper
+@Repository
 public interface CommissionMapper {
+
     /**
      * 插入用户今日代办
+     *
+     * @param commission
      */
     @Insert("insert into cl_commission(user_id,com_content,is_did) values(#{commission.userId},#{commission.comContent},0) ")
     void saveCommission(@Param("commission") Commission commission);
 
     /**
      * 设置代办为已完成
+     *
+     * @param id
      */
     @Update("update cl_commission set is_did=1 where com_id=#{id}")
     void setDid(Integer id);
@@ -30,7 +38,7 @@ public interface CommissionMapper {
      *
      * @param id
      */
-    @Delete("delete from cl_commission where com_id=#{id}")
+    @Update("update cl_commission set is_deleted=1 where com_id=#{id}")
     void deletecom(Integer id);
 
     /**
