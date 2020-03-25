@@ -34,7 +34,7 @@ public class Registration implements Serializable {
     private Date signTime;
 
     /**
-     * 签到的课程：划分为5个课时，1-5
+     * 签到的课程-划分为5个课时，1-5
      */
     private String signClass;
 

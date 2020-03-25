@@ -60,7 +60,7 @@ public class Notice implements Serializable {
     private String userName;
 
     /**
-     * 是否启用：1是0否
+     * 是否启用-1是0否
      */
     @JsonProperty("isEnabled")
     private boolean isEnabled;

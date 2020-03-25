@@ -42,7 +42,7 @@ public class RegistrationController {
     }
 
     /**
-     * 根据用户id获取签到
+     * 根据用户id获取本周签到情况
      *
      * @param id
      * @return
@@ -71,7 +71,7 @@ public class RegistrationController {
      * @param id
      * @return
      */
-    @Delete("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable("id") Integer id) {
         registrationService.deleteRegis(id);
         return new Result("取消成功");

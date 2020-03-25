@@ -44,7 +44,7 @@ public class Task implements Serializable {
     private Date createdTime;
 
     /**
-     * 是否启用  是1否0
+     * 是否启用--是1否0
      */
     private Boolean isEnabled;
 

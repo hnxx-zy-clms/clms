@@ -23,7 +23,7 @@ public interface RegistrationService {
     void saveRegist(Registration registration);
 
     /**
-     * 获取用户签到情况
+     * 获取用户id签到情况
      *
      * @param id
      * @return

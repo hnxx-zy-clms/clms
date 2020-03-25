@@ -22,7 +22,7 @@ public interface NoticeMapper {
      *
      * @param notice
      */
-    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{notice.noticeId},#{notice.userId},#{notice.ifRead})")
+    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{notice.noticeId},#{notice.userId},1)")
     void setChange(@Param("notice") Notice notice);
 
     /**

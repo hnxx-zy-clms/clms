@@ -47,7 +47,7 @@ public interface TaskService {
     Page<Task> getAllTaskByPage(Page<Task> task);
 
     /**
-     * 获取该任务完成情况
+     * 学生id获取该任务完成情况
      *
      * @param task
      * @param id

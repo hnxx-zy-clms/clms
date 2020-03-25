@@ -65,7 +65,7 @@ public class NoticeController {
     }
 
     /**
-     * 分页获取通知
+     * 根据用户id分页获取通知
      *
      * @param page
      * @param id

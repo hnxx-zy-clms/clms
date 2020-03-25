@@ -18,7 +18,7 @@ import java.util.List;
 public interface CommissionMapper {
 
     /**
-     * 插入用户今日代办
+     * 插入用户今日代办-
      *
      * @param commission
      */

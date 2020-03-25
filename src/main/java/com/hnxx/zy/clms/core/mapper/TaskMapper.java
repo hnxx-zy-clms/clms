@@ -48,7 +48,7 @@ public interface TaskMapper {
      *
      * @return
      */
-    @Select("select count(*) from cl_task WHERE is_deleted =0 and is_enabled=1")
+    @Select("select count(*) from cl_task WHERE is_deleted =0")
     int getCountByPage();
 
     /**
@@ -78,7 +78,7 @@ public interface TaskMapper {
      * @param id
      * @return
      */
-    @Select("select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_right=0 limit #{page.index}, #{page.pageSize}")
+    @Select("select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id=0 limit #{page.index}, #{page.pageSize}")
     List<Task> getTaskSituation(@Param("page") Page page, Integer id);
 
     /**
@@ -94,7 +94,7 @@ public interface TaskMapper {
      *
      * @param id
      */
-    @Update("update cl_task set id_deleted=1 where task_id=#{id}")
+    @Update("update cl_task set is_deleted=1 where task_id=#{id}")
     void deleteTask(Integer id);
 
 

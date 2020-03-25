@@ -63,7 +63,7 @@ public class CommissionController {
     }
 
     /**
-     * 获取指定日期的今日代办
+     * 根据用户id获取指定日期的今日代办
      *
      * @param id
      * @param time

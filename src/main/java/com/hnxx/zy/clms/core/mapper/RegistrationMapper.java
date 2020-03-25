@@ -27,12 +27,12 @@ public interface RegistrationMapper {
     void saveRegist(@Param("registration") Registration registration);
 
     /**
-     * 获取用户签到情况
+     * 获取用户本周签到情况
      *
      * @param id
      * @return
      */
-    @Select("select * from cl_registration where user_id=#{id}")
+    @Select("select * from cl_registration where user_id=#{id} and sign_time>= date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY) and sign_time<=date_sub(curdate(),INTERVAL WEEKDAY(curdate())-7 DAY)")
     List<Registration> getRegisListById(Integer id);
 
     /**

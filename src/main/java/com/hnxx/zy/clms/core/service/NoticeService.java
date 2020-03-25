@@ -15,7 +15,7 @@ import java.util.List;
 public interface NoticeService {
 
     /**
-     * 设置已读
+     * 设置为已读
      *
      * @param notice
      */
