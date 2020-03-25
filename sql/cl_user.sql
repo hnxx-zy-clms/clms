@@ -1,0 +1,1 @@
+INSERT INTO `cl_user`(`user_id`, `user_name`, `user_password`, `user_college_id`, `user_classes_id`, `user_group_id`, `user_icon`, `user_description`, `created_time`, `update_time`, `user_position_id`, `user_states`) VALUES (1, 'test', '123', '', '1', '', NULL, '', '2020-03-25 11:33:14', '2020-03-25 11:33:16', 0, 1);
