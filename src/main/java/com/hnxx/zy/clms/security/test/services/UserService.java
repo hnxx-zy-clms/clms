@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.security.test.services;
 
 
 import com.hnxx.zy.clms.security.test.entity.SysUser;
+import org.springframework.stereotype.Service;
 
 /**
  * @description: 测试security用户服务层接口

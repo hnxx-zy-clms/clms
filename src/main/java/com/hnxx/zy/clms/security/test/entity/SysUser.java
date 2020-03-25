@@ -14,7 +14,7 @@ public class SysUser {
     /**
      * 用户ID
      */
-    private  String userID;
+    private  Integer userId;
 
     /**
      * 用户名

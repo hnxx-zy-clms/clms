@@ -52,19 +52,19 @@ public class Report {
     /**
      * 写日报的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date createdDate;
+    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    private Date createdTime;
 
     /**
      * 更新报告的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date updatedDate;
+    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    private Date updatedTime;
 
     /**
      * 报告读写状态：0 可编辑 1 不可编辑
      */
-    private Integer isEnable;
+    private Integer isEnabled;
 
     /**
      * 报告是否存在： 0未删除 1 已删除

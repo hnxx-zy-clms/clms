@@ -42,7 +42,7 @@ public class MyErrorController implements ErrorController {
             }
         }
         assert status != null;
-        return new Result<>(0,"未知错误",status.toString());
+        return new Result<>(Integer.parseInt(status.toString()),"未知错误");
     }
 
     @Override
