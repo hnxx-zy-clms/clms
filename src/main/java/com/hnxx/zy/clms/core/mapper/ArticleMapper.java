@@ -129,4 +129,11 @@ public interface ArticleMapper {
      */
     @Update("update cl_article set version = version + 1, is_enabled = #{isEnabled} and version = #{version}")
     void updateEnable(Article article);
+
+    /**
+     * 阅读 +1
+     * @param id
+     */
+    @Update("update cl_article set article_read = article_read + 1 where article_id = #{id}")
+    void addRead(Integer id);
 }

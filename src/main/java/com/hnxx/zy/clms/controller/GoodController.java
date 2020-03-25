@@ -19,6 +19,11 @@ public class GoodController {
     @Autowired
     private GoodService goodService;
 
+    /**
+     * 点赞
+     * @param good
+     * @return
+     */
     @PutMapping("/doGood")
     public Result<Object> doGood(@RequestBody Good good){
         goodService.doGood(good);
