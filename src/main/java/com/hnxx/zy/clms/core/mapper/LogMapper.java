@@ -40,6 +40,9 @@ public interface LogMapper {
             "            <if test=\"params.logUrl!=null and params.logUrl!=''\">\n" +
             "                and log_url = #{params.logUrl}\n" +
             "            </if>\n" +
+            "            <if test=\"params.logId!=null\">\n" +
+            "                and log_id = #{params.logId}\n" +
+            "            </if>\n" +
             "            <if test=\"params.logStatus!=null\">\n" +
             "                and log_status = #{params.logStatus}\n" +
             "            </if>\n" +

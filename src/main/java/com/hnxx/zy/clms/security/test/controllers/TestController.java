@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.security.test.controllers;
 
 import com.hnxx.zy.clms.security.jwt.JwtProvider;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
+import org.apache.ibatis.annotations.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -26,12 +27,12 @@ public class TestController {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody SysUser loginRequest) {
-        SecurityContextHolder.getContext().getAuthentication();
-
-        return ResponseEntity.ok( loginRequest.getUserName());
+    @GetMapping("/login")
+    @ResponseBody
+    public String authenticateUser(){
+        return "未登录";
     }
+
     @GetMapping("/ttttt")
     @ResponseBody
     public String User() {

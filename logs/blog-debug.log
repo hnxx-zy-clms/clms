@@ -206,3 +206,585 @@
 2020-03-25 00:45:49.532 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
 2020-03-25 00:45:49.537 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/getAll(String), [](String), 1(Integer), null, GET(String), 1365(Long), {"code":200,"data":[{"commentArticle":1,"commentContent":"测试文章评论1","commentGood":0,"commentId":1,"commentList":[{"commentArticle":1,"commentContent":"测试评论评论2","commentGood":0,"commentId":2,"commentList":[],"commentTime":"2020-03-24 16:13:42","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":1,"commentContent":"测试评论评论3","commentGood":0,"commentId":3,"commentList":[],"commentTime":"2020-03-24 16:24:40","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1}],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论4","commentGood":0,"commentId":13,"commentList":[],"commentTime":"2020-03-24 22:08:07","commentType":0,"commentUser":1,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论5","commentGood":0,"commentId":14,"commentList":[],"commentTime":"2020-03-24 22:08:21","commentType":0,"commentUser":1,"isDeleted":0,"isEnabled":1,"pid":0}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-25 00:45:50.447 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 13:48:08.743 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 13:48:34.141 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 13:52:10.443 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 13:52:10.499 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: (String)
+2020-03-25 13:52:10.573 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-03-25 13:53:30.664 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 13:53:30.665 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 13:53:30.704 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 13:55:33.796 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 13:55:33.797 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 13:55:33.830 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 13:55:34.030 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.XxxMapper.getAll.debug:159 -==>  Preparing: select * from cl_xx 
+2020-03-25 13:55:34.031 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.XxxMapper.getAll.debug:159 -==> Parameters: 
+2020-03-25 13:55:34.065 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.XxxMapper.getAll.debug:159 -<==      Total: 0
+2020-03-25 13:55:34.107 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 13:55:34.111 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /xxx/list(String), [](String), 1(Integer), null, GET(String), 105(Long), {"code":200,"data":[],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 13:55:34.183 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 13:56:27.748 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 13:56:27.749 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 13:56:27.783 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 13:56:28.183 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log WHERE log_method = ? order by created_time desc limit ?, ? 
+2020-03-25 13:56:28.186 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: get(String), 0(Integer), 4(Integer)
+2020-03-25 13:56:28.237 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-25 13:56:28.279 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log WHERE log_method = ? 
+2020-03-25 13:56:28.281 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: get(String)
+2020-03-25 13:56:28.314 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-25 13:56:28.385 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 13:56:28.389 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={logMethod=get}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 289(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-25 13:55:34","logId":179,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[]","logResult":"{\"code\":200,\"data\":[],\"msg\":\"操作成功！\"}","logStatus":1,"logTime":105,"logUrl":"/xxx/list"},{"createdTime":"2020-03-25 13:33:55","logId":178,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@3baab6a3]]]","logResult":"{\"code\":0,\"data\":\"405\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":19,"logUrl":"/error"},{"createdTime":"2020-03-25 13:30:26","logId":177,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@3cbfc88f]]]","logResult":"{\"code\":0,\"data\":\"405\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":20,"logUrl":"/error"},{"createdTime":"2020-03-25 12:55:18","logId":176,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@581bb0c7]]]","logResult":"{\"code\":0,\"data\":\"405\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":24,"logUrl":"/error"}],"pageSize":4,"params":{"logMethod":"get"},"sortColumn":"created_time","sortMethod":"desc","totalCount":83,"totalPage":21},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 13:56:28.461 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 13:59:22.599 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 13:59:22.600 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 13:59:22.636 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 13:59:22.811 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==>  Preparing: delete from cl_log where log_id in ( ? , ? , ? ) 
+2020-03-25 13:59:22.813 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -==> Parameters: 1(Integer), 3(Integer), 4(Integer)
+2020-03-25 13:59:22.882 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.deleteByIds.debug:159 -<==    Updates: 0
+2020-03-25 13:59:22.921 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 13:59:22.922 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/deleteByIds(String), [[1, 3, 4]](String), 1(Integer), null, PUT(String), 120(Long), {"code":200,"msg":"删除成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 13:59:22.992 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:00:24.914 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:00:24.915 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:00:24.950 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:00:25.145 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==>  Preparing: insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) values (?, ?, ?, ?, ?, ?) 
+2020-03-25 14:00:25.147 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -==> Parameters: 测试文章1(String), code-fusheng(String), null, 这是code-fsheng写的测试文章1的内容，关于文章的测试(String), 2(Integer), null
+2020-03-25 14:00:25.218 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:00:25.259 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:00:25.261 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/save(String), [Article(articleId=null, articleTitle=测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章1的内容，关于文章的测试, articleGood=null, articleRead=null, articleCollection=null, articleType=2, articleComment=null, articleSource=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), null, POST(String), 124(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:00:25.334 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:00:37.840 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:00:37.842 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:00:37.879 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:00:38.060 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 14:00:38.062 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 14:00:38.098 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:00:38.149 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:00:38.151 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/get/2(String), [2](String), 1(Integer), null, GET(String), 81(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":0,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":0,"articleTitle":"测试文章2","articleType":2,"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":1,"updateTime":"2020-03-22 12:16:29","version":1},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:00:38.230 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:00:49.314 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:00:49.315 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:00:49.353 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:00:49.535 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==>  Preparing: update cl_article set version = version + 1 ,article_title = ? ,article_author = ? ,article_content = ? ,article_good = ? ,article_read = ? ,article_collection = ? ,article_type = ? ,article_comment = ? ,article_source = ? where article_id = ? and version = ? 
+2020-03-25 14:00:49.537 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -==> Parameters: 修改测试文章1(String), code-fusheng(String), 这是code-fsheng写的测试文章2的内容，关于文章的测试(String), 0(Integer), 0(Integer), 0(Integer), 2(Integer), 0(Integer), 未知(String), 1(Integer), 6(Integer)
+2020-03-25 14:00:49.605 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ArticleMapper.update.debug:159 -<==    Updates: 0
+2020-03-25 14:00:49.645 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:00:49.647 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/update(String), [Article(articleId=1, articleTitle=修改测试文章1, articleAuthor=code-fusheng, articleImage=null, articleContent=这是code-fsheng写的测试文章2的内容，关于文章的测试, articleGood=0, articleRead=0, articleCollection=0, articleType=2, articleComment=0, articleSource=未知, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=6)](String), 1(Integer), null, PUT(String), 129(Long), {"code":200,"msg":"更新成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:00:49.717 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:01:21.209 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:01:21.210 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:01:21.243 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:01:21.488 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select * from cl_article where is_deleted = 0 and article_author = ? and article_title like CONCAT('%', ?, '%') order by update_time desc limit ?, ? 
+2020-03-25 14:01:21.489 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: null, 文章2(String), 0(Integer), 4(Integer)
+2020-03-25 14:01:21.527 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 0
+2020-03-25 14:01:21.529 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 and article_title like CONCAT('%', ?, '%') 
+2020-03-25 14:01:21.531 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 文章2(String)
+2020-03-25 14:01:21.567 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-25 14:01:21.676 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:01:21.678 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={articleTitle=文章2}, sortColumn=update_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 257(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[],"pageSize":4,"params":{"articleTitle":"文章2"},"sortColumn":"update_time","sortMethod":"desc","totalCount":1,"totalPage":1},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:01:21.758 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:01:41.194 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:01:41.196 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:01:41.233 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:01:41.400 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 14:01:41.402 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:01:41.451 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:01:41.489 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-25 14:01:41.491 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 1(Integer)
+2020-03-25 14:01:41.562 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 4
+2020-03-25 14:01:41.602 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:01:41.604 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/enable/1(String), [1](String), 1(Integer), null, PUT(String), 205(Long), {"code":200,"msg":"启用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:01:41.674 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:01:53.141 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:01:53.142 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:01:53.178 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:01:53.376 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 14:01:53.378 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:01:53.414 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:01:53.452 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==>  Preparing: update cl_article set version = version + 1, is_enabled = ? and version = ? 
+2020-03-25 14:01:53.454 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -==> Parameters: 0(Integer), 2(Integer)
+2020-03-25 14:01:53.528 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleMapper.updateEnable.debug:159 -<==    Updates: 4
+2020-03-25 14:01:53.565 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:01:53.567 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/disable/1(String), [1](String), 1(Integer), null, PUT(String), 193(Long), {"code":200,"msg":"弃用成功"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:01:53.642 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:10:58.466 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:10:58.467 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:10:58.504 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:10:58.738 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.save.debug:159 -==>  Preparing: Insert into cl_comment(comment_content, comment_user, comment_article, comment_type, pid)values (?, ?, ?, ?, ?) 
+2020-03-25 14:10:58.741 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.save.debug:159 -==> Parameters: 测试评论评论8(String), 2(Integer), 1(Integer), 1(Integer), 14(Integer)
+2020-03-25 14:10:58.813 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:10:58.937 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:10:58.939 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/save(String), [Comment(commentId=null, commentContent=测试评论评论8, commentUser=2, commentArticle=1, commentGood=null, commentTime=null, commentType=1, isEnabled=null, isDeleted=null, pid=14, commentList=[])](String), 1(Integer), null, POST(String), 246(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:10:59.017 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:11:11.703 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:11:11.705 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:11:11.741 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:11:11.917 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.CommentMapper.getAll.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and is_deleted = 0 
+2020-03-25 14:11:11.919 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.CommentMapper.getAll.debug:159 -==> Parameters: 
+2020-03-25 14:11:11.958 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.CommentMapper.getAll.debug:159 -<==      Total: 5
+2020-03-25 14:11:11.999 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 14:11:11.999 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:11:12.041 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 3
+2020-03-25 14:11:12.089 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 14:11:12.091 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 13(Integer)
+2020-03-25 14:11:12.129 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 14:11:12.171 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 14:11:12.172 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 14:11:12.210 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 14:11:12.250 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 14:11:12.250 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 14:11:12.287 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 14:11:12.327 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 14:11:12.328 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 14:11:12.365 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 14:11:12.416 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:11:12.418 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/getAll(String), [](String), 1(Integer), null, GET(String), 502(Long), {"code":200,"data":[{"commentArticle":1,"commentContent":"测试文章评论1","commentGood":0,"commentId":1,"commentList":[{"commentArticle":1,"commentContent":"测试评论评论2","commentGood":0,"commentId":2,"commentList":[],"commentTime":"2020-03-24 16:13:42","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":1,"commentContent":"测试评论评论3","commentGood":0,"commentId":3,"commentList":[],"commentTime":"2020-03-24 16:24:40","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":2,"commentContent":"测试文章评论9","commentGood":0,"commentId":22,"commentList":[],"commentTime":"2020-03-24 23:44:17","commentType":1,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":1}],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论4","commentGood":0,"commentId":13,"commentList":[],"commentTime":"2020-03-24 22:08:07","commentType":0,"commentUser":1,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论8","commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:11:12.495 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:13:30.322 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:13:30.323 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:13:30.361 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:13:30.590 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:13:30.594 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@25cbdb1d]]](String), 1(Integer), null, GET(String), 5(Long), {"code":0,"data":"405","msg":"未知错误"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:13:30.673 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:13:37.767 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:13:37.768 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:13:37.805 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:13:37.980 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:13:37.983 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@567cc937]]](String), 1(Integer), null, GET(String), 2(Long), {"code":0,"data":"405","msg":"未知错误"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:13:38.063 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:13:59.220 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:13:59.221 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:13:59.256 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:13:59.451 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:13:59.453 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@2f34653c]]](String), 1(Integer), null, GET(String), 11(Long), {"code":0,"data":"405","msg":"未知错误"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:13:59.530 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:14:04.644 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:14:04.645 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:14:04.683 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:14:04.855 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.getById.debug:159 -==>  Preparing: select * from cl_comment where comment_id = ? and is_deleted = 0 
+2020-03-25 14:14:04.856 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.getById.debug:159 -==> Parameters: 13(Integer)
+2020-03-25 14:14:04.893 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:14:04.942 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteByPid.debug:159 -==>  Preparing: delete from cl_comment where pid = ? 
+2020-03-25 14:14:04.943 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteByPid.debug:159 -==> Parameters: 13(Integer)
+2020-03-25 14:14:05.052 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteByPid.debug:159 -<==    Updates: 0
+2020-03-25 14:14:05.095 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteById.debug:159 -==>  Preparing: delete from cl_comment where comment_id = ? 
+2020-03-25 14:14:05.096 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteById.debug:159 -==> Parameters: 13(Integer)
+2020-03-25 14:14:05.173 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.CommentMapper.deleteById.debug:159 -<==    Updates: 1
+2020-03-25 14:14:05.214 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:14:05.215 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/delete/13(String), [13](String), 1(Integer), null, DELETE(String), 362(Long), {"code":200,"msg":"删除成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:14:05.293 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:15:32.366 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:15:32.367 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:15:32.403 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:15:32.584 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_type where type_name = ? and is_deleted = 0 
+2020-03-25 14:15:32.585 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==> Parameters: Spring Boot(String)
+2020-03-25 14:15:32.622 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -<==      Total: 1
+2020-03-25 14:15:32.722 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:15:32.723 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/save(String), [ArticleType(typeId=null, typeName=Spring Boot, typeCount=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 0(Integer), com.hnxx.zy.clms.common.exception.ClmsException: 该文章分类已经存在!
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.save(ArticleTypeServiceImpl.java:35)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.save(ArticleTypeController.java:32)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.save(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), POST(String), 0(Long), {"code":200,"msg":"删除成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:15:32.802 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:15:33.116 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:15:33.118 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@4611ac76]]](String), 1(Integer), com.hnxx.zy.clms.common.exception.ClmsException: 该文章分类已经存在!
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.save(ArticleTypeServiceImpl.java:35)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.save(ArticleTypeController.java:32)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.save(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), POST(String), 7(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:15:33.194 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:15:58.528 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:15:58.529 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:15:58.564 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:15:58.730 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==>  Preparing: select type_id, type_name, type_count, is_deleted, version from cl_article_type where type_name = ? and is_deleted = 0 
+2020-03-25 14:15:58.731 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -==> Parameters: Spring XXX(String)
+2020-03-25 14:15:58.768 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getByName.debug:159 -<==      Total: 0
+2020-03-25 14:15:58.809 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.save.debug:159 -==>  Preparing: insert into cl_article_type(type_name) values (?) 
+2020-03-25 14:15:58.810 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.save.debug:159 -==> Parameters: Spring XXX(String)
+2020-03-25 14:15:58.887 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:15:58.930 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:15:58.931 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/save(String), [ArticleType(typeId=null, typeName=Spring XXX, typeCount=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=null)](String), 1(Integer), null, POST(String), 201(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:15:59.010 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:16:15.816 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:16:15.817 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:16:15.855 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:16:16.019 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-25 14:16:16.020 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 14:16:16.059 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:16:16.108 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:16:16.110 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/get/2(String), [2](String), 1(Integer), null, GET(String), 86(Long), {"code":200,"data":{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:16:16.200 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:17:26.510 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:17:26.511 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:17:26.548 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:17:26.752 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-03-25 14:17:26.753 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-03-25 14:17:26.792 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 6
+2020-03-25 14:17:26.835 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:17:26.837 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), [](String), 1(Integer), null, GET(String), 90(Long), {"code":200,"data":[{"typeCount":0,"typeId":1,"typeName":"软件工程"},{"typeCount":0,"typeId":2,"typeName":"C++"},{"typeCount":0,"typeId":3,"typeName":"Java"},{"typeCount":0,"typeId":4,"typeName":"Python"},{"typeCount":0,"typeId":5,"typeName":"Spring Boot"},{"typeCount":0,"typeId":6,"typeName":"Spring XXX"}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:17:26.929 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:17:40.577 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:17:40.578 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:17:40.614 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:17:40.789 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==>  Preparing: select * from cl_article_type where is_deleted = 0 
+2020-03-25 14:17:40.790 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==> Parameters: 
+2020-03-25 14:17:40.839 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -<==      Total: 6
+2020-03-25 14:17:40.882 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:17:40.883 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getAll(String), [](String), 1(Integer), null, GET(String), 99(Long), {"code":200,"data":[{"createdTime":"2020-03-22 14:23:28","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":1,"typeName":"软件工程","updateTime":"2020-03-22 19:28:05","version":8},{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19","version":3},{"createdTime":"2020-03-22 14:23:53","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":3,"typeName":"Java","updateTime":"2020-03-22 14:23:53","version":1},{"createdTime":"2020-03-22 14:24:07","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":4,"typeName":"Python","updateTime":"2020-03-22 14:24:07","version":1},{"createdTime":"2020-03-22 19:26:04","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":5,"typeName":"Spring Boot","updateTime":"2020-03-22 19:26:04","version":1},{"createdTime":"2020-03-25 14:15:58","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":6,"typeName":"Spring XXX","updateTime":"2020-03-25 14:15:58","version":1}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:17:40.959 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:17:54.286 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:17:54.286 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:17:54.324 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:17:54.499 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -==>  Preparing: update cl_article_type set version = version + 1 ,type_name = ? where type_id = ? and version = ? 
+2020-03-25 14:17:54.501 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -==> Parameters: 软件工程(String), 1(Integer), 2(Integer)
+2020-03-25 14:17:54.571 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.update.debug:159 -<==    Updates: 0
+2020-03-25 14:17:54.615 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:17:54.616 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/update(String), [ArticleType(typeId=1, typeName=软件工程, typeCount=null, createdTime=null, updateTime=null, isEnabled=null, isDeleted=null, version=2)](String), 1(Integer), com.hnxx.zy.clms.common.exception.ClmsException: 该文章分类已经存在!
+	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.save(ArticleTypeServiceImpl.java:35)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.save(ArticleTypeController.java:32)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.save(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 121(Long), {"code":200,"msg":"修改成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:17:54.697 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:18:33.825 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:18:33.826 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:18:33.862 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:18:34.050 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -==>  Preparing: update cl_article_type set is_deleted = 1 where type_id = ? 
+2020-03-25 14:18:34.051 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:18:34.131 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleTypeMapper.deleteById.debug:159 -<==    Updates: 1
+2020-03-25 14:18:34.180 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:18:34.181 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/delete/1(String), [1](String), 1(Integer), null, DELETE(String), 139(Long), {"code":200,"msg":"删除成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:18:34.306 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:18:45.490 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:18:45.491 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:18:45.530 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:18:45.706 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-25 14:18:45.707 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:18:45.745 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 0
+2020-03-25 14:18:45.790 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:18:45.794 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/enable/1(String), [1](String), 0(Integer), 	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.enabledById(ArticleTypeServiceImpl.java:94)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.enable(ArticleTypeController.java:96)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.enable(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 0(Long), {"code":200,"msg":"添加成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:18:45.878 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:18:45.927 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:18:45.929 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@642b7e55]]](String), 1(Integer), 	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.enabledById(ArticleTypeServiceImpl.java:94)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.enable(ArticleTypeController.java:96)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.enable(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 1(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:18:46.007 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:19:03.684 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:19:03.685 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:19:03.721 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:19:03.951 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-25 14:19:03.952 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 14:19:03.992 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:19:04.033 DEBUG [http-nio-8080-exec-7]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==>  Preparing: update cl_article_type set version = version + 1, is_enabled = ? and version = ? 
+2020-03-25 14:19:04.035 DEBUG [http-nio-8080-exec-7]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==> Parameters: 1(Integer), 3(Integer)
+2020-03-25 14:19:04.109 DEBUG [http-nio-8080-exec-7]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -<==    Updates: 6
+2020-03-25 14:19:04.151 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:19:04.153 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/enable/2(String), [2](String), 1(Integer), null, PUT(String), 205(Long), {"code":200,"msg":"已启用!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:19:04.234 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:19:14.302 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:19:14.302 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:19:14.340 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:19:14.534 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-25 14:19:14.536 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 14:19:14.571 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 0
+2020-03-25 14:19:14.615 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:19:14.617 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/disable/1(String), [1](String), 0(Integer), 	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.disabledById(ArticleTypeServiceImpl.java:106)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.disable(ArticleTypeController.java:107)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.disable(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 0(Long), {"code":200,"data":{"createdTime":"2020-03-22 14:23:44","isDeleted":0,"isEnabled":1,"typeCount":0,"typeId":2,"typeName":"C++","updateTime":"2020-03-22 17:41:19","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:19:14.694 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:19:14.740 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:19:14.741 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@46bd287e]]](String), 1(Integer), 	at com.hnxx.zy.clms.core.service.impl.ArticleTypeServiceImpl.disabledById(ArticleTypeServiceImpl.java:106)
+	at com.hnxx.zy.clms.controller.ArticleTypeController.disable(ArticleTypeController.java:107)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$FastClassBySpringCGLIB$$1107d7a5.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleTypeController$$EnhancerBySpringCGLIB$$ac3aae66.disable(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 2(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:19:14.818 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 14:19:26.183 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 14:19:26.183 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 14:19:26.257 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 14:19:26.424 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==>  Preparing: select * from cl_article_type where type_id = ? and is_deleted = 0 
+2020-03-25 14:19:26.425 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 14:19:26.463 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 14:19:26.502 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==>  Preparing: update cl_article_type set version = version + 1, is_enabled = ? and version = ? 
+2020-03-25 14:19:26.504 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -==> Parameters: 0(Integer), 4(Integer)
+2020-03-25 14:19:26.600 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.ArticleTypeMapper.updateEnable.debug:159 -<==    Updates: 6
+2020-03-25 14:19:26.639 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 14:19:26.640 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/disable/2(String), [2](String), 1(Integer), null, PUT(String), 220(Long), {"code":200,"msg":"已弃用!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 14:19:26.717 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:07:33.509 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:07:45.751 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:08:56.423 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:08:56.601 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:08:56.682 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:20:01.746 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:20:11.833 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:20:18.943 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:20:19.143 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:20:19.227 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:25:06.590 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:25:06.591 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:25:06.628 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:25:29.254 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:25:29.323 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=null, articleId=null, commentId=null)](String), 0(Integer), 	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:29)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:26)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$42999b86.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:25:29.405 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:25:29.717 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:25:29.719 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@69be92a4]]](String), 1(Integer), 	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:29)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:26)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$42999b86.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 8(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:25:29.795 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:26:10.410 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:26:10.412 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:26:10.449 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:26:56.148 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:26:56.150 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=null, articleId=null, commentId=null)](String), 0(Integer), 	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:29)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:26)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$42999b86.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:26:56.247 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:26:56.311 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:26:56.313 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@459b2081]]](String), 1(Integer), 	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:29)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:26)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$42999b86.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+(String), PUT(String), 4(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:26:56.395 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:27:08.391 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:27:17.877 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:27:26.357 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:27:26.399 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:27:26.479 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:27:48.647 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:27:48.648 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:27:48.685 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:28:42.131 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 15:28:42.134 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 15:28:42.215 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 15:28:45.742 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 15:28:45.808 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:28:45.812 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 0(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$dcb99113.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:28:45.896 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:28:45.987 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:28:45.989 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@30fce50f]]](String), 1(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$dcb99113.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 13(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:28:46.073 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:29:23.449 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:29:31.817 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:29:39.495 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:29:39.553 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:29:39.624 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:30:01.285 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:30:01.286 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:30:01.322 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:30:01.576 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 15:30:01.578 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 15:30:01.654 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 15:30:01.690 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 15:30:01.740 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:30:01.743 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 0(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$2aa7da.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:30:01.821 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:30:01.900 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:30:01.902 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@404ff239]]](String), 1(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$2aa7da.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 7(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:30:01.977 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:31:33.449 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:31:40.802 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:31:49.604 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:31:49.647 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:31:49.715 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:32:28.843 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:32:28.845 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:32:28.884 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:32:29.143 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 15:32:29.145 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 15:32:29.222 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 15:32:29.262 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 15:32:29.321 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:32:29.325 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 0(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$996a2c69.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:32:29.415 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:32:29.492 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:32:29.496 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@42b69242]]](String), 1(Integer), org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$996a2c69.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'comment_id' in 'class com.hnxx.zy.clms.core.entity.Good'
+(String), PUT(String), 7(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:32:29.576 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:33:15.459 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:33:25.176 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:33:35.702 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:33:35.736 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:33:35.825 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:37:19.689 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:37:19.691 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:37:19.726 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:37:20.108 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log WHERE log_method = ? order by created_time desc limit ?, ? 
+2020-03-25 15:37:20.110 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: get(String), 0(Integer), 4(Integer)
+2020-03-25 15:37:20.159 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-25 15:37:20.199 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log WHERE log_method = ? 
+2020-03-25 15:37:20.201 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: get(String)
+2020-03-25 15:37:20.237 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-25 15:37:20.287 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:37:20.291 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={logMethod=get}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 274(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-25 15:12:07","logId":220,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@5f2286a3]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":4,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:04","logId":219,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@48267a01]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":7,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:03","logId":218,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@62463734]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":4,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:02","logId":217,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@2922d791]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":7,"logUrl":"/error"}],"pageSize":4,"params":{"logMethod":"get"},"sortColumn":"created_time","sortMethod":"desc","totalCount":104,"totalPage":26},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:37:20.372 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:42:32.613 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 15:42:40.361 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 15:43:10.871 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:43:10.915 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:43:10.991 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:43:27.956 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:43:27.958 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:43:27.997 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:43:47.589 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:43:47.590 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:43:47.625 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:43:47.967 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log WHERE log_id = ? and log_method = ? order by created_time desc limit ?, ? 
+2020-03-25 15:43:47.970 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: 100(Integer), get(String), 0(Integer), 4(Integer)
+2020-03-25 15:43:48.012 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 1
+2020-03-25 15:43:48.053 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log WHERE log_method = ? 
+2020-03-25 15:43:48.055 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: get(String)
+2020-03-25 15:43:48.092 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-25 15:43:48.148 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:43:48.153 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={logMethod=get, logId=100}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 234(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-23 22:40:58","logId":100,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[]","logResult":"\"index\"","logStatus":1,"logTime":16,"logUrl":"/"}],"pageSize":4,"params":{"logMethod":"get","logId":100},"sortColumn":"created_time","sortMethod":"desc","totalCount":104,"totalPage":26},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:43:48.227 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:47:45.998 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:47:45.999 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:47:46.047 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:47:46.211 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log WHERE log_method = ? order by created_time desc limit ?, ? 
+2020-03-25 15:47:46.213 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: get(String), 0(Integer), 4(Integer)
+2020-03-25 15:47:46.255 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 4
+2020-03-25 15:47:46.297 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log WHERE log_method = ? 
+2020-03-25 15:47:46.299 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: get(String)
+2020-03-25 15:47:46.335 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-03-25 15:47:46.381 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:47:46.384 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), [Page(currentPage=1, pageSize=4, totalPage=0, totalCount=0, index=0, list=null, params={logMethod=get}, sortColumn=created_time, sortMethod=desc)](String), 1(Integer), null, POST(String), 169(Long), {"code":200,"data":{"currentPage":1,"index":0,"list":[{"createdTime":"2020-03-25 15:12:07","logId":220,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@5f2286a3]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":4,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:04","logId":219,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@48267a01]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":7,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:03","logId":218,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@62463734]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":4,"logUrl":"/error"},{"createdTime":"2020-03-25 15:12:02","logId":217,"logIp":"0:0:0:0:0:0:0:1","logMethod":"GET","logParams":"[SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@2922d791]]","logResult":"{\"code\":0,\"data\":\"400\",\"msg\":\"未知错误\"}","logStatus":1,"logTime":7,"logUrl":"/error"}],"pageSize":4,"params":{"logMethod":"get"},"sortColumn":"created_time","sortMethod":"desc","totalCount":104,"totalPage":26},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:47:46.464 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:48:49.013 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:48:49.014 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:48:49.056 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:48:49.231 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 15:48:49.232 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 15:48:49.310 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 15:48:49.350 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 15:48:49.351 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 1(Integer), 0(Integer)
+2020-03-25 15:48:49.661 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:48:49.663 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 0(Integer), org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+### The error may involve com.hnxx.zy.clms.core.mapper.GoodMapper.save-Inline
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+; Column 'good_id' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$909746fa.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+(String), PUT(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:48:49.738 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:48:49.803 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:48:49.806 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@2aaf3c37]]](String), 1(Integer), org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+### The error may involve com.hnxx.zy.clms.core.mapper.GoodMapper.save-Inline
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+; Column 'good_id' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+	at com.hnxx.zy.clms.core.service.impl.GoodServiceImpl.doGood(GoodServiceImpl.java:43)
+	at com.hnxx.zy.clms.controller.GoodController.doGood(GoodController.java:24)
+	at com.hnxx.zy.clms.controller.GoodController$$FastClassBySpringCGLIB$$aa636bc0.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.GoodController$$EnhancerBySpringCGLIB$$909746fa.doGood(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'good_id' cannot be null
+(String), PUT(String), 8(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:48:49.881 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:49:18.158 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 15:49:18.160 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 15:49:18.193 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 15:49:18.375 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 15:49:18.377 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 15:49:18.453 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 15:49:18.498 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 15:49:18.500 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 1(Integer), 0(Integer)
+2020-03-25 15:49:18.577 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 15:49:18.618 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 15:49:18.620 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 1(Integer), null, PUT(String), 253(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 15:49:18.696 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
