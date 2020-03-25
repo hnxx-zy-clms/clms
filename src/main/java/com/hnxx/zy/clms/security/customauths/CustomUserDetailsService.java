@@ -23,7 +23,7 @@ import java.util.Collection;
  *Security 注册用户类
  */
 
-//@Service("userDetailsService")
+@Service("userDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -32,17 +32,18 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
+    /**
+     * 设置密码加密方式
+     * @return
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-
     /**
      * 添加认证信息
      */
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
@@ -51,13 +52,13 @@ public class CustomUserDetailsService implements UserDetailsService {
         SysUser user = userService.selectByName(username);
         // 判断用户是否存在
         if(user == null) {
-            throw new UsernameNotFoundException("用户名不存在");
+           throw new UsernameNotFoundException("用户名不存在");
         }
         // 添加权限
-        authorities.add(new SimpleGrantedAuthority(user.getUserRole()));
+        authorities.add(new SimpleGrantedAuthority(user.getUserPositionId()));
        //密码加密
-        String password = passwordEncoder.encode(user.getPassword());
+        String password = passwordEncoder.encode(user.getUserPassword());
 
-        return new User(user.getUsername(),password, authorities);
+        return new User(user.getUserName(),password, authorities);
     }
 }

@@ -14,14 +14,14 @@ public class SysUser {
     /**
      * 用户名
      */
-    private  String username;
+    private  String userName;
     /**
      *密码
      */
-    private  String password;
+    private  String userPassword;
     /**
-     *权限信息：ROLE_0 ROLE_1 ROLE_2
+     *权限信息：0 1 2
      */
-    private String userRole;
+    private String userPositionId;
 
 }

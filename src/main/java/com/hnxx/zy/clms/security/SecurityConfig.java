@@ -7,14 +7,14 @@ import com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -34,47 +34,58 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 
-//    @Autowired
-//    private CustomUserDetailsService userDetailsService;
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
+
+    /**
+     * 注入jwt
+     * @return
+     */
     @Bean
     public JwtAuthTokenFilter authenticationJwtTokenFilter() {
         return new JwtAuthTokenFilter();
     }
 
-//    @Bean
-//    @Override
-//    public AuthenticationManager authenticationManagerBean() throws Exception {
-//        return super.authenticationManagerBean();
-//    }
 
-//    @Override
-//    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-//        authenticationManagerBuilder
-//                .userDetailsService(userDetailsService);
-//    }
+    /**
+     * 自定义DaoAuthenticationProvider
+     * @return
+     */
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setHideUserNotFoundExceptions(false);
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder);
+        return provider;
+    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
-//        http.authorizeRequests()
-//                // 如果有允许匿名的url，填在下面
-//                .antMatchers("/login").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                //设置登录方式
-//                .formLogin().loginPage("/login")
-//               // 自定义登录成功和失败处理
-//                .successHandler(customAuthenticationSuccessHandler)
-//                .failureHandler(customAuthenticationFailureHandler)
-//                .and()
-//                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//
-//        // 关闭CSRF跨域,开发和测试时较方便，上线时需要开启
-//        http.cors().and().csrf().disable();
-        http.csrf().disable().authorizeRequests().anyRequest().permitAll().and().logout().permitAll();
+        http.authorizeRequests()
+                // 如果有允许匿名的url，填在下面
+                .antMatchers("/login").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                //设置登录方式,和登录接口，登录请求方式必须是Post
+                .formLogin().loginPage("/login")
+               // 自定义登录成功和失败处理
+                .successHandler(customAuthenticationSuccessHandler)
+                .failureHandler(customAuthenticationFailureHandler)
+                .and()
+                //把jwt加到security过滤器链中
+                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+                //禁止security自己创建session
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        // 关闭CSRF跨域,开发和测试时较方便，上线时需要开启
+       http.cors().and().csrf().disable();
 
     }
 

@@ -33,7 +33,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         response.setContentType("application/json;charset=utf-8");
         String jwtToken = jwtProvider.generateJwtToken(authentication);
         SysUser user = new SysUser();
-        user.setUsername(authentication.getName());
+        user.setUserName(authentication.getName());
         response.getWriter().write(JSON.toJSONString(new Result<Object>(jwtToken,user)));
     }
 }

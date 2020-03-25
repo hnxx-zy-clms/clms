@@ -28,31 +28,41 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     JwtProvider tokenProvider;
 
-//    @Autowired
-//    UserDetailsService userDetailsService;
+    @Autowired
+    UserDetailsService userDetailsService;
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthTokenFilter.class);
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain)throws ServletException, IOException {
         try {
+            //获取请求头中的token
             String jwt = getJwt(request);
+            //判断token是否存在，并且验证该token是否有效
             if (jwt!=null && tokenProvider.validateJwtToken(jwt)) {
+                //获取token中的用户名
                 String username = tokenProvider.getUserNameFromJwtToken(jwt);
-//                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-//                UsernamePasswordAuthenticationToken authentication
-//                		= new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-//                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-//
-//                SecurityContextHolder.getContext().setAuthentication(authentication);
+                //调用userDetailsService进行验证，验证成功返回一个UserDetails
+                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                //根据UserDetails生成UsernamePasswordAuthenticationToken实例
+                UsernamePasswordAuthenticationToken authentication
+                		= new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                //在UsernamePasswordAuthenticationToken实例中加入当前请求的详细信息
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                //authentication写入Security的session中
+                SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (Exception e) {
             logger.error(" Can NOT set user authentication -> Message: { } ", e);
         }
-
+        //token不存在，进入Security的UsernameFilter验证流程
         filterChain.doFilter(request, response);
     }
 
+    /**
+     * 取得当前request,判断token是否存在，如果不存在返回null
+     * @param request
+     */
     private String getJwt(HttpServletRequest request) {
         String authHeader = request.getHeader("Authorization");
         if (authHeader != null) {

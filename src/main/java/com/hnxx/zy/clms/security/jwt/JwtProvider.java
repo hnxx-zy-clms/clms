@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Date;
 
@@ -14,29 +15,37 @@ import java.util.Date;
  * @create: 2020-03-22 22:19
  * Jwt参数配置类
  */
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Component
 public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-
+    //自定义盐，整个jwt中的重要部分
     private String jwtSecret = "thisistest";
-
+    //设置token过期时间ms
     private int jwtExpiration = 1000000;
 
+    /**
+     * 根据Authentication信息生成token
+     * @param authentication
+     */
     public String generateJwtToken(Authentication authentication) {
 
         SysUser userPrincipal = new SysUser();
-        userPrincipal.setUsername(authentication.getName());
+        userPrincipal.setUserName(authentication.getName());
 
         return Jwts.builder()
-		                .setSubject((userPrincipal.getUsername()))
+		                .setSubject((userPrincipal.getUserName()))
 		                .setIssuedAt(new Date())
 		                .setExpiration(new Date((new Date()).getTime() + jwtExpiration*1000))
 		                .signWith(SignatureAlgorithm.HS512, jwtSecret)
 		                .compact();
     }
-    
+
+    /**
+     * 验证当前token是否有效
+     * @param authToken
+     */
     public boolean validateJwtToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
@@ -55,7 +64,11 @@ public class JwtProvider {
         
         return false;
     }
-    
+
+    /**
+     * 根据token返回用户名
+     * @param token
+     */
     public String getUserNameFromJwtToken(String token) {
         return Jwts.parser()
 			                .setSigningKey(jwtSecret)
