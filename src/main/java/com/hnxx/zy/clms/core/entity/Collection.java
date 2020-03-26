@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ArticleCollection implements Serializable {
+public class Collection implements Serializable {
 
     private static final long serialVersionUID = 4593901166353847852L;
 

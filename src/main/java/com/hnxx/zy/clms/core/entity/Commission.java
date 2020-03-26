@@ -20,7 +20,7 @@ public class Commission implements Serializable {
     private static final long serialVersionUID = -8724518310083269150L;
 
     /**
-     * 代办id
+     * 今日代办id
      */
     private Integer comId;
 
@@ -28,6 +28,11 @@ public class Commission implements Serializable {
      * 用户id
      */
     private Integer userId;
+
+    /**
+     * 是否删除
+     */
+    private Boolean isDeleted;
 
     /**
      * 代办内容

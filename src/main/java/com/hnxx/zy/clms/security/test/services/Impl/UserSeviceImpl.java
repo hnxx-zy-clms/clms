@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,4 +24,10 @@ public class UserSeviceImpl implements UserService {
     public SysUser selectByName(String username) {
         return userMapper.selectByName(username);
     }
+
+    @Override
+    public String getUserName() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
 }

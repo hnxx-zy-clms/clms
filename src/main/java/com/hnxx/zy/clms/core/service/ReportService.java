@@ -3,6 +3,8 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 
+import java.util.List;
+
 /**
  * @program: clms
  * @description: 报告service
@@ -24,7 +26,7 @@ public interface ReportService {
     /**
      * 根据id删除报告
      */
-    void deleteById(String reportId);
+    void deleteById(Integer reportId);
 
     /**
      * 根据user_classes_id和report_type查找班级报告
@@ -39,8 +41,13 @@ public interface ReportService {
     /**
      * 根据user_id和report_type查找个人报告
      */
-    Page<Report> getReportByUserId(Page<Report> page);
+    List<Report> getReportByUserId(Page<Report> page);
 
-
+    /**
+     * 保存报告后添加cl_user_report表的数据
+     * @param userId
+     * @param reportId
+     */
+    void addUserReport(Integer userId,Integer reportId);
 
 }

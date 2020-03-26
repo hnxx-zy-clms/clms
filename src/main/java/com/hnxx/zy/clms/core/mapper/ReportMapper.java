@@ -2,11 +2,10 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @program: clms
@@ -27,16 +26,17 @@ public interface ReportMapper {
     void save(Report report);
 
     /**
-     * 根据id修改报告
+     * 根据修改报告
      */
-    @Update("update cl_report set work_content=#{workContent},difficulty=#{difficulty},solution=#{solution},experience=#{experience},plan=#{plan} "+
-            "where report_id=#{reportId} and is_enabled=0 and is_deleted=0")
+    @Update("update cl_report set work_content = #{workContent},difficulty = #{difficulty},solution = #{solution},experience = #{experience},plan = #{plan} "+
+            "where report_id = #{reportId} and is_enabled = 0 and is_deleted = 0")
     void update(Report report);
 
     /**
      * 根据id删除报告
      */
-    void deleteById(String reportId);
+    @Delete("update into cl_report set is_deleted = 1 where report_id = #{reportId} and is_enabled = 0")
+    void deleteById(Integer reportId);
 
     /**
      * 根据user_classes_id和report_type查找班级报告
@@ -51,7 +51,18 @@ public interface ReportMapper {
     /**
      * 根据user_id和report_type查找个人报告
      */
-    Page<Report> getReportByUserId(Page<Report> page);
+    @Select("select b.* from cl_user_report a left join cl_report b on a.report_id=b.report_id " +
+            "where user_id = #{params.userId} and report_type = #{params.reportType} and is_deleted = 0")
+    List<Report> getReportByUserId(Page<Report> page);
+
+    /**
+     *
+     * @param userId
+     * @param reportId
+     */
+    @Insert("insert into cl_user_report(user_id,report_id) value(#{userId},#{reportId})")
+    void addUserReport(Integer userId,Integer reportId);
+
 
 }
 

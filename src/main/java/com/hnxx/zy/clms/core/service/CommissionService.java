@@ -33,7 +33,7 @@ public interface CommissionService {
     void deleteCom(Integer id);
 
     /**
-     * 根据日期和用户id查询代办
+     * 根据日期和用户id来查询代办
      *
      * @param id
      * @param time

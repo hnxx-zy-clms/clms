@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.security.test.services;
 
 
 import com.hnxx.zy.clms.security.test.entity.SysUser;
+import org.springframework.stereotype.Service;
 
 /**
  * @description: 测试security用户服务层接口
@@ -15,5 +16,11 @@ public interface UserService {
      * 打印测试用户信息
      */
     SysUser selectByName(String username);
+
+    /**
+     * 获取登录用户名
+     * @return
+     */
+    String getUserName();
 
 }

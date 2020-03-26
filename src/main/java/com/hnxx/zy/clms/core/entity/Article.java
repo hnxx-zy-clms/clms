@@ -9,6 +9,9 @@ package com.hnxx.zy.clms.core.entity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Article {
@@ -92,6 +95,11 @@ public class Article {
      * 乐观锁
      */
     private Integer version;
+
+    /**
+     * 文章评论列表
+     */
+    private List<Comment> commentList = new ArrayList<>();
 
 }
 

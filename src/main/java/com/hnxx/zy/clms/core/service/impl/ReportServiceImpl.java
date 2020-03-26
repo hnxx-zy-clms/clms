@@ -1,11 +1,15 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.mapper.ReportMapper;
 import com.hnxx.zy.clms.core.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @program: clms
@@ -30,7 +34,7 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public void deleteById(String reportId) {
+    public void deleteById(Integer reportId) {
         reportMapper.deleteById(reportId);
     }
 
@@ -45,7 +49,9 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Page<Report> getReportByUserId(Page<Report> page) {
-        return reportMapper.getReportByUserId(page);
-    }
+    @Transactional(rollbackFor = Exception.class)
+    public List<Report> getReportByUserId(Page<Report> page) { return reportMapper.getReportByUserId(page); }
+
+    @Override
+    public void addUserReport(Integer userId,Integer reportId) { reportMapper.addUserReport(userId,reportId); }
 }

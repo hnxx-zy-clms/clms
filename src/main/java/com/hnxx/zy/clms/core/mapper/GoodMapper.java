@@ -9,8 +9,12 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.core.entity.Good;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Mapper
 @Repository
@@ -36,4 +40,12 @@ public interface GoodMapper {
      */
     @Insert("insert into cl_good(good_id, user_id, article_id, comment_id) values (#{goodId}, #{userId}, #{articleId}, #{commentId})")
     void save(Good good);
+
+    /**
+     * 根据用户id查询点赞信息集合
+     * @param id
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{id}")
+    List<Good> getListByUserId(Integer id);
 }

@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.service;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Notice;
 import org.aspectj.weaver.ast.Not;
 
@@ -14,15 +15,7 @@ import java.util.List;
 public interface NoticeService {
 
     /**
-     * 获取所有通知
-     *
-     * @param id
-     * @return
-     */
-    List<Notice> getAllNotice(Integer id);
-
-    /**
-     * 设置已读
+     * 设置为已读
      *
      * @param notice
      */
@@ -41,5 +34,14 @@ public interface NoticeService {
      * @param id
      */
     void delNotice(Integer id);
+
+    /**
+     * 分页获取通知
+     *
+     * @param page
+     * @param id
+     * @return
+     */
+    Page<Notice> getByPage(Page<Notice> page, Integer id);
 
 }

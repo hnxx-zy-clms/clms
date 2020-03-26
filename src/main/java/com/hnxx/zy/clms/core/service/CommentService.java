@@ -37,5 +37,10 @@ public interface CommentService {
      */
     void deleteById(Integer id);
 
-
+    /**
+     * 根据id查询文章评论列表
+     * @param id
+     * @return
+     */
+    List<Comment> getListById(Integer id);
 }

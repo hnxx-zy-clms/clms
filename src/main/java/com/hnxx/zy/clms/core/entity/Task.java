@@ -44,7 +44,7 @@ public class Task implements Serializable {
     private Date createdTime;
 
     /**
-     * 是否启用  是1否0
+     * 是否启用--是1否0
      */
     private Boolean isEnabled;
 
@@ -52,6 +52,11 @@ public class Task implements Serializable {
      * 是否已完成
      */
     private Boolean isDid;
+
+    /**
+     * 是否删除
+     */
+    private Boolean isDeleted;
 
     /**
      * 用户id
@@ -62,5 +67,10 @@ public class Task implements Serializable {
      * 回复内容
      */
     private String replyContent;
+
+    /**
+     * 用户姓名
+     */
+    private String userName;
 
 }

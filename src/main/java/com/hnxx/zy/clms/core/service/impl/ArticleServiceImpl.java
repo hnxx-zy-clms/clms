@@ -11,9 +11,13 @@ import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
+import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +28,9 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     private ArticleMapper articleMapper;
+
+    @Autowired
+    private CommentMapper commentMapper;
 
     /**
      * 保存
@@ -41,7 +48,11 @@ public class ArticleServiceImpl implements ArticleService {
      */
     @Override
     public Article getById(Integer id) {
-        return articleMapper.getById(id);
+        // 获取文章实体
+        Article article = articleMapper.getById(id);
+        // 给文章实体的评论总数赋值
+        article.setArticleComment(commentMapper.getCountByAid(id));
+        return article;
     }
 
     /**
@@ -99,5 +110,37 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleMapper.getById(id);
         article.setIsEnabled(StateEnum.NOT_ENABLE.getCode());
         articleMapper.updateEnable(article);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Article readById(Integer id) {
+        // read +1
+        articleMapper.addRead(id);
+        // 获取文章实体 根据id
+        Article article = articleMapper.getById(id);
+        // 获取文章评论量
+        int commentCount1 = commentMapper.getCountByAid(id);
+        article.setArticleComment(commentCount1);
+        // 获取文章下的所有文章评论
+        List<Comment> commentList = commentMapper.getCommentByAid(id);
+        for(Comment comment1 : commentList){
+            // 获取文章评论的id 这个id是评论的评论的pid
+            int pid = comment1.getCommentId();
+            // 根据 pid 获取评论的评论量
+            int commentCount2 = commentMapper.getCountByCid(pid);
+            // 设置评论的评论量
+            comment1.setCommentCount(commentCount2);
+            // 通过文章的评论id获取评论的评论list
+            List<Comment> comments = commentMapper.getCommentByPid(pid);
+            // 遍历评论下的评论
+            for (Comment comment2 : comments) {
+                // 将评论下的评论添加到评论的评论集合
+                comment1.getCommentList().add(comment2);
+            }
+            // 将文章的评论添加到文章的评论列表
+            article.getCommentList().add(comment1);
+        }
+        return article;
     }
 }

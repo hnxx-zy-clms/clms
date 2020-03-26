@@ -9,6 +9,7 @@ package com.hnxx.zy.clms.common.utils;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +74,7 @@ public class Page<T> implements Serializable {
      * 获取当前页 头溢出 当前当前页数小于1时，赋值为1
      * @return
      */
-    private Integer getCurrentPage0(){
+    private Integer getCurrentPage(){
         if(currentPage < 1){
             return 1;
         }
@@ -111,5 +112,22 @@ public class Page<T> implements Serializable {
             this.sortMethod = SORT_ASC;
         }
         return this.sortMethod;
+    }
+
+    /**
+     * 分页输出
+     */
+    public void pagingDate(){
+        int start = (currentPage-1) * pageSize;
+        int end =  currentPage * pageSize;
+        if(currentPage == 1) {
+            this.list = list.subList(0, pageSize);
+        }else if(currentPage <= totalPage && end >= totalCount){
+            this.list = list.subList(start, totalCount);
+        }else if(currentPage > totalPage){
+             this.list = null;
+        }else {
+            this. list = list.subList(start , end);
+        }
     }
 }

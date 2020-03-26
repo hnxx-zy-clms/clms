@@ -32,12 +32,17 @@ public class Comment implements Serializable {
     /**
      * 评论人
      */
-    private Integer commentUser;
+    private String commentUser;
 
     /**
      * 评论文章id
      */
     private Integer commentArticle;
+
+    /**
+     * 评论评论量
+     */
+    private Integer commentCount;
 
     /**
      * 评论点赞数
