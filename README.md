@@ -18,18 +18,18 @@
 │      cl_classes.sql                       //
 │      cl_college.sql                       //
 │      cl_comment.sql                       // 文章评论表 code-fusheng
-│      cl_commission.sql                    //
+│      cl_commission.sql                    //今日代办表
 │      cl_githubuser.sql                    //
 │      cl_group.sql                         //
 │      cl_log.sql                           //
-│      cl_notice.sql                        //
-│      cl_notice_user.sql                   //
+│      cl_notice.sql                        //通知表
+│      cl_notice_user.sql                   //通知用户表
 │      cl_position.sql                      //
-│      cl_registration.sql                  //
+│      cl_registration.sql                  //签到表
 │      cl_report.sql                        //
 │      cl_report_marking.sql                //
-│      cl_task.sql                          //
-│      cl_task_user.sql                     //
+│      cl_task.sql                          //任务表
+│      cl_task_user.sql                     //任务用户表
 │      cl_user.sql                          //
 │      cl_user_report.sql                   //
 │      cl_xx.sql                            //
