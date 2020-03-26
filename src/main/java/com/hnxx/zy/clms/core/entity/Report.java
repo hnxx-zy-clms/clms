@@ -25,6 +25,11 @@ public class Report {
     private Integer reportType;
 
     /**
+     * 用户名
+     */
+    private String userName;
+
+    /**
      * 工作内容
      */
     private String workContent;

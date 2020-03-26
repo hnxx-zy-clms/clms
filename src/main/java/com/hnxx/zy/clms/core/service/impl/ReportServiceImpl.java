@@ -39,12 +39,12 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Page<Report> getReportByClassId(Page<Report> page) {
-        return reportMapper.getReportByClassId(page);
+    public List<Report> getReportByClassesId(Page<Report> page) {
+        return reportMapper.getReportByClassesId(page);
     }
 
     @Override
-    public Page<Report> getReportByGroupId(Page<Report> page) {
+    public List<Report> getReportByGroupId(Page<Report> page) {
         return reportMapper.getReportByGroupId(page);
     }
 

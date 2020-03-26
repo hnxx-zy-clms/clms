@@ -31,12 +31,12 @@ public interface ReportService {
     /**
      * 根据user_classes_id和report_type查找班级报告
      */
-    Page<Report> getReportByClassId(Page<Report> page);
+    List<Report> getReportByClassesId(Page<Report> page);
 
     /**
      * 根据user_group_id和report_type查找组报告
      */
-    Page<Report> getReportByGroupId(Page<Report> page);
+    List<Report> getReportByGroupId(Page<Report> page);
 
     /**
      * 根据user_id和report_type查找个人报告
