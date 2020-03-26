@@ -16,6 +16,7 @@ import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -113,11 +114,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Article readById(Integer id) {
+        // read +1
+        articleMapper.addRead(id);
         // 获取文章实体 根据id
         Article article = articleMapper.getById(id);
-        // read +1
-        int readCount = article.getArticleRead() + 1;
-        article.setArticleRead(readCount);
         // 获取文章评论量
         int commentCount1 = commentMapper.getCountByAid(id);
         article.setArticleComment(commentCount1);

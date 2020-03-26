@@ -1064,3 +1064,428 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'article_id' in 'whe
 2020-03-25 22:41:35.827 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
 2020-03-25 22:41:35.831 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/getList/1(String), [1](String), 1(Integer), null, GET(String), 254(Long), {"code":200,"data":[{"commentArticle":1,"commentContent":"测试文章评论1","commentCount":2,"commentGood":0,"commentId":1,"commentList":[],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-25 22:41:35.908 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:10:33.877 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 23:10:41.948 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 23:10:48.407 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:10:48.457 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:10:48.537 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:10:48.921 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:10:48.925 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:10:48.971 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:10:48.973 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:10:48.975 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:10:49.009 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:10:49.011 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:10:49.013 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:10:49.057 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:10:49.061 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:10:49.062 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:10:49.097 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:10:49.099 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:10:49.101 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:10:49.139 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:10:49.141 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:10:49.143 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:10:49.177 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:10:49.179 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:10:49.182 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:10:49.218 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:10:49.511 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:10:49.516 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 486(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":1,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 14:01:53","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:10:49.606 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:18:04.267 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:18:04.268 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:18:04.307 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:18:04.504 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:18:04.507 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:04.547 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:18:04.549 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:18:04.550 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:04.587 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:18:04.588 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:18:04.590 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:04.629 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:18:04.631 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:18:04.632 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:18:04.669 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:18:04.670 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:18:04.672 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:18:04.709 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:18:04.711 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:18:04.713 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:18:04.756 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:18:04.758 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:18:04.760 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:18:04.802 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:18:04.917 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:18:04.920 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 447(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":1,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 14:01:53","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:18:04.998 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:18:26.050 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:18:26.051 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:18:26.088 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:18:26.296 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:18:26.298 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:26.338 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:18:26.339 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:18:26.340 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:26.394 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:18:26.396 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:18:26.397 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:18:26.436 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:18:26.438 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:18:26.439 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:18:26.475 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:18:26.478 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:18:26.482 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:18:26.519 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:18:26.521 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:18:26.522 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:18:26.558 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:18:26.559 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:18:26.561 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:18:26.597 DEBUG [http-nio-8080-exec-6]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:18:26.709 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:18:26.714 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 448(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":1,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 14:01:53","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:18:26.820 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:30:34.300 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 23:30:42.573 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 23:30:49.156 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:30:49.188 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:30:49.258 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:30:49.531 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:30:49.534 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:30:49.581 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:30:49.583 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article + 1 where article_id = ? 
+2020-03-25 23:30:49.584 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:30:50.058 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:30:50.062 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 0(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead-Inline
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.readById(ArticleServiceImpl.java:119)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$d3f76eb9.readById(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.read(ArticleController.java:120)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$c2f36d7a.read(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:30:50.164 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:30:50.421 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:30:50.423 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), [SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.apache.catalina.core.ApplicationHttpRequest@55457900]]](String), 1(Integer), org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+### The error may involve com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead-Inline
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl.readById(ArticleServiceImpl.java:119)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$FastClassBySpringCGLIB$$9341d0.invoke(<generated>)
+	at com.hnxx.zy.clms.core.service.impl.ArticleServiceImpl$$EnhancerBySpringCGLIB$$d3f76eb9.readById(<generated>)
+	at com.hnxx.zy.clms.controller.ArticleController.read(ArticleController.java:120)
+	at com.hnxx.zy.clms.controller.ArticleController$$FastClassBySpringCGLIB$$7b8f9c4b.invoke(<generated>)
+	at com.hnxx.zy.clms.common.aspect.RequestAspect.doAround(RequestAspect.java:78)
+	at com.hnxx.zy.clms.controller.ArticleController$$EnhancerBySpringCGLIB$$c2f36d7a.read(<generated>)
+	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'article' in 'field list'
+(String), GET(String), 8(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:30:50.504 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:31:47.273 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 23:31:55.741 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 23:32:07.644 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:32:07.689 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:32:07.764 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:32:08.069 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:32:08.072 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:08.115 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:32:08.117 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:32:08.119 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:08.188 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:32:08.190 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:32:08.192 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:08.228 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:32:08.230 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:32:08.232 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:08.269 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:32:08.271 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:32:08.272 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:32:08.307 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:32:08.309 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:32:08.310 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:32:08.346 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:32:08.348 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:32:08.348 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:32:08.383 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:32:08.384 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:32:08.385 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:32:08.421 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:32:08.646 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:32:08.649 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 529(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":0,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 14:01:53","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:32:08.725 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:32:15.945 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:32:15.947 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:32:15.982 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:32:16.194 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:32:16.196 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:16.234 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:32:16.237 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:32:16.239 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:16.309 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:32:16.310 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:32:16.312 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:16.346 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:32:16.347 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:32:16.348 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:32:16.386 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:32:16.388 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:32:16.390 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:32:16.433 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:32:16.435 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:32:16.437 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:32:16.473 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:32:16.475 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:32:16.477 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:32:16.510 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:32:16.512 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:32:16.513 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:32:16.551 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:32:16.662 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:32:16.665 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 510(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":1,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:32:07","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:32:16.746 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:32:53.945 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-25 23:33:00.953 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-03-25 23:33:09.454 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:33:09.491 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:33:09.592 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:33:09.968 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:33:09.971 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:10.045 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:33:10.047 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:33:10.050 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:10.099 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:33:10.101 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:33:10.103 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:10.139 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:33:10.141 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:33:10.143 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:10.181 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:33:10.184 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:10.186 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:33:10.221 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:10.223 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:10.224 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:33:10.261 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:10.263 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:10.264 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:33:10.303 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:10.305 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:10.307 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:33:10.345 DEBUG [http-nio-8080-exec-1]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:10.578 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:33:10.583 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 577(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":3,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:33:09","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:33:10.662 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:33:14.902 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:33:14.903 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:33:14.940 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:33:15.158 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:33:15.160 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:15.233 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:33:15.234 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:33:15.236 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:15.275 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:33:15.277 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:33:15.278 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:15.317 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:33:15.319 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:33:15.321 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:33:15.361 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:33:15.364 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:15.366 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:33:15.405 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:15.407 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:15.409 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 19(Integer)
+2020-03-25 23:33:15.445 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:15.447 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:15.449 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:33:15.485 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:15.486 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:15.487 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 20(Integer)
+2020-03-25 23:33:15.527 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:15.647 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:33:15.650 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/2(String), [2](String), 1(Integer), null, GET(String), 541(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":2,"articleContent":"这是code-fsheng写的测试文章2的内容，关于文章的测试","articleGood":0,"articleId":2,"articleRead":4,"articleTitle":"测试文章2","articleType":2,"commentList":[{"commentArticle":2,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":19,"commentList":[],"commentTime":"2020-03-24 23:43:12","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":2,"commentContent":"测试文章评论9","commentCount":0,"commentGood":0,"commentId":20,"commentList":[],"commentTime":"2020-03-24 23:43:33","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:16:29","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:33:14","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:33:15.726 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:33:25.416 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:33:25.418 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:33:25.454 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:33:25.664 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:33:25.666 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.737 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:33:25.738 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:33:25.739 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.777 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:33:25.779 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:33:25.781 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.817 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:33:25.819 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:33:25.820 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.859 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:33:25.861 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:25.862 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.897 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:25.899 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:25.901 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:25.940 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 2
+2020-03-25 23:33:25.943 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:25.947 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:33:25.985 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:25.987 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:25.988 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:33:26.025 DEBUG [http-nio-8080-exec-4]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:26.140 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:33:26.142 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/1(String), [1](String), 1(Integer), null, GET(String), 516(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":5,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":6,"articleId":1,"articleRead":1,"articleTitle":"测试文章1","articleType":1,"commentList":[{"commentArticle":1,"commentContent":"测试文章评论1","commentCount":2,"commentGood":0,"commentId":1,"commentList":[{"commentArticle":1,"commentContent":"测试评论评论2","commentCount":0,"commentGood":0,"commentId":2,"commentList":[],"commentTime":"2020-03-24 16:13:42","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":1,"commentContent":"测试评论评论3","commentCount":0,"commentGood":0,"commentId":3,"commentList":[],"commentTime":"2020-03-24 16:24:40","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1}],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:06:08","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:33:25","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:33:26.217 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:33:29.127 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:33:29.128 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:33:29.164 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:33:29.359 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:33:29.361 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.433 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:33:29.434 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:33:29.435 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.472 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:33:29.474 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:33:29.474 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.510 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:33:29.512 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:33:29.514 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.551 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:33:29.553 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:29.554 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.590 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:29.591 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:29.592 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:33:29.628 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 2
+2020-03-25 23:33:29.630 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:33:29.631 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:33:29.667 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:33:29.668 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:33:29.669 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:33:29.705 DEBUG [http-nio-8080-exec-5]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:33:29.819 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:33:29.821 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/1(String), [1](String), 1(Integer), null, GET(String), 495(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":5,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":6,"articleId":1,"articleRead":2,"articleTitle":"测试文章1","articleType":1,"commentList":[{"commentArticle":1,"commentContent":"测试文章评论1","commentCount":2,"commentGood":0,"commentId":1,"commentList":[{"commentArticle":1,"commentContent":"测试评论评论2","commentCount":0,"commentGood":0,"commentId":2,"commentList":[],"commentTime":"2020-03-24 16:13:42","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":1,"commentContent":"测试评论评论3","commentCount":0,"commentGood":0,"commentId":3,"commentList":[],"commentTime":"2020-03-24 16:24:40","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1}],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:06:08","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:33:29","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:33:29.899 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:00.834 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:38:00.835 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:38:00.872 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:38:01.154 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 23:38:01.155 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:38:01.233 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 23:38:01.272 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:38:01.274 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 1(Integer), 0(Integer)
+2020-03-25 23:38:01.353 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:01.395 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:38:01.398 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=1, commentId=0)](String), 1(Integer), null, PUT(String), 253(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:38:01.476 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:23.564 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:38:23.565 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:38:23.604 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:38:23.777 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==>  Preparing: update cl_article set article_good = article_good + 1 where article_id = ? 
+2020-03-25 23:38:23.778 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:38:23.857 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.goodArticle.debug:159 -<==    Updates: 1
+2020-03-25 23:38:23.899 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:38:23.901 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 2(Integer), 0(Integer)
+2020-03-25 23:38:23.981 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:24.027 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:38:24.029 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=2, commentId=0)](String), 1(Integer), null, PUT(String), 253(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:38:24.107 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:28.972 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:38:28.973 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:38:29.010 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:38:29.174 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:38:29.175 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 2(Integer), 1(Integer)
+2020-03-25 23:38:29.259 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:38:29.304 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:38:29.305 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=2, commentId=1)](String), 1(Integer), null, PUT(String), 134(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:38:29.394 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:40:18.005 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:40:18.006 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:40:18.044 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:40:18.278 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==>  Preparing: update cl_article set article_read = article_read + 1 where article_id = ? 
+2020-03-25 23:40:18.280 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.352 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.addRead.debug:159 -<==    Updates: 1
+2020-03-25 23:40:18.353 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==>  Preparing: select * from cl_article where article_id = ? and is_deleted = 0 
+2020-03-25 23:40:18.354 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.394 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleMapper.getById.debug:159 -<==      Total: 1
+2020-03-25 23:40:18.396 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==>  Preparing: select count(*) from cl_comment where comment_article = ? 
+2020-03-25 23:40:18.397 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.434 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByAid.debug:159 -<==      Total: 1
+2020-03-25 23:40:18.435 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:40:18.436 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.474 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:40:18.476 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:40:18.478 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.514 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:40:18.515 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:40:18.517 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:18.560 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 2
+2020-03-25 23:40:18.563 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:40:18.565 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:40:18.602 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:40:18.604 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 1 and pid = ? 
+2020-03-25 23:40:18.605 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:40:18.641 DEBUG [http-nio-8080-exec-3]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByPid.debug:159 -<==      Total: 0
+2020-03-25 23:40:18.763 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:40:18.765 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/read/1(String), [1](String), 1(Integer), null, GET(String), 523(Long), {"code":200,"data":{"articleAuthor":"code-fusheng","articleCollection":0,"articleComment":5,"articleContent":"这是code-fsheng写的测试文章1的内容，关于文章的测试","articleGood":7,"articleId":1,"articleRead":3,"articleTitle":"测试文章1","articleType":1,"commentList":[{"commentArticle":1,"commentContent":"测试文章评论1","commentCount":2,"commentGood":0,"commentId":1,"commentList":[{"commentArticle":1,"commentContent":"测试评论评论2","commentCount":0,"commentGood":0,"commentId":2,"commentList":[],"commentTime":"2020-03-24 16:13:42","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1},{"commentArticle":1,"commentContent":"测试评论评论3","commentCount":0,"commentGood":0,"commentId":3,"commentList":[],"commentTime":"2020-03-24 16:24:40","commentType":1,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":1}],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"createdTime":"2020-03-22 12:06:08","isDeleted":0,"isEnabled":0,"updateTime":"2020-03-25 23:40:18","version":3},"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:40:18.845 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:40:49.359 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:40:49.359 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:40:49.397 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:40:49.569 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==>  Preparing: update cl_comment set comment_good = comment_good + 1 where comment_id = ? 
+2020-03-25 23:40:49.570 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:40:49.649 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -<==    Updates: 1
+2020-03-25 23:40:49.693 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:40:49.696 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 0(Integer), 1(Integer)
+2020-03-25 23:40:49.773 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:40:49.817 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:40:49.820 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=0, commentId=1)](String), 1(Integer), null, PUT(String), 253(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:40:49.899 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:40:56.528 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:40:56.529 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:40:56.568 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:40:56.730 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==>  Preparing: update cl_comment set comment_good = comment_good + 1 where comment_id = ? 
+2020-03-25 23:40:56.730 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==> Parameters: 2(Integer)
+2020-03-25 23:40:56.808 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -<==    Updates: 1
+2020-03-25 23:40:56.848 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:40:56.850 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 0(Integer), 2(Integer)
+2020-03-25 23:40:56.926 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:40:56.970 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:40:56.973 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=0, commentId=2)](String), 1(Integer), null, PUT(String), 240(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:40:57.057 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:41:02.380 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:41:02.381 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:41:02.419 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:41:02.582 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==>  Preparing: update cl_comment set comment_good = comment_good + 1 where comment_id = ? 
+2020-03-25 23:41:02.583 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -==> Parameters: 3(Integer)
+2020-03-25 23:41:02.661 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.goodComment.debug:159 -<==    Updates: 1
+2020-03-25 23:41:02.703 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==>  Preparing: insert into cl_good(good_id, user_id, article_id, comment_id) values (?, ?, ?, ?) 
+2020-03-25 23:41:02.705 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -==> Parameters: null, 1(Integer), 0(Integer), 3(Integer)
+2020-03-25 23:41:02.784 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.GoodMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:41:02.825 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:41:02.826 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/doGood(String), [Good(goodId=null, userId=1, articleId=0, commentId=3)](String), 1(Integer), null, PUT(String), 245(Long), {"code":200,"msg":"点赞成功!"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:41:02.903 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-03-25 23:41:16.293 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-03-25 23:41:16.293 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: test(String)
+2020-03-25 23:41:16.331 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-03-25 23:41:16.503 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==>  Preparing: select * from cl_comment where comment_type = 0 and comment_article = ? and is_deleted = 0 
+2020-03-25 23:41:16.505 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:41:16.550 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.CommentMapper.getCommentByAid.debug:159 -<==      Total: 2
+2020-03-25 23:41:16.593 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:41:16.594 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 1(Integer)
+2020-03-25 23:41:16.631 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:41:16.674 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==>  Preparing: select count(*) from cl_comment where pid = ? 
+2020-03-25 23:41:16.675 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -==> Parameters: 18(Integer)
+2020-03-25 23:41:16.711 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CommentMapper.getCountByCid.debug:159 -<==      Total: 1
+2020-03-25 23:41:16.757 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-03-25 23:41:16.758 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/getList/1(String), [1](String), 1(Integer), null, GET(String), 260(Long), {"code":200,"data":[{"commentArticle":1,"commentContent":"测试文章评论1","commentCount":2,"commentGood":1,"commentId":1,"commentList":[],"commentTime":"2020-03-24 16:01:17","commentType":0,"commentUser":0,"isDeleted":0,"isEnabled":1,"pid":0},{"commentArticle":1,"commentContent":"测试文章评论8","commentCount":0,"commentGood":0,"commentId":18,"commentList":[],"commentTime":"2020-03-24 23:43:05","commentType":0,"commentUser":2,"isDeleted":0,"isEnabled":1,"pid":0}],"msg":"操作成功！"}(String), 0:0:0:0:0:0:0:1(String)
+2020-03-25 23:41:16.850 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
