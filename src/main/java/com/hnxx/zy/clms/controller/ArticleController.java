@@ -12,6 +12,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.service.ArticleService;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,9 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    @Autowired
+    private UserService userService;
+
     /**
      * 保存【新增】
      * @param article
@@ -32,6 +36,7 @@ public class ArticleController {
      */
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Article article){
+        article.setArticleAuthor(userService.getUserName());
         articleService.save(article);
         return new Result<>("添加成功！");
     }

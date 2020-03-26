@@ -31,5 +31,4 @@ public class Good {
      */
     private Integer commentId;
 
-
 }

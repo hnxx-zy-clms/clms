@@ -8,6 +8,8 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.core.entity.Good;
 
+import java.util.List;
+
 public interface GoodService {
 
     /**
@@ -16,4 +18,11 @@ public interface GoodService {
      */
      void doGood(Good good);
 
+
+    /**
+     * 根据用户id获取点赞集合
+     * @param id
+     * @return
+     */
+    List<Good> getListByUserId(Integer id);
 }

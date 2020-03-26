@@ -17,4 +17,10 @@ public interface UserService {
      */
     SysUser selectByName(String username);
 
+    /**
+     * 获取登录用户名
+     * @return
+     */
+    String getUserName();
+
 }

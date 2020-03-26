@@ -11,9 +11,12 @@ import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.CommentService;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +30,9 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentMapper commentMapper;
 
+    @Autowired
+    private UserService userService;
+
     /**
      * 保存,添加
      *
@@ -35,14 +41,8 @@ public class CommentServiceImpl implements CommentService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void save(Comment comment) {
-        // 评论类型为 文章评论 父类id为空
-        if (comment.getCommentType().equals(0) && comment.getPid() != null){
-            throw new ClmsException("参数错误,评论失败!");
-        }else if (comment.getCommentType().equals(1) && comment.getPid() == null){
-            throw new ClmsException("参数错误,腈纶失败!");
-        }else {
-            commentMapper.save(comment);
-        }
+        // 评论类型为0 文章评论 父类id为空
+        commentMapper.save(comment);
     }
 
     /**
@@ -67,6 +67,7 @@ public class CommentServiceImpl implements CommentService {
         for (Comment comment : commentList) {
             // 拿到文章评论实体的id值
             int id = comment.getCommentId();
+            comment.setCommentCount(getCountByCid(id));
             List<Comment> comments = commentMapper.getCommentByPid(id);
             for (Comment comment1 : comments) {
                 comment.getCommentList().add(comment1);

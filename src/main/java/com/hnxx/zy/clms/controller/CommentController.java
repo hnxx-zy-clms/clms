@@ -10,7 +10,9 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.service.CommentService;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +24,16 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private UserService userService;
+
     /**
      * 保存添加评论
      * @return
      */
     @PostMapping("/save")
     public Result<Comment> save(@RequestBody Comment comment){
+        comment.setCommentUser(userService.getUserName());
         commentService.save(comment);
         return new Result<>("添加成功！");
     }

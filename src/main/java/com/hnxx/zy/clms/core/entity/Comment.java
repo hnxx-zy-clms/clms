@@ -32,7 +32,7 @@ public class Comment implements Serializable {
     /**
      * 评论人
      */
-    private Integer commentUser;
+    private String commentUser;
 
     /**
      * 评论文章id

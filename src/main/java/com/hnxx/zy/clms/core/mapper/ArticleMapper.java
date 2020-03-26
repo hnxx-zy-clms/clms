@@ -92,12 +92,15 @@ public interface ArticleMapper {
      */
     @Select("<script>" +
             "        select * from cl_article\n" +
-            "        where is_deleted = 0 and article_author = #{params.articleAuthor}\n" +
+            "        where is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +
             "            and article_type = #{params.articleType}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
+            "            and article_author = #{params.articleAuthor}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
