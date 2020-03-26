@@ -3,8 +3,10 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.mapper.ClassesMapper;
-import com.hnxx.zy.clms.core.service.ClassesService;
+import com.hnxx.zy.clms.core.entity.College;
+import com.hnxx.zy.clms.core.entity.Group;
+import com.hnxx.zy.clms.core.mapper.GroupMapper;
+import com.hnxx.zy.clms.core.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,26 +15,26 @@ import java.util.List;
 
 @Service
 @Transactional
-public class ClassesServiceImpl implements ClassesService {
+public class GroupServiceImpl implements GroupService {
 
     @Autowired
-    private ClassesMapper classesMapper;
+    private GroupMapper groupMapper;
 
     @Override
-    public void save(Classes classes) {
-        classes.setClassesStates(1);
-        classesMapper.save(classes);
+    public void save(Group group) {
+        group.setGroupStates(1);
+        groupMapper.save(group);
     }
 
     @Override
     public void updateClasses(int id) {
-        classesMapper.updateClasses(id);
+        groupMapper.updateClasses(id);
     }
 
     @Override
-    public PageInfo findAllClassesByPage(int page, int size) {
+    public PageInfo findAllByPage(int page, int size) {
         PageHelper.startPage(page, size);
-        List<Classes> list = classesMapper.findAllClassesByPage();
+        List<Group> list = groupMapper.findAllByPage();
         PageInfo info = new PageInfo(list);
         return info;
     }

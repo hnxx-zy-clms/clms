@@ -3,8 +3,9 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.mapper.ClassesMapper;
-import com.hnxx.zy.clms.core.service.ClassesService;
+import com.hnxx.zy.clms.core.entity.College;
+import com.hnxx.zy.clms.core.mapper.CollegeMapper;
+import com.hnxx.zy.clms.core.service.CollegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,26 +14,26 @@ import java.util.List;
 
 @Service
 @Transactional
-public class ClassesServiceImpl implements ClassesService {
+public class CollegeServiceImpl implements CollegeService {
 
     @Autowired
-    private ClassesMapper classesMapper;
+    private CollegeMapper collegeMapper;
 
     @Override
-    public void save(Classes classes) {
-        classes.setClassesStates(1);
-        classesMapper.save(classes);
+    public void save(College college) {
+        college.setCollegeStates(1);
+        collegeMapper.save(college);
     }
 
     @Override
     public void updateClasses(int id) {
-        classesMapper.updateClasses(id);
+        collegeMapper.updateClasses(id);
     }
 
     @Override
-    public PageInfo findAllClassesByPage(int page, int size) {
+    public PageInfo findAllByPage(int page, int size) {
         PageHelper.startPage(page, size);
-        List<Classes> list = classesMapper.findAllClassesByPage();
+        List<College> list = collegeMapper.findAllByPage();
         PageInfo info = new PageInfo(list);
         return info;
     }

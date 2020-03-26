@@ -4,17 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class College implements Serializable {
+public class Position {
 
-    private int collegeId;
-
-    private String collegeName;
-
-    private int collegeStates;
+    private int positionId;
+    private String positionName;
+    private int positionStatus;
 
 }

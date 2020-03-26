@@ -9,12 +9,9 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class College implements Serializable {
+public class Group implements Serializable {
 
-    private int collegeId;
-
-    private String collegeName;
-
-    private int collegeStates;
-
+    private int groupId;
+    private String groupName;
+    private int groupStates;
 }
