@@ -24,6 +24,7 @@ public class ClassesController {
     @GetMapping(value = "all")
     public Result<PageInfo> findAllClassesByPage(@RequestParam(required = false,defaultValue = "1") int page,
                                              @RequestParam(required = false,defaultValue = "5") int size){
+
         PageInfo pages = classesService.findAllClassesByPage(page, size);
         return new Result<>(pages);
     }
