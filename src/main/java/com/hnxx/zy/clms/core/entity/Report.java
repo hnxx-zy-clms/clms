@@ -30,6 +30,16 @@ public class Report {
     private String userName;
 
     /**
+     * 组名
+     */
+    private String userGroupId;
+
+    /**
+     * 班级名
+     */
+    private String userClassesId;
+
+    /**
      * 工作内容
      */
     private String workContent;
@@ -57,13 +67,13 @@ public class Report {
     /**
      * 写日报的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createdTime;
 
     /**
      * 更新报告的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date updatedTime;
 
     /**

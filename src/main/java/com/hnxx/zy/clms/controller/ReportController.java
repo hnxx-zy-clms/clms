@@ -7,12 +7,15 @@ import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -97,7 +100,7 @@ public class ReportController {
     /**
      * 根据user_classes_id 、user_name、日期和reportType分页查询报告
      * @param page
-     * @return
+     * @return m
      */
     @PostMapping("/getByClassesId")
     public Result<Page<Report>> getByClassId(@RequestBody Page<Report> page){
@@ -109,52 +112,244 @@ public class ReportController {
     }
 
     /**
-     * 导出报告
+     * 学生导出报告
+     * @param page
      * @param response
      * @throws IOException
      */
     @PostMapping("/userExcelDownloads")
-    public void downloadAllClassmate(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
+    public void userExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
+        SysUser user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet("报告信息表");
+        sheet.setColumnWidth(0, 2000);
+        sheet.setColumnWidth(1, 3000);
+        sheet.setColumnWidth(2, 3000);
+        sheet.setColumnWidth(3, 8000);
+        sheet.setColumnWidth(4, 6000);
+        sheet.setColumnWidth(5, 8000);
+        sheet.setColumnWidth(6, 8000);
+        sheet.setColumnWidth(7, 8000);
 
+        // 设置字体
+        HSSFFont headfont = workbook.createFont();
+        headfont.setFontName("楷体");
+        // 字体大小
+        headfont.setFontHeightInPoints((short) 10);
+
+        HSSFCellStyle headstyle = workbook.createCellStyle();
+        headstyle.setFont(headfont);
+        // 左右居中
+        headstyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+        // 上下居中
+        headstyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+        headstyle.setLocked(true);
+        // 自动换行
+        headstyle.setWrapText(true);
+        // 设置单元格的边框颜色．
+        headstyle.setBottomBorderColor(HSSFColor.BLACK.index);
         List<Report> reports = reportService.getReportByUserId(page);
         //设置要导出的文件的名字
-        String fileName = "reportinfo" + ".xlsx";
+        String fileName = "userReportInfo" + ".xlsx";
         //新增数据行，并且设置单元格数据
-
         int rowNum = 1;
-
-        String[] headers = {"报告ID", "工作内容", "遇到的困难","解决方法","心得体会","后续计划"};
+        String[] headers = {"报告ID","创建时间", "用户名","工作内容", "遇到的困难","解决方法","心得体会","后续计划"};
         //headers表示excel表中第一行的表头
-
         HSSFRow row = sheet.createRow(0);
         //在excel表中添加表头
-
         for (int i = 0; i < headers.length; i++) {
             HSSFCell cell = row.createCell(i);
             HSSFRichTextString text = new HSSFRichTextString(headers[i]);
             cell.setCellValue(text);
+            cell.setCellStyle(headstyle);
         }
-
         //在表中存放查询到的数据放入对应的列
         for (Report report : reports) {
             HSSFRow row1 = sheet.createRow(rowNum);
-            row1.createCell(0).setCellValue(report.getReportId());
-            row1.createCell(1).setCellValue(report.getWorkContent());
-            row1.createCell(2).setCellValue(report.getDifficulty());
-            row1.createCell(3).setCellValue(report.getSolution());
-            row1.createCell(4).setCellValue(report.getExperience());
-            row1.createCell(5).setCellValue(report.getPlan());
+            row1.setHeight((short) 3000);
+            HSSFCell cell = row1.createCell(0);
+            cell.setCellValue(report.getReportId());
+            cell.setCellStyle(headstyle);
+            HSSFUtils(row1,1,headstyle,df.format(report.getCreatedTime()));
+            HSSFUtils(row1,2,headstyle,user.getUserName());
+            HSSFUtils(row1,3,headstyle,report.getWorkContent());
+            HSSFUtils(row1,4,headstyle,report.getDifficulty());
+            HSSFUtils(row1,5,headstyle,report.getSolution());
+            HSSFUtils(row1,6,headstyle,report.getExperience());
+            HSSFUtils(row1,7,headstyle,report.getPlan());
             rowNum++;
         }
-
         response.setContentType("application/octet-stream");
         response.setHeader("Content-disposition", "attachment;filename=" + fileName);
         response.flushBuffer();
         workbook.write(response.getOutputStream());
     }
 
+    /**
+     * 组长导出报告
+     * @param page
+     * @param response
+     * @throws IOException
+     */
+    @PostMapping("/groupExcelDownloads")
+    public void groupExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet("报告信息表");
+        sheet.setColumnWidth(0, 2000);
+        sheet.setColumnWidth(1, 3000);
+        sheet.setColumnWidth(2, 3000);
+        sheet.setColumnWidth(3, 3000);
+        sheet.setColumnWidth(4, 8000);
+        sheet.setColumnWidth(5, 6000);
+        sheet.setColumnWidth(6, 8000);
+        sheet.setColumnWidth(7, 8000);
+        sheet.setColumnWidth(8, 8000);
+        // 设置字体
+        HSSFFont headfont = workbook.createFont();
+        headfont.setFontName("楷体");
+        // 字体大小
+        headfont.setFontHeightInPoints((short) 10);
+        HSSFCellStyle headstyle = workbook.createCellStyle();
+        headstyle.setFont(headfont);
+        // 左右居中
+        headstyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+        // 上下居中
+        headstyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+        headstyle.setLocked(true);
+        // 自动换行
+        headstyle.setWrapText(true);
+        // 设置单元格的边框颜色．
+        headstyle.setBottomBorderColor(HSSFColor.BLACK.index);
+        List<Report> reports = reportService.getReportByGroupId(page);
+        //设置要导出的文件的名字
+        String fileName = "groupReportInfo" + ".xlsx";
+        //新增数据行，并且设置单元格数据
+        int rowNum = 1;
+        String[] headers = {"报告ID","创建时间", "组名","用户名","工作内容", "遇到的困难","解决方法","心得体会","后续计划"};
+        //headers表示excel表中第一行的表头
+        HSSFRow row = sheet.createRow(0);
+        //在excel表中添加表头
+        for (int i = 0; i < headers.length; i++) {
+            HSSFCell cell = row.createCell(i);
+            HSSFRichTextString text = new HSSFRichTextString(headers[i]);
+            cell.setCellValue(text);
+            cell.setCellStyle(headstyle);
+        }
+        //在表中存放查询到的数据放入对应的列
+        for (Report report : reports) {
+            HSSFRow row1 = sheet.createRow(rowNum);
+            row1.setHeight((short) 3000);
+            HSSFCell cell = row1.createCell(0);
+            cell.setCellValue(report.getReportId());
+            cell.setCellStyle(headstyle);
+            HSSFUtils(row1,1,headstyle,df.format(report.getCreatedTime()));
+            HSSFCell cell1 = row1.createCell(2);
+            cell1.setCellValue(report.getUserGroupId());
+            cell1.setCellStyle(headstyle);
+            HSSFUtils(row1,3,headstyle,report.getUserName());
+            HSSFUtils(row1,4,headstyle,report.getWorkContent());
+            HSSFUtils(row1,5,headstyle,report.getDifficulty());
+            HSSFUtils(row1,6,headstyle,report.getSolution());
+            HSSFUtils(row1,7,headstyle,report.getExperience());
+            HSSFUtils(row1,8,headstyle,report.getPlan());
+            rowNum++;
+        }
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName);
+        response.flushBuffer();
+        workbook.write(response.getOutputStream());
+    }
+
+    /**
+     *
+     * @param page
+     * @param response
+     * @throws IOException
+     */
+    @PostMapping("/classesExcelDownloads")
+    public void classesExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet("报告信息表");
+        sheet.setColumnWidth(0, 2000);
+        sheet.setColumnWidth(1, 3000);
+        sheet.setColumnWidth(2, 3000);
+        sheet.setColumnWidth(3, 3000);
+        sheet.setColumnWidth(4, 3000);
+        sheet.setColumnWidth(5, 8000);
+        sheet.setColumnWidth(6, 6000);
+        sheet.setColumnWidth(7, 8000);
+        sheet.setColumnWidth(8, 8000);
+        sheet.setColumnWidth(9, 8000);
+
+        // 设置字体
+        HSSFFont headfont = workbook.createFont();
+        headfont.setFontName("楷体");
+        // 字体大小
+        headfont.setFontHeightInPoints((short) 10);
+
+        HSSFCellStyle headstyle = workbook.createCellStyle();
+        headstyle.setFont(headfont);
+        // 左右居中
+        headstyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+        // 上下居中
+        headstyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+        headstyle.setLocked(true);
+        // 自动换行
+        headstyle.setWrapText(true);
+        // 设置单元格的边框颜色．
+        headstyle.setBottomBorderColor(HSSFColor.BLACK.index);
+        List<Report> reports = reportService.getReportByClassesId(page);
+        //设置要导出的文件的名字
+        String fileName = "classesReportInfo" + ".xlsx";
+        //新增数据行，并且设置单元格数据
+        int rowNum = 1;
+        String[] headers = {"报告ID","创建时间","班级名","组名", "用户名","工作内容", "遇到的困难","解决方法","心得体会","后续计划"};
+        //headers表示excel表中第一行的表头
+        HSSFRow row = sheet.createRow(0);
+        //在excel表中添加表头
+        for (int i = 0; i < headers.length; i++) {
+            HSSFCell cell = row.createCell(i);
+            HSSFRichTextString text = new HSSFRichTextString(headers[i]);
+            cell.setCellValue(text);
+            cell.setCellStyle(headstyle);
+        }
+        //在表中存放查询到的数据放入对应的列
+        for (Report report : reports) {
+            HSSFRow row1 = sheet.createRow(rowNum);
+            row1.setHeight((short) 3000);
+            HSSFCell cell = row1.createCell(0);
+            cell.setCellValue(report.getReportId());
+            cell.setCellStyle(headstyle);
+            HSSFUtils(row1,1,headstyle,df.format(report.getCreatedTime()));
+            HSSFCell cell1 = row1.createCell(2);
+            cell1.setCellValue(report.getUserClassesId());
+            cell1.setCellStyle(headstyle);
+            HSSFCell cell2 = row1.createCell(3);
+            cell2.setCellValue(report.getUserGroupId());
+            cell2.setCellStyle(headstyle);
+            HSSFUtils(row1,4,headstyle,report.getUserName());
+            HSSFUtils(row1,5,headstyle,report.getWorkContent());
+            HSSFUtils(row1,6,headstyle,report.getDifficulty());
+            HSSFUtils(row1,7,headstyle,report.getSolution());
+            HSSFUtils(row1,8,headstyle,report.getExperience());
+            HSSFUtils(row1,9,headstyle,report.getPlan());
+            rowNum++;
+        }
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName);
+        response.flushBuffer();
+        workbook.write(response.getOutputStream());
+    }
+
+    private void HSSFUtils(HSSFRow row,int column,HSSFCellStyle headstyle, String  obj) {
+        HSSFCell cell = row.createCell(column);
+        HSSFRichTextString text = new HSSFRichTextString(obj);
+        cell.setCellValue(text);
+        cell.setCellStyle(headstyle);
+    }
 
 
 }

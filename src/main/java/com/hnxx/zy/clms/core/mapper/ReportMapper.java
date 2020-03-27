@@ -26,7 +26,7 @@ public interface ReportMapper {
     void save(Report report);
 
     /**
-     * 根据修改报告
+     * 根据report_id修改报告
      */
     @Update("update cl_report set work_content = #{workContent},difficulty = #{difficulty},solution = #{solution},experience = #{experience},plan = #{plan} \n"+
             "where report_id = #{reportId} and is_enabled = 0 and is_deleted = 0")
@@ -39,13 +39,16 @@ public interface ReportMapper {
     void deleteById(Integer reportId);
 
     /**
-     * 根据user_classes_id和report_type查找班级报告
+     * 根据user_classes_id、用户名、起止日期和report_type查找班级报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id \n" +
+            "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id \n" +
             "where c.user_classes_id = #{params.userClassesId} and b.report_type = #{params.reportType} and b.is_deleted = 0 \n" +
             "<if test='params.userName!=null' > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
+            "</if> \n" +
+            "<if test='params.userGroupId!=null' > \n" +
+            "and c.user_group_id = userGroupId \n" +
             "</if> \n" +
             "<if test='params.startTime!=null' > \n" +
             "and b.created_time &lt;= #{params.startTime}\n" +
@@ -58,10 +61,10 @@ public interface ReportMapper {
 
     /**
      * 根据user_group_id和report_type查找组报告
-     * 根据user_group_id、username、日期和reportType分页查询报告
+     * 根据user_group_id、username、日期和reportType查询报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id\n" +
+            "select b.*,c.user_name,c.user_group_id from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id\n" +
             "where user_group_id = #{params.userGroupId} and report_type = #{params.reportType} and is_deleted = 0 \n" +
             "<if test='params.userName!=null' > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
@@ -76,7 +79,7 @@ public interface ReportMapper {
     List<Report> getReportByGroupId(Page<Report> page);
 
     /**
-     * 根据user_id和report_type查找个人报告
+     * 根据user_id、起止日期和report_type查找个人报告
      */
     @Select({"<script> \n"+
             "select b.* from cl_user_report a left join cl_report b on a.report_id=b.report_id \n" +
@@ -98,6 +101,34 @@ public interface ReportMapper {
     @Insert("insert into cl_user_report(user_id,report_id) value(#{userId},#{reportId})")
     void addUserReport(Integer userId,Integer reportId);
 
+    /**
+     * 获取指定时间段内的所有日报
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select * from cl_report where report_type = 0 and is_deleted = 0 and created_time &lt;=#{startTime} and created_time &gt;= #{endTime}\n"+
+            "</script>"})
+    List<Report> getToDayAllReport(String startTime,String endTime);
+
+    /**
+     * 获取指定时间段内的所有日报
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select * from cl_report where report_type = 1 and is_deleted = 0 and created_time &lt;= #{startTime} and created_time &gt;= #{endTime}\n"+
+            "</script>"})
+    List<Report> getWeekAllReport(String startTime,String endTime);
+
+    /**
+     * 设置报告状态为NotEnable 不可删除或更改
+     * @param report
+     */
+    @Update("update cl_report set is_enabled = 1 where report_id = #{reportId}  and is_deleted = 0")
+    void setReportNotEnable(Report report);
 
 }
 

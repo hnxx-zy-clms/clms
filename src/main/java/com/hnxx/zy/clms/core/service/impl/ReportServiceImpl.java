@@ -54,4 +54,19 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public void addUserReport(Integer userId,Integer reportId) { reportMapper.addUserReport(userId,reportId); }
+
+    @Override
+    public List<Report> getToDayAllReport(String startTime, String endTime) {
+        return reportMapper.getToDayAllReport(startTime,endTime);
+    }
+
+    @Override
+    public List<Report> getWeekAllReport(String startTime, String endTime) {
+        return reportMapper.getWeekAllReport(startTime,endTime);
+    }
+
+    @Override
+    public void setReportNotEnable(Report report) {
+        reportMapper.setReportNotEnable(report);
+    }
 }
