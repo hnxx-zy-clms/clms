@@ -43,7 +43,7 @@ public interface ReportMapper {
      */
     @Select({"<script> \n" +
             "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id \n" +
-            "where c.user_classes_id = #{params.userClassesId} and b.report_type = #{params.reportType} and b.is_deleted = 0 \n" +
+            "where c.user_classes_id = #{params.userClassesId} and b.report_type = #{params.reportType} and b.is_deleted = 0 and b.is_checked = 1 \n" +
             "<if test='params.userName!=null' > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
@@ -65,7 +65,7 @@ public interface ReportMapper {
      */
     @Select({"<script> \n" +
             "select b.*,c.user_name,c.user_group_id from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id\n" +
-            "where user_group_id = #{params.userGroupId} and report_type = #{params.reportType} and is_deleted = 0 \n" +
+            "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and is_deleted = 0 \n" +
             "<if test='params.userName!=null' > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
@@ -113,7 +113,7 @@ public interface ReportMapper {
     List<Report> getToDayAllReport(String startTime,String endTime);
 
     /**
-     * 获取指定时间段内的所有日报
+     * 获取指定时间段内的所有周报
      * @param startTime
      * @param endTime
      * @return
@@ -129,6 +129,17 @@ public interface ReportMapper {
      */
     @Update("update cl_report set is_enabled = 1 where report_id = #{reportId}  and is_deleted = 0")
     void setReportNotEnable(Report report);
+
+    /**
+     * 获取数据库用户今日是否存在报告
+     * @param nowToday
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select b.* from cl_user_report a left join cl_report b on a.report_id=b.report_id  \n" +
+            "            where a.user_id = #{userId} and b.report_type = #{reportType} and created_time &gt;= #{nowToday} and b.is_deleted = 0 \n" +
+            "</script>"})
+    Report getTodayUserReport(Integer userId,String nowToday,Integer reportType);
 
 }
 

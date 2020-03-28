@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,8 +43,15 @@ public class ReportController {
      */
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Report report){
-        reportService.save(report);
         SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Calendar rightNow = Calendar.getInstance();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+            return new Result<>("时间已截止");
+        }else if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),report.getReportType()) != null){
+            return new Result<>("数据库已存在报告数据");
+        }
+        reportService.save(report);
         reportService.addUserReport(userId.getUserId(),report.getReportId());
         return new Result<>("添加成功");
     }

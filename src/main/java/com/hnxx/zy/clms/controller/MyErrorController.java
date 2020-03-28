@@ -39,6 +39,8 @@ public class MyErrorController implements ErrorController {
                 return new Result<>(ResultEnum.UNAUTHORIZED);
             }else if(statusCode == HttpStatus.FORBIDDEN.value()) {
                 return new Result<>(ResultEnum.FORBIDDEN);
+            }else if(statusCode == 405){
+                return new Result<>(ResultEnum.NOT_SUPPORTED);
             }
         }
         assert status != null;

@@ -69,4 +69,9 @@ public class ReportServiceImpl implements ReportService {
     public void setReportNotEnable(Report report) {
         reportMapper.setReportNotEnable(report);
     }
+
+    @Override
+    public Report getTodayUserReport(Integer userId,String nowToday, Integer reportType) {
+        return reportMapper.getTodayUserReport(userId,nowToday,reportType);
+    }
 }

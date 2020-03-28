@@ -71,4 +71,11 @@ public interface ReportService {
      * @param report
      */
     void setReportNotEnable(Report report);
+
+    /**
+     * 获取数据库用户今日是否存在报告
+     * @param nowToday
+     * @return
+     */
+    Report getTodayUserReport(Integer userId,String nowToday,Integer reportType);
 }
