@@ -1,3 +1,22 @@
 2020-03-27 17:12:55.871 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fissionWantedTask' defined in file [D:\新建文件夹\clms\target\classes\com\hnxx\zy\clms\common\config\FissionWantedTask.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'weekNotEnable': Cron expression must consist of 6 fields (found 7 in "0 14 17 * * ? Fri")
 2020-03-27 17:14:12.926 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fissionWantedTask' defined in file [D:\新建文件夹\clms\target\classes\com\hnxx\zy\clms\common\config\FissionWantedTask.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'weekNotEnable': Cron expression must consist of 6 fields (found 7 in "0 15 17 * * ? FRI")
 2020-03-27 17:15:18.089 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fissionWantedTask' defined in file [D:\新建文件夹\clms\target\classes\com\hnxx\zy\clms\common\config\FissionWantedTask.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'weekNotEnable': For input string: "?"
+2020-03-28 21:22:45.164 WARN  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:61 -Unable to start LiveReload server
+2020-03-28 21:22:45.365 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-867020046] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2443)
+2020-03-28 21:22:45.368 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-867020046] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2540)
+2020-03-28 21:26:07.887 WARN  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:61 -Unable to start LiveReload server
+2020-03-28 21:26:07.976 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-1761987593] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+ com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2443)
+2020-03-28 21:26:07.977 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-1761987593] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2540)
+2020-03-28 22:38:03.910 WARN  [http-nio-8080-exec-5]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]

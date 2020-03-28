@@ -16,4 +16,10 @@ public interface CollectionService {
      * @param collection
      */
     void save(Collection collection);
+
+    /**
+     * 根据id删除
+     * @param id
+     */
+    void deleteById(Integer id);
 }

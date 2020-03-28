@@ -90,5 +90,19 @@ public interface CommentMapper {
     @Select("select count(*) from cl_comment where pid = #{pid}")
     int getCountByCid(int pid);
 
+    /**
+     * 根据文章id更新文章的评论量
+     * @param cCount
+     * @param aid
+     */
+    @Update("update cl_article set article_comment = #{cCount} where article_id = #{aid}")
+    void updateACommentCount(int cCount, int aid);
 
+    /**
+     * 根据评论id更新评论的评论量
+     * @param cCount
+     * @param cid
+     */
+    @Update("update cl_comment set comment_count = #{cCount} where comment_id = #{cid}")
+    void updateCCommentCount(int cCount, int cid);
 }

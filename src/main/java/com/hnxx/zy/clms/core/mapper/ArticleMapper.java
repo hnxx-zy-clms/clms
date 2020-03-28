@@ -139,4 +139,12 @@ public interface ArticleMapper {
      */
     @Update("update cl_article set article_read = article_read + 1 where article_id = #{id}")
     void addRead(Integer id);
+
+    /**
+     * 更新文章的收藏量
+     * @param cCount
+     * @param aid
+     */
+    @Update("update cl_article set article_collection = #{cCount} where article_id = #{aid}")
+    void updateCollectionCount(int cCount, int aid);
 }

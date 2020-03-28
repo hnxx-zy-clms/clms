@@ -43,6 +43,19 @@ public class CommentServiceImpl implements CommentService {
     public void save(Comment comment) {
         // 评论类型为0 文章评论 父类id为空
         commentMapper.save(comment);
+        // 根据评论类型， 文章评论 commentType = 0, 评论的评论 commentType = 1
+        if(comment.getCommentType() == 0){
+            int aid = comment.getCommentArticle();
+            int cCount = commentMapper.getCountByAid(aid);
+            // 更新文章评论数
+            commentMapper.updateACommentCount(cCount, aid);
+        } else if(comment.getCommentType() == 1) {
+            int cid = comment.getPid();
+            int cCount = commentMapper.getCountByCid(cid);
+            // 更新评论评论数
+            commentMapper.updateCCommentCount(cCount, cid);
+        }
+
     }
 
     /**
@@ -95,6 +108,7 @@ public class CommentServiceImpl implements CommentService {
             commentMapper.deleteByPid(pid);
         }
         commentMapper.deleteById(id);
+
     }
 
     /**
