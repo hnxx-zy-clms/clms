@@ -28,16 +28,36 @@ public interface ReportMarkingService {
     void setGroupMarking(List<ReportMarking> reportMarkings);
 
     /**
-     * 修改报告批阅状态
+     * 修改组长报告批阅状态
      * @param reportId
      */
     void setCheck(Integer reportId);
 
     /**
-     * 学生获取批阅信息
+     * 修改班长报告批阅状态
+     * @param reportId
+     */
+    void setClassesCheck(Integer reportId);
+
+    /**
+     * 修改教师报告批阅状态
+     * @param reportId
+     */
+    void setTeacherCheck(Integer reportId);
+
+    /**
+     * 获取批阅信息
+     * @param reportId
+     * @param userName
+     * @return
+     */
+    List<ReportMarking> getMyMarking(Integer reportId,String userName);
+
+    /**
+     ** 学生查询报告批阅
      * @param page
      * @return
      */
-    List<ReportMarking> getMyMarking(Page<ReportMarking> page);
+    List<ReportMarking> getUserMarking(Page<ReportMarking> page);
 
 }

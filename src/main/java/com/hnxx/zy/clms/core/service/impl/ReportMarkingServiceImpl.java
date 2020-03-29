@@ -38,7 +38,22 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public List<ReportMarking> getMyMarking(Page<ReportMarking> page) {
-        return reportMarkingMapper.getMyMarking(page);
+    public void setClassesCheck(Integer reportId) {
+        reportMarkingMapper.setClassesCheck(reportId);
+    }
+
+    @Override
+    public void setTeacherCheck(Integer reportId) {
+        reportMarkingMapper.setTeacherCheck(reportId);
+    }
+
+    @Override
+    public  List<ReportMarking> getMyMarking(Integer reportId,String userName){
+        return reportMarkingMapper.getMyMarking(reportId,userName);
+    }
+
+    @Override
+    public List<ReportMarking> getUserMarking(Page<ReportMarking> page) {
+        return reportMarkingMapper.getUserMarking(page);
     }
 }

@@ -87,8 +87,18 @@ public class Report {
     private Integer isDeleted;
 
     /**
-     * 报告检查状态： 0 未检查 1 已检查
+     * 组长报告检查状态： 0 未检查 1 已检查
      */
     private Integer isChecked;
+
+    /**
+     * 班长报告检查状态： 0 未检查 1 已检查
+     */
+    private Integer isClassesChecked;
+
+    /**
+     * 老师报告检查状态： 0 未检查 1 已检查
+     */
+    private Integer isTeacherChecked;
 
 }

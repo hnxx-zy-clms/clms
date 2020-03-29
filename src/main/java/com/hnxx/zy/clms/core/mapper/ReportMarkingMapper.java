@@ -3,7 +3,6 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -29,7 +28,7 @@ public interface ReportMarkingMapper {
     List<Report> getGroupMarking(Page<Report> page);
 
     /**
-     * 组长提交批阅报告
+     * 提交批阅报告
      * @param reportMarkings
      */
     @Insert({"<script> \n" +
@@ -41,20 +40,52 @@ public interface ReportMarkingMapper {
     void setGroupMarking(@Param("reportMarkings") List<ReportMarking> reportMarkings);
 
     /**
-     * 修改报告批阅状态
+     * 修改报告组长批阅状态
      * @param reportId
      */
     @Update("update cl_report set is_checked  = 1 \n"+
             "where report_id = #{reportId} and is_deleted = 0")
     void setCheck(Integer reportId);
 
+    /**
+     * 修改班长报告批阅状态
+     * @param reportId
+     */
+    @Update("update cl_report set is_classes_checked  = 1 \n"+
+            "where report_id = #{reportId} and is_deleted = 0")
+    void setClassesCheck(Integer reportId);
+    /**
+     * 修改教师报告批阅状态
+     * @param reportId
+     */
+    @Update("update cl_report set is_teacher_checked  = 1 \n"+
+            "where report_id = #{reportId} and is_deleted = 0")
+    void setTeacherCheck(Integer reportId);
 
     /**
-     * 学生获取批阅信息
+     * 根据report_id和当前用户名获取批阅信息
+     * @param reportId
+     * @param userName
+     * @return
+     */
+    @Select("select * from cl_report_marking where report_id = #{reportId} and user_name = #{userName}")
+    List<ReportMarking> getMyMarking(Integer reportId,String userName);
+
+    /**
+     * 学生查询报告批阅
      * @param page
      * @return
      */
-    @Select("select * from cl_report_marking where report_id = #{params.reportId}")
-    List<ReportMarking> getMyMarking(Page<ReportMarking> page);
+    @Select({"<script> \n" +
+            "SELECT c.* FROM cl_user  a LEFT JOIN cl_user_report b on a.user_id = b.user_id LEFT JOIN cl_report_marking c on b.report_id = c.report_id LEFT JOIN cl_report d on d.report_id = b.report_id\n" +
+            "WHERE a.user_id = #{params.userId} AND  d.report_type = #{params.reportType}\n"+
+            "<if test='params.startTime!=null' > \n" +
+            "and c.created_time &lt;= #{params.startTime}\n" +
+            "</if> \n" +
+            "<if test='params.endTime!=null' > \n" +
+            "and c.created_time &gt;= #{params.endTime}\n" +
+            "</if> \n"+
+            "</script>"})
+    List<ReportMarking> getUserMarking(Page<ReportMarking> page);
 
 }

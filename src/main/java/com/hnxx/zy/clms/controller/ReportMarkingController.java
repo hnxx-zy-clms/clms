@@ -28,7 +28,7 @@ public class ReportMarkingController {
      * @param page
      * @return
      */
-    @PostMapping("/getGroupMarking")
+    @GetMapping("/getGroupMarking")
     public Result<Page<Report>> getGroupMarking(@RequestBody Page<Report> page){
         List<Report> reports = reportMarkingService.getGroupMarking(page);
         page.setList(reports);
@@ -37,11 +37,66 @@ public class ReportMarkingController {
         return new Result<>(page);
     }
 
+    /**
+     * 组长提交批阅数据
+     * @param reportMarkings
+     * @return
+     */
     @PostMapping("/setGroupMarkings")
     public Result<Object> setGroupMarking(@RequestBody List<ReportMarking> reportMarkings){
         reportMarkingService.setCheck(reportMarkings.get(0).getReportId());
         reportMarkingService.setGroupMarking(reportMarkings);
         return new Result<>("成功");
+    }
+
+    /**
+     * 班长提交批阅
+     * @param reportMarkings
+     * @return
+     */
+    @PostMapping("/setClassesMarkings")
+    public Result<Object> setClassesMarkings(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setClassesCheck(reportMarkings.get(0).getReportId());
+        reportMarkingService.setGroupMarking(reportMarkings);
+        return new Result<>("成功");
+    }
+
+    /**
+     * 教师提交批阅
+     * @param reportMarkings
+     * @return
+     */
+    @PostMapping("/setTeacherMarkings")
+    public Result<Object> seTteacherMarkings(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setTeacherCheck(reportMarkings.get(0).getReportId());
+        reportMarkingService.setGroupMarking(reportMarkings);
+        return new Result<>("成功");
+    }
+
+    /**
+     * 用户获取自己的批阅
+     * @param userId
+     * @param userName
+     * @return
+     */
+    @GetMapping("/getMyMarking")
+    public Result<List<ReportMarking>> getMyMarking(@RequestParam("id") Integer userId,@RequestParam("userName") String userName){
+        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(userId,userName);
+        return new Result<>(reportMarkings);
+    }
+
+    /**
+     * 学生获取批阅数据
+     * @param page
+     * @return
+     */
+    @PostMapping("/getUserMarking")
+    public Result<Page<ReportMarking>> getUserMarking(@RequestBody Page<ReportMarking> page){
+        List<ReportMarking> reports = reportMarkingService.getUserMarking(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
     }
 
 }

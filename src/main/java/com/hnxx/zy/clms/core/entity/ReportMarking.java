@@ -39,6 +39,6 @@ public class ReportMarking {
      * 写批阅的时间，返回时转成正常日期格式 年-月-日
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date createTime;
+    private Date createdTime;
 
 }

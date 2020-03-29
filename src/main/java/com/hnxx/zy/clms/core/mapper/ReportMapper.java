@@ -28,14 +28,31 @@ public interface ReportMapper {
     /**
      * 根据report_id修改报告
      */
-    @Update("update cl_report set work_content = #{workContent},difficulty = #{difficulty},solution = #{solution},experience = #{experience},plan = #{plan} \n"+
-            "where report_id = #{reportId} and is_enabled = 0 and is_deleted = 0")
+    @Update({"<script> \n" +
+            "update cl_report set report_id = #{reportId}\n" +
+            "<if test='workContent!=null' > \n" +
+            ",work_content = #{workContent} \n" +
+            "</if> \n" +
+            "<if test='difficulty!=null' > \n" +
+            ",difficulty = #{difficulty} \n" +
+            "</if> \n" +
+            "<if test='solution!=null' > \n" +
+            ",solution = #{solution} \n" +
+            "</if> \n" +
+            "<if test='experience !=null' > \n" +
+            ",experience = #{experience} \n" +
+            "</if> \n" +
+            "<if test='plan!=null' > \n" +
+            ",plan = #{plan} \n"+
+            "</if> \n" +
+            "where report_id = #{reportId} and is_enabled = 0 and is_deleted = 0 \n"+
+            "</script>"})
     void update(Report report);
 
     /**
      * 根据id删除报告
      */
-    @Delete("update into cl_report set is_deleted = 1 where report_id = #{reportId} and is_enabled = 0")
+    @Update("update cl_report set is_deleted = 1 where report_id = #{reportId} and is_enabled = 0")
     void deleteById(Integer reportId);
 
     /**
