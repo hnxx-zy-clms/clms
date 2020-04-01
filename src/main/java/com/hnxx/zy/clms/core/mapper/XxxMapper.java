@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -75,4 +76,19 @@ public interface XxxMapper {
     @Update("update cl_xx set is_deleted = 1 where xx_id = #{id}")
     void deleteById(Integer id);
 
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @Select("select xx_name, created_time, update_time from cl_xx order by ${sortColumn} ${sortMethod} limit #{index}, #{pageSize}")
+    List<Xxx> getByPage(Page<Xxx> page);
+
+    /**
+     * 统计总数
+     * @param page
+     * @return
+     */
+    @Select("select count(*) from cl_xx")
+    int getCountByPage(Page<Xxx> page);
 }

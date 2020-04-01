@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Xxx;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public interface XxxService {
      * @return
      */
     List<Xxx> getAll();
+
 
 
     /**
@@ -44,4 +46,10 @@ public interface XxxService {
      */
     void deleteById(Integer id);
 
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    Page<Xxx> getByPage(Page<Xxx> page);
 }

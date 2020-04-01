@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.XxxMapper;
 import com.hnxx.zy.clms.core.service.XxxService;
@@ -49,5 +50,16 @@ public class XxxServiceImpl implements XxxService {
     @Override
     public void deleteById(Integer id) {
         xxxMapper.deleteById(id);
+    }
+
+    @Override
+    public Page<Xxx> getByPage(Page<Xxx> page) {
+        // 查询数据
+        List<Xxx> xxxList = xxxMapper.getByPage(page);
+        page.setList(xxxList);
+        // 查询总数
+        int totalCount = xxxMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
     }
 }

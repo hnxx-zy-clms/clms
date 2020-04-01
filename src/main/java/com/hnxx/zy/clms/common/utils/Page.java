@@ -97,20 +97,20 @@ public class Page<T> implements Serializable {
         this.totalPage = (int) Math.ceil(totalCount * 1.0 / pageSize);
     }
 
-    public String getSortMethod(String sortMethod){
-        // 判断sortMethod是否为空或长度为0或有空白字符串构成
-        // 对于制表符、换行符、换页符和回车符StringUtils.isBlank()均识为空白符
-        if(StringUtils.isBlank(sortMethod)){
-            return "asc";
-        }
-        if (sortMethod.toLowerCase().startsWith(SORT_ASC)){
+    /**
+     * 设置排序方式
+     */
+    public void setSortMethod(String sortMethod) {
+        if (StringUtils.isBlank(sortMethod)) {
             this.sortMethod = SORT_ASC;
-        }else if (sortMethod.toLowerCase().startsWith(SORT_DESC)) {
+        }
+        if (sortMethod.toLowerCase().startsWith(SORT_ASC)) {
+            this.sortMethod = SORT_ASC;
+        } else if (sortMethod.toLowerCase().startsWith(SORT_DESC)) {
             this.sortMethod = SORT_DESC;
         } else {
             this.sortMethod = SORT_ASC;
         }
-        return this.sortMethod;
     }
 
     /**
@@ -122,7 +122,7 @@ public class Page<T> implements Serializable {
         if(currentPage <= totalPage && end >= totalCount){
             this.list = list.subList(start, totalCount);
         }else if(currentPage > totalPage){
-             this.list = null;
+            this.list = null;
         }else {
             this. list = list.subList(start , end);
         }
