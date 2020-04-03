@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Registration;
 import com.hnxx.zy.clms.core.service.RegistrationService;
+import org.apache.ibatis.annotations.Delete;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,21 +34,21 @@ public class RegistrationController {
      * @param registration
      * @return
      */
-    @PostMapping("/saveregist")
-    public Result saveRegis(@RequestBody Registration registration) {
+    @PostMapping("/save")
+    public Result save(@RequestBody Registration registration) {
 
         registrationService.saveRegist(registration);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
     /**
-     * 获取签到
+     * 根据用户id获取本周签到情况
      *
      * @param id
      * @return
      */
-    @GetMapping("/getuserregis/{id}")
-    public Result getRegisListById(@PathVariable("id") Integer id) {
+    @GetMapping("/getListById/{id}")
+    public Result getListById(@PathVariable("id") Integer id) {
         List<Registration> regis = registrationService.getRegisListById(id);
         return new Result(regis);
     }
@@ -58,10 +59,22 @@ public class RegistrationController {
      * @param date
      * @return
      */
-    @GetMapping("/getregis/{date}")
-    public Result getRisListByDate(@PathVariable("date") String date) {
+    @GetMapping("/getListByDate/{date}")
+    public Result getListByDate(@PathVariable("date") String date) {
         List<Registration> regis = registrationService.getRegisListByDate(date);
         return new Result(regis);
+    }
+
+    /**
+     * 删除签到
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/delete/{id}")
+    public Result delete(@PathVariable("id") Integer id) {
+        registrationService.deleteRegis(id);
+        return new Result("取消成功");
     }
 
 }

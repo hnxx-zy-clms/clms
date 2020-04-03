@@ -92,12 +92,15 @@ public interface ArticleMapper {
      */
     @Select("<script>" +
             "        select * from cl_article\n" +
-            "        where is_deleted = 0 and article_author = #{params.articleAuthor}\n" +
+            "        where is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +
             "            and article_type = #{params.articleType}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
+            "            and article_author = #{params.articleAuthor}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
@@ -129,4 +132,19 @@ public interface ArticleMapper {
      */
     @Update("update cl_article set version = version + 1, is_enabled = #{isEnabled} and version = #{version}")
     void updateEnable(Article article);
+
+    /**
+     * 阅读 +1
+     * @param id
+     */
+    @Update("update cl_article set article_read = article_read + 1 where article_id = #{id}")
+    void addRead(Integer id);
+
+    /**
+     * 更新文章的收藏量
+     * @param cCount
+     * @param aid
+     */
+    @Update("update cl_article set article_collection = #{cCount} where article_id = #{aid}")
+    void updateCollectionCount(int cCount, int aid);
 }

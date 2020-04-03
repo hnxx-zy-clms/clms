@@ -12,6 +12,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.service.ArticleService;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,9 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    @Autowired
+    private UserService userService;
+
     /**
      * 保存【新增】
      * @param article
@@ -32,6 +36,7 @@ public class ArticleController {
      */
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Article article){
+        article.setArticleAuthor(userService.getUserName());
         articleService.save(article);
         return new Result<>("添加成功！");
     }
@@ -76,7 +81,12 @@ public class ArticleController {
      */
     @PostMapping("/getByPage")
     public Result<Page<Article>> getByPage(@RequestBody Page<Article> page) {
+        // 获取排序方式  page对象中 封装了 sortColumn 排序列
         String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
         if (StringUtils.isNotBlank(sortColumn)) {
             String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_type", "article_comment", "created_time", "update_time"};
             List<String> sortList = Arrays.asList(sortColumns);
@@ -110,5 +120,15 @@ public class ArticleController {
         return new Result<>("弃用成功");
     }
 
+    /**
+     * 根据id阅读文章
+     * @param id
+     * @return
+     */
+    @GetMapping("/read/{id}")
+    public Result<Article> read(@PathVariable("id") Integer id){
+        Article article = articleService.readById(id);
+        return new Result<>(article);
+    }
 
 }

@@ -31,10 +31,9 @@ public class ArticleTypeServiceImpl implements ArticleTypeService {
     public void save(ArticleType articleType) {
         // 查询文章分类是否存在
         ArticleType t = articleTypeMapper.getByName(articleType.getTypeName());
-        if(t != null){
-            throw new ClmsException("该文章分类已经存在!");
+        if(t == null){
+            articleTypeMapper.save(articleType);
         }
-        articleTypeMapper.save(articleType);
     }
 
     /**

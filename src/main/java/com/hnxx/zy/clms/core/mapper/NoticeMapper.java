@@ -1,7 +1,10 @@
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Notice;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,22 +14,15 @@ import java.util.List;
  * @version: 1.0
  * @desc:
  */
+@Mapper
+@Repository
 public interface NoticeMapper {
-    /**
-     * 获取所有通知
-     *
-     * @param id
-     * @return
-     */
-    @Select("SELECT a.*,b.if_read from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id")
-    List<Notice> getAllNotice(Integer id);
-
     /**
      * 设置已读
      *
      * @param notice
      */
-    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{notice.noticeId},#{notice.userId},#{notice.ifRead})")
+    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{notice.noticeId},#{notice.userId},1)")
     void setChange(@Param("notice") Notice notice);
 
     /**
@@ -42,6 +38,24 @@ public interface NoticeMapper {
      *
      * @param id
      */
-    @Delete("DELETE cl_notice,cl_notice_user from cl_notice LEFT JOIN cl_notice_user ON cl_notice.notice_id=cl_notice_user.notice_id WHERE cl_notice.notice_id=#{id}")
+    @Update("update cl_notice set is_deleted=1 WHERE cl_notice.notice_id=#{id}")
     void delNotice(Integer id);
+
+    /**
+     * 分页获取通知
+     *
+     * @param page
+     * @param id
+     * @return
+     */
+    @Select("SELECT a.*,IFNULL(b.if_read,0) as if_read,c.user_name from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id LEFT JOIN cl_user c ON a.created_id=c.user_id WHERE a.is_deleted =0 and a.is_enabled=1 ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize} ")
+    List<Notice> getByPage(@Param("page") Page page, Integer id);
+
+    /**
+     * 查询总数
+     *
+     * @return
+     */
+    @Select("select count(*) from cl_notice WHERE is_deleted =0 and is_enabled=1")
+    int getCountByPage();
 }

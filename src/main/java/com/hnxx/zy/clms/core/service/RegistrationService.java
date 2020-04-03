@@ -23,7 +23,7 @@ public interface RegistrationService {
     void saveRegist(Registration registration);
 
     /**
-     * 获取用户签到情况
+     * 获取用户id签到情况
      *
      * @param id
      * @return
@@ -37,5 +37,12 @@ public interface RegistrationService {
      * @return
      */
     List<Registration> getRegisListByDate(String date);
+
+    /**
+     * 取消签到
+     *
+     * @param id
+     */
+    void deleteRegis(Integer id);
 
 }

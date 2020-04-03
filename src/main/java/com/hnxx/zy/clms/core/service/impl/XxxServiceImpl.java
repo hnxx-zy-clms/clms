@@ -6,6 +6,9 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.hnxx.zy.clms.common.enums.StateEnum;
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.XxxMapper;
 import com.hnxx.zy.clms.core.service.XxxService;
@@ -27,13 +30,18 @@ public class XxxServiceImpl implements XxxService {
     private XxxMapper xxxMapper;
 
     @Override
-    public List<Xxx> getAll() {
-        return xxxMapper.getAll();
+    public void save(Xxx xxx) {
+        xxxMapper.save(xxx);
     }
 
     @Override
-    public void save(Xxx xxx) {
-        xxxMapper.save(xxx);
+    public void deleteById(Integer id) {
+        xxxMapper.deleteById(id);
+    }
+
+    @Override
+    public void deleteByIds(List<Integer> ids) {
+        xxxMapper.deleteByIds(ids);
     }
 
     @Override
@@ -47,7 +55,32 @@ public class XxxServiceImpl implements XxxService {
     }
 
     @Override
-    public void deleteById(Integer id) {
-        xxxMapper.deleteById(id);
+    public List<Xxx> getAll() {
+        return xxxMapper.getAll();
+    }
+
+    @Override
+    public Page<Xxx> getByPage(Page<Xxx> page) {
+        // 查询数据
+        List<Xxx> xxxList = xxxMapper.getByPage(page);
+        page.setList(xxxList);
+        // 查询总数
+        int totalCount = xxxMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
+    }
+
+    @Override
+    public void enableById(Integer id) {
+        Xxx xxx = xxxMapper.getById(id);
+        xxx.setIsEnabled(StateEnum.ENABLED.getCode());
+        xxxMapper.updateEnable(xxx);
+    }
+
+    @Override
+    public void disableById(Integer id) {
+        Xxx xxx = xxxMapper.getById(id);
+        xxx.setIsEnabled(StateEnum.NOT_ENABLE.getCode());
+        xxxMapper.updateEnable(xxx);
     }
 }

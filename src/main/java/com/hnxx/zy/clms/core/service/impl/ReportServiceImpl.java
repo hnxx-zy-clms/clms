@@ -1,11 +1,15 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.mapper.ReportMapper;
 import com.hnxx.zy.clms.core.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @program: clms
@@ -30,22 +34,44 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public void deleteById(String reportId) {
+    public void deleteById(Integer reportId) {
         reportMapper.deleteById(reportId);
     }
 
     @Override
-    public Page<Report> getReportByClassId(Page<Report> page) {
-        return reportMapper.getReportByClassId(page);
+    public List<Report> getReportByClassesId(Page<Report> page) {
+        return reportMapper.getReportByClassesId(page);
     }
 
     @Override
-    public Page<Report> getReportByGroupId(Page<Report> page) {
+    public List<Report> getReportByGroupId(Page<Report> page) {
         return reportMapper.getReportByGroupId(page);
     }
 
     @Override
-    public Page<Report> getReportByUserId(Page<Report> page) {
-        return reportMapper.getReportByUserId(page);
+    @Transactional(rollbackFor = Exception.class)
+    public List<Report> getReportByUserId(Page<Report> page) { return reportMapper.getReportByUserId(page); }
+
+    @Override
+    public void addUserReport(Integer userId,Integer reportId) { reportMapper.addUserReport(userId,reportId); }
+
+    @Override
+    public List<Report> getToDayAllReport(String startTime, String endTime) {
+        return reportMapper.getToDayAllReport(startTime,endTime);
+    }
+
+    @Override
+    public List<Report> getWeekAllReport(String startTime, String endTime) {
+        return reportMapper.getWeekAllReport(startTime,endTime);
+    }
+
+    @Override
+    public void setReportNotEnable(Report report) {
+        reportMapper.setReportNotEnable(report);
+    }
+
+    @Override
+    public Report getTodayUserReport(Integer userId,String nowToday, Integer reportType) {
+        return reportMapper.getTodayUserReport(userId,nowToday,reportType);
     }
 }

@@ -1,35 +1,33 @@
 ## 【班务管理系统】
 
-#### 文件目录结构 [定期更新] date:2020/3/22 10:28
+### 文件目录结构 [定期更新] 
+#### data:2020/3/22 10:28
+#### data:2020/3/25 23:52
 ```
 │  pom.xml
 │  README.md
-├─logs
-│      blog-all.log
-│      blog-debug.log
-│      blog-error.log
-│      blog-info.log
-│      blog-warn.log
+├─logs     
 ├─sql
-│      clms_test.sql  (3.25) 整体数据库表 (近期无改动)
+│      clms_test.sql  (3.26) 整体数据库表 (最近更新)
 │      cl_article.sql                       // 文章表 code-fusheng
 │      cl_article_collection.sql            // 文章收藏表 code-fusheng
 │      cl_article_type.sql                  // 文章类型表 code-fusheng    
-│      cl_classes.sql                       //
+│      cl_classes.sql                       // 
 │      cl_college.sql                       //
-│      cl_comment.sql                       // 文章评论表 code-fusheng
+│      cl_comment.sql                       // 评论表 code-fusheng
 │      cl_commission.sql                    //
 │      cl_githubuser.sql                    //
+│      cl_good.sql                          // 点赞表 code-fusheng (最新添加 3-25)
 │      cl_group.sql                         //
 │      cl_log.sql                           //
-│      cl_notice.sql                        //
-│      cl_notice_user.sql                   //
+│      cl_notice.sql                        //通知表
+│      cl_notice_user.sql                   //通知用户表
 │      cl_position.sql                      //
-│      cl_registration.sql                  //
+│      cl_registration.sql                  //签到表
 │      cl_report.sql                        //
 │      cl_report_marking.sql                //
-│      cl_task.sql                          //
-│      cl_task_user.sql                     //
+│      cl_task.sql                          //任务表
+│      cl_task_user.sql                     //任务用户表
 │      cl_user.sql                          //
 │      cl_user_report.sql                   //
 │      cl_xx.sql                            //

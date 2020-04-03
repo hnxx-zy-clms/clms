@@ -1,0 +1,2 @@
+INSERT INTO `cl_commission`(`com_id`,`user_id`,`com_content`,`is_did`,`created_time`,`is_deleted`)VALUES (200004, 2, '今天完成所有接口的测试和jwt的使2用', b'0', '2020-03-25 17:10:01', b'0');
+INSERT INTO `cl_commission`(`com_id`,`user_id`,`com_content`,`is_did`,`created_time`,`is_deleted`)VALUES (200005, 1, '今天完成所有接口的测试和jwt的使用2', b'0', '2020-03-25 17:14:43', b'0');

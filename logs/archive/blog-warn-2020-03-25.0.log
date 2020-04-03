@@ -1,0 +1,69 @@
+2020-03-24 00:15:17.635 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-576489533] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ app//ch.qos.logback.classic.spi.LoggingEvent.getThreadName(LoggingEvent.java:161)
+ app//ch.qos.logback.classic.pattern.ThreadConverter.convert(ThreadConverter.java:26)
+ app//ch.qos.logback.classic.pattern.ThreadConverter.convert(ThreadConverter.java:1)
+ app//ch.qos.logback.core.pattern.FormattingConverter.write(FormattingConverter.java:36)
+ app//ch.qos.logback.core.pattern.PatternLayoutBase.writeLoopOnConverters(PatternLayoutBase.java:115)
+ app//ch.qos.logback.classic.PatternLayout.doLayout(PatternLayout.java:141)
+ app//ch.qos.logback.classic.PatternLayout.doLayout(PatternLayout.java:1)
+ app//ch.qos.logback.core.encoder.LayoutWrappingEncoder.encode(LayoutWrappingEncoder.java:115)
+ app//ch.qos.logback.core.OutputStreamAppender.subAppend(OutputStreamAppender.java:230)
+ app//ch.qos.logback.core.rolling.RollingFileAppender.subAppend(RollingFileAppender.java:235)
+ app//ch.qos.logback.core.OutputStreamAppender.append(OutputStreamAppender.java:102)
+ app//ch.qos.logback.core.UnsynchronizedAppenderBase.doAppend(UnsynchronizedAppenderBase.java:84)
+ app//ch.qos.logback.core.spi.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:51)
+ app//ch.qos.logback.classic.Logger.appendLoopOnAppenders(Logger.java:270)
+ app//ch.qos.logback.classic.Logger.callAppenders(Logger.java:257)
+ app//ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(Logger.java:421)
+ app//ch.qos.logback.classic.Logger.filterAndLog_0_Or3Plus(Logger.java:383)
+ app//ch.qos.logback.classic.Logger.log(Logger.java:765)
+ app//com.alibaba.druid.support.logging.SLF4JImpl.error(SLF4JImpl.java:54)
+ app//com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2471)
+2020-03-24 00:15:17.638 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-576489533] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+ app//com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2540)
+2020-03-24 00:15:17.644 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-24 00:16:22.637 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-1936288102] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@9.0.4/java.net.SocketInputStream.socketRead0(Native Method)
+ java.base@9.0.4/java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.base@9.0.4/java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.base@9.0.4/java.net.SocketInputStream.read(SocketInputStream.java:141)
+ java.base@9.0.4/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:425)
+ java.base@9.0.4/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:154)
+ java.base@9.0.4/sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1031)
+ java.base@9.0.4/sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+ java.base@9.0.4/sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1402)
+ java.base@9.0.4/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1429)
+ java.base@9.0.4/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+ app//com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
+ app//com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
+ app//com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
+ app//com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:329)
+ app//com.mysql.cj.protocol.a.NativeAuthenticationProvider.negotiateSSLConnection(NativeAuthenticationProvider.java:777)
+ app//com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:486)
+ app//com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:202)
+ app//com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1340)
+ app//com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+ app//com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+ app//com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+ app//com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+ app//com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+ app//com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+ app//com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+ app//com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+ app//com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+ app//com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+ app//com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+ app//com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2468)
+2020-03-24 00:16:22.638 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-1936288102] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+ app//com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2540)
+2020-03-24 00:16:22.643 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-03-24 00:19:29.004 WARN  [http-nio-8080-exec-7]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-03-24 00:22:00.347 WARN  [http-nio-8080-exec-6]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-03-24 00:24:28.493 WARN  [http-nio-8080-exec-6]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-03-24 00:59:45.673 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationManagerBean' defined in class path resource [com/hnxx/zy/clms/security/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.authentication.AuthenticationManager]: Factory method 'authenticationManagerBean' threw exception; nested exception is org.springframework.beans.FatalBeanException: A dependency cycle was detected when trying to resolve the AuthenticationManager. Please ensure you have configured authentication.
+2020-03-24 01:02:00.843 WARN  [http-nio-8080-exec-5]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-03-25 14:13:30.496 WARN  [http-nio-8080-exec-7]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-03-25 14:13:37.934 WARN  [http-nio-8080-exec-9]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-03-25 14:13:59.390 WARN  [http-nio-8080-exec-1]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]

@@ -35,6 +35,15 @@ public interface CommentMapper {
     @Select("select * from cl_comment where comment_id = #{id} and is_deleted = 0")
     Comment getById(Integer id);
 
+
+    /**
+     * 根据文章id获取评论列表
+     * @param aid
+     * @return
+     */
+    @Select("select * from cl_comment where comment_type = 0 and comment_article = #{aid} and is_deleted = 0")
+    List<Comment> getCommentByAid(Integer aid);
+
     /**
      * 获取所有文章评论
      * @return
@@ -64,4 +73,36 @@ public interface CommentMapper {
      */
     @Delete("delete from cl_comment where pid = #{pid}")
     void deleteByPid(int pid);
+
+    /**
+     * 根据aid统计总数 文章评论总数
+     * @param aid
+     * @return
+     */
+    @Select("select count(*) from cl_comment where comment_article = #{aid}")
+    int getCountByAid(int aid);
+
+    /**
+     * 根据pid统计总数 评论的评论总数
+     * @param pid
+     * @return
+     */
+    @Select("select count(*) from cl_comment where pid = #{pid}")
+    int getCountByCid(int pid);
+
+    /**
+     * 根据文章id更新文章的评论量
+     * @param cCount
+     * @param aid
+     */
+    @Update("update cl_article set article_comment = #{cCount} where article_id = #{aid}")
+    void updateACommentCount(int cCount, int aid);
+
+    /**
+     * 根据评论id更新评论的评论量
+     * @param cCount
+     * @param cid
+     */
+    @Update("update cl_comment set comment_count = #{cCount} where comment_id = #{cid}")
+    void updateCCommentCount(int cCount, int cid);
 }

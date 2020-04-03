@@ -3,6 +3,9 @@ package com.hnxx.zy.clms.core.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.util.Date;
+
+
 /**
  * @program: clms
  * @description: 报告批阅内容实体
@@ -20,22 +23,22 @@ public class ReportMarking {
     /**
      * 批阅类型
      */
-    private String keys;
+    private String operationType;
 
     /**
      * 批阅内容
      */
-    private String values;
+    private String operationContent;
 
     /**
      * 批阅人
      */
-    private String username;
+    private String userName;
 
     /**
      * 写批阅的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private Data createTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date createdTime;
 
 }
