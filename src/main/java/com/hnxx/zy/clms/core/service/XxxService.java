@@ -14,18 +14,22 @@ import java.util.List;
 public interface XxxService {
 
     /**
-     * 查询所有
-     * @return
-     */
-    List<Xxx> getAll();
-
-
-
-    /**
      * 保存
      * @param xxx
      */
     void save(Xxx xxx);
+
+    /**
+     * 根据id删除
+     * @param id
+     */
+    void deleteById(Integer id);
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    void deleteByIds(List<Integer> ids);
 
     /**
      * 修改
@@ -41,10 +45,10 @@ public interface XxxService {
     Xxx getById(Integer id);
 
     /**
-     * 根据id删除
-     * @param id
+     * 查询所有
+     * @return
      */
-    void deleteById(Integer id);
+    List<Xxx> getAll();
 
     /**
      * 分页查询
@@ -52,4 +56,17 @@ public interface XxxService {
      * @return
      */
     Page<Xxx> getByPage(Page<Xxx> page);
+
+    /**
+     * 根据id启用
+     * @param id
+     */
+    void enableById(Integer id);
+
+    /**
+     * 根据id弃用
+     * @param id
+     */
+    void disableById(Integer id);
+
 }

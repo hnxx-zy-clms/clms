@@ -32,16 +32,6 @@ public class XxxController {
     private XxxService xxxService;
 
     /**
-     * 查询所有
-     * @return
-     */
-    @GetMapping("/list")
-    public Result<List<Xxx>> list(){
-        List<Xxx> xxxList = xxxService.getAll();
-        return new Result<>(xxxList);
-    }
-
-    /**
      * 保存
      * @param xxx
      * @return
@@ -61,6 +51,17 @@ public class XxxController {
     public Result<Object> delete(@PathVariable("id") Integer id){
         xxxService.deleteById(id);
         return new Result<>("删除成功!");
+    }
+
+    /**
+     * 批量删除
+     * @param ids
+     * @return
+     */
+    @PutMapping("/deleteByIds")
+    public Result<Object> deleteByIds(@RequestBody List<Integer> ids){
+        xxxService.deleteByIds(ids);
+        return new Result<>("删除成功！");
     }
 
     /**
@@ -86,6 +87,16 @@ public class XxxController {
     }
 
     /**
+     * 查询所有
+     * @return
+     */
+    @GetMapping("/list")
+    public Result<List<Xxx>> list(){
+        List<Xxx> xxxList = xxxService.getAll();
+        return new Result<>(xxxList);
+    }
+
+    /**
      * 分页查询
      * @param page
      * @return
@@ -101,7 +112,7 @@ public class XxxController {
         // 判断排序列不为空
         if(StringUtils.isNotBlank(sortColumn)){
             // 根据 日志请求路径，日志状态，请求方式，响应时间，请求时间 排序
-            String[] sortColumns = {"created_time", "update_time"};
+            String[] sortColumns = {"xx_name", "created_time", "update_time"};
             // Arrays.asList() 方法使用
             // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式
             // 2. 该方法不适用于剧本数据类型（byte,short,int,long,float,double,boolean）
@@ -113,6 +124,28 @@ public class XxxController {
         }
         page = xxxService.getByPage(page);
         return new Result<>(page);
+    }
+
+    /**
+     * 启用
+     * @param id
+     * @return
+     */
+    @PutMapping("/enable/{id}")
+    public Result<Object> enable(@PathVariable("id") Integer id) {
+        xxxService.enableById(id);
+        return new Result<>("启用成功");
+    }
+
+    /**
+     * 弃用
+     * @param id
+     * @return
+     */
+    @PutMapping("/disable/{id}")
+    public Result<Object> disable(@PathVariable("id") Integer id) {
+        xxxService.disableById(id);
+        return new Result<>("弃用成功");
     }
 
 
