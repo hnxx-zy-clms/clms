@@ -75,13 +75,13 @@ public class ReportMarkingController {
 
     /**
      * 用户获取自己的批阅
-     * @param userId
+     * @param reportId
      * @param userName
      * @return
      */
     @GetMapping("/getMyMarking")
-    public Result<List<ReportMarking>> getMyMarking(@RequestParam("id") Integer userId,@RequestParam("userName") String userName){
-        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(userId,userName);
+    public Result<List<ReportMarking>> getMyMarking(@RequestParam("reportId") Integer reportId,@RequestParam("userName") String userName){
+        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(reportId,userName);
         return new Result<>(reportMarkings);
     }
 

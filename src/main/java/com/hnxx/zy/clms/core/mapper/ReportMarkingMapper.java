@@ -85,6 +85,9 @@ public interface ReportMarkingMapper {
             "<if test='params.endTime!=null' > \n" +
             "and c.created_time &gt;= #{params.endTime}\n" +
             "</if> \n"+
+            "<if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "order by ${sortColumn} ${sortMethod}\n" +
+            "</if>\n" +
             "</script>"})
     List<ReportMarking> getUserMarking(Page<ReportMarking> page);
 

@@ -71,7 +71,12 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Report getTodayUserReport(Integer userId,String nowToday, Integer reportType) {
-        return reportMapper.getTodayUserReport(userId,nowToday,reportType);
+    public int getTodayUserReport(Integer userId,String nowToday, Integer reportType ,String[] results) {
+        return reportMapper.getTodayUserReport(userId,nowToday,reportType,results);
+    }
+
+    @Override
+    public int getTodayStatistics(String nowToday) {
+        return reportMapper.getTodayStatistics(nowToday);
     }
 }

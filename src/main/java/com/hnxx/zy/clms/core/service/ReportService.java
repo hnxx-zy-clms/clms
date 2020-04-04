@@ -77,5 +77,12 @@ public interface ReportService {
      * @param nowToday
      * @return
      */
-    Report getTodayUserReport(Integer userId,String nowToday,Integer reportType);
+    int  getTodayUserReport(Integer userId,String nowToday,Integer reportType,String[] results);
+
+    /**
+     * 获取数据库用户今日报告情况
+     * @param nowToday
+     * @return
+     */
+    int getTodayStatistics(String nowToday);
 }
