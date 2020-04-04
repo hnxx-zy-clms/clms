@@ -8,6 +8,8 @@ import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -51,12 +53,12 @@ public class ReportController {
             return new Result<>("时间已截止");
         }else if(report.getReportType() == 0){
             if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),0, null) != 0) {
-                return new Result<>("已存在日报数据");
+                return new Result<>("已存在报告数据");
             }
         }else if (report.getReportType() == 1){
             String[] results = dateUtils.getDateWeek(sdf.format(new Date()));
             if(reportService.getTodayUserReport(userId.getUserId(),null,1,results) != 0) {
-                return new Result<>("已存在周报数据");
+                return new Result<>("已存在报告数据");
             }
         }
         reportService.save(report);
@@ -156,7 +158,7 @@ public class ReportController {
     @PostMapping("/groupExcelDownloads")
     public void groupExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
         String sheetName = "报告信息表";
-        String fileName = "classesReportInfo" + ".xlsx";
+        String fileName = "groupReportInfo" + ".xlsx";
         List<Report> reports = reportService.getReportByGroupId(page);
         ExcelUtils excelUtils = new ExcelUtils();
         excelUtils.setFileName(fileName);
@@ -167,7 +169,7 @@ public class ReportController {
     }
 
     /**
-     *
+     *班长长导出报告
      * @param page
      * @param response
      * @throws IOException
@@ -175,7 +177,7 @@ public class ReportController {
     @PostMapping("/classesExcelDownloads")
     public void classesExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
         String sheetName = "报告信息表";
-        String fileName = "groupReportInfo" + ".xlsx";
+        String fileName = "classesReportInfo" + ".xlsx";
         List<Report> reports = reportService.getReportByClassesId(page);
         ExcelUtils excelUtils = new ExcelUtils();
         excelUtils.setFileName(fileName);

@@ -160,8 +160,11 @@ public interface ReportMapper {
     void setReportNotEnable(Report report);
 
     /**
-     * 获取数据库用户今日/本周是否存在报告
+     * 判断数据库当前是否存在报告
+     * @param userId
      * @param nowToday
+     * @param reportType
+     * @param results
      * @return
      */
     @Select({"<script> \n"+
@@ -177,6 +180,11 @@ public interface ReportMapper {
             "</script>"})
     int getTodayUserReport(Integer userId,String nowToday,Integer reportType,String[] results);
 
+    /**
+     * 报告情况
+     * @param nowToday
+     * @return
+     */
     @Select({"<script> \n"+
             "select count(*)   from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
             "where b.created_time &gt;= #{nowToday} and b.report_type = 0 and is_deleted = 0 \n"+
