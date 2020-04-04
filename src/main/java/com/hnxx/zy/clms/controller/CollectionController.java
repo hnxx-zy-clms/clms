@@ -43,4 +43,15 @@ public class CollectionController {
         collectionService.save(collection);
         return new Result<>("添加成功!");
     }
+
+    /**
+     * 根据id删除
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/delete/{id}")
+    public Result<Collection> delete(@PathVariable("id") Integer id){
+        collectionService.deleteById(id);
+        return new Result<>("删除成功!");
+    }
 }

@@ -28,8 +28,8 @@ public enum  ResultEnum {
     FORBIDDEN(403,"无权限，禁止访问"),
     UNAUTHORIZED(501,"未授权"),
     INTERNAL_SERVER_ERROR(500,"服务器故障"),
-    NOT_FOUND(404,"访问连接不存在")
-
+    NOT_FOUND(404,"访问连接不存在"),
+    NOT_SUPPORTED(405,"方法不支持该连接方式")
 
     ;
 

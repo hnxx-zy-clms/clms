@@ -27,6 +27,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+      <!--聊天所需的依赖包  websocket        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+
         <!-- AOP 通过切面获取日志信息 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -81,7 +81,12 @@ public class ArticleController {
      */
     @PostMapping("/getByPage")
     public Result<Page<Article>> getByPage(@RequestBody Page<Article> page) {
+        // 获取排序方式  page对象中 封装了 sortColumn 排序列
         String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
         if (StringUtils.isNotBlank(sortColumn)) {
             String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_type", "article_comment", "created_time", "update_time"};
             List<String> sortList = Arrays.asList(sortColumns);

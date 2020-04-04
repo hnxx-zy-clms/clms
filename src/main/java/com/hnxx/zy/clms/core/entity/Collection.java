@@ -36,4 +36,9 @@ public class Collection implements Serializable {
      * 收藏时间
      */
     private String collectionTime;
+
+    /**
+     * 是否启用
+     */
+    private Integer isDeleted;
 }

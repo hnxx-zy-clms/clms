@@ -38,7 +38,7 @@ public class GoodController {
     @PutMapping("/doGood")
     @Transactional(rollbackFor = Exception.class)
     public Result<Object> doGood(@RequestBody Good good){
-        SysUser user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        SysUser user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         good.setUserId(user.getUserId());
         goodService.doGood(good);
         return new Result<>("点赞成功!");

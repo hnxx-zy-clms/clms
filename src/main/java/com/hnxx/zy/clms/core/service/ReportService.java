@@ -50,4 +50,32 @@ public interface ReportService {
      */
     void addUserReport(Integer userId,Integer reportId);
 
+    /**
+     * 获取指定时间段内的所有日报
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    List<Report> getToDayAllReport(String startTime,String endTime);
+
+    /**
+     * 获取指定时间段内的所有日报
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    List<Report> getWeekAllReport(String startTime,String endTime);
+
+    /**
+     * 设置报告状态为NotEnable 不可删除或更改
+     * @param report
+     */
+    void setReportNotEnable(Report report);
+
+    /**
+     * 获取数据库用户今日是否存在报告
+     * @param nowToday
+     * @return
+     */
+    Report getTodayUserReport(Integer userId,String nowToday,Integer reportType);
 }

@@ -37,20 +37,28 @@ public class GoodServiceImpl implements GoodService {
         if (good.getArticleId() != null) {
             // 获取文章id
             int aid = good.getArticleId();
-            // for (Good oldGood : goodList) {
-            //     if (uid == oldGood.getUserId() && aid == oldGood.getArticleId()) {
-            //         throw new ClmsException("重复文章点赞!");
-            //     }
-            // }
+            for (Good oldGood : goodList) {
+                if(oldGood.getArticleId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && aid == oldGood.getArticleId()) {
+                        throw new ClmsException("重复文章点赞!");
+                    }
+                }
+            }
             goodMapper.goodArticle(aid);
         } else if (good.getCommentId() != null) {
             // 获取评论id
             int cid = good.getCommentId();
-            // for (Good oldGood : goodList) {
-            //     if (uid == oldGood.getUserId() && cid == oldGood.getCommentId()) {
-            //         throw new ClmsException("重复评论点赞!");
-            //     }
-            // }
+            for (Good oldGood : goodList) {
+                if(oldGood.getCommentId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && cid == oldGood.getCommentId()) {
+                        throw new ClmsException("重复评论点赞!");
+                    }
+                }
+            }
             goodMapper.goodComment(cid);
         }
         goodMapper.save(good);

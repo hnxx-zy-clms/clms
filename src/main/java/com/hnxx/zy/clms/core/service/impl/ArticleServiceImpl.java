@@ -38,6 +38,7 @@ public class ArticleServiceImpl implements ArticleService {
      */
     @Override
     public void save(Article article) {
+        article.setArticleComment(commentMapper.getCountByAid(article.getArticleId()));
         articleMapper.save(article);
     }
 
