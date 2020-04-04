@@ -130,7 +130,7 @@ public interface ArticleMapper {
      * 改变文章状态
      * @param article
      */
-    @Update("update cl_article set version = version + 1, is_enabled = #{isEnabled} and version = #{version}")
+    @Update("update cl_article set version = version + 1, is_enabled = #{isEnabled} where article_id = #{articleId} and version = #{version}")
     void updateEnable(Article article);
 
     /**

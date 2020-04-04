@@ -75,7 +75,7 @@ public interface XxxMapper {
      * @param id
      * @return
      */
-    @Select("select xx_id, xx_name, created_time, update_time from cl_xx where xx_id = #{id} and is_deleted = 0")
+    @Select("select * from cl_xx where xx_id = #{id} and is_deleted = 0")
     Xxx getById(Integer id);
 
     /**
@@ -115,7 +115,7 @@ public interface XxxMapper {
      * 改变文章状态
      * @param xxx
      */
-    @Update("update cl_xx set version = version + 1, is_enabled = #{isEnabled} and version = #{version}")
+    @Update("update cl_xx set version = version + 1, is_enabled = #{isEnabled} where xx_id = #{xxId} and version = #{version}")
     void updateEnable(Xxx xxx);
 
 }
