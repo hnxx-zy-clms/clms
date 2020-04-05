@@ -13,6 +13,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
+import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.security.test.services.UserService;
@@ -32,14 +33,20 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private CommentMapper commentMapper;
 
+    @Autowired
+    private ArticleTypeMapper articleTypeMapper;
+
     /**
      * 保存
      * @param article
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void save(Article article) {
-        article.setArticleComment(commentMapper.getCountByAid(article.getArticleId()));
         articleMapper.save(article);
+        int tid = article.getArticleType();
+        int aCount = articleTypeMapper.getArticleCountByType(tid);
+        articleTypeMapper.updateArticleCount(tid, aCount);
     }
 
     /**
