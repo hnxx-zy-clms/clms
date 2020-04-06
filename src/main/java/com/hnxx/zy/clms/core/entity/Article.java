@@ -62,6 +62,11 @@ public class Article {
     private Integer articleType;
 
     /**
+     * 类型名称
+     */
+    private String typeName;
+
+    /**
      * 文章评论数
      */
     private Integer articleComment;
