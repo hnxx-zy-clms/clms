@@ -32,7 +32,7 @@ public interface ArticleMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_article where article_id = #{id} and is_deleted = 0")
+    @Select("select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id  where a.article_id = #{id} and a.is_deleted = 0")
     Article getById(Integer id);
 
     /**
@@ -81,8 +81,10 @@ public interface ArticleMapper {
      *
      * @param id
      */
-    @Update("update cl_article set is_deleted = #{isDeleted} where article_id = #{id}")
+    @Update("update cl_article set is_deleted = 1 where article_id = #{id}")
     void deleteById(Integer id);
+
+
 
     /**
      * 分页查询

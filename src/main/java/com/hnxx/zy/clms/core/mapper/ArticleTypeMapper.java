@@ -30,7 +30,7 @@ public interface ArticleTypeMapper {
      * @param tid
      * @return
      */
-    @Select("select count(*) from cl_article where article_type = #{tid}")
+    @Select("select count(*) from cl_article where article_type = #{tid} where is_deleted = 0")
     int getArticleCountByType(int tid);
 
     /**

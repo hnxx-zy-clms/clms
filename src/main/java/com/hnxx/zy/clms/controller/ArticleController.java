@@ -97,7 +97,7 @@ public class ArticleController {
             // 3. 不支持add和remove方法
             List<String> sortList = Arrays.asList(sortColumns);
             if(!sortList.contains(newSortColumn.toLowerCase())) {
-                // return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
+                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
             }
         }
         page = articleService.getByPage(page);

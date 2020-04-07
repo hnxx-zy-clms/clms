@@ -68,8 +68,12 @@ public class ArticleServiceImpl implements ArticleService {
      * @param article
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void update(Article article) {
         articleMapper.update(article);
+        int tid = article.getArticleType();
+        int aCount = articleTypeMapper.getArticleCountByType(tid);
+        articleTypeMapper.updateArticleCount(tid, aCount);
     }
 
     /**
