@@ -39,6 +39,12 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
+    public void deleteAdminById(Integer reportId) { reportMapper.deleteAdminById(reportId); }
+
+    @Override
+    public List<Report> getByPage(Page<Report> page) { return reportMapper.getByPage(page);}
+
+    @Override
     public List<Report> getReportByClassesId(Page<Report> page) {
         return reportMapper.getReportByClassesId(page);
     }

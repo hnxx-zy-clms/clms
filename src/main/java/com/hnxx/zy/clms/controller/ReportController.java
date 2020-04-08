@@ -1,9 +1,6 @@
 package com.hnxx.zy.clms.controller;
 
-import com.hnxx.zy.clms.common.utils.DateUtils;
-import com.hnxx.zy.clms.common.utils.ExcelUtils;
-import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.common.utils.*;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
@@ -89,6 +86,17 @@ public class ReportController {
     }
 
     /**
+     * 管理员删除报告
+     * @param reportId
+     * @return
+     */
+    @DeleteMapping("/deleteAdmin/{id}")
+    public Result<Object> deleteAdmin(@PathVariable("id") Integer reportId){
+        reportService.deleteAdminById(reportId);
+        return new Result<>("删除成功");
+    }
+
+    /**
      * 根据user_id、日期和reportType分页查询报告
      * @param page
      */
@@ -129,6 +137,22 @@ public class ReportController {
         page.pagingDate();
         return new Result<>(page);
     }
+
+    /**
+     * 根据user_classes_id 、user_name、日期和reportType分页查询报告
+     * @param page
+     * @return m
+     */
+    @PostMapping("/getByPage")
+    public Result<Page<Report>> getByPage(@RequestBody Page<Report> page){
+        page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        List<Report> reports=reportService.getByPage(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
+    }
+
 
     /**
      * 学生导出报告

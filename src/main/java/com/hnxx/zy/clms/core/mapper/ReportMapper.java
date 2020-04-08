@@ -39,7 +39,7 @@ public interface ReportMapper {
             "<if test='solution!=null' > \n" +
             ",solution = #{solution} \n" +
             "</if> \n" +
-            "<if test='experience !=null' > \n" +
+            "<if test='experience != null' > \n" +
             ",experience = #{experience} \n" +
             "</if> \n" +
             "<if test='plan!=null' > \n" +
@@ -56,6 +56,41 @@ public interface ReportMapper {
     void deleteById(Integer reportId);
 
     /**
+     *  管理员根据id删除报告
+     *   不可恢复
+     * @param reportId
+     */
+    @Delete("delete from cl_report where report_id = #{reportId} ")
+    void deleteAdminById(Integer reportId);
+
+    /**
+     * 管理员查看所有报告
+     */
+    @Select({"<script> \n" +
+            "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n" +
+            "where b.report_type = #{params.reportType}\n" +
+            "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
+            "and c.user_name like concat('%',#{params.userName},'%') \n" +
+            "</if> \n" +
+            "<if test=\" params.userGroupId !=null and params.userGroupId != '' \" > \n" +
+            "and c.user_group_id = #{params.userGroupId}  \n" +
+            "</if> \n" +
+            "<if test=\" params.reportDate !=null and params.reportDate[1] != null  and params.reportDate[1] !='' \"  > \n" +
+            "and b.created_time &lt;= #{params.reportDate[1]}\n" +
+            "</if> \n" +
+            "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
+            "and b.created_time &gt;= #{params.reportDate[0]}\n" +
+            "</if> \n"+
+            "<if test=\" params.userPositionId != null and params.userPositionId !='' \"  > \n" +
+            "and c.user_position_id = #{params.userPositionId}\n" +
+            "</if> \n"+
+            "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
+            "order by ${sortColumn} ${sortMethod}\n" +
+            "</if>\n" +
+            "</script>"})
+    List<Report> getByPage(Page<Report> page);
+
+    /**
      * 根据user_classes_id、用户名、起止日期和report_type查找班级报告
      */
     @Select({"<script> \n" +
@@ -65,7 +100,7 @@ public interface ReportMapper {
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
             "<if test='params.userGroupId !=null' > \n" +
-            "and c.user_group_id = userGroupId \n" +
+            "and c.user_group_id = #{params.userGroupId} \n" +
             "</if> \n" +
             "<if test='params.startTime != null' > \n" +
             "and b.created_time &lt;= #{params.startTime}\n" +
@@ -92,13 +127,13 @@ public interface ReportMapper {
             "<if test='params.userName != null' > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
-            "<if test='params.startTime!=null' > \n" +
+            "<if test='params.startTime != null' > \n" +
             "and b.created_time &lt;= #{params.startTime}\n" +
             "</if> \n" +
-            "<if test='params.endTime!=null' > \n" +
+            "<if test='params.endTime != null' > \n" +
             "and b.created_time &gt;= #{params.endTime}\n" +
             "</if> \n"+
-            "<if test=\"sortColumn! = null and sortColumn!=''\">\n" +
+            "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
             "order by ${sortColumn} ${sortMethod}\n" +
             "</if>\n" +
             "</script>"})
@@ -110,13 +145,13 @@ public interface ReportMapper {
     @Select({"<script> \n"+
             "select b.*,c.user_name,c.user_group_id,c.user_classes_id  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
             "where c.user_id = #{params.userId} and b.report_type = #{params.reportType} and is_deleted = 0 \n"+
-            "<if test='params.startTime!=null' > \n" +
+            "<if test='params.startTime != null' > \n" +
             "and b.created_time &lt;= #{params.startTime}\n" +
             "</if> \n" +
-            "<if test='params.endTime!=null' > \n" +
+            "<if test='params.endTime != null' > \n" +
             "and b.created_time &gt;= #{params.endTime}\n" +
             "</if> \n"+
-            "<if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
             "order by ${sortColumn} ${sortMethod}\n" +
             "</if>\n" +
             "</script>"})
@@ -129,6 +164,7 @@ public interface ReportMapper {
      */
     @Insert("insert into cl_user_report(user_id,report_id) value(#{userId},#{reportId})")
     void addUserReport(Integer userId,Integer reportId);
+
 
     /**
      * 获取指定时间段内的所有日报
