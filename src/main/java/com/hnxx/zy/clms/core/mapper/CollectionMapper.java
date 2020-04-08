@@ -17,6 +17,8 @@ import java.util.List;
 @Repository
 public interface CollectionMapper {
 
+
+
     /**
      * 添加收藏
      * @param collection

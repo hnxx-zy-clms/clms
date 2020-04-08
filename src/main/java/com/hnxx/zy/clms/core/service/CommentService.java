@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Comment;
 
 import java.util.List;
@@ -43,4 +44,11 @@ public interface CommentService {
      * @return
      */
     List<Comment> getListById(Integer id);
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    Page<Comment> getByPage(Page<Comment> page);
 }

@@ -40,6 +40,11 @@ public class Comment implements Serializable {
     private Integer commentArticle;
 
     /**
+     * 评论文章标题
+     */
+    private String articleTitle;
+
+    /**
      * 评论评论量
      */
     private Integer commentCount;
