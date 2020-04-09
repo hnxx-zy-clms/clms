@@ -28,39 +28,43 @@ public interface ReportMarkingMapper {
     List<Report> getGroupMarking(Page<Report> page);
 
     /**
-     * 提交批阅报告
+     * 组长提交批阅报告
      * @param reportMarkings
      */
-    @Insert({"<script> \n" +
-            "insert into cl_report_marking(report_id,operation_type,operation_content,user_name) values\n" +
+    @Update({"<script> \n" +
+            "update cl_report_marking set \n"+
             "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            "(#{item.reportId},#{item.operationType},#{item.operationContent},#{item.userName}) \n" +
+            "group_leader_score = #{item.groupLeaderScore},group_leader_comment = #{item.groupLeaderComment},group_name = #{item.groupName} ,group_time = #{item.groupTime}\n" +
+            " where report_id = #{item.reportId} \n" +
             "</foreach> \n" +
             "</script>"})
     void setGroupMarking(@Param("reportMarkings") List<ReportMarking> reportMarkings);
 
     /**
-     * 修改报告组长批阅状态
-     * @param reportId
+     * 班长提交批阅报告
+     * @param reportMarkings
      */
-    @Update("update cl_report set is_checked  = 1 \n"+
-            "where report_id = #{reportId} and is_deleted = 0")
-    void setCheck(Integer reportId);
+    @Update({"<script> \n" +
+            "update cl_report_marking set \n"+
+            "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
+            "monitor_score = #{item.monitorScore},monitor_comment = #{item.monitorComment},monitor_name = #{item.monitorName} ,monitor_time = #{item.monitorTime}\n" +
+            " where report_id = #{item.reportId}\n" +
+            "</foreach> \n" +
+            "</script>"})
+    void setClassesMarking(@Param("reportMarkings") List<ReportMarking> reportMarkings);
 
     /**
-     * 修改班长报告批阅状态
-     * @param reportId
+     * 教师提交批阅报告
+     * @param reportMarkings
      */
-    @Update("update cl_report set is_classes_checked  = 1 \n"+
-            "where report_id = #{reportId} and is_deleted = 0")
-    void setClassesCheck(Integer reportId);
-    /**
-     * 修改教师报告批阅状态
-     * @param reportId
-     */
-    @Update("update cl_report set is_teacher_checked  = 1 \n"+
-            "where report_id = #{reportId} and is_deleted = 0")
-    void setTeacherCheck(Integer reportId);
+    @Update({"<script> \n" +
+            "update cl_report_marking set \n"+
+            "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
+            " teacher_score = #{item.teacherScore} ,teacher_comment = #{item.teacherComment},teacher_name = #{item.teacherName} ,teacher_time = #{item.teacherTime}\n" +
+            " where report_id = #{item.reportId} \n" +
+            "</foreach> \n" +
+            "</script>"})
+    void setTeacherMarking(@Param("reportMarkings") List<ReportMarking> reportMarkings);
 
     /**
      * 根据report_id和当前用户名获取批阅信息

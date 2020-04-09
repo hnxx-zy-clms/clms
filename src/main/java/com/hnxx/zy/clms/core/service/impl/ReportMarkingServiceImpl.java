@@ -33,18 +33,13 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public void setCheck(Integer reportId) {
-        reportMarkingMapper.setCheck(reportId);
+    public void setClassesMarking(List<ReportMarking> reportMarkings) {
+        reportMarkingMapper.setClassesMarking(reportMarkings);
     }
 
     @Override
-    public void setClassesCheck(Integer reportId) {
-        reportMarkingMapper.setClassesCheck(reportId);
-    }
-
-    @Override
-    public void setTeacherCheck(Integer reportId) {
-        reportMarkingMapper.setTeacherCheck(reportId);
+    public void setTeacherMarking(List<ReportMarking> reportMarkings) {
+        reportMarkingMapper.setTeacherMarking(reportMarkings);
     }
 
     @Override

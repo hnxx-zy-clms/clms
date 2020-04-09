@@ -44,32 +44,29 @@ public class ReportMarkingController {
      */
     @PostMapping("/setGroupMarkings")
     public Result<Object> setGroupMarking(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setCheck(reportMarkings.get(0).getReportId());
         reportMarkingService.setGroupMarking(reportMarkings);
         return new Result<>("成功");
     }
 
     /**
-     * 班长提交批阅
+     * 班长提交批阅数据
      * @param reportMarkings
      * @return
      */
     @PostMapping("/setClassesMarkings")
-    public Result<Object> setClassesMarkings(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setClassesCheck(reportMarkings.get(0).getReportId());
-        reportMarkingService.setGroupMarking(reportMarkings);
+    public Result<Object> setClassesMarking(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setClassesMarking(reportMarkings);
         return new Result<>("成功");
     }
 
     /**
-     * 教师提交批阅
+     * 教师提交批阅数据
      * @param reportMarkings
      * @return
      */
     @PostMapping("/setTeacherMarkings")
-    public Result<Object> seTteacherMarkings(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setTeacherCheck(reportMarkings.get(0).getReportId());
-        reportMarkingService.setGroupMarking(reportMarkings);
+    public Result<Object> setTeacherMarking(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setTeacherMarking(reportMarkings);
         return new Result<>("成功");
     }
 
@@ -77,6 +74,7 @@ public class ReportMarkingController {
      * 用户获取自己的批阅
      * @param reportId
      * @param userName
+     *
      * @return
      */
     @GetMapping("/getMyMarking")
