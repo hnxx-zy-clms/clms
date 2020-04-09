@@ -8,10 +8,7 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Good;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -86,4 +83,11 @@ public interface GoodMapper {
      */
     @Select("select count(*) from cl_good")
     int getCountByPage(Page<Good> page);
+
+    /**
+     * 取消点赞
+     * @param id
+     */
+    @Delete("delete from cl_good where good_id = #{id}")
+    void deleteById(Integer id);
 }

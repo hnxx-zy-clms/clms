@@ -89,6 +89,17 @@ public class GoodController {
         return new Result<>(page);
     }
 
+    /**
+     * 根据id删除 取消点赞
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/delete/{id}")
+    public Result<Good> delete(@PathVariable("id") Integer id){
+        goodService.deleteById(id);
+        return new Result<>("点赞取消!");
+    }
+
 
 
 }

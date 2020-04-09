@@ -48,7 +48,7 @@ public class Collection implements Serializable {
     private String collectionTime;
 
     /**
-     * 是否启用
+     * 是否删除
      */
     private Integer isDeleted;
 }

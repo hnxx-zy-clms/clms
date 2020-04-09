@@ -33,4 +33,10 @@ public interface GoodService {
      * @return
      */
     Page<Good> getByPage(Page<Good> page);
+
+    /**
+     * 取消点赞
+     * @param id
+     */
+    void deleteById(Integer id);
 }

@@ -71,8 +71,8 @@ public class CollectionController {
      * 根据用户id查询收藏列表
      * @return
      */
-    @GetMapping("/getListByUserId")
-    public Result<List<Collection>> getListByUserId(){
+    @GetMapping("/getList")
+    public Result<List<Collection>> getList(){
         SysUser user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         int id = user.getUserId();
         List<Collection> collectionList = collectionService.getListByUserId(id);

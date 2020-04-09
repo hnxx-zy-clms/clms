@@ -93,4 +93,13 @@ public class GoodServiceImpl implements GoodService {
         return page;
     }
 
+    /**
+     * 取消点赞
+     * @param id
+     */
+    @Override
+    public void deleteById(Integer id) {
+        goodMapper.deleteById(id);
+    }
+
 }
