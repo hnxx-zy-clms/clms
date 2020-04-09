@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Good;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -48,4 +49,41 @@ public interface GoodMapper {
      */
     @Select("select * from cl_good where user_id = #{id}")
     List<Good> getListByUserId(Integer id);
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select * from cl_good\n" +
+            "        where 1=1\n" +
+            "        <if test=\"params.userId!=null\">\n" +
+            "            and user_id = #{params.userId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleId!=null\">\n" +
+            "            and article_id = #{params.articleId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.commentId!=null\">\n" +
+            "            and comment_id = #{params.commentId}\n" +
+            "        </if>\n" +
+            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "            order by ${sortColumn} ${sortMethod}\n" +
+            "        </if>\n" +
+            "        limit #{index}, #{pageSize}" +
+            "</script>")
+    List<Good> getByPage(Page<Good> page);
+
+    /**
+     * 查询总数
+     * @param page
+     * @return
+     */
+    @Select("select count(*) from cl_good")
+    int getCountByPage(Page<Good> page);
 }

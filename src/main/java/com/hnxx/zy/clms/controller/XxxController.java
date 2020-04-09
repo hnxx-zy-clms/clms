@@ -111,7 +111,7 @@ public class XxxController {
         page.setSortColumn(newSortColumn);
         // 判断排序列不为空
         if(StringUtils.isNotBlank(sortColumn)){
-            // 根据 日志请求路径，日志状态，请求方式，响应时间，请求时间 排序
+            // 响应时间，请求时间 排序
             String[] sortColumns = {"xx_name", "created_time", "update_time"};
             // Arrays.asList() 方法使用
             // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式

@@ -31,4 +31,9 @@ public class Good {
      */
     private Integer commentId;
 
+    /**
+     * 点赞时间
+     */
+    private String goodTime;
+
 }
