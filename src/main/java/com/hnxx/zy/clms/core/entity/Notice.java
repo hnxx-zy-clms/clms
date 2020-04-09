@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -32,6 +33,8 @@ public class Notice implements Serializable {
     /**
      * 创建时间
      */
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
     private Date createdTime;
 
     /**

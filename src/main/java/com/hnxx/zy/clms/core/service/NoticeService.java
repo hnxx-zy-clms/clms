@@ -36,12 +36,19 @@ public interface NoticeService {
     void delNotice(Integer id);
 
     /**
-     * 分页获取通知
+     * 学生分页获取通知
      *
      * @param page
      * @param id
      * @return
      */
     Page<Notice> getByPage(Page<Notice> page, Integer id);
+
+    /**
+     * 教师分页获取通知
+     * @param page
+     * @return
+     */
+    Page<Notice> getByPageAdmin(Page<Notice> page);
 
 }

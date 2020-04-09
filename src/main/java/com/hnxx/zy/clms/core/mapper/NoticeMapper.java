@@ -42,7 +42,7 @@ public interface NoticeMapper {
     void delNotice(Integer id);
 
     /**
-     * 分页获取通知
+     * 学生分页获取通知
      *
      * @param page
      * @param id
@@ -52,10 +52,36 @@ public interface NoticeMapper {
     List<Notice> getByPage(@Param("page") Page page, Integer id);
 
     /**
+     * 分页获取通知
+     *
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        SELECT a.*,b.user_name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id" +
+            "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
+            "            where a.notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.sortColumn!=null and page.sortColumn!=''\">\n" +
+            "            order by ${page.sortColumn} ${page.sortMethod}\n" +
+            "        </if>\n" +
+            "           LIMIT #{page.index}, #{page.pageSize}"+
+            "</script>")
+    List<Notice> getByPageAdmin(@Param("page") Page page);
+
+    /**
      * 查询总数
      *
      * @return
      */
-    @Select("select count(*) from cl_notice WHERE is_deleted =0 and is_enabled=1")
-    int getCountByPage();
+    @Select("<script>"+
+            "        select count(*) from cl_notice "+
+            "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
+            "           WHERE notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"student\" \'>\n" +
+            "           WHERE is_deleted =0 and is_enabled=1" +
+            "        </if>" +
+            "        </script>")
+    int getCountByPage(@Param("page") Page page);
 }

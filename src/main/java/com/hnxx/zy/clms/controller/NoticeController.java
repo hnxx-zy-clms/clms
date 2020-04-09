@@ -65,16 +65,29 @@ public class NoticeController {
     }
 
     /**
-     * 根据用户id分页获取通知
+     * 学生分页获取通知
      *
      * @param page
      * @param id
      * @return
      */
-    @GetMapping("getByPage/{id}")
+    @PostMapping("getByPage/{id}")
     public Result<Page> getByPage(@RequestBody Page page, @PathVariable("id") Integer id) {
         page.setIndex(page.getIndex());
         page = noticeService.getByPage(page, id);
+        return new Result<>(page);
+
+    }
+
+    /**
+     * 教师分页获取
+     * @param page
+     * @return
+     */
+    @PostMapping("getByPageAdmin")
+    public Result<Page> getByPageAdmin(@RequestBody Page page) {
+        page.setIndex(page.getIndex());
+        page = noticeService.getByPageAdmin(page);
         return new Result<>(page);
 
     }
