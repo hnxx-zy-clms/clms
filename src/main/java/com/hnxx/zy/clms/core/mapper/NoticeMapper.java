@@ -58,16 +58,37 @@ public interface NoticeMapper {
      * @return
      */
     @Select("<script>" +
-            "        SELECT a.*,b.user_name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id" +
+            "        SELECT a.*,b.user_name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
             "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
-            "            where a.notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "             and a.notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
+            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
+            "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.sortColumn!=null and page.sortColumn!=''\">\n" +
             "            order by ${page.sortColumn} ${page.sortMethod}\n" +
             "        </if>\n" +
             "           LIMIT #{page.index}, #{page.pageSize}"+
             "</script>")
+    @Results({
+            @Result(property = "numRead",
+                    column = "notice_id",
+                    one = @One(select = "com.hnxx.zy.clms.core.mapper.NoticeMapper.selectnum")),
+            @Result(property = "noticeId",
+                    column = "notice_id")
+    })
     List<Notice> getByPageAdmin(@Param("page") Page page);
+
+    /**
+     * 获取已读人数
+     * @param id
+     * @return
+     */
+    @Select("select count(*) from cl_notice_user where notice_id=#{id}")
+    int selectnum(@Param("id") Integer id);
 
     /**
      * 查询总数
@@ -75,13 +96,31 @@ public interface NoticeMapper {
      * @return
      */
     @Select("<script>"+
-            "        select count(*) from cl_notice "+
+            "        select count(*) from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id  WHERE 1>0"+
             "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
-            "           WHERE notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "           and notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
+            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
+            "             and created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
             "           WHERE is_deleted =0 and is_enabled=1" +
             "        </if>" +
             "        </script>")
     int getCountByPage(@Param("page") Page page);
+
+    /**
+     * 批量删除
+     * @param params
+     */
+    @Update("<script>"+
+                "update cl_notice set is_deleted=1 WHERE cl_notice.notice_id in "+
+                    "<foreach collection='params' item='param' open='(' separator=',' close=')'>"+
+                        "   #{param}"+
+                    "</foreach>"+
+            "</script>")
+    void deleteNotices(@Param("params") Integer [] params);
 }

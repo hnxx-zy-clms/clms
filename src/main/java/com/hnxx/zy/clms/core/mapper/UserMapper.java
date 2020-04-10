@@ -23,5 +23,12 @@ public interface UserMapper {
     @Select("select user_id,user_name,user_password,user_position_id from cl_user where user_name=#{username}")
     SysUser selectByName(String username);
 
+    /**
+     * 获取总人数
+     * @return
+     */
+    @Select("select count(*) from cl_user")
+    int selectUserNum();
+
 }
 

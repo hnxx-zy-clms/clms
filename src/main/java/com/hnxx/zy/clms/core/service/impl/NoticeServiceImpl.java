@@ -5,6 +5,7 @@ import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.mapper.NoticeMapper;
 import com.hnxx.zy.clms.core.service.NoticeService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,5 +56,10 @@ public class NoticeServiceImpl implements NoticeService {
         int totalCount = noticeMapper.getCountByPage(page);
         page.setTotalCount(totalCount);
         return page;
+    }
+
+    @Override
+    public void deleteNotices(Integer [] params){
+        noticeMapper.deleteNotices(params);
     }
 }

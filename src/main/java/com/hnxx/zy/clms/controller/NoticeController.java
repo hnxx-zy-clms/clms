@@ -4,6 +4,8 @@ import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Notice;
+import com.hnxx.zy.clms.core.mapper.NoticeMapper;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.NoticeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,9 @@ public class NoticeController {
     @Autowired
     private NoticeService noticeService;
 
+    @Autowired
+    private UserMapper userMapper;
+
     /**
      * 设置已读
      *
@@ -35,7 +40,7 @@ public class NoticeController {
      */
     @PostMapping("/changeRead")
     public Result changeRead(@RequestBody Notice notice) {
-        notice.setIfRead(true);
+       // notice.setIfRead(true);
         noticeService.setChange(notice);
         return new Result<>(ResultEnum.SUCCESS);
     }
@@ -91,6 +96,28 @@ public class NoticeController {
         return new Result<>(page);
 
     }
+
+    /**
+     * 批量删除
+     * @param ids
+     * @return
+     */
+    @PostMapping("deleteByIds")
+    public Result<Page> deletes(Integer[] ids){
+        noticeService.deleteNotices(ids);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     * 获取总人数
+     * @return
+     */
+    @GetMapping("getUserNum")
+    public Result getUserNum(){
+        int i = userMapper.selectUserNum();
+        return new Result<>(i);
+    }
+
 
 
 }

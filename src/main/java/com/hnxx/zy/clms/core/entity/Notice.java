@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: chenii
@@ -52,10 +54,10 @@ public class Notice implements Serializable {
      */
     private Boolean isDeleted;
 
-    /**
-     * 用户id
-     */
-    private Integer userId;
+//    /**
+//     * 用户id
+//     */
+//    private Integer userId;
 
     /**
      * 创建者姓名
@@ -68,10 +70,17 @@ public class Notice implements Serializable {
     @JsonProperty("isEnabled")
     private boolean isEnabled;
 
+//    /**
+//     * 是否已阅：1是0否
+//     */
+//    @JsonProperty("ifRead")
+//    private boolean ifRead;
+
     /**
-     * 是否已阅：1是0否
+     * 已读人数
      */
-    @JsonProperty("ifRead")
-    private boolean ifRead;
+    private Integer numRead;
+
+    private List<NoticeUser> noticeUserList = new ArrayList<>();
 
 }
