@@ -23,6 +23,11 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     private ReportMarkingMapper reportMarkingMapper;
 
     @Override
+    public List<ReportMarking> getAllMarking(Page<ReportMarking> page) {
+        return reportMarkingMapper.getAllMarking(page);
+    }
+
+    @Override
     public List<Report> getGroupMarking(Page<Report> page) {
         return reportMarkingMapper.getGroupMarking(page);
     }

@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
@@ -23,6 +24,20 @@ public class ReportMarkingController {
     @Autowired
     private ReportMarkingService reportMarkingService;
 
+    /**
+     *管理员获取批阅报告
+     * @param page
+     * @return
+     */
+    @PostMapping("/getAllMarking")
+    public Result<Page<ReportMarking>> getAllMarking(@RequestBody Page<ReportMarking> page){
+        page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        List<ReportMarking> reports = reportMarkingService.getAllMarking(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
+    }
     /**
      *组长获取本组未批阅报告
      * @param page

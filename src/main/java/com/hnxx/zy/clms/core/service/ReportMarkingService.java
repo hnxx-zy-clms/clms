@@ -16,6 +16,13 @@ import java.util.List;
 public interface ReportMarkingService {
 
     /**
+     * 管理员获取所有报告批阅信息
+     * @param page
+     * @return
+     */
+    List<ReportMarking> getAllMarking(Page<ReportMarking> page);
+
+    /**
      * 返回未批阅的报告
      * @param page
      * @return

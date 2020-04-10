@@ -96,19 +96,19 @@ public interface ReportMapper {
     @Select({"<script> \n" +
             "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n" +
             "where c.user_classes_id = #{params.userClassesId} and b.report_type = #{params.reportType} and b.is_deleted = 0 and b.is_checked = 1 \n" +
-            "<if test='params.userName != null' > \n" +
+            "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
-            "<if test='params.userGroupId !=null' > \n" +
-            "and c.user_group_id = #{params.userGroupId} \n" +
+            "<if test=\" params.userGroupId !=null and params.userGroupId != '' \" > \n" +
+            "and c.user_group_id = #{params.userGroupId}  \n" +
             "</if> \n" +
-            "<if test='params.startTime != null' > \n" +
-            "and b.created_time &lt;= #{params.startTime}\n" +
+            "<if test=\" params.reportDate !=null and params.reportDate[1] != null  and params.reportDate[1] !='' \"  > \n" +
+            "and b.created_time &lt;= #{params.reportDate[1]}\n" +
             "</if> \n" +
-            "<if test='params.endTime != null' > \n" +
-            "and b.created_time &gt;= #{params.endTime}\n" +
+            "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
+            "and b.created_time &gt;= #{params.reportDate[0]}\n" +
             "</if> \n"+
-            "<if test='params.userPositionId != null' > \n" +
+            "<if test=\" params.userPositionId != null and params.userPositionId !='' \"  > \n" +
             "and c.user_position_id = #{params.userPositionId}\n" +
             "</if> \n"+
             "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
@@ -124,14 +124,14 @@ public interface ReportMapper {
     @Select({"<script> \n" +
             "select b.*,c.user_name,c.user_group_id,c.user_classes_id  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
             "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and is_deleted = 0 \n" +
-            "<if test='params.userName != null' > \n" +
+            "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
-            "<if test='params.startTime != null' > \n" +
-            "and b.created_time &lt;= #{params.startTime}\n" +
-            "</if> \n" +
-            "<if test='params.endTime != null' > \n" +
-            "and b.created_time &gt;= #{params.endTime}\n" +
+            "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
+            "and b.created_time &gt;= #{params.reportDate[0]}\n" +
+            "</if> \n"+
+            "<if test=\" params.userPositionId != null and params.userPositionId !='' \"  > \n" +
+            "and c.user_position_id = #{params.userPositionId}\n" +
             "</if> \n"+
             "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
             "order by ${sortColumn} ${sortMethod}\n" +
@@ -145,11 +145,11 @@ public interface ReportMapper {
     @Select({"<script> \n"+
             "select b.*,c.user_name,c.user_group_id,c.user_classes_id  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
             "where c.user_id = #{params.userId} and b.report_type = #{params.reportType} and is_deleted = 0 \n"+
-            "<if test='params.startTime != null' > \n" +
-            "and b.created_time &lt;= #{params.startTime}\n" +
-            "</if> \n" +
-            "<if test='params.endTime != null' > \n" +
-            "and b.created_time &gt;= #{params.endTime}\n" +
+            "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
+            "and b.created_time &gt;= #{params.reportDate[0]}\n" +
+            "</if> \n"+
+            "<if test=\" params.userPositionId != null and params.userPositionId !='' \"  > \n" +
+            "and c.user_position_id = #{params.userPositionId}\n" +
             "</if> \n"+
             "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
             "order by ${sortColumn} ${sortMethod}\n" +

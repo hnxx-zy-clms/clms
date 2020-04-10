@@ -19,6 +19,35 @@ import java.util.List;
 public interface ReportMarkingMapper {
 
     /**
+     * 管理员获取所有报告批阅信息
+     * @param page
+     * @return
+     */
+    @Select({"<script> \n" +
+            "select b.* from cl_report a left join cl_report_marking b on a.report_id = b.report_id  \n" +
+            "where a.is_deleted = 0 and a.is_checked = 1\n" +
+            "<if test=\" params.is_checked != null and params.is_checked != '' \"  > \n" +
+            "and a.is_checked = 1 \n" +
+            "</if> \n" +
+            "<if test=\" params.userGroupId !=null and params.userGroupId != '' \" > \n" +
+            "and c.user_group_id = #{params.userGroupId}  \n" +
+            "</if> \n" +
+            "<if test=\" params.reportDate !=null and params.reportDate[1] != null  and params.reportDate[1] !='' \"  > \n" +
+            "and b.created_time &lt;= #{params.reportDate[1]}\n" +
+            "</if> \n" +
+            "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
+            "and b.created_time &gt;= #{params.reportDate[0]}\n" +
+            "</if> \n"+
+            "<if test=\" params.userPositionId != null and params.userPositionId !='' \"  > \n" +
+            "and c.user_position_id = #{params.userPositionId}\n" +
+            "</if> \n"+
+            "<if test=\"sortColumn != null and sortColumn!=''\">\n" +
+            "order by ${sortColumn} ${sortMethod}\n" +
+            "</if>\n" +
+            "</script>"})
+    List<ReportMarking> getAllMarking(Page<ReportMarking> page);
+
+    /**
      * 返回本组未批阅的报告
      * @param page
      * @return
