@@ -2431,3 +2431,7 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'pid' canno
 	at com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:59)
 (String), PUT(String), 3(Long), {"code":500,"msg":"服务器故障"}(String), 0:0:0:0:0:0:0:1(String)
 2020-03-28 22:46:37.828 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-10 18:10:45.843 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-10 18:10:59.520 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-10 18:51:41.905 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-10 18:51:54.719 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
