@@ -122,7 +122,8 @@ public class Page<T> implements Serializable {
         if(currentPage <= totalPage && end >= totalCount){
             this.list = list.subList(start, totalCount);
         }else if(currentPage > totalPage){
-            this.list = null;
+            this.currentPage = totalPage;
+            this.list = currentPage > 0 ? list.subList((currentPage-1) * pageSize, totalCount):null;
         }else {
             this. list = list.subList(start , end);
         }

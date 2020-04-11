@@ -29,6 +29,16 @@ public interface ReportService {
     void deleteById(Integer reportId);
 
     /**
+     * 管理员根据id删除报告
+     */
+    void deleteAdminById(Integer reportId);
+
+    /**
+     * 管理员查看所有报告
+     */
+    List<Report> getByPage(Page<Report> page);
+
+    /**
      * 根据user_classes_id和report_type查找班级报告
      */
     List<Report> getReportByClassesId(Page<Report> page);
@@ -59,7 +69,7 @@ public interface ReportService {
     List<Report> getToDayAllReport(String startTime,String endTime);
 
     /**
-     * 获取指定时间段内的所有日报
+     * 获取指定时间段内的所有周报
      * @param startTime
      * @param endTime
      * @return
@@ -77,5 +87,12 @@ public interface ReportService {
      * @param nowToday
      * @return
      */
-    Report getTodayUserReport(Integer userId,String nowToday,Integer reportType);
+    int  getTodayUserReport(Integer userId,String nowToday,Integer reportType,String[] results);
+
+    /**
+     * 获取数据库用户今日报告情况
+     * @param nowToday
+     * @return
+     */
+    int getTodayStatistics(String nowToday);
 }

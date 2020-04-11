@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
@@ -24,6 +25,32 @@ public class ReportMarkingController {
     private ReportMarkingService reportMarkingService;
 
     /**
+     *管理员获取批阅报告
+     * @param page
+     * @return
+     */
+    @PostMapping("/getAllMarking")
+    public Result<Page<ReportMarking>> getAllMarking(@RequestBody Page<ReportMarking> page){
+        page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        List<ReportMarking> reports = reportMarkingService.getAllMarking(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
+    }
+
+    /**
+     * 管理员清空批阅数据
+     * @param markingId
+     * @return
+     */
+    @DeleteMapping("/deleteAdmin/{id}")
+    public Result<Object> deleteAdmin(@PathVariable("id") Integer markingId) {
+        reportMarkingService.deleteAdminById(markingId);
+        return new Result<>("删除成功");
+    }
+
+    /**
      *组长获取本组未批阅报告
      * @param page
      * @return
@@ -44,44 +71,42 @@ public class ReportMarkingController {
      */
     @PostMapping("/setGroupMarkings")
     public Result<Object> setGroupMarking(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setCheck(reportMarkings.get(0).getReportId());
         reportMarkingService.setGroupMarking(reportMarkings);
         return new Result<>("成功");
     }
 
     /**
-     * 班长提交批阅
+     * 班长提交批阅数据
      * @param reportMarkings
      * @return
      */
     @PostMapping("/setClassesMarkings")
-    public Result<Object> setClassesMarkings(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setClassesCheck(reportMarkings.get(0).getReportId());
-        reportMarkingService.setGroupMarking(reportMarkings);
+    public Result<Object> setClassesMarking(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setClassesMarking(reportMarkings);
         return new Result<>("成功");
     }
 
     /**
-     * 教师提交批阅
+     * 教师提交批阅数据
      * @param reportMarkings
      * @return
      */
     @PostMapping("/setTeacherMarkings")
-    public Result<Object> seTteacherMarkings(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setTeacherCheck(reportMarkings.get(0).getReportId());
-        reportMarkingService.setGroupMarking(reportMarkings);
+    public Result<Object> setTeacherMarking(@RequestBody List<ReportMarking> reportMarkings){
+        reportMarkingService.setTeacherMarking(reportMarkings);
         return new Result<>("成功");
     }
 
     /**
      * 用户获取自己的批阅
-     * @param userId
+     * @param reportId
      * @param userName
+     *
      * @return
      */
     @GetMapping("/getMyMarking")
-    public Result<List<ReportMarking>> getMyMarking(@RequestParam("id") Integer userId,@RequestParam("userName") String userName){
-        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(userId,userName);
+    public Result<List<ReportMarking>> getMyMarking(@RequestParam("reportId") Integer reportId,@RequestParam("userName") String userName){
+        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(reportId,userName);
         return new Result<>(reportMarkings);
     }
 

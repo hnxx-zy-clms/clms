@@ -11,6 +11,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Collection;
+import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.service.CollectionService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
@@ -45,7 +46,7 @@ public class CollectionController {
     }
 
     /**
-     * 根据id删除
+     * 根据id删除 取消收藏
      * @param id
      * @return
      */
@@ -54,4 +55,59 @@ public class CollectionController {
         collectionService.deleteById(id);
         return new Result<>("删除成功!");
     }
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    @GetMapping("/get/{id}")
+    public Result<Collection> get(@PathVariable("id") Integer id){
+        Collection collection = collectionService.getById(id);
+        return new Result<>(collection);
+    }
+
+    /**
+     * 根据用户id查询收藏列表
+     * @return
+     */
+    @GetMapping("/getList")
+    public Result<List<Collection>> getList(){
+        SysUser user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        int id = user.getUserId();
+        List<Collection> collectionList = collectionService.getListByUserId(id);
+        return new Result<>(collectionList);
+    }
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @PostMapping("/getByPage")
+    public Result<Page<Collection>> getByPage(@RequestBody Page<Collection> page){
+        // 获取排序方式  page对象中 封装了 sortColumn 排序列
+        String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
+        // 判断排序列不为空
+        if(StringUtils.isNotBlank(sortColumn)){
+            // 响应时间，请求时间 排序
+            String[] sortColumns = {"collection_time"};
+            // Arrays.asList() 方法使用
+            // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式
+            // 2. 该方法不适用于剧本数据类型（byte,short,int,long,float,double,boolean）
+            // 3. 不支持add和remove方法
+            List<String> sortList = Arrays.asList(sortColumns);
+            if(!sortList.contains(newSortColumn.toLowerCase())) {
+                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
+            }
+        }
+        page = collectionService.getByPage(page);
+        return new Result<>(page);
+    }
+
+
 }

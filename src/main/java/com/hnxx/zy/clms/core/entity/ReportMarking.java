@@ -16,29 +16,78 @@ import java.util.Date;
 public class ReportMarking {
 
     /**
+     * 批阅ID
+     */
+    private Integer markingId;
+
+    /**
      * 报告ID
      */
     private Integer reportId;
 
     /**
-     * 批阅类型
+     * 组长评分
      */
-    private String operationType;
+    private Integer groupLeaderScore;
 
     /**
-     * 批阅内容
+     * 组长评语
      */
-    private String operationContent;
+    private String groupLeaderComment;
 
     /**
-     * 批阅人
+     * 组批阅人用户名
      */
-    private String userName;
+    private String groupName;
 
     /**
-     * 写批阅的时间，返回时转成正常日期格式 年-月-日
+     * 组长写批阅的时间，返回时转成正常日期格式 年-月-日
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date createdTime;
+    private Date groupTime;
+
+
+    /**
+     * 班长评分
+     */
+    private Integer monitorScore;
+
+    /**
+     * 班长评语
+     */
+    private String monitorComment;
+
+    /**
+     * 班长批阅人用户名
+     */
+    private String monitorName;
+
+    /**
+     * 班长写批阅的时间，返回时转成正常日期格式 年-月-日
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date monitorTime;
+
+    /**
+     * 教师评分
+     */
+    private Integer teacherScore;
+
+    /**
+     * 教师评语
+     */
+    private String teacherComment;
+
+    /**
+     * 教师用户名
+     */
+    private String teacherName;
+
+    /**
+     * 教师写批阅的时间，返回时转成正常日期格式 年-月-日
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date teacherTime;
+
 
 }

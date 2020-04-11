@@ -32,7 +32,7 @@ public interface ArticleMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_article where article_id = #{id} and is_deleted = 0")
+    @Select("select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id  where a.article_id = #{id} and a.is_deleted = 0")
     Article getById(Integer id);
 
     /**
@@ -81,8 +81,10 @@ public interface ArticleMapper {
      *
      * @param id
      */
-    @Update("update cl_article set is_deleted = #{isDeleted} where article_id = #{id}")
+    @Update("update cl_article set is_deleted = 1 where article_id = #{id}")
     void deleteById(Integer id);
+
+
 
     /**
      * 分页查询
@@ -91,16 +93,16 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select * from cl_article\n" +
-            "        where is_deleted = 0 \n" +
+            "        select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id\n" +
+            "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
-            "            and article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
+            "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +
-            "            and article_type = #{params.articleType}\n" +
+            "            and a.article_type = #{params.articleType}\n" +
             "        </if>\n" +
             "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
-            "            and article_author = #{params.articleAuthor}\n" +
+            "            and a.article_author = #{params.articleAuthor}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +

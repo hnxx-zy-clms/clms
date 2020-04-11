@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Notice;
+import org.apache.ibatis.annotations.Param;
 import org.aspectj.weaver.ast.Not;
 
 import java.util.List;
@@ -36,12 +37,26 @@ public interface NoticeService {
     void delNotice(Integer id);
 
     /**
-     * 分页获取通知
+     * 学生分页获取通知
      *
      * @param page
      * @param id
      * @return
      */
     Page<Notice> getByPage(Page<Notice> page, Integer id);
+
+    /**
+     * 教师分页获取通知
+     * @param page
+     * @return
+     */
+    Page<Notice> getByPageAdmin(Page<Notice> page);
+
+    /**
+     * 批量删除通知
+     * @param params
+     */
+    void deleteNotices(Integer [] params);
+
 
 }

@@ -7,6 +7,7 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.exception.ClmsException;
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Good;
 import com.hnxx.zy.clms.core.mapper.GoodMapper;
@@ -74,6 +75,31 @@ public class GoodServiceImpl implements GoodService {
     public List<Good> getListByUserId(Integer id) {
         List<Good> goodList = goodMapper.getListByUserId(id);
         return goodList;
+    }
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @Override
+    public Page<Good> getByPage(Page<Good> page) {
+        // 查询数据
+        List<Good> goodList = goodMapper.getByPage(page);
+        page.setList(goodList);
+        // 统计总数
+        int totalCount = goodMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
+    }
+
+    /**
+     * 取消点赞
+     * @param id
+     */
+    @Override
+    public void deleteById(Integer id) {
+        goodMapper.deleteById(id);
     }
 
 }

@@ -52,4 +52,41 @@ public class CollectionServiceImpl implements CollectionService {
     public void deleteById(Integer id) {
         collectionMapper.delete(id);
     }
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    @Override
+    public Collection getById(Integer id) {
+        return collectionMapper.getById(id);
+    }
+
+    /**
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @Override
+    public Page<Collection> getByPage(Page<Collection> page) {
+        // 查询数据
+        List<Collection> collectionList = collectionMapper.getByPage(page);
+        page.setList(collectionList);
+        // 查询总数
+        int totalCount = collectionMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
+    }
+
+    /**
+     * 根据用户id查询收藏列表
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Collection> getListByUserId(Integer id) {
+        List<Collection> collectionList = collectionMapper.getListByUserId(id);
+        return collectionList;
+    }
 }

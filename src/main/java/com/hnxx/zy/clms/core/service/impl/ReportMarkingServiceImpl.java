@@ -23,6 +23,16 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     private ReportMarkingMapper reportMarkingMapper;
 
     @Override
+    public List<ReportMarking> getAllMarking(Page<ReportMarking> page) {
+        return reportMarkingMapper.getAllMarking(page);
+    }
+
+    @Override
+    public void deleteAdminById(Integer markingId) {
+        reportMarkingMapper.deleteAdminById(markingId);
+    }
+
+    @Override
     public List<Report> getGroupMarking(Page<Report> page) {
         return reportMarkingMapper.getGroupMarking(page);
     }
@@ -33,18 +43,13 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public void setCheck(Integer reportId) {
-        reportMarkingMapper.setCheck(reportId);
+    public void setClassesMarking(List<ReportMarking> reportMarkings) {
+        reportMarkingMapper.setClassesMarking(reportMarkings);
     }
 
     @Override
-    public void setClassesCheck(Integer reportId) {
-        reportMarkingMapper.setClassesCheck(reportId);
-    }
-
-    @Override
-    public void setTeacherCheck(Integer reportId) {
-        reportMarkingMapper.setTeacherCheck(reportId);
+    public void setTeacherMarking(List<ReportMarking> reportMarkings) {
+        reportMarkingMapper.setTeacherMarking(reportMarkings);
     }
 
     @Override

@@ -8,7 +8,9 @@ package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Comment;
+import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.CommentService;
 import com.hnxx.zy.clms.security.test.services.UserService;
@@ -124,6 +126,17 @@ public class CommentServiceImpl implements CommentService {
             comment.setCommentCount(getCountByCid(pid));
         }
         return commentList;
+    }
+
+    @Override
+    public Page<Comment> getByPage(Page<Comment> page) {
+        // 查询数据
+        List<Comment> commentList = commentMapper.getByPage(page);
+        page.setList(commentList);
+        // 查询总数
+        int totalCount = commentMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
     }
 
 

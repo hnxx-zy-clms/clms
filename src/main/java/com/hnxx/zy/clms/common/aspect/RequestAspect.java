@@ -27,7 +27,17 @@ import java.util.Arrays;
 /**
  * 切面输出基本信息
  * 以及记录日志
- *
+ * 1、@Around 环绕通知
+ *  在目标方法执行前后实施增强，可以用于日志，事务管理等功能
+ * 2、@Before 前置通知
+ *  在目标方法执行前实施增强，可以应用于权限管理功能
+ * 3、@AfterReturning 后置通知
+ *  在目标方法执行后实施增强，可以应用于关闭流、上传文件、删除临时文件等功能
+ * 4、@AfterThrowing 异常抛出通知
+ *  在方法抛出异常后实施增强，可以应用于处理异常记录日志等功能
+ * 5、@DeclareParents 引介通知
+ *  在目标类中添加一些新的方法和属性，可以应用于修改老版本程序
+ * 6、@After 最终通知
  * @author code-fusheng
  */
 @Aspect
@@ -95,6 +105,7 @@ public class RequestAspect {
         String result = JSON.toJSONString(ret);
         // 数据量大选择性赋值为******
         result = "******";
+        ret = "******";
         log.info("返回值:{}", JSON.toJSONString(ret));
         Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogResult(result);
@@ -137,7 +148,7 @@ public class RequestAspect {
         log.info("方法 : {}.{}", controllerName, joinPoint.getSignature().getName());
         String params = Arrays.toString(joinPoint.getArgs());
         // 数据量大选择性赋值为******
-        // params = "******";
+        params = "******";
         log.info("请求参数：{}", params);
 
         // 获取日志实体

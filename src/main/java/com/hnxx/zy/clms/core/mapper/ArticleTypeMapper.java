@@ -26,6 +26,22 @@ public interface ArticleTypeMapper {
     void save(ArticleType articleType);
 
     /**
+     * 统计该类型的文章量
+     * @param tid
+     * @return
+     */
+    @Select("select count(*) from cl_article where article_type = #{tid} where is_deleted = 0")
+    int getArticleCountByType(int tid);
+
+    /**
+     * 更新该类型的文章量
+     * @param tid
+     * @param aCount
+     */
+    @Update("update cl_article_type set type_count = #{aCount} where type_id = #{tid}")
+    void updateArticleCount(int tid, int aCount);
+
+    /**
      * 根据id查询
      * @param id
      * @return
@@ -85,6 +101,6 @@ public interface ArticleTypeMapper {
      * 更新启用状态
      * @param type
      */
-    @Update("update cl_article_type set version = version + 1, is_enabled = #{isEnabled} and version = #{version}")
+    @Update("update cl_article_type set version = version + 1, is_enabled = #{isEnabled} where type_id = #{typeId} and version = #{version}")
     void updateEnable(ArticleType type);
 }

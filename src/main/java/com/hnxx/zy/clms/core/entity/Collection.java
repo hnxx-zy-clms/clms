@@ -28,9 +28,19 @@ public class Collection implements Serializable {
     private Integer articleId;
 
     /**
+     * 文章标题
+     */
+    private String articleTitle;
+
+    /**
      * 用户id
      */
     private Integer userId;
+
+    /**
+     * 用户名
+     */
+    private String username;
 
     /**
      * 收藏时间
@@ -38,7 +48,7 @@ public class Collection implements Serializable {
     private String collectionTime;
 
     /**
-     * 是否启用
+     * 是否删除
      */
     private Integer isDeleted;
 }

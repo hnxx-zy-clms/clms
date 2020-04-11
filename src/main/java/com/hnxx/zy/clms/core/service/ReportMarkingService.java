@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,6 +14,19 @@ import java.util.List;
  * @create: 2020-03-24 16:15
  **/
 public interface ReportMarkingService {
+
+    /**
+     * 管理员获取所有报告批阅信息
+     * @param page
+     * @return
+     */
+    List<ReportMarking> getAllMarking(Page<ReportMarking> page);
+
+    /**
+     * 管理员根据id清空批阅数据
+     */
+    void deleteAdminById(Integer markingId);
+
 
     /**
      * 返回未批阅的报告
@@ -28,22 +42,16 @@ public interface ReportMarkingService {
     void setGroupMarking(List<ReportMarking> reportMarkings);
 
     /**
-     * 修改组长报告批阅状态
-     * @param reportId
+     * 班长提交批阅报告
+     * @param reportMarkings
      */
-    void setCheck(Integer reportId);
+    void setClassesMarking(List<ReportMarking> reportMarkings);
 
     /**
-     * 修改班长报告批阅状态
-     * @param reportId
+     * 教师提交批阅报告
+     * @param reportMarkings
      */
-    void setClassesCheck(Integer reportId);
-
-    /**
-     * 修改教师报告批阅状态
-     * @param reportId
-     */
-    void setTeacherCheck(Integer reportId);
+    void setTeacherMarking(List<ReportMarking> reportMarkings);
 
     /**
      * 获取批阅信息

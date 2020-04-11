@@ -1,9 +1,11 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.mapper.NoticeMapper;
 import com.hnxx.zy.clms.core.service.NoticeService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,8 +43,23 @@ public class NoticeServiceImpl implements NoticeService {
         List<Notice> notices = noticeMapper.getByPage(page, id);
         page.setList(notices);
 
-        int totalCount = noticeMapper.getCountByPage();
+        int totalCount = noticeMapper.getCountByPage(page);
         page.setTotalCount(totalCount);
         return page;
+    }
+
+    @Override
+    public Page<Notice> getByPageAdmin(Page<Notice> page){
+        List<Notice> notices = noticeMapper.getByPageAdmin(page);
+        page.setList(notices);
+
+        int totalCount = noticeMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
+    }
+
+    @Override
+    public void deleteNotices(Integer [] params){
+        noticeMapper.deleteNotices(params);
     }
 }
