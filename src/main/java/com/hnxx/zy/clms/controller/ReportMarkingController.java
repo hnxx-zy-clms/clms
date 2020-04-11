@@ -38,6 +38,18 @@ public class ReportMarkingController {
         page.pagingDate();
         return new Result<>(page);
     }
+
+    /**
+     * 管理员清空批阅数据
+     * @param markingId
+     * @return
+     */
+    @DeleteMapping("/deleteAdmin/{id}")
+    public Result<Object> deleteAdmin(@PathVariable("id") Integer markingId) {
+        reportMarkingService.deleteAdminById(markingId);
+        return new Result<>("删除成功");
+    }
+
     /**
      *组长获取本组未批阅报告
      * @param page

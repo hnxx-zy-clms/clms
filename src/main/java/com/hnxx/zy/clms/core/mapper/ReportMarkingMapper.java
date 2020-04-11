@@ -19,18 +19,26 @@ import java.util.List;
 public interface ReportMarkingMapper {
 
     /**
-     * 管理员获取所有报告批阅信息
+     * 管理员获取报告批阅信息
      * @param page
      * @return
      */
     @Select({"<script> \n" +
-            "select b.* from cl_report a left join cl_report_marking b on a.report_id = b.report_id  \n" +
-            "where a.is_deleted = 0 and a.is_checked = 1\n" +
-            "<if test=\" params.is_checked != null and params.is_checked != '' \"  > \n" +
-            "and a.is_checked = 1 \n" +
+            "select a.* from cl_report b left join cl_report_marking a on a.report_id = b.report_id  \n" +
+            "where b.is_deleted = 0 \n" +
+            "<if test=\" params.markingType != null and params.markingType != '' \"  > \n" +
+            "<if test=\" params.markingType == 3 \"> \n" +
+            "and b.is_checked = 1 \n" +
             "</if> \n" +
-            "<if test=\" params.userGroupId !=null and params.userGroupId != '' \" > \n" +
-            "and c.user_group_id = #{params.userGroupId}  \n" +
+            "<if test=\" params.markingType == 1 \"> \n" +
+            "and b.is_classes_checked = 1 \n" +
+            "</if> \n" +
+            "<if test=\" params.markingType == 2 \"> \n" +
+            "and b.is_teacher_checked = 1 \n" +
+            "</if> \n" +
+            "</if> \n" +
+            "<if test=\" params.reportType !=null and params.reportType !='' \"  > \n" +
+            "and b.report_type = #{params.reportType}\n" +
             "</if> \n" +
             "<if test=\" params.reportDate !=null and params.reportDate[1] != null  and params.reportDate[1] !='' \"  > \n" +
             "and b.created_time &lt;= #{params.reportDate[1]}\n" +
@@ -46,6 +54,26 @@ public interface ReportMarkingMapper {
             "</if>\n" +
             "</script>"})
     List<ReportMarking> getAllMarking(Page<ReportMarking> page);
+
+    /**
+     *  管理员根据id清空批阅数据
+     *   不可恢复
+     * @param markingId
+     */
+    @Update("update cl_report_marking a left join cl_report b on a.report_id = b.report_id set  group_leader_score = null,\n" +
+            "        group_leader_comment = null,\n" +
+            "        group_name = null,\n" +
+            "        group_time = null,\n" +
+            "        monitor_score = null,\n" +
+            "        monitor_comment = null,\n" +
+            "        monitor_name = null,\n" +
+            "        monitor_time = null,\n" +
+            "        teacher_score = null,\n" +
+            "        teacher_comment = null,\n" +
+            "        teacher_name = null,\n" +
+            "        teacher_time = null,\n" +
+            "        b.is_checked = 0,b.is_classes_checked = 0,b.is_teacher_checked = 0 where marking_id = #{markingId} ")
+    void deleteAdminById(Integer markingId);
 
     /**
      * 返回本组未批阅的报告

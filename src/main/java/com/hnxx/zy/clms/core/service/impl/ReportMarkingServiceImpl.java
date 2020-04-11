@@ -28,6 +28,11 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
+    public void deleteAdminById(Integer markingId) {
+        reportMarkingMapper.deleteAdminById(markingId);
+    }
+
+    @Override
     public List<Report> getGroupMarking(Page<Report> page) {
         return reportMarkingMapper.getGroupMarking(page);
     }

@@ -23,6 +23,12 @@ public interface ReportMarkingService {
     List<ReportMarking> getAllMarking(Page<ReportMarking> page);
 
     /**
+     * 管理员根据id清空批阅数据
+     */
+    void deleteAdminById(Integer markingId);
+
+
+    /**
      * 返回未批阅的报告
      * @param page
      * @return
