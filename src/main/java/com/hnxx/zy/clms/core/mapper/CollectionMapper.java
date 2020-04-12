@@ -72,7 +72,13 @@ public interface CollectionMapper {
      * @param page
      * @return
      */
-    @Select("select count(*) from cl_collection where is_deleted = 0")
+    @Select("<script>" +
+            "        select count(*) from cl_collection c left join cl_article a on c.article_id = a.article_id\n" +
+            "        where c.is_deleted = 0 \n" +
+            "        <if test=\"params.userId!=null\">\n" +
+            "            and c.user_id = #{params.userId}\n" +
+            "        </if>\n" +
+            "</script>")
     int getCountByPage(Page<Collection> page);
 
     /**

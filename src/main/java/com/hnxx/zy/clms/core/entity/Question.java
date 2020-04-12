@@ -6,11 +6,13 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Question {
 
     /**
@@ -39,6 +41,11 @@ public class Question {
     private String questionTime;
 
     /**
+     * 修改时间
+     */
+    private String updateTime;
+
+    /**
      * 提问点赞数
      */
     private Integer questionGood;
@@ -47,11 +54,6 @@ public class Question {
      * 提问答复数
      */
     private Integer answerCount;
-
-    /**
-     * 修改时间
-     */
-    private String updateTime;
 
     /**
      * 问题标记 可以理解为状态
@@ -83,5 +85,6 @@ public class Question {
      * 0 : 否
      * 1 : 是
      */
-    private Integer is_deleted;
+    private Integer isDeleted;
+
 }

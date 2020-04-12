@@ -6,9 +6,11 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Answer {
 
     /**
@@ -27,9 +29,19 @@ public class Answer {
     private String answerContent;
 
     /**
+     * 答复点赞量
+     */
+    private Integer answerGood;
+
+    /**
      * 答复时间
      */
     private String answerTime;
+
+    /**
+     * 修改时间
+     */
+    private String updateTime;
 
     /**
      * 答复人
@@ -42,6 +54,10 @@ public class Answer {
      * 1 : 采纳 --> 指当前问题的优质答复
      * 2 : 错误 --> 标记错误的答复(权限)
      */
-    private Integer mark;
+    private Integer answerMark;
 
+    /**
+     * 是否删除
+     */
+    private Integer isDeleted;
 }

@@ -117,14 +117,17 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select count(*) from cl_article\n" +
-            "        where is_deleted = 0\n" +
+            "        select count(*) from cl_article a left join cl_article_type t on a.article_type = t.type_id\n" +
+            "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
-            "            and article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
+            "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +
-            "            and article_type = #{params.articleType}\n" +
-            "        </if>" +
+            "            and a.article_type = #{params.articleType}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
+            "            and a.article_author = #{params.articleAuthor}\n" +
+            "        </if>\n" +
             "</script>")
     int getCountByPage(Page<Article> page);
 
@@ -147,6 +150,6 @@ public interface ArticleMapper {
      * @param cCount
      * @param aid
      */
-    @Update("update cl_article set article_collection = #{cCount} where article_id = #{aid}")
+    @Update("update cl_article set article_collection = #{cCount} where article_id = #{aid} and is_deleted = 0")
     void updateCollectionCount(int cCount, int aid);
 }

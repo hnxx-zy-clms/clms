@@ -7,12 +7,13 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.core.mapper.AnswerMapper;
+import com.hnxx.zy.clms.core.service.AnswerService;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AnswerServiceImpl {
+public class AnswerServiceImpl implements AnswerService {
 
     @Autowired
     private AnswerMapper answerMapper;

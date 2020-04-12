@@ -146,6 +146,27 @@ public interface CommentMapper {
      * @param page
      * @return
      */
-    @Select("select count(*) from cl_comment")
+    @Select("<script>" +
+            "        select count(*) from cl_comment c left join cl_article a on c.comment_article = a.article_id\n" +
+            "        where c.is_deleted = 0\n" +
+            "        <if test=\"params.commentContent!=null and params.commentContent!=''\">\n" +
+            "            and c.comment_content like CONCAT('%', #{params.commentContent}, '%')\n" +
+            "        </if>\n" +
+            "        <if test=\"params.commentId!=null\">\n" +
+            "            and c.comment_id = #{params.commentId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.commentUser!=null and params.commentUser!=''\">\n" +
+            "            and c.comment_user = #{params.commentUser}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
+            "            and a.article_title = #{params.articleTitle}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.commentType!=null\">\n" +
+            "            and c.comment_type = #{params.commentType}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.pid!=null\">\n" +
+            "            and c.pid = #{params.pid}\n" +
+            "        </if>\n" +
+            "</script>")
     int getCountByPage(Page<Comment> page);
 }
