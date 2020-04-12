@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,6 +32,9 @@ public class NoticeController {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private NoticeMapper noticeMapper;
 
     /**
      * 设置已读
@@ -53,6 +57,11 @@ public class NoticeController {
      */
     @PostMapping("/save")
     public Result save(@RequestBody Notice notice) {
+        if (notice.isEnabled()==false){
+            notice.setPushedTime(null);
+        }else {
+            notice.setPushedTime(new Date());
+        }
         noticeService.save(notice);
         return new Result<>(ResultEnum.SUCCESS);
     }
@@ -118,6 +127,46 @@ public class NoticeController {
         return new Result<>(i);
     }
 
+    /**
+     * 保存转为发布
+     * @param id
+     * @return
+     */
+    @PutMapping("saveTopush/{id}/{time}")
+    public Result savedTopushed(@PathVariable("id") Integer id, @PathVariable("time")Date date){
+        noticeService.savedTopushed(id,date);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     *删除转发布
+     * @param notice
+     * @return
+     */
+    @PostMapping("deleteTopush")
+    public Result deleteTopush(@RequestBody Notice notice){
+        notice.setPushedTime(new Date());
+        noticeMapper.delete(notice.getNoticeId());
+        notice.setEnabled(true);
+        noticeMapper.save(notice);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     * 更新通知
+     * @param notice
+     * @return
+     */
+    @PutMapping("update")
+    public Result update(@RequestBody Notice notice){
+        if (notice.isEnabled()==false){
+            notice.setPushedTime(null);
+        }else {
+            notice.setPushedTime(new Date());
+        }
+        noticeMapper.update(notice);
+        return new Result(ResultEnum.SUCCESS);
+    }
 
 
 }

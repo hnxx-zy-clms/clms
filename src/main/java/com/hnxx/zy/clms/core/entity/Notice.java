@@ -40,6 +40,12 @@ public class Notice implements Serializable {
     private Date createdTime;
 
     /**
+     * 发布时间
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date pushedTime;
+
+    /**
      * 通知内容
      */
     private String noticeContent;

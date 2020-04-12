@@ -6,6 +6,8 @@ import com.hnxx.zy.clms.core.entity.Notice;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,7 +32,17 @@ public interface NoticeMapper {
      *
      * @param notice
      */
-    @Insert("insert into cl_notice(created_id,notice_content,notice_title,is_enabled) values (#{notice.createdId},#{notice.noticeContent},#{notice.noticeTitle},#{notice.isEnabled})")
+    @Insert("<script>"+
+            "insert into cl_notice(created_id,notice_content,notice_title,is_enabled"+
+            "        <if test=\"notice.pushedTime!=null\">\n" +
+            "             ,pushed_time\n" +
+            "        </if>" +
+            ") values (#{notice.createdId},#{notice.noticeContent},#{notice.noticeTitle},#{notice.isEnabled}"+
+            "        <if test=\"notice.pushedTime!=null\">\n" +
+            "             ,date_format(#{notice.pushedTime}, '%Y-%m-%d %H:%i:%s')\n" +
+            "        </if>" +
+            ")"+
+    "</script>")
     void save(@Param("notice") Notice notice);
 
     /**
@@ -68,6 +80,15 @@ public interface NoticeMapper {
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
+            "        <if test=\'page.params.statu==\"saved\"\'>\n" +
+            "             and a.is_enabled=0 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.statu==\"pushed\"\'>\n" +
+            "             and a.is_enabled=1 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.statu==\"deleted\"\'>\n" +
+            "             and a.is_deleted=1\n" +
+            "        </if>" +
             "        <if test=\"page.sortColumn!=null and page.sortColumn!=''\">\n" +
             "            order by ${page.sortColumn} ${page.sortMethod}\n" +
             "        </if>\n" +
@@ -104,7 +125,7 @@ public interface NoticeMapper {
             "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
-            "             and created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
+            "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
             "           WHERE is_deleted =0 and is_enabled=1" +
@@ -123,4 +144,25 @@ public interface NoticeMapper {
                     "</foreach>"+
             "</script>")
     void deleteNotices(@Param("params") Integer [] params);
+
+    /**
+     * 将已保存状态改为发布状态
+     * @param id
+     */
+    @Update("update cl_notice set pushed_time=date_format(#{time}, '%Y-%m-%d %H:%i:%s'),is_Enabled =1 ,is_deleted=0 where notice_id = #{id}")
+    void savedTopushed(@Param("id") Integer id, @Param("time") Date date);
+
+    /**
+     * 物理删除
+     * @param id
+     */
+    @Delete("delete from cl_notice where notice_id = #{id}")
+    void delete(@Param("id") Integer id);
+
+    /**
+     * 更新通知
+     * @param notice
+     */
+    @Update("update cl_notice set created_time=#{notice.createdTime},pushed_time=#{notice.pushedTime},notice_content=#{notice.noticeContent},notice_title=#{notice.noticeTitle},is_enabled=#{notice.isEnabled},is_deleted=#{notice.isDeleted} where notice_id = #{notice.noticeId}")
+    void update(@Param("notice") Notice notice);
 }
