@@ -122,4 +122,28 @@ public interface QuestionMapper {
             "        </if>\n" +
             "</script>")
     int getCountByPage(Page<Question> page);
+
+    /**
+     * 获取对应问题的答复数
+     * @param qid
+     * @return
+     */
+    @Select("select count(*) from cl_answer where question_id = #{qid} and is_deleted = 0 ")
+    int getAnswerCount(Integer qid);
+
+    /**
+     * 更新对应问题的答复数
+     * @param id
+     * @param aCount
+     */
+    @Update("update cl_question set answer_count = #{aCount} where question_id = #{id}")
+    void updateAnswerCount(Integer id, Integer aCount);
+
+    /**
+     * 改变问题状态
+     * @param id
+     * @param mark
+     */
+    @Update("update cl_question set question_mark = #{mark} where question_id = #{id}")
+    void changeSolve(Integer id, int mark);
 }

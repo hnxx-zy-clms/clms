@@ -42,4 +42,16 @@ public interface QuestionService {
      * @return
      */
     Page<Question> getByPage(Page<Question> page);
+
+    /**
+     * 问题 已解决
+     * @param id
+     */
+    void isSolve(Integer id);
+
+    /**
+     * 问题 未解决
+     * @param id
+     */
+    void noSolve(Integer id);
 }

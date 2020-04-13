@@ -7,6 +7,7 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
@@ -38,8 +39,32 @@ public class QuestionController {
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Question question){
         question.setQuestionAuthor(userService.getUserName());
+        // 提出问题时, 设置初始化问题状态值 未解决
+        question.setQuestionMark(StateEnum.NO_SOLVE_QUESTION.getCode());
         questionService.save(question);
         return new Result<>("保存成功!");
+    }
+
+    /**
+     * 已解答
+     * @param id
+     * @return
+     */
+    @PutMapping("/isSolve/{id}")
+    public Result<Object> isSolve(@PathVariable Integer id){
+        questionService.isSolve(id);
+        return new Result<>("问题状态更新成功:已解答!");
+    }
+
+    /**
+     * 未解答
+     * @param id
+     * @return
+     */
+    @PutMapping("/noSolve/{id}")
+    public Result<Object> noSolve(@PathVariable Integer id){
+        questionService.noSolve(id);
+        return new Result<>("问题状态更新成功:未解答!");
     }
 
     /**
@@ -90,8 +115,8 @@ public class QuestionController {
         page.setSortColumn(newSortColumn);
         // 判断排序列不为空
         if(StringUtils.isNotBlank(sortColumn)){
-            // 提问时间，修改时间
-            String[] sortColumns = {"question_time", "update_time"};
+            // 提问时间，修改时间 问题点赞量,问题答复量
+            String[] sortColumns = {"question_good", "answer_count", "question_time", "update_time"};
             // Arrays.asList() 方法使用
             // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式
             // 2. 该方法不适用于剧本数据类型（byte,short,int,long,float,double,boolean）
@@ -104,6 +129,5 @@ public class QuestionController {
         page = questionService.getByPage(page);
         return new Result<>(page);
     }
-
 
 }

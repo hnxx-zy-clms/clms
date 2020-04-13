@@ -40,7 +40,19 @@ public enum StateEnum {
     ARTICLE_COMMENT(0,"文章的评论"),
     COMMENT_COMMENT(1,"评论的评论"),
     QUESTION_COMMENT(2,"问题的评论"),
-    ANSWER_COMMENT(3,"答疑的评论")
+    ANSWER_COMMENT(3,"答疑的评论"),
+
+    /**
+     * 问题状态枚举
+     */
+    NO_SOLVE_QUESTION(0, "未解决"),
+    IS_SOLVE_QUESTION(1, "已解决"),
+
+    /**
+     * 答复类型标记
+     */
+    NO_ADOPT_ANSWER(0, "未采纳"),
+    IS_ADOPT_ANSWER(1, "已采纳"),
 
     ;
 

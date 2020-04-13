@@ -57,9 +57,8 @@ public class Question {
 
     /**
      * 问题标记 可以理解为状态
-     * 0 : 默认 --> 没有答复
-     * 1 : 未解决 --> 答复了没有采纳的答案
-     * 2 : 已解决 --> 答复了并且已经采纳
+     * 0 : 未解决
+     * 1 : 已解决
      */
     private Integer questionMark;
 

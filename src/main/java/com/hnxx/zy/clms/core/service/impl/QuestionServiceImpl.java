@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
@@ -30,6 +31,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public void save(Question question) {
+
         questionMapper.save(question);
     }
 
@@ -59,5 +61,20 @@ public class QuestionServiceImpl implements QuestionService {
         int totalCount = questionMapper.getCountByPage(page);
         page.setTotalCount(totalCount);
         return page;
+    }
+
+    @Override
+    public void isSolve(Integer id) {
+        // 设置问题状态码,已解答
+        int mark = StateEnum.IS_SOLVE_QUESTION.getCode();
+        questionMapper.changeSolve(id, mark);
+    }
+
+    @Override
+    public void noSolve(Integer id) {
+        // 设置问题状态码,未解答
+        int mark = StateEnum.NO_SOLVE_QUESTION.getCode();
+        questionMapper.changeSolve(id, mark);
+        // 同时将所有相关答案的已采纳,重置为未采纳
     }
 }

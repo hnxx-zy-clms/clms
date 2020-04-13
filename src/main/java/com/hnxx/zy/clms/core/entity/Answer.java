@@ -50,9 +50,8 @@ public class Answer {
 
     /**
      * 答复标记
-     * 0 : 默认 --> 一般的答复
-     * 1 : 采纳 --> 指当前问题的优质答复
-     * 2 : 错误 --> 标记错误的答复(权限)
+     * 0 : 已采纳
+     * 1 : 未采纳
      */
     private Integer answerMark;
 
