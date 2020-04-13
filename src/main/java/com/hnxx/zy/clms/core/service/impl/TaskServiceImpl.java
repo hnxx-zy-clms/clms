@@ -42,7 +42,7 @@ public class TaskServiceImpl implements TaskService {
         List<Task> tasks = taskMapper.getAllTaskByPage(task);
         task.setList(tasks);
 
-        int totalCount = taskMapper.getCountByPage();
+        int totalCount = taskMapper.getCountByPage(task);
         task.setTotalCount(totalCount);
         return task;
 
@@ -68,8 +68,18 @@ public class TaskServiceImpl implements TaskService {
         List<Task> tasks = taskMapper.getByPage(task, id);
         task.setList(tasks);
 
-        int totalCount = taskMapper.getCountByPage();
+        int totalCount = taskMapper.getCountByPage(task);
         task.setTotalCount(totalCount);
         return task;
+    }
+
+    @Override
+    public Page<Task> getByPageAdmin(Page<Task> page) {
+        List<Task> tasks = taskMapper.getByPageAdmin(page);
+        page.setList(tasks);
+
+        int totalCount = taskMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
+        return page;
     }
 }

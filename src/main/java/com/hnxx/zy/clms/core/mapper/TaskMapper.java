@@ -1,6 +1,7 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.entity.Task;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -48,8 +49,22 @@ public interface TaskMapper {
      *
      * @return
      */
-    @Select("select count(*) from cl_task WHERE is_deleted =0")
-    int getCountByPage();
+    @Select("<script>"+
+            "        select count(*) from cl_task a left JOIN cl_user b ON a.created_id=b.user_id  WHERE 1>0"+
+            "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
+            "           and notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
+            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
+            "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"student\" \'>\n" +
+            "           WHERE is_deleted =0 and is_enabled=1" +
+            "        </if>" +
+            "        </script>")
+    int getCountByPage(@Param("page") Page page);
 
     /**
      * 学生查看任务内容及回复内容
@@ -96,6 +111,54 @@ public interface TaskMapper {
      */
     @Update("update cl_task set is_deleted=1 where task_id=#{id}")
     void deleteTask(Integer id);
+
+    /**
+     * 分页获取任务列表
+     *
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        SELECT a.*,b.user_name from cl_task a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
+            "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
+            "             and a.task_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
+            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "        </if>" +
+            "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
+            "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
+            "        </if>" +
+            "        <if test=\'page.params.statu==\"saved\"\'>\n" +
+            "             and a.is_enabled=0 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.statu==\"pushed\"\'>\n" +
+            "             and a.is_enabled=1 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.statu==\"deleted\"\'>\n" +
+            "             and a.is_deleted=1\n" +
+            "        </if>" +
+            "        <if test=\"page.sortColumn!=null and page.sortColumn!=''\">\n" +
+            "            order by ${page.sortColumn} ${page.sortMethod}\n" +
+            "        </if>\n" +
+            "           LIMIT #{page.index}, #{page.pageSize}"+
+            "</script>")
+    @Results({
+            @Result(property = "numDid",
+                    column = "task_id",
+                    one = @One(select = "com.hnxx.zy.clms.core.mapper.TaskMapper.selectnum")),
+            @Result(property = "taskId",
+                    column = "task_id")
+    })
+    List<Task> getByPageAdmin(@Param("page") Page page);
+
+    /**
+     * 获取已完成人数
+     * @param id
+     * @return
+     */
+    @Select("select count(*) from cl_task_user where task_id=#{id}")
+    int selectnum(@Param("id") Integer id);
 
 
 }

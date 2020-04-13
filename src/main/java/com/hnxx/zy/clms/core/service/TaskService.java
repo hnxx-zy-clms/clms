@@ -71,4 +71,10 @@ public interface TaskService {
      */
     Page<Task> getByPage(Page<Task> task, Integer id);
 
+    /**
+     * 教师分页获取任务
+     * @param page
+     */
+    Page<Task> getByPageAdmin(Page<Task> page);
+
 }

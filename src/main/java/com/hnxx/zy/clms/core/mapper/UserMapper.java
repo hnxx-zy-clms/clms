@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -29,6 +30,9 @@ public interface UserMapper {
      */
     @Select("select count(*) from cl_user")
     int selectUserNum();
+
+    @Select("select user_id from cl_user where user_name = #{name}")
+    int selectUserId(@Param("name") String name);
 
 }
 

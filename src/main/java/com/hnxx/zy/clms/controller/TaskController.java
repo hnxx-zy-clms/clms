@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Task;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ import java.util.List;
 public class TaskController {
     @Autowired
     private TaskService taskService;
+
+    @Autowired
+    private UserMapper userMapper;
 
     /**
      * 新建任务
@@ -108,5 +112,28 @@ public class TaskController {
     public Result delete(@PathVariable("id") Integer id) {
         taskService.deleteTask(id);
         return new Result("删除成功");
+    }
+
+    /**
+     * 教师分页获取任务
+     * @param page
+     * @return
+     */
+    @PostMapping("getByPageAdmin")
+    public Result<Page> getByPageAdmin(@RequestBody Page page) {
+        System.out.println(page);
+        page.setIndex(page.getIndex());
+        page = taskService.getByPageAdmin(page);
+        return new Result<>(page);
+    }
+
+    /**
+     * 获取总人数
+     * @return
+     */
+    @GetMapping("getUserNum")
+    public Result getUserNum(){
+        int i = userMapper.selectUserNum();
+        return new Result<>(i);
     }
 }

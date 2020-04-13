@@ -128,6 +128,17 @@ public class NoticeController {
     }
 
     /**
+     * 获取用户Id
+     * @param name
+     * @return
+     */
+    @GetMapping("getUserId/{name}")
+    public Result getUserId(@PathVariable("name") String name){
+        int i = userMapper.selectUserId(name);
+        return new Result(i);
+    }
+
+    /**
      * 保存转为发布
      * @param id
      * @return

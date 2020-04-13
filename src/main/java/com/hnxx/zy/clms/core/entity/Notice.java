@@ -76,12 +76,6 @@ public class Notice implements Serializable {
     @JsonProperty("isEnabled")
     private boolean isEnabled;
 
-//    /**
-//     * 是否已阅：1是0否
-//     */
-//    @JsonProperty("ifRead")
-//    private boolean ifRead;
-
     /**
      * 已读人数
      */
