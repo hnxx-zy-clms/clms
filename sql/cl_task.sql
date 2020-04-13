@@ -1,3 +1,0 @@
-INSERT INTO `cl_task`(`task_id`, `created_id`,`task_title`,`task_content`,`created_time`,`is_enabled`,`is_deleted`)VALUES (3, 3, '测试机', '测试', '2020-03-22 20:41:23', 0, 0);
-INSERT INTO `cl_task`(`task_id`, `created_id`,`task_title`,`task_content`,`created_time`,`is_enabled`,`is_deleted`)VALUES (4, 1, '任务测12312312试', '任务内容测试', '2020-03-22 22:44:13', 1, 0);
-INSERT INTO `cl_task`(`task_id`, `created_id`,`task_title`,`task_content`,`created_time`,`is_enabled`,`is_deleted`)VALUES (5, 1, '任务测12312312试', '任务内容测aaaaa试', '2020-03-23 15:00:50', 1, 0);

@@ -1,5 +1,0 @@
-INSERT INTO `cl_article_type`(`type_id`, `type_name`, `type_count`, `created_time`, `update_time`, `is_enabled`, `is_deleted`, `version`) VALUES (1, '软件工程', 0, '2020-03-22 14:23:28', '2020-03-22 19:28:05', 1, 0, 8);
-INSERT INTO `cl_article_type`(`type_id`, `type_name`, `type_count`, `created_time`, `update_time`, `is_enabled`, `is_deleted`, `version`) VALUES (2, 'C++', 0, '2020-03-22 14:23:44', '2020-03-22 17:41:19', 1, 0, 3);
-INSERT INTO `cl_article_type`(`type_id`, `type_name`, `type_count`, `created_time`, `update_time`, `is_enabled`, `is_deleted`, `version`) VALUES (3, 'Java', 0, '2020-03-22 14:23:53', '2020-03-22 14:23:53', 1, 0, 1);
-INSERT INTO `cl_article_type`(`type_id`, `type_name`, `type_count`, `created_time`, `update_time`, `is_enabled`, `is_deleted`, `version`) VALUES (4, 'Python', 0, '2020-03-22 14:24:07', '2020-03-22 14:24:07', 1, 0, 1);
-INSERT INTO `cl_article_type`(`type_id`, `type_name`, `type_count`, `created_time`, `update_time`, `is_enabled`, `is_deleted`, `version`) VALUES (5, 'Spring Boot', 0, '2020-03-22 19:26:04', '2020-03-22 19:26:04', 1, 0, 1);
