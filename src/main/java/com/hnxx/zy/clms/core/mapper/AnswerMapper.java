@@ -82,8 +82,8 @@ public interface AnswerMapper {
             "        <if test=\"params.answerAuthor!=null and params.answerAuthor!=''\">\n" +
             "            and answer_author like CONCAT('%', #{params.answerAuthor}, '%')\n" +
             "        </if>\n" +
-            "        <if test=\"params.answerTime!=null and params.answerTime!=''\">\n" +
-            "            and answer_time like CONCAT('%', #{params.answerTime})\n" +
+            "        <if test=\"params.answerTime!=null\">\n" +
+            "            and answer_time between #{params.answerTime[0]} and #{params.answerTime[1]}\n" +
             "        </if>\n" +
             "        <if test=\"params.answerMark!=null\">\n" +
             "            and answer_mark = #{params.answerMark}\n" +
@@ -112,8 +112,8 @@ public interface AnswerMapper {
             "        <if test=\"params.answerAuthor!=null and params.answerAuthor!=''\">\n" +
             "            and answer_author like CONCAT('%', #{params.answerAuthor}, '%')\n" +
             "        </if>\n" +
-            "        <if test=\"params.answerTime!=null and params.answerTime!=''\">\n" +
-            "            and answer_time like CONCAT('%', #{params.answerTime})\n" +
+            "        <if test=\"params.answerTime!=null\">\n" +
+            "            and answer_time between #{params.answerTime[0],jdbcType=TIMESTAMP} and #{params.answerTime[1],jdbcType=TIMESTAMP}\n" +
             "        </if>\n" +
             "        <if test=\"params.answerMark!=null\">\n" +
             "            and answer_mark = #{params.answerMark}\n" +

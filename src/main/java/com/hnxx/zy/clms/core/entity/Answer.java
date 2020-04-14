@@ -6,8 +6,12 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,6 +40,7 @@ public class Answer {
     /**
      * 答复时间
      */
+
     private String answerTime;
 
     /**

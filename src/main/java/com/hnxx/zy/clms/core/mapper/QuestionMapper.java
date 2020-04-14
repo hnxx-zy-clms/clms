@@ -84,10 +84,10 @@ public interface QuestionMapper {
             "        <if test=\"params.questionAuthor!=null and params.questionAuthor!=''\">\n" +
             "            and question_author like CONCAT('%', #{params.questionAuthor}, '%')\n" +
             "        </if>\n" +
-            "        <if test=\"params.questionTime!=null and params.questionTime!=''\">\n" +
-            "            and question_time like CONCAT('%', #{params.questionTime})\n" +
+            "        <if test=\"params.questionTime!=null\">\n" +
+            "            and question_time between #{params.questionTime[0]} and #{params.questionTime[1]}\n" +
             "        </if>\n" +
-            "        <if test=\"params.questionMark!=null and params.questionMark!=''\">\n" +
+            "        <if test=\"params.questionMark!=null\">\n" +
             "            and question_mark = #{params.questionMark}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
@@ -114,10 +114,10 @@ public interface QuestionMapper {
             "        <if test=\"params.questionAuthor!=null and params.questionAuthor!=''\">\n" +
             "            and question_author like CONCAT('%', #{params.questionAuthor}, '%')\n" +
             "        </if>\n" +
-            "        <if test=\"params.questionTime!=null and params.questionTime!=''\">\n" +
-            "            and question_time like CONCAT('%', #{params.questionTime})\n" +
+            "        <if test=\"params.questionTime!=null\">\n" +
+            "            and question_time between #{params.questionTime[0]} and #{params.questionTime[1]}\n" +
             "        </if>\n" +
-            "        <if test=\"params.questionMark!=null and params.questionMark!=''\">\n" +
+            "        <if test=\"params.questionMark!=null\">\n" +
             "            and question_mark = #{params.questionMark}\n" +
             "        </if>\n" +
             "</script>")
