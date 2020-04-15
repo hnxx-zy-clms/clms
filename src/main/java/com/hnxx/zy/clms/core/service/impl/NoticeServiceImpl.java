@@ -41,6 +41,9 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public void delete(Integer id) { noticeMapper.delete(id);}
+
+    @Override
     public Page<Notice> getByPage(Page<Notice> page, Integer id) {
         List<Notice> notices = noticeMapper.getByPage(page, id);
         page.setList(notices);

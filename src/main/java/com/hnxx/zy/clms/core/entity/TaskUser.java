@@ -35,6 +35,11 @@ public class TaskUser implements Serializable {
     private Integer userId;
 
     /**
+     * 用户姓名
+     */
+    private String userName;
+
+    /**
      * 是否已完成
      */
     private Boolean isDid;

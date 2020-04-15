@@ -33,9 +33,6 @@ public class NoticeController {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private NoticeMapper noticeMapper;
-
     /**
      * 设置已读
      *
@@ -157,9 +154,9 @@ public class NoticeController {
     @PostMapping("deleteTopush")
     public Result deleteTopush(@RequestBody Notice notice){
         notice.setPushedTime(new Date());
-        noticeMapper.delete(notice.getNoticeId());
+        noticeService.delete(notice.getNoticeId());
         notice.setEnabled(true);
-        noticeMapper.save(notice);
+        noticeService.save(notice);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
@@ -175,7 +172,7 @@ public class NoticeController {
         }else {
             notice.setPushedTime(new Date());
         }
-        noticeMapper.update(notice);
+        noticeService.update(notice);
         return new Result(ResultEnum.SUCCESS);
     }
 

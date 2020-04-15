@@ -3,8 +3,10 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.entity.Task;
+import com.hnxx.zy.clms.core.entity.TaskUser;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,18 +51,31 @@ public interface TaskService {
     /**
      * 学生id获取该任务完成情况
      *
-     * @param task
+     * @param taskuser
      * @param id
      * @return
      */
-    Page<Task> getTaskSituation(Page<Task> task, Integer id);
+    Page<TaskUser> getTaskSituation(Page<TaskUser> taskuser, Integer id);
 
     /**
-     * 删除任务
+     * 逻辑删除任务
      *
      * @param id
      */
     void deleteTask(Integer id);
+
+    /**
+     * 将已保存状态改为发布
+     * @param id
+     */
+    void savedTopushed(Integer id, Date date);
+
+    /**
+     * 物理删除通知
+     *
+     * @param id
+     */
+    void delete(Integer id);
 
     /**
      * 分页获取任务
@@ -76,5 +91,17 @@ public interface TaskService {
      * @param page
      */
     Page<Task> getByPageAdmin(Page<Task> page);
+
+    /**
+     * 批量删除通知
+     * @param params
+     */
+    void deleteTasks(Integer [] params);
+
+    /**
+     * 更新任务
+     * @param task
+     */
+    void update(Task task);
 
 }

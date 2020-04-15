@@ -31,6 +31,11 @@ public interface UserMapper {
     @Select("select count(*) from cl_user")
     int selectUserNum();
 
+    /**
+     * 获取用户Id
+     * @param name
+     * @return
+     */
     @Select("select user_id from cl_user where user_name = #{name}")
     int selectUserId(@Param("name") String name);
 

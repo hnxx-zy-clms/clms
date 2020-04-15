@@ -31,11 +31,18 @@ public interface NoticeService {
     void save(Notice notice);
 
     /**
-     * 删除通知
+     * 逻辑删除通知
      *
      * @param id
      */
     void delNotice(Integer id);
+
+    /**
+     * 物理删除通知
+     *
+     * @param id
+     */
+    void delete(Integer id);
 
     /**
      * 学生分页获取通知

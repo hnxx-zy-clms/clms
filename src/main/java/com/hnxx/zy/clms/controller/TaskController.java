@@ -9,6 +9,7 @@ import com.hnxx.zy.clms.core.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +35,11 @@ public class TaskController {
      */
     @PostMapping("/save")
     public Result save(@RequestBody Task task) {
+        if (task.getIsEnabled()==false){
+            task.setPushedTime(null);
+        }else {
+            task.setPushedTime(new Date());
+        }
         taskService.saveTask(task);
         return new Result(ResultEnum.SUCCESS);
     }
@@ -61,6 +67,17 @@ public class TaskController {
         page.setIndex(page.getIndex());
         page = taskService.getByPage(page, id);
         return new Result<>(page);
+    }
+
+    /**
+     * 批量删除
+     * @param ids
+     * @return
+     */
+    @PostMapping("deleteByIds")
+    public Result<Page> deletes(Integer[] ids){
+        taskService.deleteTasks(ids);
+        return new Result<>(ResultEnum.SUCCESS);
     }
 
     /**
@@ -95,7 +112,7 @@ public class TaskController {
      * @param taskid
      * @return
      */
-    @GetMapping("/getTaskSituation/{taskid}")
+    @PostMapping("/getTaskSituation/{taskid}")
     public Result getTaskSituation(@RequestBody Page page, @PathVariable("taskid") Integer taskid) {
         page.setIndex(page.getIndex());
         page = taskService.getTaskSituation(page, taskid);
@@ -121,7 +138,6 @@ public class TaskController {
      */
     @PostMapping("getByPageAdmin")
     public Result<Page> getByPageAdmin(@RequestBody Page page) {
-        System.out.println(page);
         page.setIndex(page.getIndex());
         page = taskService.getByPageAdmin(page);
         return new Result<>(page);
@@ -135,5 +151,46 @@ public class TaskController {
     public Result getUserNum(){
         int i = userMapper.selectUserNum();
         return new Result<>(i);
+    }
+
+    /**
+     * 保存转为发布
+     * @param id
+     * @return
+     */
+    @PutMapping("saveTopush/{id}/{time}")
+    public Result savedTopushed(@PathVariable("id") Integer id, @PathVariable("time")Date date){
+        taskService.savedTopushed(id,date);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     *删除转发布
+     * @param task
+     * @return
+     */
+    @PostMapping("deleteTopush")
+    public Result deleteTopush(@RequestBody Task task){
+        task.setPushedTime(new Date());
+        taskService.delete(task.getTaskId());
+        task.setIsEnabled(true);
+        taskService.saveTask(task);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    /**
+     * 更新通知
+     * @param task
+     * @return
+     */
+    @PutMapping("update")
+    public Result update(@RequestBody Task task){
+        if (task.getIsEnabled()==false){
+            task.setPushedTime(null);
+        }else {
+            task.setPushedTime(new Date());
+        }
+        taskService.update(task);
+        return new Result(ResultEnum.SUCCESS);
     }
 }

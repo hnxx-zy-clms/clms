@@ -1,11 +1,13 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.entity.Task;
+import com.hnxx.zy.clms.core.entity.TaskUser;
+import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,7 +25,17 @@ public interface TaskMapper {
      *
      * @param task
      */
-    @Insert("insert into cl_task(created_id,task_title,task_content,is_enabled) values(#{task.createdId},#{task.taskTitle},#{task.taskContent},#{task.isEnabled})")
+    @Insert("<script>"+
+            "insert into cl_task(created_id,task_content,task_title,is_enabled"+
+            "        <if test=\"task.pushedTime!=null\">\n" +
+            "             ,pushed_time\n" +
+            "        </if>" +
+            ") values (#{task.createdId},#{task.taskContent},#{task.taskTitle},#{task.isEnabled}"+
+            "        <if test=\"task.pushedTime!=null\">\n" +
+            "             ,date_format(#{task.pushedTime}, '%Y-%m-%d %H:%i:%s')\n" +
+            "        </if>" +
+            ")"+
+            "</script>")
     void saveTask(@Param("task") Task task);
 
     /**
@@ -52,7 +64,7 @@ public interface TaskMapper {
     @Select("<script>"+
             "        select count(*) from cl_task a left JOIN cl_user b ON a.created_id=b.user_id  WHERE 1>0"+
             "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
-            "           and notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
+            "           and task_title like CONCAT('%', #{page.params.Title}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
             "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
@@ -93,8 +105,8 @@ public interface TaskMapper {
      * @param id
      * @return
      */
-    @Select("select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id=0 limit #{page.index}, #{page.pageSize}")
-    List<Task> getTaskSituation(@Param("page") Page page, Integer id);
+    @Select("select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id=2 limit #{page.index}, #{page.pageSize}")
+    List<TaskUser> getTaskSituation(@Param("page") Page page, Integer id);
 
     /**
      * 获取回复总数
@@ -152,6 +164,7 @@ public interface TaskMapper {
     })
     List<Task> getByPageAdmin(@Param("page") Page page);
 
+
     /**
      * 获取已完成人数
      * @param id
@@ -159,6 +172,39 @@ public interface TaskMapper {
      */
     @Select("select count(*) from cl_task_user where task_id=#{id}")
     int selectnum(@Param("id") Integer id);
+
+    /**
+     * 批量删除
+     * @param params
+     */
+    @Update("<script>"+
+            "update cl_task set is_deleted=1 WHERE cl_task.task_id in "+
+            "<foreach collection='params' item='param' open='(' separator=',' close=')'>"+
+            "   #{param}"+
+            "</foreach>"+
+            "</script>")
+    void deleteTasks(@Param("params") Integer [] params);
+
+    /**
+     * 物理删除
+     * @param id
+     */
+    @Delete("delete from cl_task where task_id = #{id}")
+    void delete(@Param("id") Integer id);
+
+    /**
+     * 将已保存状态改为发布状态
+     * @param id
+     */
+    @Update("update cl_task set pushed_time=date_format(#{time}, '%Y-%m-%d %H:%i:%s'),is_Enabled =1 ,is_deleted=0 where task_id = #{id}")
+    void savedTopushed(@Param("id") Integer id, @Param("time") Date date);
+
+    /**
+     * 更新任务
+     * @param task
+     */
+    @Update("update cl_task set created_time=#{task.createdTime},pushed_time=#{task.pushedTime},task_content=#{task.taskContent},task_title=#{task.taskTitle},is_enabled=#{task.isEnabled},is_deleted=#{task.isDeleted} where task_id = #{task.taskId}")
+    void update(@Param("task") Task task);
 
 
 }
