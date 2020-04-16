@@ -32,12 +32,12 @@ public class Report {
     /**
      * 组名
      */
-    private Integer userGroupId;
+    private String userGroupId;
 
     /**
      * 班级名
      */
-    private Integer userClassesId;
+    private String userClassesId;
 
     /**
      * 工作内容

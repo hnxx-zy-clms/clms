@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -151,5 +152,30 @@ public interface ReportMarkingMapper {
             "</if>\n" +
             "</script>"})
     List<ReportMarking> getUserMarking(Page<ReportMarking> page);
+
+    @Select({"<script> \n" +
+            "SELECT\n" +
+            "\t  #{params.time} as  type,'平均' as state ,AVG( a.group_leader_score) as value\n" +
+            "FROM\n" +
+            "\tcl_report_marking a\n" +
+            "\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\tLEFT JOIN cl_user_report c ON b.report_id = c.report_id\n" +
+            "\tLEFT JOIN cl_user d ON c.user_id = d.user_id\n" +
+            "\twhere is_deleted = 0 AND b.report_type = 0 AND  date_format(b.created_time,'%Y-%m-%d') = #{params.time}"+
+            "</script>"})
+    ReportStatistics getAvgReportScore(Page<ReportStatistics> page);
+
+    @Select({"<script> \n" +
+            "SELECT\n" +
+            "\t #{params.time} as  type,#{params.userName} as state ,a.group_leader_score as value\n" +
+            "FROM\n" +
+            "\tcl_report_marking a\n" +
+            "\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\tLEFT JOIN cl_user_report c ON b.report_id = c.report_id\n" +
+            "\tLEFT JOIN cl_user d ON c.user_id = d.user_id\n" +
+            "\twhere is_deleted = 0 AND b.report_type = 0 AND  date_format(b.created_time,'%Y-%m-%d') = #{params.time}"+
+            "\tAND d.user_name = #{params.userName} "+
+            "</script>"})
+    ReportStatistics getReportScore(Page<ReportStatistics> page);
 
 }
