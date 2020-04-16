@@ -1,5 +1,7 @@
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -7,6 +9,8 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+
+import java.util.Map;
 
 /**
  * @program: clms
@@ -39,5 +43,29 @@ public interface UserMapper {
     @Select("select user_id from cl_user where user_name = #{name}")
     int selectUserId(@Param("name") String name);
 
+    /**
+     * 获取人数
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select count(*) from cl_user where user_status = 1 \n"+
+            "<if test=\" params.userClassesId != null and params.userClassesId  != '' \"  > \n" +
+            "and user_classes_id = #{params.userClassesId}\n" +
+            "<if test='params.isClasses == 0  and params.userGroupId!=null' > \n" +
+            "and user_group_id = #{params.userGroupId}\n" +
+            "</if> \n" +
+            "</if> \n" +
+            "</script>"})
+    int getUserNum(Page<ReportStatistics> page);
+
+    /**
+     * 获取人数
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select DISTINCT(user_group_id) from cl_user where user_status = 1 \n"+
+            "and user_classes_id = #{params.userClassesId}\n" +
+            "</script>"})
+    Integer[] getGroupIds(Page<ReportStatistics> page);
 }
 
