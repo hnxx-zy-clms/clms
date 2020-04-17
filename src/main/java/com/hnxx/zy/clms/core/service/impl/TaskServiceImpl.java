@@ -35,7 +35,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task getTaskReply(Integer taskid, Integer userid) {
+    public TaskUser getTaskReply(Integer taskid, Integer userid) {
         return taskMapper.getTaskReply(taskid, userid);
     }
 
@@ -87,7 +87,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void savedTopushed(Integer id, Date date) {
-        taskMapper.savedTopushed(id,date);
+        taskMapper.savedTopushed(id, date);
     }
 
     @Override
@@ -101,7 +101,18 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void update(Task task){
+    public void update(Task task) {
         taskMapper.update(task);
+    }
+
+    @Override
+    public Task selectTask(Integer taskid) {
+        Task task = taskMapper.selectTask(taskid);
+        return task;
+    }
+
+    @Override
+    public void setLevel(Integer level, Integer id) {
+        taskMapper.setLevel(level, id);
     }
 }

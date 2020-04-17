@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Task;
+import com.hnxx.zy.clms.core.entity.TaskUser;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +36,9 @@ public class TaskController {
      */
     @PostMapping("/save")
     public Result save(@RequestBody Task task) {
-        if (task.getIsEnabled()==false){
+        if (task.getIsEnabled() == false) {
             task.setPushedTime(null);
-        }else {
+        } else {
             task.setPushedTime(new Date());
         }
         taskService.saveTask(task);
@@ -71,11 +72,12 @@ public class TaskController {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
     @PostMapping("deleteByIds")
-    public Result<Page> deletes(Integer[] ids){
+    public Result<Page> deletes(Integer[] ids) {
         taskService.deleteTasks(ids);
         return new Result<>(ResultEnum.SUCCESS);
     }
@@ -90,8 +92,8 @@ public class TaskController {
      */
     @GetMapping("/getTaskReply/{taskid}/{userid}")
     public Result getTaskReply(@PathVariable("taskid") Integer taskid, @PathVariable("userid") Integer userid) {
-        Task task = taskService.getTaskReply(taskid, userid);
-        return new Result(task);
+        TaskUser taskUser = taskService.getTaskReply(taskid, userid);
+        return new Result(taskUser);
     }
 
     /**
@@ -133,6 +135,7 @@ public class TaskController {
 
     /**
      * 教师分页获取任务
+     *
      * @param page
      * @return
      */
@@ -145,32 +148,35 @@ public class TaskController {
 
     /**
      * 获取总人数
+     *
      * @return
      */
     @GetMapping("getUserNum")
-    public Result getUserNum(){
+    public Result getUserNum() {
         int i = userMapper.selectUserNum();
         return new Result<>(i);
     }
 
     /**
      * 保存转为发布
+     *
      * @param id
      * @return
      */
     @PutMapping("saveTopush/{id}/{time}")
-    public Result savedTopushed(@PathVariable("id") Integer id, @PathVariable("time")Date date){
-        taskService.savedTopushed(id,date);
+    public Result savedTopushed(@PathVariable("id") Integer id, @PathVariable("time") Date date) {
+        taskService.savedTopushed(id, date);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
     /**
-     *删除转发布
+     * 删除转发布
+     *
      * @param task
      * @return
      */
     @PostMapping("deleteTopush")
-    public Result deleteTopush(@RequestBody Task task){
+    public Result deleteTopush(@RequestBody Task task) {
         task.setPushedTime(new Date());
         taskService.delete(task.getTaskId());
         task.setIsEnabled(true);
@@ -180,17 +186,30 @@ public class TaskController {
 
     /**
      * 更新通知
+     *
      * @param task
      * @return
      */
     @PutMapping("update")
-    public Result update(@RequestBody Task task){
-        if (task.getIsEnabled()==false){
+    public Result update(@RequestBody Task task) {
+        if (task.getIsEnabled() == false) {
             task.setPushedTime(null);
-        }else {
+        } else {
             task.setPushedTime(new Date());
         }
         taskService.update(task);
+        return new Result(ResultEnum.SUCCESS);
+    }
+
+    @GetMapping("gettask/{taskid}")
+    public Result selectTask(@PathVariable("taskid") Integer taskid) {
+        Task task = taskService.selectTask(taskid);
+        return new Result(task);
+    }
+
+    @PutMapping("setlevel/{level}/{id}")
+    public Result setLevel(@PathVariable("level") Integer level, @PathVariable("id") Integer id) {
+        taskService.setLevel(level, id);
         return new Result(ResultEnum.SUCCESS);
     }
 }
