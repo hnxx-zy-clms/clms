@@ -55,4 +55,9 @@ public class TaskUser implements Serializable {
      * 回复内容
      */
     private String replyContent;
+
+    /**
+     * 评分等级，1优秀-2良好-3及格-4未及格
+     */
+    private Integer Level;
 }
