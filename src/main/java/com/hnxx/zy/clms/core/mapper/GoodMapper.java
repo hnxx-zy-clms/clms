@@ -81,7 +81,19 @@ public interface GoodMapper {
      * @param page
      * @return
      */
-    @Select("select count(*) from cl_good")
+    @Select("<script>" +
+            "        select count(*) from cl_good\n" +
+            "        where 1=1\n" +
+            "        <if test=\"params.userId!=null\">\n" +
+            "            and user_id = #{params.userId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleId!=null\">\n" +
+            "            and article_id = #{params.articleId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.commentId!=null\">\n" +
+            "            and comment_id = #{params.commentId}\n" +
+            "        </if>\n" +
+            "</script>")
     int getCountByPage(Page<Good> page);
 
     /**

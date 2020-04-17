@@ -2,22 +2,20 @@ package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.utils.*;
 import com.hnxx.zy.clms.core.entity.Report;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.hssf.util.HSSFColor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: clms
@@ -145,7 +143,9 @@ public class ReportController {
      */
     @PostMapping("/getByPage")
     public Result<Page<Report>> getByPage(@RequestBody Page<Report> page){
-        page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        if(page.getSortColumn() != null) {
+            page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        }
         List<Report> reports=reportService.getByPage(page);
         page.setList(reports);
         page.setTotalCount(reports.size());
@@ -209,6 +209,67 @@ public class ReportController {
         excelUtils.setSheetName(sheetName);
         excelUtils.setResponse(response);
         excelUtils.start();
+    }
+    /**
+     *班长长导出报告
+     * @param page
+     * @param response
+     * @throws IOException
+     */
+    @PostMapping("/adminExcelDownloads")
+    public void adminExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
+        String sheetName = "报告信息表";
+        String fileName = "adminReportInfo" + ".xlsx";
+        List<Report> reports = reportService.getByPage(page);
+        ExcelUtils excelUtils = new ExcelUtils();
+        excelUtils.setFileName(fileName);
+        excelUtils.setList(reports);
+        excelUtils.setSheetName(sheetName);
+        excelUtils.setResponse(response);
+        excelUtils.start();
+    }
+
+
+    @PostMapping("/getUserReportInfo")
+    public Result<Page<ReportStatistics>> getUserNum(@RequestBody Page<ReportStatistics> page) throws ParseException {
+        if((Integer)page.params.get("reportType")==1){
+            DateUtils dateUtils =new DateUtils();
+            String[] results = dateUtils.getDateWeek((String)page.params.get("time"));
+            page.params.put("time",results);
+        }
+        List<ReportStatistics> reportStatisticsList = new ArrayList<>();
+        if (page.params.get("userGroupId")!=null && !"".equals(page.params.get("userGroupId"))){
+            int i = userService.getUserNum(page);
+            ReportStatistics reportStatistics = reportService.getTodayStatistics(page, i);
+            reportStatisticsList.add(reportStatistics);
+        } else if ((Integer) page.params.get("isClasses") == 1) {
+            int i = userService.getUserNum(page);
+            ReportStatistics reportStatistics = reportService.getTodayStatistics(page, i);
+            reportStatisticsList.add(reportStatistics);
+        }else{
+                Integer[] groupIds = userService.getGroupIds(page);
+                for (Integer groupId : groupIds) {
+                    page.params.put("userGroupId", groupId);
+                    int i = userService.getUserNum(page);
+                    ReportStatistics reportStatistics = reportService.getTodayStatistics(page, i);
+                    reportStatisticsList.add(reportStatistics);
+                }
+            }
+        page.setList(reportStatisticsList);
+        return new Result<>(page);
+    }
+
+    @PostMapping("/getMainReportInfo")
+    public Result<Page<ReportStatistics>> getMainReportInfo(@RequestBody Page<ReportStatistics> page) throws ParseException {
+        int i = userService.getUserNum(page);
+        if((Integer)page.params.get("reportType")==1){
+            DateUtils dateUtils =new DateUtils();
+            String[] results = dateUtils.getDateWeek((String)page.params.get("time"));
+            page.params.put("time",results);
+        }
+        List<ReportStatistics> reportStatisticsList=reportService.getMainReportInfo(page,i);
+        page.setList(reportStatisticsList);
+        return new Result<>(page);
     }
 
 }

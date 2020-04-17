@@ -16,7 +16,7 @@ import java.util.Date;
 public class ReportMarking {
 
     /**
-     * 报告ID
+     * 批阅ID
      */
     private Integer markingId;
 
@@ -28,7 +28,7 @@ public class ReportMarking {
     /**
      * 组长评分
      */
-    private float groupLeaderScore;
+    private Integer groupLeaderScore;
 
     /**
      * 组长评语
@@ -50,7 +50,7 @@ public class ReportMarking {
     /**
      * 班长评分
      */
-    private float monitorScore;
+    private Integer monitorScore;
 
     /**
      * 班长评语
@@ -71,7 +71,7 @@ public class ReportMarking {
     /**
      * 教师评分
      */
-    private float teacherScore;
+    private Integer teacherScore;
 
     /**
      * 教师评语

@@ -1,5 +1,7 @@
 package com.hnxx.zy.clms.security.test.services.Impl;
 
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
@@ -28,6 +30,21 @@ public class UserSeviceImpl implements UserService {
     @Override
     public String getUserName() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
+    @Override
+    public Integer selectUserId(String name) {
+        return userMapper.selectUserId(name);
+    }
+
+    @Override
+    public int getUserNum(Page<ReportStatistics> page) {
+        return userMapper.getUserNum(page);
+    }
+
+    @Override
+    public Integer[] getGroupIds(Page<ReportStatistics> page) {
+        return userMapper.getGroupIds(page);
     }
 
 }

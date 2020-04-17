@@ -1,13 +1,17 @@
 package com.hnxx.zy.clms.controller;
 
+import com.hnxx.zy.clms.common.utils.DateUtils;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +26,32 @@ public class ReportMarkingController {
 
     @Autowired
     private ReportMarkingService reportMarkingService;
+
+    /**
+     *管理员获取批阅报告
+     * @param page
+     * @return
+     */
+    @PostMapping("/getAllMarking")
+    public Result<Page<ReportMarking>> getAllMarking(@RequestBody Page<ReportMarking> page){
+        page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
+        List<ReportMarking> reports = reportMarkingService.getAllMarking(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
+    }
+
+    /**
+     * 管理员清空批阅数据
+     * @param markingId
+     * @return
+     */
+    @DeleteMapping("/deleteAdmin/{id}")
+    public Result<Object> deleteAdmin(@PathVariable("id") Integer markingId) {
+        reportMarkingService.deleteAdminById(markingId);
+        return new Result<>("删除成功");
+    }
 
     /**
      *组长获取本组未批阅报告
@@ -94,6 +124,20 @@ public class ReportMarkingController {
         page.setList(reports);
         page.setTotalCount(reports.size());
         page.pagingDate();
+        return new Result<>(page);
+    }
+
+    @PostMapping("/getMarkingScore")
+    public Result<Page<ReportStatistics>>getMarkingScore(@RequestBody Page<ReportStatistics> page){
+        DateUtils dateUtils =new DateUtils();
+        String[] c = dateUtils.getBeforeSevenDay();
+        List<ReportStatistics> reportStatisticsList = new ArrayList<>();
+        for (String time : c) {
+            page.params.put("time",time);
+            reportStatisticsList.add(reportMarkingService.getAvgReportScore(page));
+            reportStatisticsList.add(reportMarkingService.getReportScore(page));
+        }
+        page.setList(reportStatisticsList);
         return new Result<>(page);
     }
 

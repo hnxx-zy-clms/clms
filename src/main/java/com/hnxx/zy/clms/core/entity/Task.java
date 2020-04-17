@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
@@ -41,17 +42,20 @@ public class Task implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
     private Date createdTime;
+
+    /**
+     * 发布时间
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date pushedTime;
 
     /**
      * 是否启用--是1否0
      */
     private Boolean isEnabled;
 
-    /**
-     * 是否已完成
-     */
-    private Boolean isDid;
 
     /**
      * 是否删除
@@ -59,18 +63,13 @@ public class Task implements Serializable {
     private Boolean isDeleted;
 
     /**
-     * 用户id
-     */
-    private Integer userId;
-
-    /**
-     * 回复内容
-     */
-    private String replyContent;
-
-    /**
-     * 用户姓名
+     * 创建人姓名
      */
     private String userName;
+
+    /**
+     * 完成人数
+     */
+    private Integer numDid;
 
 }

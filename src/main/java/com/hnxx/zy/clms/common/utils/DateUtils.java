@@ -14,9 +14,21 @@ import java.util.function.Function;
  **/
 public class DateUtils {
 
+    public  String [] getBeforeSevenDay(){
+        String [] arr = new String[7];
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = null;
+        for (int i=0;i<7;i++){
+            c=Calendar.getInstance();
+            c.add(Calendar.DAY_OF_MONTH, - i-1);
+            arr[6-i] =sdf.format(c.getTime());
+        }
+        return arr;
+    }
     public String[] getDateWeek(String date) throws ParseException {
         Calendar c = getCalendarByDateStr(date);
         String[] result = getStartAndEndDayByDate(date);
+        result[0] = result[0]+" 00:00:00";
         result[1] = result[1]+" 22:00:00";
         System.out.println("当前周为第 "+c.get(Calendar.WEEK_OF_YEAR)+"周");
         System.out.println("周一日期为：" + result[0]);

@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Report;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.mapper.ReportMapper;
 import com.hnxx.zy.clms.core.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +83,14 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public int getTodayStatistics(String nowToday) {
-        return reportMapper.getTodayStatistics(nowToday);
+    public ReportStatistics  getTodayStatistics(Page<ReportStatistics> page , Integer i) {
+        return reportMapper.getTodayStatistics(page, i);
     }
+
+    @Override
+    public  List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page, Integer i) {
+        return reportMapper.getMainReportInfo(page,i);
+    }
+
+
 }

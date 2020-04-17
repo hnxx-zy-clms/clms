@@ -1,7 +1,7 @@
 spring:
   datasource:
     druid:
-#      url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+#      url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
 #      username: root
 #      password: code-fusheng
       url: jdbc:mysql://175.24.45.179/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8

@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 
 import java.util.List;
 
@@ -91,8 +92,10 @@ public interface ReportService {
 
     /**
      * 获取数据库用户今日报告情况
-     * @param nowToday
+     * @param page
      * @return
      */
-    int getTodayStatistics(String nowToday);
+    ReportStatistics  getTodayStatistics(Page<ReportStatistics> page , Integer i);
+
+    List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page,Integer i);
 }
