@@ -153,10 +153,6 @@ public class ArticleController {
         if(StringUtils.isNotBlank(sortColumn)){
             // 文章数 、文章点赞量、文章阅读量、文章收藏量、文章评论量
             String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_comment"};
-            // Arrays.asList() 方法使用
-            // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式
-            // 2. 该方法不适用于剧本数据类型（byte,short,int,long,float,double,boolean）
-            // 3. 不支持add和remove方法
             List<String> sortList = Arrays.asList(sortColumns);
             if(!sortList.contains(newSortColumn.toLowerCase())) {
                 return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
@@ -182,10 +178,6 @@ public class ArticleController {
         if(StringUtils.isNotBlank(sortColumn)){
             // 对应类型的文章量
             String[] sortColumns = {"article_type"};
-            // Arrays.asList() 方法使用
-            // 1. 该方法是将数组转换成list。 Json 数据格式中的 排序列为数组形式，此处需要转换成 List数据形式
-            // 2. 该方法不适用于剧本数据类型（byte,short,int,long,float,double,boolean）
-            // 3. 不支持add和remove方法
             List<String> sortList = Arrays.asList(sortColumns);
             if(!sortList.contains(newSortColumn.toLowerCase())) {
                 return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
@@ -194,11 +186,5 @@ public class ArticleController {
         page = articleService.getUserArticleCountInfo(page);
         return new Result<>(page);
     }
-
-
-
-
-
-
 
 }
