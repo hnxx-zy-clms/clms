@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
@@ -31,6 +32,7 @@ public class Registration implements Serializable {
     /**
      * 签到时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date signTime;
 
     /**
@@ -43,5 +45,9 @@ public class Registration implements Serializable {
      */
     private String userName;
 
+    /**
+     * 星期
+     */
+    private Integer signDay;
 
 }

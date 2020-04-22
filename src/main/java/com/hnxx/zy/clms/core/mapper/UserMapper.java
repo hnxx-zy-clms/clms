@@ -44,6 +44,14 @@ public interface UserMapper {
     int selectUserId(@Param("name") String name);
 
     /**
+     * 获取用户姓名
+     * @param id
+     * @return
+     */
+    @Select("select user_name from cl_user where user_id = #{id}")
+    String selectUserName(@Param("id") Integer id);
+
+    /**
      * 获取人数
      * @return
      */
