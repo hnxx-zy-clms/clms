@@ -108,7 +108,13 @@ public interface XxxMapper {
      * @param page
      * @return
      */
-    @Select("select count(*) from cl_xx")
+    @Select("<script>" +
+            "        select count(*) from cl_xx\n" +
+            "        where is_deleted = 0\n" +
+            "        <if test=\"params.xxName!=null and params.xxName!=''\">\n" +
+            "            and xx_name like CONCAT('%', #{params.xxName}, '%')\n" +
+            "        </if>" +
+            "</script>")
     int getCountByPage(Page<Xxx> page);
 
     /**

@@ -5,6 +5,7 @@ import com.hnxx.zy.clms.core.entity.Notice;
 import org.apache.ibatis.annotations.Param;
 import org.aspectj.weaver.ast.Not;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,11 +31,18 @@ public interface NoticeService {
     void save(Notice notice);
 
     /**
-     * 删除通知
+     * 逻辑删除通知
      *
      * @param id
      */
     void delNotice(Integer id);
+
+    /**
+     * 物理删除通知
+     *
+     * @param id
+     */
+    void delete(Integer id);
 
     /**
      * 学生分页获取通知
@@ -57,6 +65,19 @@ public interface NoticeService {
      * @param params
      */
     void deleteNotices(Integer [] params);
+
+    /**
+     * 将已保存状态改为发布
+     * @param id
+     */
+    void savedTopushed(Integer id, Date date);
+
+    /**
+     * 更新通知
+     * @param notice
+     */
+    void update(Notice notice);
+
 
 
 }

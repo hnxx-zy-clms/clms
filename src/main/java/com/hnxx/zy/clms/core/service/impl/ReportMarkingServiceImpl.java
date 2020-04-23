@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.mapper.ReportMarkingMapper;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +61,15 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     @Override
     public List<ReportMarking> getUserMarking(Page<ReportMarking> page) {
         return reportMarkingMapper.getUserMarking(page);
+    }
+
+    @Override
+    public ReportStatistics getAvgReportScore(Page<ReportStatistics> page) {
+        return reportMarkingMapper.getAvgReportScore(page);
+    }
+
+    @Override
+    public ReportStatistics getReportScore(Page<ReportStatistics> page) {
+        return reportMarkingMapper.getReportScore(page);
     }
 }

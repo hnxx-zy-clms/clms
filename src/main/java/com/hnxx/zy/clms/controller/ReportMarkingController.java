@@ -1,14 +1,17 @@
 package com.hnxx.zy.clms.controller;
 
+import com.hnxx.zy.clms.common.utils.DateUtils;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -121,6 +124,20 @@ public class ReportMarkingController {
         page.setList(reports);
         page.setTotalCount(reports.size());
         page.pagingDate();
+        return new Result<>(page);
+    }
+
+    @PostMapping("/getMarkingScore")
+    public Result<Page<ReportStatistics>>getMarkingScore(@RequestBody Page<ReportStatistics> page){
+        DateUtils dateUtils =new DateUtils();
+        String[] c = dateUtils.getBeforeSevenDay();
+        List<ReportStatistics> reportStatisticsList = new ArrayList<>();
+        for (String time : c) {
+            page.params.put("time",time);
+            reportStatisticsList.add(reportMarkingService.getAvgReportScore(page));
+            reportStatisticsList.add(reportMarkingService.getReportScore(page));
+        }
+        page.setList(reportStatisticsList);
         return new Result<>(page);
     }
 

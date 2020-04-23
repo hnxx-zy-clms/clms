@@ -57,9 +57,9 @@ public class Page<T> implements Serializable {
     /**
      * 条件参数
      */
-    private Map<String, Object> params = new HashMap<>(16);
+    public Map<String, Object> params = new HashMap<>(16);
 
-    /**
+    /**s
      * 排序列
      */
     private String sortColumn;

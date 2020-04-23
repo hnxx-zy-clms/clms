@@ -6,14 +6,18 @@
  */
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.ArticleType;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Repository
@@ -103,4 +107,22 @@ public interface ArticleTypeMapper {
      */
     @Update("update cl_article_type set version = version + 1, is_enabled = #{isEnabled} where type_id = #{typeId} and version = #{version}")
     void updateEnable(ArticleType type);
+
+
+    /**
+     * 查询各类型对应的做品数 以及 占比
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select type_name typeName, " +
+            "        type_count typeCounts," +
+            "        type_count/(select count(*) from cl_article_type) as percent" +
+            "        from cl_article_type\n" +
+            "        where is_deleted = 0 \n" +
+            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "            order by ${sortColumn} ${sortMethod}\n" +
+            "        </if>\n" +
+            "</script>")
+    List<Map> getArticleTypeCountInfo(Page<ArticleStatistics> page);
 }

@@ -3,8 +3,10 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Notice;
 import com.hnxx.zy.clms.core.entity.Task;
+import com.hnxx.zy.clms.core.entity.TaskUser;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,7 +38,7 @@ public interface TaskService {
      * @param userid
      * @return
      */
-    Task getTaskReply(Integer taskid, Integer userid);
+    TaskUser getTaskReply(Integer taskid, Integer userid);
 
     /**
      * 教师分页获取任务列表
@@ -49,18 +51,31 @@ public interface TaskService {
     /**
      * 学生id获取该任务完成情况
      *
-     * @param task
+     * @param taskuser
      * @param id
      * @return
      */
-    Page<Task> getTaskSituation(Page<Task> task, Integer id);
+    Page<TaskUser> getTaskSituation(Page<TaskUser> taskuser, Integer id);
 
     /**
-     * 删除任务
+     * 逻辑删除任务
      *
      * @param id
      */
     void deleteTask(Integer id);
+
+    /**
+     * 将已保存状态改为发布
+     * @param id
+     */
+    void savedTopushed(Integer id, Date date);
+
+    /**
+     * 物理删除通知
+     *
+     * @param id
+     */
+    void delete(Integer id);
 
     /**
      * 分页获取任务
@@ -70,5 +85,38 @@ public interface TaskService {
      * @return
      */
     Page<Task> getByPage(Page<Task> task, Integer id);
+
+    /**
+     * 教师分页获取任务
+     * @param page
+     */
+    Page<Task> getByPageAdmin(Page<Task> page);
+
+    /**
+     * 批量删除通知
+     * @param params
+     */
+    void deleteTasks(Integer [] params);
+
+    /**
+     * 更新任务
+     * @param task
+     */
+    void update(Task task);
+
+    /**
+     * 获取单个任务
+     * @param taskid
+     * @return
+     */
+    Task selectTask(Integer taskid);
+
+    /**
+     * 设置学生任务回复等级
+     * @param level
+     * @param id
+     */
+    void setLevel(Integer level,Integer id);
+
 
 }

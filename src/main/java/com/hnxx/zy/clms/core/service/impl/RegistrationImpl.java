@@ -6,6 +6,7 @@ import com.hnxx.zy.clms.core.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,5 +39,26 @@ public class RegistrationImpl implements RegistrationService {
     @Override
     public void deleteRegis(Integer id) {
         registrationMapper.deleteRegis(id);
+    }
+
+    @Override
+    public void updateRegistration(String sign_class,Integer sign_id){
+        registrationMapper.updateRegistration(sign_class,sign_id);
+    }
+
+    @Override
+    public Registration selectSignClass(Integer user_id, Date sign_time){
+        Registration registration = registrationMapper.selectSignClass(user_id,sign_time);
+        return registration;
+    }
+    @Override
+    public List<Registration> getRegisList(){
+        List<Registration> registrations = registrationMapper.getRegisList();
+        return registrations;
+    }
+    @Override
+    public List<Registration> getNameList(Integer classes, String date) {
+        List<Registration> registrations = registrationMapper.getNameList(classes,date);
+        return registrations;
     }
 }

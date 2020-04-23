@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +41,9 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public void delete(Integer id) { noticeMapper.delete(id);}
+
+    @Override
     public Page<Notice> getByPage(Page<Notice> page, Integer id) {
         List<Notice> notices = noticeMapper.getByPage(page, id);
         page.setList(notices);
@@ -49,7 +54,7 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public Page<Notice> getByPageAdmin(Page<Notice> page){
+    public Page<Notice> getByPageAdmin(Page<Notice> page) {
         List<Notice> notices = noticeMapper.getByPageAdmin(page);
         page.setList(notices);
 
@@ -59,7 +64,19 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public void deleteNotices(Integer [] params){
+    public void deleteNotices(Integer[] params) {
         noticeMapper.deleteNotices(params);
     }
+
+    @Override
+    public void savedTopushed(Integer id, Date date) {
+        noticeMapper.savedTopushed(id,date);
+    }
+
+    @Override
+    public void update(Notice notice){
+        noticeMapper.update(notice);
+    }
+
+
 }

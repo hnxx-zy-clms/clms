@@ -1,7 +1,9 @@
 package com.hnxx.zy.clms.core.mapper;
 
+import afu.org.checkerframework.checker.igj.qual.I;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -67,7 +69,9 @@ public interface ReportMapper {
      * 管理员查看所有报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n" +
+            "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where b.report_type = #{params.reportType}\n" +
             "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
@@ -94,7 +98,9 @@ public interface ReportMapper {
      * 根据user_classes_id、用户名、起止日期和report_type查找班级报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n" +
+            "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where c.user_classes_id = #{params.userClassesId} and b.report_type = #{params.reportType} and b.is_deleted = 0 and b.is_checked = 1 \n" +
             "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
@@ -122,7 +128,9 @@ public interface ReportMapper {
      * 根据user_group_id、username、日期和reportType查询报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name,c.user_group_id,c.user_classes_id  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
+            "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and is_deleted = 0 \n" +
             "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
@@ -143,7 +151,9 @@ public interface ReportMapper {
      * 根据user_id、起止日期和report_type查找个人报告
      */
     @Select({"<script> \n"+
-            "select b.*,c.user_name,c.user_group_id,c.user_classes_id  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
+            "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where c.user_id = #{params.userId} and b.report_type = #{params.reportType} and is_deleted = 0 \n"+
             "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
             "and b.created_time &gt;= #{params.reportDate[0]}\n" +
@@ -218,13 +228,163 @@ public interface ReportMapper {
 
     /**
      * 报告情况
-     * @param nowToday
+     * @param page
      * @return
      */
     @Select({"<script> \n"+
-            "select count(*)   from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id\n" +
-            "where b.created_time &gt;= #{nowToday} and b.report_type = 0 and is_deleted = 0 \n"+
+            "SELECT\n" +
+            "\ta.value,b.type\n" +
+            "FROM\n" +
+            "((\n" +
+            "SELECT\n" +
+            "<if test='page.params.isClasses == 0' > \n" +
+            "convert(SUM( CASE c.user_group_id WHEN #{page.params.userGroupId} THEN 1 ELSE 0 END )/#{i},decimal(15,2))*100 AS 'value'\n" +
+            "</if> \n"+
+            "<if test='page.params.isClasses == 1' > \n" +
+            "convert(SUM( CASE c.user_classes_id WHEN #{page.params.userClassesId} THEN 1 ELSE 0 END )/#{i},decimal(15,2))*100 AS 'value'\n" +
+            "</if> \n"+
+            "FROM\n" +
+            "cl_user_report a\n" +
+            "LEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "LEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            ") a,\n" +
+            "(\n" +
+            "SELECT\n" +
+            "<if test='page.params.isClasses == 0' > \n" +
+            "DISTINCT(x.codename) AS type \n" +
+            "</if> \n"+
+            "<if test='page.params.isClasses == 1' > \n" +
+            "DISTINCT(y.codename) AS type \n" +
+            "</if> \n"+
+            "FROM\n" +
+            "cl_user c\n" +
+            "LEFT JOIN cl_dict x ON x.type = 'group' \n" +
+            "AND x.CODE = c.user_group_id\n" +
+            "LEFT JOIN cl_dict y ON y.type = 'classes' \n" +
+            "AND y.CODE = c.user_classes_id \n" +
+            "WHERE\n" +
+            "<if test='page.params.isClasses == 0' > \n" +
+            "c.user_group_id = #{page.params.userGroupId} \n" +
+            "</if> \n"+
+            "<if test='page.params.isClasses == 1' > \n" +
+            "c.user_classes_id = #{page.params.userClassesId} \n" +
+            "</if> \n"+
+            ") b \n" +
+            ")\n" +
             "</script>"})
-    int getTodayStatistics(String nowToday);
+    ReportStatistics getTodayStatistics(Page<ReportStatistics> page,Integer i);
+
+    @Select({"<script> \n"+
+            "SELECT   '未批阅' AS  type , 未批阅  as  value ,'已提交' as state\n" +
+            "FROM \n" +
+            "(\n" +
+            "\tSELECT\n" +
+            "\t\t\tSUM( CASE b.is_checked WHEN 0 THEN 1 ELSE 0 END ) AS '未批阅'\n" +
+            "\t\tFROM\n" +
+            "\t\t\tcl_user_report a\n" +
+            "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            "\t\t\t) a\n" +
+            "\t\t\tUNION\n" +
+            "SELECT   '教师批阅' AS  type , 教师批阅 as  value ,'已提交' as state\n" +
+            "FROM \n" +
+            "(\n" +
+            "\tSELECT\n" +
+            "\t\t\tSUM( CASE b.is_teacher_checked WHEN 1 THEN 1 ELSE 0 END ) AS '教师批阅'\n" +
+            "\t\tFROM\n" +
+            "\t\t\tcl_user_report a\n" +
+            "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            "\t\t\t) b\n" +
+            "\t\t\t\tUNION\n" +
+            "SELECT   '组长批阅' AS  type , 组长批阅 as  value ,'已提交' as state\n" +
+            "FROM \n" +
+            "(\n" +
+            "\tSELECT\n" +
+            "\t\t\tSUM( CASE b.is_checked WHEN 1 THEN 1 ELSE 0 END ) AS '组长批阅'\n" +
+            "\t\tFROM\n" +
+            "\t\t\tcl_user_report a\n" +
+            "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            "\t\t\t) c\n" +
+            "\t\t\t\tUNION\n" +
+            "SELECT   '班长批阅' AS  type , 班长批阅 as  value ,'已提交' as state\n" +
+            "FROM \n" +
+            "(\n" +
+            "\tSELECT\n" +
+            "\t\t\tSUM(CASE b.is_classes_checked WHEN 1 THEN 1 ELSE 0 END ) AS '班长批阅'\n" +
+            "\t\tFROM\n" +
+            "\t\t\tcl_user_report a\n" +
+            "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            "\t\t\t) d\n" +
+            "\t\t\t\tUNION\n" +
+            "SELECT\n" +
+            "\t'未提交' AS  type ,#{i}-未提交 as value ,'未提交' as state\n" +
+            "FROM\n" +
+            "(\n" +
+            "SELECT\n" +
+            "COUNT(CASE c.user_classes_id WHEN #{page.params.userClassesId} THEN 1 END) AS '未提交'\n" +
+            "FROM\n" +
+            "cl_user_report a\n" +
+            "LEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "LEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "b.report_type = #{page.params.reportType}\n" +
+            "<if test='page.params.reportType == 0' > \n" +
+            "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
+            "</if> \n"+
+            "<if test='page.params.reportType  == 1' > \n" +
+            "and b.created_time &gt;= #{page.params.time[0]} \n" +
+            "and b.created_time &lt;= #{page.params.time[1]} \n" +
+            "</if> \n"+
+            ") e\n" +
+            "</script>"})
+    List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page,Integer i);
 }
 

@@ -1,1 +1,0 @@
-2020-03-22 17:42:39.720 WARN  [http-nio-8080-exec-8]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]

@@ -8,6 +8,9 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
+
+import java.util.List;
 
 public interface ArticleService {
     /**
@@ -60,4 +63,18 @@ public interface ArticleService {
      * @return
      */
     Article readById(Integer id);
+
+    /**
+     * 文章信息数据统计
+     * @param page
+     * @return
+     */
+    Page<ArticleStatistics> getArticleCountInfo(Page<ArticleStatistics> page);
+
+    /**
+     * 获取用户各类型文章数
+     * @param page
+     * @return
+     */
+    Page<ArticleStatistics> getUserArticleCountInfo(Page<ArticleStatistics> page);
 }

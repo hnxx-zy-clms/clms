@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -68,4 +69,17 @@ public interface ReportMarkingService {
      */
     List<ReportMarking> getUserMarking(Page<ReportMarking> page);
 
+    /**
+     * 获取所有报告批阅平均分数
+     * @param page
+     * @return
+     */
+    ReportStatistics getAvgReportScore(Page<ReportStatistics> page);
+
+    /**
+     * 获取用户报告批阅平均分数
+     * @param page
+     * @return
+     */
+    ReportStatistics getReportScore(Page<ReportStatistics> page);
 }
