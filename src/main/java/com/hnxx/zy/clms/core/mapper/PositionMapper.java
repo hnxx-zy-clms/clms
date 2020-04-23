@@ -17,10 +17,10 @@ public interface PositionMapper {
     @Select("select * from cl_position")
     List<Position> findAllByPage();
 
-    @Update("UPDATE `cl_position` SET positionStatus = 0 WHERE positionId = #{id}")
+    @Update("UPDATE `cl_position` SET position_Status = 0 WHERE position_Id = #{id}")
     int disableClasses(int id);
 
-    @Update("UPDATE `cl_position` SET positionStatus = 1 WHERE positionId = #{id}")
+    @Update("UPDATE `cl_position` SET position_Status = 1 WHERE position_Id = #{id}")
     int enableClasses(int id);
 
 }
