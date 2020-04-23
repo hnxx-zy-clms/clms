@@ -21,10 +21,9 @@ public class ClassesController {
     @Autowired
     private ClassesService classesService;
 
-    @GetMapping(value = "all")
-    public Result<PageInfo> findAllClassesByPage(@RequestParam(required = false,defaultValue = "1") int page,
-                                             @RequestParam(required = false,defaultValue = "5") int size){
-
+    @GetMapping(value = "all/{page}/{size}")
+    public Result<PageInfo> findAllClassesByPage(@PathVariable("page") int page,
+                                             @PathVariable("size") int size){
         PageInfo pages = classesService.findAllClassesByPage(page, size);
         return new Result<>(pages);
     }
@@ -35,10 +34,15 @@ public class ClassesController {
         return new Result<>(ResultEnum.SUCCESS);
     }
 
-    @PutMapping("update")
-    public Result<String> updateClasses(int id){
-        classesService.updateClasses(id);
+    @PutMapping("update/{id}/{type}")
+    public Result<String> updateClasses(@PathVariable("id") int id ,@PathVariable("type") int type){
+        classesService.updateClasses(id,type);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
+    @PutMapping("updateIds")
+    public Result<String> updateClasses(@RequestBody List<Integer> ids){
+        classesService.updateIdsClasses(ids);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
 }

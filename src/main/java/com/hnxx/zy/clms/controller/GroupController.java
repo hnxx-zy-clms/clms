@@ -10,6 +10,8 @@ import com.hnxx.zy.clms.core.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("group")
 public class GroupController {
@@ -17,9 +19,9 @@ public class GroupController {
     @Autowired
     private GroupService groupService;
 
-    @GetMapping(value = "all")
-    public Result<PageInfo> findAllByPage(@RequestParam(required = false,defaultValue = "1") int page,
-                                                 @RequestParam(required = false,defaultValue = "5") int size){
+    @GetMapping(value = "all/{page}/{size}")
+    public Result<PageInfo> findAllByPage(@PathVariable("page") int page,
+                                          @PathVariable("size") int size){
         PageInfo pages = groupService.findAllByPage(page, size);
         return new Result<>(pages);
     }
@@ -30,9 +32,15 @@ public class GroupController {
         return new Result<>(ResultEnum.SUCCESS);
     }
 
-    @PutMapping("update")
-    public Result<String> updateClasses(int id){
-        groupService.updateClasses(id);
+    @PutMapping("update/{id}/{type}")
+    public Result<String> updateClasses(@PathVariable("id") int id ,@PathVariable("type") int type){
+        groupService.updateClasses(id,type);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    @PutMapping("updateIds")
+    public Result<String> updateClasses(@RequestBody List<Integer> ids){
+        groupService.updateIdsClasses(ids);
         return new Result<>(ResultEnum.SUCCESS);
     }
 

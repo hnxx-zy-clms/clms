@@ -10,6 +10,8 @@ import com.hnxx.zy.clms.core.service.CollegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("college")
 public class CollegeController {
@@ -17,9 +19,9 @@ public class CollegeController {
     @Autowired
     private CollegeService collegeService;
 
-    @GetMapping(value = "all")
-    public Result<PageInfo> findAllByPage(@RequestParam(required = false,defaultValue = "1") int page,
-                                                 @RequestParam(required = false,defaultValue = "5") int size){
+    @GetMapping(value = "all/{page}/{size}")
+    public Result<PageInfo> findAllByPage(@PathVariable("page") int page,
+                                          @PathVariable("size") int size){
         PageInfo pages = collegeService.findAllByPage(page, size);
         return new Result<>(pages);
     }
@@ -30,9 +32,15 @@ public class CollegeController {
         return new Result<>(ResultEnum.SUCCESS);
     }
 
-    @PutMapping("update")
-    public Result<String> updateClasses(int id){
-        collegeService.updateClasses(id);
+    @PutMapping("update/{id}/{type}")
+    public Result<String> updateClasses(@PathVariable("id") int id ,@PathVariable("type") int type){
+        collegeService.updateClasses(id,type);
+        return new Result<>(ResultEnum.SUCCESS);
+    }
+
+    @PutMapping("updateIds")
+    public Result<String> updateClasses(@RequestBody List<Integer> ids){
+        collegeService.updateIdsClasses(ids);
         return new Result<>(ResultEnum.SUCCESS);
     }
 

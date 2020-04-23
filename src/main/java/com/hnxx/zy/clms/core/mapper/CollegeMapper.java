@@ -13,9 +13,12 @@ public interface CollegeMapper {
     @Insert("insert into `cl_college`(college_name,college_states) values(#{collegeName},#{collegeStates})")
     int save(College college);
 
-    @Update("UPDATE `cl_college` SET college_states = 0 WHERE college_id = #{id}")
-    int updateClasses(int id);
-
     @Select("select * from cl_college")
     List<College> findAllByPage();
+
+    @Update("UPDATE `cl_college` SET college_states = 0 WHERE college_id = #{id}")
+    void disableClasses(int id);
+
+    @Update("UPDATE `cl_college` SET college_states = 1 WHERE college_id = #{id}")
+    void enableClasses(int id);
 }

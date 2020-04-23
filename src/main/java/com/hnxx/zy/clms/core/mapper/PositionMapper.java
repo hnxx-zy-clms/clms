@@ -14,10 +14,13 @@ public interface PositionMapper {
     @Insert("insert into `cl_position`(position_name,position_status) values(#{positionName},#{positionStatus})")
     int save(Position position);
 
-    @Update("UPDATE `cl_position` SET positionStatus = 0 WHERE positionId = #{id}")
-    int updateClasses(int id);
-
     @Select("select * from cl_position")
     List<Position> findAllByPage();
+
+    @Update("UPDATE `cl_position` SET positionStatus = 0 WHERE positionId = #{id}")
+    int disableClasses(int id);
+
+    @Update("UPDATE `cl_position` SET positionStatus = 1 WHERE positionId = #{id}")
+    int enableClasses(int id);
 
 }

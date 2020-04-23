@@ -27,8 +27,15 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public void updateClasses(int id) {
-        groupMapper.updateClasses(id);
+    public void updateClasses(int id ,int type) {
+        switch (type){
+            case 0:
+                groupMapper.disableClasses(id);
+                break;
+            case 1:
+                groupMapper.enableClasses(id);
+                break;
+        }
     }
 
     @Override
@@ -37,5 +44,12 @@ public class GroupServiceImpl implements GroupService {
         List<Group> list = groupMapper.findAllByPage();
         PageInfo info = new PageInfo(list);
         return info;
+    }
+
+    @Override
+    public void updateIdsClasses(List<Integer> ids) {
+        for (Integer id : ids){
+            groupMapper.disableClasses(id);
+        }
     }
 }

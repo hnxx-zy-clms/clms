@@ -13,7 +13,10 @@ public interface ClassesMapper {
     int save(Classes classes);
 
     @Update("UPDATE `cl_classes` SET classes_states = 0 WHERE classes_id = #{id}")
-    int updateClasses(int id);
+    int disableClasses(int id);
+
+    @Update("UPDATE `cl_classes` SET classes_states = 1 WHERE classes_id = #{id}")
+    int enableClasses(int id);
 
     @Select("select * from cl_classes")
     List<Classes> findAllClassesByPage();

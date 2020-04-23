@@ -27,8 +27,15 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
-    public void updateClasses(int id) {
-        positionMapper.updateClasses(id);
+    public void updateClasses(int id , int type) {
+        switch (type){
+            case 0:
+                positionMapper.disableClasses(id);
+                break;
+            case 1:
+                positionMapper.enableClasses(id);
+                break;
+        }
     }
 
     @Override
@@ -37,5 +44,12 @@ public class PositionServiceImpl implements PositionService {
         List<Position> list = positionMapper.findAllByPage();
         PageInfo info = new PageInfo(list);
         return info;
+    }
+
+    @Override
+    public void updateIdsClasses(List<Integer> ids) {
+        for (Integer id : ids){
+            positionMapper.disableClasses(id);
+        }
     }
 }

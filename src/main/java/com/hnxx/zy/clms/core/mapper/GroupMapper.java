@@ -14,9 +14,12 @@ public interface GroupMapper {
     @Insert("insert into `cl_group`(group_name,group_states) values(#{groupName},#{groupStates})")
     int save(Group group);
 
-    @Update("UPDATE `cl_group` SET group_states = 0 WHERE group_id = #{id}")
-    int updateClasses(int id);
-
     @Select("select * from cl_group")
     List<Group> findAllByPage();
+
+    @Update("UPDATE `cl_group` SET group_states = 0 WHERE group_id = #{id}")
+    void disableClasses(int id);
+
+    @Update("UPDATE `cl_group` SET group_states = 1 WHERE group_id = #{id}")
+    void enableClasses(int id);
 }

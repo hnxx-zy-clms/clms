@@ -2,7 +2,6 @@ package com.hnxx.zy.clms.core.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.College;
 import com.hnxx.zy.clms.core.mapper.CollegeMapper;
 import com.hnxx.zy.clms.core.service.CollegeService;
@@ -26,8 +25,15 @@ public class CollegeServiceImpl implements CollegeService {
     }
 
     @Override
-    public void updateClasses(int id) {
-        collegeMapper.updateClasses(id);
+    public void updateClasses(int id , int type) {
+        switch (type){
+            case 0:
+                collegeMapper.disableClasses(id);
+                break;
+            case 1:
+                collegeMapper.enableClasses(id);
+                break;
+        }
     }
 
     @Override
@@ -36,5 +42,12 @@ public class CollegeServiceImpl implements CollegeService {
         List<College> list = collegeMapper.findAllByPage();
         PageInfo info = new PageInfo(list);
         return info;
+    }
+
+    @Override
+    public void updateIdsClasses(List<Integer> ids) {
+        for (Integer id : ids){
+            collegeMapper.disableClasses(id);
+        }
     }
 }

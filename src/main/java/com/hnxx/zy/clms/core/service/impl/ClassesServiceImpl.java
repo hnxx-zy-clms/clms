@@ -25,8 +25,15 @@ public class ClassesServiceImpl implements ClassesService {
     }
 
     @Override
-    public void updateClasses(int id) {
-        classesMapper.updateClasses(id);
+    public void updateClasses(int id , int type) {
+        switch (type){
+            case 0:
+                classesMapper.disableClasses(id);
+                break;
+            case 1:
+                classesMapper.enableClasses(id);
+                break;
+        }
     }
 
     @Override
@@ -35,5 +42,12 @@ public class ClassesServiceImpl implements ClassesService {
         List<Classes> list = classesMapper.findAllClassesByPage();
         PageInfo info = new PageInfo(list);
         return info;
+    }
+
+    @Override
+    public void updateIdsClasses(List<Integer> ids) {
+        for (Integer id : ids){
+            classesMapper.disableClasses(id);
+        }
     }
 }
