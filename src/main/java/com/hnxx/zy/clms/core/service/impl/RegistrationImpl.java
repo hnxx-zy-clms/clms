@@ -42,23 +42,25 @@ public class RegistrationImpl implements RegistrationService {
     }
 
     @Override
-    public void updateRegistration(String sign_class,Integer sign_id){
-        registrationMapper.updateRegistration(sign_class,sign_id);
+    public void updateRegistration(String sign_class, Integer sign_id) {
+        registrationMapper.updateRegistration(sign_class, sign_id);
     }
 
     @Override
-    public Registration selectSignClass(Integer user_id, Date sign_time){
-        Registration registration = registrationMapper.selectSignClass(user_id,sign_time);
+    public Registration selectSignClass(Integer user_id, Date sign_time) {
+        Registration registration = registrationMapper.selectSignClass(user_id, sign_time);
         return registration;
     }
+
     @Override
-    public List<Registration> getRegisList(){
+    public List<Registration> getRegisList() {
         List<Registration> registrations = registrationMapper.getRegisList();
         return registrations;
     }
+
     @Override
     public List<Registration> getNameList(Integer classes, String date) {
-        List<Registration> registrations = registrationMapper.getNameList(classes,date);
+        List<Registration> registrations = registrationMapper.getNameList(classes, date);
         return registrations;
     }
 }

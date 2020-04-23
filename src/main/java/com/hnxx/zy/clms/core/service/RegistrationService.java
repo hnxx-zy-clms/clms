@@ -48,12 +48,14 @@ public interface RegistrationService {
 
     /**
      * 更新签到
+     *
      * @param sign_class
      */
-    void updateRegistration(String sign_class,Integer sign_id);
+    void updateRegistration(String sign_class, Integer sign_id);
 
     /**
      * 获取当天签到的情况
+     *
      * @param user_id
      * @param sign_time
      * @return
@@ -62,12 +64,14 @@ public interface RegistrationService {
 
     /**
      * 获取所有用户本周签到
+     *
      * @return
      */
     List<Registration> getRegisList();
 
     /**
      * 获取当天当节课签到人姓名
+     *
      * @param classes
      * @param date
      * @return

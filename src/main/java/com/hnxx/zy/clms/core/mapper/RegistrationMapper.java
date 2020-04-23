@@ -81,6 +81,7 @@ public interface RegistrationMapper {
 
     /**
      * 获取当天当节课签到人姓名
+     *
      * @param classes
      * @param date
      * @return
@@ -89,7 +90,7 @@ public interface RegistrationMapper {
     @Results({
             @Result(property = "userName",
                     column = "user_id",
-                    one=@One(select = "com.hnxx.zy.clms.core.mapper.UserMapper.selectUserName")
+                    one = @One(select = "com.hnxx.zy.clms.core.mapper.UserMapper.selectUserName")
             )
     })
     List<Registration> getNameList(Integer classes, String date);
