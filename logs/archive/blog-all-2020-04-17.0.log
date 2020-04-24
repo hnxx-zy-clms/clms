@@ -1,0 +1,1110 @@
+2020-04-14 02:34:38.324 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 9688 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-14 02:34:38.394 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 02:34:38.411 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-14 02:34:39.034 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-14 02:34:39.035 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-14 02:34:39.036 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 02:34:39.036 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 02:34:53.240 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-14 02:34:53.356 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-14 02:34:53.357 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-14 02:34:53.358 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 02:34:55.301 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-14 02:34:55.302 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 16266 ms
+2020-04-14 02:34:56.742 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-14 02:35:15.050 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-14 02:35:18.025 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-14 02:35:26.845 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-14 02:35:26.846 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-14 02:35:32.471 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@226ba0ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@a53ee07, org.springframework.security.web.header.HeaderWriterFilter@217b2b97, org.springframework.web.filter.CorsFilter@2b342c4a, org.springframework.security.web.authentication.logout.LogoutFilter@39ab3801, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@46bcea3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d63cfb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58622af3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63679bf7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@259bfad4, org.springframework.security.web.session.SessionManagementFilter@6ef6a717, org.springframework.security.web.access.ExceptionTranslationFilter@2445aa22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d4cccac]
+2020-04-14 02:35:34.705 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 02:35:40.698 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-14 02:35:41.442 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-14 02:35:41.492 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8887"]
+2020-04-14 02:35:44.204 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-14 02:35:44.844 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 72.268 seconds (JVM running for 74.404)
+2020-04-14 02:37:21.600 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 8340 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-14 02:37:21.600 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 02:37:21.600 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-14 02:37:21.680 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-14 02:37:21.680 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-14 02:37:21.680 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 02:37:21.680 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 02:37:23.379 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-14 02:37:23.389 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-14 02:37:23.389 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-14 02:37:23.389 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 02:37:23.559 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-14 02:37:23.559 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 1869 ms
+2020-04-14 02:37:23.822 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-14 02:37:24.941 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-14 02:37:25.141 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-14 02:37:25.641 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-14 02:37:25.641 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-14 02:37:26.200 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c272ad, org.springframework.security.web.context.SecurityContextPersistenceFilter@6849d880, org.springframework.security.web.header.HeaderWriterFilter@3800dc03, org.springframework.web.filter.CorsFilter@79e970ce, org.springframework.security.web.authentication.logout.LogoutFilter@791b7d4d, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@7d36585, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34b35f3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9131d00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3da6bba4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24f6a636, org.springframework.security.web.session.SessionManagementFilter@195b47a2, org.springframework.security.web.access.ExceptionTranslationFilter@212099fe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42fb1e5]
+2020-04-14 02:37:26.310 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 02:37:26.520 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-14 02:37:26.600 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-14 02:37:26.630 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-14 02:37:26.660 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 02:37:26.660 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 6.388 seconds (JVM running for 9.046)
+2020-04-14 02:41:28.413 INFO  [http-nio-8080-exec-7]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 02:41:28.429 INFO  [http-nio-8080-exec-7]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-14 02:41:29.837 INFO  [http-nio-8080-exec-7]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 1406 ms
+2020-04-14 02:41:39.793 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:41:45.537 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:41:50.775 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:41:52.253 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:41:52.254 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:41:52.256 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:42:15.353 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:42:15.354 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:42:15.357 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:42:31.331 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:42:31.346 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:42:31.352 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:42:47.954 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:42:47.955 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:42:47.957 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:42:49.380 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:42:49.382 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:42:49.384 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:44:52.960 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:44:52.970 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:44:52.976 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:44:54.590 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:44:54.591 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:44:54.593 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:46:35.939 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:46:35.950 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:46:35.956 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
+2020-04-14 02:47:04.007 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 11404 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-14 02:47:04.017 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 02:47:04.017 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-14 02:47:04.117 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-14 02:47:04.127 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-14 02:47:04.127 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 02:47:04.127 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 02:47:07.515 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-14 02:47:07.535 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-14 02:47:07.545 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-14 02:47:07.545 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 02:47:07.819 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-14 02:47:07.820 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3693 ms
+2020-04-14 02:47:08.101 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-14 02:47:09.029 ERROR [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:872 -init datasource error, url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:861)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1922)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:467)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hnxx.zy.clms.ClmsApplication.main(ClmsApplication.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-04-14 02:47:09.047 ERROR [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:905 -{dataSource-1} init error
+java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:861)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1922)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:467)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hnxx.zy.clms.ClmsApplication.main(ClmsApplication.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-04-14 02:47:09.049 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-14 02:47:09.062 ERROR [restartedMain]o.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup:61 -Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\ideaProject\clms\target\classes\com\hnxx\zy\clms\core\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+2020-04-14 02:47:09.107 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-14 02:47:09.127 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Create-1799889496] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:107)
+ com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:150)
+ com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:180)
+ java.io.FilterInputStream.read(FilterInputStream.java:133)
+ com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+ com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+ com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+ com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:533)
+ com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:703)
+ com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:680)
+ com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:128)
+ com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:540)
+ com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:202)
+ com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1340)
+ com.mysql.cj.NativeSession.connect(NativeSession.java:157)
+ com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+ com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+ com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+ com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+ com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+ com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+ com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+ com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+ com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+ com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+ com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2468)
+2020-04-14 02:47:09.150 WARN  [restartedMain]org.apache.catalina.loader.WebappClassLoaderBase.log:173 -The web application [ROOT] appears to have started a thread named [Druid-ConnectionPool-Destroy-1799889496] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ com.alibaba.druid.pool.DruidDataSource$DestroyConnectionThread.run(DruidDataSource.java:2540)
+2020-04-14 02:47:09.153 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-04-14 02:47:09.157 ERROR [Druid-ConnectionPool-Create-1799889496]com.alibaba.druid.pool.DruidDataSource.run:2471 -create connection SQLException, url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 1049, state 42000
+java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2468)
+2020-04-14 02:47:09.166 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-14 02:47:09.209 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:826 -Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.hnxx.zy.clms.ClmsApplication.main(ClmsApplication.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\ideaProject\clms\target\classes\com\hnxx\zy\clms\core\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:467)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\ideaProject\clms\target\classes\com\hnxx\zy\clms\core\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userSeviceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\ideaProject\clms\target\classes\com\hnxx\zy\clms\core\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\ideaProject\clms\target\classes\com\hnxx\zy\clms\core\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 94 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	... 105 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 118 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'clms_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1560)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1623)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:861)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1922)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	... 129 common frames omitted
+2020-04-14 02:48:30.466 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 12100 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-14 02:48:30.475 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 02:48:30.477 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-14 02:48:30.588 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-14 02:48:30.590 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-14 02:48:30.591 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 02:48:30.591 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 02:48:32.327 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-14 02:48:32.336 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-14 02:48:32.337 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-14 02:48:32.338 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 02:48:32.517 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-14 02:48:32.518 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 1926 ms
+2020-04-14 02:48:32.822 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-14 02:48:36.584 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-14 02:48:36.804 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-14 02:48:37.669 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-14 02:48:37.669 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-14 02:48:38.030 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10f3f6ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@21dadc90, org.springframework.security.web.header.HeaderWriterFilter@7ac594c3, org.springframework.web.filter.CorsFilter@230220f2, org.springframework.security.web.authentication.logout.LogoutFilter@286cceae, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@63d066a4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b26fef2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7707b59b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4624d2c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@437aa034, org.springframework.security.web.session.SessionManagementFilter@49f2f224, org.springframework.security.web.access.ExceptionTranslationFilter@5c3a1740, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@376796c2]
+2020-04-14 02:48:38.114 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 02:48:38.320 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-14 02:48:38.399 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-14 02:48:38.482 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-14 02:48:38.521 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 02:48:38.527 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 9.029 seconds (JVM running for 10.611)
+2020-04-14 02:48:54.025 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 02:48:54.026 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-14 02:48:54.045 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-04-14 02:48:54.338 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:48:55.126 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:48:55.863 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:12.863 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:12.867 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:12.901 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:23.193 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:23.194 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:23.227 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:23.459 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:49:23.474 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:49:23.489 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:49:23.492 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:49:23.493 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:49:23.538 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:49:23.539 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:49:23.577 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:49:23.578 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 120
+2020-04-14 02:49:23.585 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:49:23.622 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:49:23.627 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 120(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:49:23.704 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:49:32.723 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:32.726 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:32.762 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:32.894 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:49:32.895 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:49:32.896 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:49:32.897 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:49:32.898 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:49:32.938 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:49:32.939 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:49:32.973 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:49:32.974 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 80
+2020-04-14 02:49:32.975 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:49:33.018 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:49:33.021 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 80(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:49:33.091 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:49:36.540 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:36.541 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:36.574 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:36.696 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:49:36.696 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:49:36.697 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:49:36.698 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:49:36.699 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:49:36.740 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:49:36.741 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:49:36.780 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:49:36.782 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 86
+2020-04-14 02:49:36.782 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:49:36.826 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:49:36.828 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 86(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:49:36.896 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:49:50.228 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:50.229 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:50.262 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:51.470 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:49:51.471 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:49:51.471 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:49:51.472 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:49:51.472 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:49:51.714 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:49:51.716 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 0(Integer)
+2020-04-14 02:49:51.761 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 6
+2020-04-14 02:49:51.762 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 292
+2020-04-14 02:49:51.780 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:49:51.820 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:49:51.822 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 292(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:49:51.890 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:49:52.121 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:49:52.122 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:49:52.156 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:49:52.277 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:49:52.278 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:49:52.279 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:49:52.279 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:49:52.280 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:49:52.322 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:49:52.324 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 1(Integer)
+2020-04-14 02:49:52.362 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 7
+2020-04-14 02:49:52.365 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 88
+2020-04-14 02:49:52.366 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:49:52.409 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:49:52.418 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 88(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:49:52.489 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:50:15.022 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:50:15.024 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:50:15.044 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:50:15.045 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:50:15.058 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:50:15.079 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:50:15.221 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:50:15.222 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:50:15.222 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:50:15.223 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:50:15.224 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:50:15.243 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:50:15.244 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:50:15.244 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:50:15.245 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:50:15.246 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:50:15.270 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:50:15.271 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 1(Integer)
+2020-04-14 02:50:15.289 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:50:15.291 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:50:15.324 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 7
+2020-04-14 02:50:15.326 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:50:15.326 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 105
+2020-04-14 02:50:15.328 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:50:15.328 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 85
+2020-04-14 02:50:15.329 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:50:15.368 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:50:15.370 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 105(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:50:15.383 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:50:15.386 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 85(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:50:15.440 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:50:15.457 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:09.267 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:09.269 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:09.276 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:09.276 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:09.319 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:09.319 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:09.618 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:51:09.620 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:51:09.620 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:09.621 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:51:09.621 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:09.629 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:51:09.632 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:09.633 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:09.634 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:51:09.635 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:09.661 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:51:09.663 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:51:09.679 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:51:09.681 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 1(Integer)
+2020-04-14 02:51:09.699 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:51:09.700 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 82
+2020-04-14 02:51:09.703 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:09.756 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 7
+2020-04-14 02:51:09.774 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 145
+2020-04-14 02:51:09.776 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:09.780 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:09.782 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 82(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:09.818 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:09.819 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 145(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:09.855 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:09.894 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:12.271 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:12.272 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:12.306 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:12.478 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-14 02:51:12.479 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:12.480 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:12.484 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-14 02:51:12.485 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:12.495 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 17
+2020-04-14 02:51:12.496 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:12.538 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:12.540 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 17(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:12.610 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:28.899 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:28.900 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:28.935 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:29.062 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:51:29.062 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:29.064 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:29.065 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:51:29.066 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:29.104 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:51:29.105 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 0(Integer)
+2020-04-14 02:51:29.144 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 6
+2020-04-14 02:51:29.148 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 86
+2020-04-14 02:51:29.150 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:29.188 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:29.190 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 86(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:29.262 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:34.476 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:34.477 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:34.512 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:34.635 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:51:34.636 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:34.636 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:34.637 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:51:34.637 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:34.678 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:51:34.680 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 1(Integer)
+2020-04-14 02:51:34.719 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 7
+2020-04-14 02:51:34.720 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 85
+2020-04-14 02:51:34.721 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:34.761 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:34.764 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 85(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:34.841 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:38.312 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:38.313 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:38.347 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:38.495 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-14 02:51:38.496 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:38.497 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:38.497 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-14 02:51:38.498 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:38.498 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 3
+2020-04-14 02:51:38.499 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:38.538 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:38.540 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 3(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:38.610 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:54.604 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:54.604 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:54.640 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:54.766 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getAll
+2020-04-14 02:51:54.767 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:51:54.767 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:54.767 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getAll
+2020-04-14 02:51:54.768 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:54.806 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==>  Preparing: select * from cl_article_type where is_deleted = 0 
+2020-04-14 02:51:54.808 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -==> Parameters: 
+2020-04-14 02:51:54.850 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getAll.debug:159 -<==      Total: 8
+2020-04-14 02:51:54.850 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 84
+2020-04-14 02:51:54.851 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:54.888 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:54.891 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getAll(String), ******(String), 1(Integer), null, GET(String), 84(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:54.964 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:51:57.026 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:51:57.026 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:51:57.066 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:51:57.200 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /article/getByPage
+2020-04-14 02:51:57.201 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:51:57.201 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:51:57.202 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-04-14 02:51:57.202 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:51:57.365 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id where a.is_deleted = 0 order by created_time asc limit ?, ? 
+2020-04-14 02:51:57.366 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:51:57.497 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 10
+2020-04-14 02:51:57.499 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-04-14 02:51:57.500 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:51:57.535 DEBUG [http-nio-8080-exec-7]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:51:57.601 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 401
+2020-04-14 02:51:57.611 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:51:57.650 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:51:57.651 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), ******(String), 1(Integer), null, POST(String), 401(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:51:57.723 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:02.721 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:02.722 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:02.757 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:02.876 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /article/getByPage
+2020-04-14 02:52:02.876 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:02.877 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:02.877 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleController.getByPage
+2020-04-14 02:52:02.880 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:02.952 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==>  Preparing: select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id where a.is_deleted = 0 order by created_time asc limit ?, ? 
+2020-04-14 02:52:02.954 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -==> Parameters: 10(Integer), 10(Integer)
+2020-04-14 02:52:03.099 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ArticleMapper.getByPage.debug:159 -<==      Total: 3
+2020-04-14 02:52:03.100 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_article where is_deleted = 0 
+2020-04-14 02:52:03.101 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:03.135 DEBUG [http-nio-8080-exec-8]c.hnxx.zy.clms.core.mapper.ArticleMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:03.202 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 327
+2020-04-14 02:52:03.204 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:03.243 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:03.246 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /article/getByPage(String), ******(String), 1(Integer), null, POST(String), 327(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:03.318 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:05.838 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:05.839 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:05.873 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:05.999 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /comment/getByPage
+2020-04-14 02:52:06.000 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:06.000 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:06.001 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.CommentController.getByPage
+2020-04-14 02:52:06.001 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:06.054 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.CommentMapper.getByPage.debug:159 -==>  Preparing: select c.*, a.article_title from cl_comment c left join cl_article a on c.comment_article = a.article_id where c.is_deleted = 0 order by comment_time asc limit ?, ? 
+2020-04-14 02:52:06.055 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.CommentMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:06.098 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.CommentMapper.getByPage.debug:159 -<==      Total: 10
+2020-04-14 02:52:06.136 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.CommentMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_comment 
+2020-04-14 02:52:06.137 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.CommentMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:06.171 DEBUG [http-nio-8080-exec-9]c.hnxx.zy.clms.core.mapper.CommentMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:06.172 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 173
+2020-04-14 02:52:06.182 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:06.221 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:06.222 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /comment/getByPage(String), ******(String), 1(Integer), null, POST(String), 173(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:06.294 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:09.333 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:09.333 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:09.369 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:09.497 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /collection/getByPage
+2020-04-14 02:52:09.497 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:09.498 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:09.499 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.CollectionController.getByPage
+2020-04-14 02:52:09.499 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:09.548 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CollectionMapper.getByPage.debug:159 -==>  Preparing: select c.*, a.article_title from cl_collection c left join cl_article a on c.article_id = a.article_id where c.is_deleted = 0 order by collection_time asc limit ?, ? 
+2020-04-14 02:52:09.549 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CollectionMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:09.584 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.CollectionMapper.getByPage.debug:159 -<==      Total: 6
+2020-04-14 02:52:09.625 DEBUG [http-nio-8080-exec-1]c.h.zy.clms.core.mapper.CollectionMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_collection where is_deleted = 0 
+2020-04-14 02:52:09.626 DEBUG [http-nio-8080-exec-1]c.h.zy.clms.core.mapper.CollectionMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:09.661 DEBUG [http-nio-8080-exec-1]c.h.zy.clms.core.mapper.CollectionMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:09.662 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 165
+2020-04-14 02:52:09.665 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:09.704 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:09.705 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /collection/getByPage(String), ******(String), 1(Integer), null, POST(String), 165(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:09.778 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:11.198 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:11.199 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:11.233 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:11.374 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /good/getByPage
+2020-04-14 02:52:11.377 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:11.379 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:11.379 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.GoodController.getByPage
+2020-04-14 02:52:11.380 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:11.428 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getByPage.debug:159 -==>  Preparing: select * from cl_good where 1=1 order by good_time asc limit ?, ? 
+2020-04-14 02:52:11.429 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:11.468 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getByPage.debug:159 -<==      Total: 10
+2020-04-14 02:52:11.511 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_good 
+2020-04-14 02:52:11.513 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:11.547 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.GoodMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:11.548 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 174
+2020-04-14 02:52:11.551 INFO  [http-nio-8080-exec-10]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:11.589 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:11.590 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /good/getByPage(String), ******(String), 1(Integer), null, POST(String), 174(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:11.661 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:14.550 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:14.550 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:14.584 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:14.714 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /log/getByPage
+2020-04-14 02:52:14.715 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:14.715 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:14.716 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.LogController.getByPage
+2020-04-14 02:52:14.716 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:14.764 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==>  Preparing: select log_id, log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_time from cl_log order by created_time asc limit ?, ? 
+2020-04-14 02:52:14.765 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:14.821 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getByPage.debug:159 -<==      Total: 10
+2020-04-14 02:52:14.863 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_log 
+2020-04-14 02:52:14.864 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:14.900 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:14.901 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 187
+2020-04-14 02:52:14.905 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:14.946 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:14.947 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /log/getByPage(String), ******(String), 1(Integer), null, POST(String), 187(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:15.020 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:25.929 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:25.930 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:25.965 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:26.082 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /xxx/getByPage
+2020-04-14 02:52:26.083 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:26.083 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:26.084 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.XxxController.getByPage
+2020-04-14 02:52:26.084 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:26.129 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getByPage.debug:159 -==>  Preparing: select xx_id, xx_name, created_time, update_time, is_enabled from cl_xx where is_deleted = 0 order by created_time asc limit ?, ? 
+2020-04-14 02:52:26.130 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getByPage.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:26.169 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getByPage.debug:159 -<==      Total: 10
+2020-04-14 02:52:26.210 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_xx 
+2020-04-14 02:52:26.210 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:26.246 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.XxxMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:26.247 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 165
+2020-04-14 02:52:26.255 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:26.295 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:26.296 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /xxx/getByPage(String), ******(String), 1(Integer), null, POST(String), 165(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:26.367 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:36.373 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:36.373 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:36.408 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:36.413 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:52:36.414 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:52:36.447 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:52:36.562 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /notice/getByPageAdmin
+2020-04-14 02:52:36.563 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:52:36.564 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:36.564 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.NoticeController.getByPageAdmin
+2020-04-14 02:52:36.565 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:36.618 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-14 02:52:36.618 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:52:36.619 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:52:36.620 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-14 02:52:36.623 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:52:36.625 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 7
+2020-04-14 02:52:36.627 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:36.670 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:36.675 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 7(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:36.684 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getByPageAdmin.debug:159 -==>  Preparing: SELECT a.*,b.user_name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id order by created_time desc LIMIT ?, ? 
+2020-04-14 02:52:36.685 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getByPageAdmin.debug:159 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-14 02:52:36.725 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getByPageAdmin.debug:159 -<==      Total: 10
+2020-04-14 02:52:36.746 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:52:36.765 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getCountByPage.debug:159 -==>  Preparing: select count(*) from cl_notice 
+2020-04-14 02:52:36.766 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getCountByPage.debug:159 -==> Parameters: 
+2020-04-14 02:52:36.799 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.NoticeMapper.getCountByPage.debug:159 -<==      Total: 1
+2020-04-14 02:52:36.800 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 238
+2020-04-14 02:52:36.810 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:52:36.852 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:52:36.856 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /notice/getByPageAdmin(String), ******(String), 1(Integer), null, POST(String), 238(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:52:36.933 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:53:14.965 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:53:14.972 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:53:15.008 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:53:18.112 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:53:18.113 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:53:18.148 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:53:18.541 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:53:18.542 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:53:18.577 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:53:18.698 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-14 02:53:18.699 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-14 02:53:18.700 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:53:18.701 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-14 02:53:18.702 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:53:18.744 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-14 02:53:18.745 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-14 02:53:18.781 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-14 02:53:18.783 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 85
+2020-04-14 02:53:18.784 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:53:18.825 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:53:18.827 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 85(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:53:18.904 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-14 02:53:22.412 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-14 02:53:22.412 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-14 02:53:22.446 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-14 02:53:22.564 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /report/getByPage
+2020-04-14 02:53:22.565 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-04-14 02:53:22.565 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 192.168.1.6
+2020-04-14 02:53:22.565 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ReportController.getByPage
+2020-04-14 02:53:22.566 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-14 02:53:22.609 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==>  Preparing: select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id where b.report_type = ? order by created_time asc 
+2020-04-14 02:53:22.610 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -==> Parameters: 1(Integer)
+2020-04-14 02:53:22.646 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ReportMapper.getByPage.debug:159 -<==      Total: 7
+2020-04-14 02:53:22.648 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 84
+2020-04-14 02:53:22.649 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-14 02:53:22.687 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-14 02:53:22.690 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /report/getByPage(String), ******(String), 1(Integer), null, POST(String), 84(Long), ******(String), 192.168.1.6(String)
+2020-04-14 02:53:22.765 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-17 18:12:23.939 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 3432 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-17 18:12:24.069 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-17 18:12:24.099 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-17 18:12:24.159 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-17 18:12:24.159 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-17 18:12:24.159 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-17 18:12:24.159 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-17 18:12:28.568 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-17 18:12:28.581 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-17 18:12:28.582 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-17 18:12:28.582 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-17 18:12:28.799 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-17 18:12:28.800 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 4641 ms
+2020-04-17 18:12:29.043 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-17 18:12:32.493 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-17 18:12:32.870 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-17 18:12:33.776 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-17 18:12:33.777 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-17 18:12:34.196 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60f29831, org.springframework.security.web.context.SecurityContextPersistenceFilter@55cad75a, org.springframework.security.web.header.HeaderWriterFilter@967db3e, org.springframework.web.filter.CorsFilter@5c2418d2, org.springframework.security.web.authentication.logout.LogoutFilter@58f93947, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@23a1d65f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c0787f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58df5e10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76f35155, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4490cfbe, org.springframework.security.web.session.SessionManagementFilter@466fbe2b, org.springframework.security.web.access.ExceptionTranslationFilter@42118e88, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26cc3520]
+2020-04-17 18:12:34.277 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-17 18:12:34.469 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-17 18:12:34.590 WARN  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:61 -Unable to start LiveReload server
+2020-04-17 18:12:34.640 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-17 18:12:34.660 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-17 18:12:34.660 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 11.769 seconds (JVM running for 13.491)
+2020-04-17 18:13:05.129 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-17 18:13:05.130 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-17 18:13:05.164 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 33 ms

@@ -1,0 +1,411 @@
+2020-04-23 02:22:00.638 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 10332 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 02:22:00.678 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 02:22:01.288 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 02:22:01.288 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 02:22:01.288 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 02:22:01.288 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 02:22:58.368 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 02:22:58.378 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:22:58.378 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 02:22:58.378 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 02:22:58.701 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 02:22:58.701 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 57413 ms
+2020-04-23 02:22:59.226 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 02:23:02.150 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 02:23:03.224 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 02:23:03.224 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 02:23:03.414 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 02:23:03.418 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 02:23:03.434 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 02:24:56.674 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 4296 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 02:24:56.684 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 02:24:56.754 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 02:24:56.754 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 02:24:56.754 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 02:24:56.754 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 02:24:58.593 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 02:24:58.593 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:24:58.603 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 02:24:58.603 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 02:24:58.783 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 02:24:58.783 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2029 ms
+2020-04-23 02:24:59.073 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 02:25:01.321 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 02:25:02.111 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 02:25:02.111 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 02:25:02.271 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 02:25:02.271 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 02:25:02.281 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 02:28:30.288 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 10416 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 02:28:30.288 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 02:28:30.458 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 02:28:30.458 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 02:28:30.458 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 02:28:30.458 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 02:28:32.647 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 02:28:32.657 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:28:32.657 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 02:28:32.657 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 02:28:32.837 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 02:28:32.837 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2379 ms
+2020-04-23 02:28:33.187 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 02:28:35.525 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 02:28:36.345 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 02:28:36.345 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 02:28:36.915 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b4572ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@702a6fb2, org.springframework.security.web.header.HeaderWriterFilter@6e3a58c6, org.springframework.web.filter.CorsFilter@6f1097c2, org.springframework.security.web.authentication.logout.LogoutFilter@3888311b, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@218305ae, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25a54479, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cb8895c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7303f0b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2be59cc9, org.springframework.security.web.session.SessionManagementFilter@7b5d8149, org.springframework.security.web.access.ExceptionTranslationFilter@313b09c4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@34a7bf68]
+2020-04-23 02:28:37.055 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 02:28:37.304 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 02:28:37.455 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 02:28:37.494 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:28:37.524 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-23 02:28:37.534 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.39 seconds (JVM running for 10.148)
+2020-04-23 02:28:44.423 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 02:28:44.423 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 02:28:44.451 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 28 ms
+2020-04-23 02:28:44.572 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /login
+2020-04-23 02:28:44.588 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:28:44.604 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 02:28:44.608 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.LoginController.callbackLogin
+2020-04-23 02:28:44.608 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:28:44.612 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 40
+2020-04-23 02:28:44.836 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 02:28:45.199 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 02:28:45.199 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:28:45.199 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 02:28:45.199 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 02:28:45.203 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:28:45.207 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 8
+2020-04-23 02:28:45.263 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 02:28:46.969 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /login
+2020-04-23 02:28:46.969 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:28:46.969 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 02:28:46.973 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.LoginController.callbackLogin
+2020-04-23 02:28:46.977 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:28:46.977 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 8
+2020-04-23 02:28:46.977 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 02:28:47.109 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 02:28:47.113 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:28:47.113 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 02:28:47.113 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 02:28:47.117 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:28:47.117 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 8
+2020-04-23 02:28:47.117 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 02:31:36.834 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 7460 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 02:31:36.844 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 02:31:36.936 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 02:31:36.936 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 02:31:36.936 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 02:31:36.936 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 02:31:39.214 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 02:31:39.224 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:31:39.224 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 02:31:39.224 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 02:31:39.414 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 02:31:39.414 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2478 ms
+2020-04-23 02:31:39.634 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 02:31:41.933 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 02:31:42.938 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 02:31:42.938 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 02:31:43.315 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@906d572, org.springframework.security.web.context.SecurityContextPersistenceFilter@a2c5d6c, org.springframework.security.web.header.HeaderWriterFilter@590c94d5, org.springframework.web.filter.CorsFilter@47fed18, org.springframework.security.web.authentication.logout.LogoutFilter@56c7ee29, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@68ef837b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d882eca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13adf70c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8535c85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e512c92, org.springframework.security.web.session.SessionManagementFilter@4e868467, org.springframework.security.web.access.ExceptionTranslationFilter@2a8353bb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f0d5f0c]
+2020-04-23 02:31:43.407 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 02:31:43.695 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 02:31:43.811 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 02:31:43.871 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-23 02:31:43.898 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-23 02:31:43.910 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.167 seconds (JVM running for 9.702)
+2020-04-23 02:31:43.966 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 02:31:43.966 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 02:31:43.986 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 20 ms
+2020-04-23 02:31:44.034 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /login
+2020-04-23 02:31:44.034 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:31:44.038 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-23 02:31:44.046 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.LoginController.callbackLogin
+2020-04-23 02:31:44.046 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:31:44.050 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 16
+2020-04-23 02:31:44.092 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 02:31:44.345 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 02:31:44.349 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 02:31:44.349 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-23 02:31:44.349 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 02:31:44.349 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 02:31:44.357 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 12
+2020-04-23 02:31:44.409 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 23:31:38.861 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 8736 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:31:38.910 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:31:39.222 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:31:39.222 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:31:39.223 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:31:39.224 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:31:45.683 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 23:31:45.693 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 23:31:45.694 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:31:45.695 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:31:46.141 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:31:46.142 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 6918 ms
+2020-04-23 23:31:46.967 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:31:49.831 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:31:51.418 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:31:51.419 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:31:52.007 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4adc7167, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a34530c, org.springframework.security.web.header.HeaderWriterFilter@2bc81b91, org.springframework.web.filter.CorsFilter@d5a5b00, org.springframework.security.web.authentication.logout.LogoutFilter@37caa432, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@b5a04c0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28a48a51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ab5d24b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@92fcfe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a795c14, org.springframework.security.web.session.SessionManagementFilter@5dc57d3f, org.springframework.security.web.access.ExceptionTranslationFilter@7a8448af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@222b5685]
+2020-04-23 23:31:52.147 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:31:52.490 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:31:52.633 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:31:52.677 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-23 23:31:52.718 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-23 23:31:52.723 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 15.937 seconds (JVM running for 18.477)
+2020-04-23 23:32:38.424 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:32:38.428 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:32:38.500 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 72 ms
+2020-04-23 23:32:38.773 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 23:32:38.775 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 23:32:38.780 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 23:32:38.785 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 23:32:38.786 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 23:32:38.794 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 22
+2020-04-23 23:32:39.040 INFO  [http-nio-8080-exec-1]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 23:32:49.414 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 23:32:49.415 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 23:32:49.415 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 23:32:49.416 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 23:32:49.417 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 23:32:49.417 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 3
+2020-04-23 23:32:49.418 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 23:32:50.714 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 23:32:50.715 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 23:32:50.715 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 23:32:50.716 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 23:32:50.717 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 23:32:50.717 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 3
+2020-04-23 23:32:50.718 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 23:39:08.340 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 12124 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:39:08.344 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:39:08.396 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:39:08.397 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:39:08.397 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:39:08.398 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:39:10.157 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-23 23:39:10.166 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-23 23:39:10.168 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:39:10.168 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:39:10.374 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:39:10.375 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 1977 ms
+2020-04-23 23:39:10.659 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:39:12.974 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:39:14.159 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:39:14.160 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:39:14.680 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ae2d5d2, org.springframework.security.web.context.SecurityContextPersistenceFilter@335f470d, org.springframework.security.web.header.HeaderWriterFilter@b6eec0c, org.springframework.web.filter.CorsFilter@1a6cb823, org.springframework.security.web.authentication.logout.LogoutFilter@24c2ce1, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@2a172edc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b52d429, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ca9348f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77735b1d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51deec3, org.springframework.security.web.session.SessionManagementFilter@691267e6, org.springframework.security.web.access.ExceptionTranslationFilter@e4555ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d1cf5d6]
+2020-04-23 23:39:14.815 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:39:15.297 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:39:15.431 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:39:15.495 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-23 23:39:15.532 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-23 23:39:15.537 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.253 seconds (JVM running for 9.976)
+2020-04-23 23:39:20.121 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:39:20.122 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:39:20.143 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-04-23 23:39:25.848 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-04-23 23:39:25.850 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-23 23:39:25.855 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 0:0:0:0:0:0:0:1
+2020-04-23 23:39:25.857 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-04-23 23:39:25.858 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-23 23:39:25.862 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 15
+2020-04-23 23:39:25.955 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-23 23:46:21.502 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 11472 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:46:21.745 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:46:22.246 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:46:22.247 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:46:22.248 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:46:22.248 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:46:37.721 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:46:37.747 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:46:37.748 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:46:37.748 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:46:39.124 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:46:39.124 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 16875 ms
+2020-04-23 23:46:40.372 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:46:43.281 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:46:46.067 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:46:46.068 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:46:46.433 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 23:46:46.437 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 23:46:46.452 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 23:49:36.347 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 7484 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:49:36.375 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:49:36.472 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:49:36.473 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:49:36.474 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:49:36.475 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:49:39.535 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:49:39.555 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:49:39.555 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:49:39.555 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:49:39.795 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:49:39.795 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3320 ms
+2020-04-23 23:49:40.105 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:49:42.573 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:49:43.505 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:49:43.505 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:49:43.704 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-04-23 23:49:44.094 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a5a0358, org.springframework.security.web.context.SecurityContextPersistenceFilter@60b5d58d, org.springframework.security.web.header.HeaderWriterFilter@736a63dc, org.springframework.web.filter.CorsFilter@55f6d086, org.springframework.security.web.authentication.logout.LogoutFilter@6cd06a8a, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@64094dc8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2e20c31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e7e5823, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cf07ef5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b79adc4, org.springframework.security.web.session.SessionManagementFilter@77e48cd, org.springframework.security.web.access.ExceptionTranslationFilter@fd96f34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@279bd4]
+2020-04-23 23:49:44.234 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:49:44.784 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:49:45.034 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:49:45.074 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:49:45.104 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-23 23:49:45.114 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 9.911 seconds (JVM running for 11.649)
+2020-04-23 23:49:59.074 INFO  [http-nio-8887-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:49:59.076 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:49:59.095 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-04-23 23:50:29.565 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 8792 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:50:29.575 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:50:29.685 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:50:29.685 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:50:29.685 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:50:29.685 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:50:31.724 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:50:31.734 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:50:31.734 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:50:31.734 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:50:31.974 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:50:31.974 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2289 ms
+2020-04-23 23:50:32.214 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:50:34.542 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:50:35.432 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:50:35.442 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:50:35.632 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-04-23 23:50:35.832 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c862e31, org.springframework.security.web.context.SecurityContextPersistenceFilter@29de89d5, org.springframework.security.web.header.HeaderWriterFilter@277737a8, org.springframework.web.filter.CorsFilter@ce63141, org.springframework.security.web.authentication.logout.LogoutFilter@1d170706, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@1ed747a5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@682efc20, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a637bbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6090e90b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1eebcc01, org.springframework.security.web.session.SessionManagementFilter@bb6bb9b, org.springframework.security.web.access.ExceptionTranslationFilter@4a78358c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25d6a832]
+2020-04-23 23:50:35.932 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:50:36.241 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:50:36.341 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:50:36.381 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:50:36.411 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-23 23:50:36.411 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 7.712 seconds (JVM running for 9.121)
+2020-04-23 23:50:41.634 INFO  [http-nio-8887-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:50:41.634 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:50:41.651 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 17 ms
+2020-04-23 23:51:10.756 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 12276 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:51:10.756 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:51:10.856 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:51:10.856 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:51:10.856 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:51:10.856 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:51:12.885 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:51:12.895 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:51:12.895 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:51:12.905 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:51:13.115 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:51:13.115 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2259 ms
+2020-04-23 23:51:13.374 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:51:15.753 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:51:16.623 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:51:16.623 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:51:16.833 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-04-23 23:51:17.082 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b4f9a02, org.springframework.security.web.context.SecurityContextPersistenceFilter@7bb48843, org.springframework.security.web.header.HeaderWriterFilter@53d0a8f1, org.springframework.web.filter.CorsFilter@73afaa64, org.springframework.security.web.authentication.logout.LogoutFilter@3adb3f48, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@2c52783d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18994502, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54ea53d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cd06a8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c11f00a, org.springframework.security.web.session.SessionManagementFilter@62bdf748, org.springframework.security.web.access.ExceptionTranslationFilter@5a38b0fa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b6ebf94]
+2020-04-23 23:51:17.182 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:51:17.512 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:51:17.602 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:51:17.642 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:51:17.672 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-23 23:51:17.672 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.005 seconds (JVM running for 9.344)
+2020-04-23 23:51:24.038 INFO  [http-nio-8887-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:51:24.039 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:51:24.058 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 19 ms
+2020-04-23 23:53:28.765 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 12280 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:53:28.775 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:53:28.885 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:53:28.885 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:53:28.885 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:53:28.895 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:53:30.814 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:53:30.824 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:53:30.834 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:53:30.834 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:53:31.014 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:53:31.014 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2119 ms
+2020-04-23 23:53:31.283 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:53:33.692 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:53:34.612 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:53:34.612 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:53:34.841 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 23:53:34.851 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 23:53:34.861 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 23:54:26.214 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 2224 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:54:26.224 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:54:26.344 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:54:26.344 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:54:26.344 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:54:26.344 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:54:28.373 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:54:28.383 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:54:28.383 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:54:28.383 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:54:28.573 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:54:28.573 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2229 ms
+2020-04-23 23:54:28.823 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:54:31.162 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:54:32.051 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:54:32.051 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:54:32.051 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='templates/**'], []
+2020-04-23 23:54:32.211 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 23:54:32.221 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 23:54:32.231 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 23:56:27.889 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 9652 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:56:27.899 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:56:28.049 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:56:28.049 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:56:28.049 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:56:28.049 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:56:30.128 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:56:30.138 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:56:30.138 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:56:30.138 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:56:30.307 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:56:30.307 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2258 ms
+2020-04-23 23:56:30.557 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:56:32.846 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:56:33.706 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:56:33.706 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:56:33.706 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='templates/**'], []
+2020-04-23 23:56:33.876 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-04-23 23:56:33.876 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-04-23 23:56:33.886 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-23 23:57:52.621 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on USER-20200114VO with PID 1440 (E:\ideaProject\clms\target\classes started by Administrator in E:\ideaProject\clms)
+2020-04-23 23:57:52.621 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-23 23:57:52.711 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-23 23:57:52.711 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in E:\安装包\个人仓库\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/E:/%e5%ae%89%e8%a3%85%e5%8c%85/%e4%b8%aa%e4%ba%ba%e4%bb%93%e5%ba%93/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-23 23:57:52.711 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-23 23:57:52.711 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-23 23:57:57.739 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8887 (http)
+2020-04-23 23:57:57.769 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:57:57.769 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-23 23:57:57.769 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-23 23:57:58.528 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-23 23:57:58.528 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 5817 ms
+2020-04-23 23:57:59.068 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-23 23:58:02.566 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-23 23:58:04.247 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-23 23:58:04.247 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-23 23:58:04.247 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='templates/**'], []
+2020-04-23 23:58:04.487 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-04-23 23:58:04.737 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@684a2e15, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b79d3c5, org.springframework.security.web.header.HeaderWriterFilter@6ca18a64, org.springframework.web.filter.CorsFilter@2866ecc7, org.springframework.security.web.authentication.logout.LogoutFilter@735296c, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@6b7b97df, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@c8c2084, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@284bc808, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b29f4d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b4a62b9, org.springframework.security.web.session.SessionManagementFilter@12bf5031, org.springframework.security.web.access.ExceptionTranslationFilter@3f59e594, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bc085c6]
+2020-04-23 23:58:04.947 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-23 23:58:05.387 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-23 23:58:05.507 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-23 23:58:05.547 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8887"]
+2020-04-23 23:58:05.577 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-23 23:58:05.577 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 13.79 seconds (JVM running for 14.963)
+2020-04-23 23:58:26.073 INFO  [http-nio-8887-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-23 23:58:26.073 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-23 23:58:26.233 INFO  [http-nio-8887-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 160 ms

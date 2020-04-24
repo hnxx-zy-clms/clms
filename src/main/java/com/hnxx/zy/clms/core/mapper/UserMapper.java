@@ -1,8 +1,10 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.GithubCount;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -67,5 +69,14 @@ public interface UserMapper {
             "and user_classes_id = #{params.userClassesId}\n" +
             "</script>"})
     Integer[] getGroupIds(Page<ReportStatistics> page);
+    /**
+     * 插入github用户信息
+     * @param githubCount
+     */
+    @Insert("insert into cl_github_user(name,account_id,token,created_time,update_time)\n" +
+            "values(#{name},#{accountId},#{token},#{createdTime},#{updateTime})")
+    void insert(GithubCount githubCount);
+
+
 }
 

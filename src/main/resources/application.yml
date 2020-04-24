@@ -1,13 +1,16 @@
 spring:
   datasource:
     druid:
-#      url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
-#      username: root
-#      password: code-fusheng
-      url: jdbc:mysql://175.24.45.179/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+      url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
-      password: sa123
+      password: code-fusheng
+#      url: jdbc:mysql://175.24.45.179/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+#      username: root
+#      password: sa123
 #      url: jdbc:mysql://127.0.0.1:3306/report?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+#      username: root
+#      password: 123456
+#      url: jdbc:mysql://127.0.0.1:3306/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
 #      username: root
 #      password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,7 +23,14 @@ spring:
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 300000
 server:
-  port: 8080
+#  port: 8080
+   port: 8887
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+github:
+  client:
+    id: 6ec6304bbb35b05f0194
+    secret: c4661c64b6e9a79a887ca694d88b45de9ccdba70
+  redirect:
+    uri: http://localhost:8887/callback

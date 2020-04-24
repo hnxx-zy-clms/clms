@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.security;
 
+import com.hnxx.zy.clms.provider.GithubProvider;
 import com.hnxx.zy.clms.security.customauths.CustomUserDetailsService;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationFailureHandler;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationSuccessHandler;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -41,7 +43,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private PasswordEncoder passwordEncoder;
 
 
-
     /**
      * 注入jwt
      * @return
@@ -70,16 +71,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // 如果有允许匿名的url，填在下面
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/login","/","/register","/home","/callback").permitAll()
+                .anyRequest()
+//                允许所有请求通过(开发测试时设置，不设置登录测试要抓狂)
+//                .permitAll()
+                //坑爹de认证方法
+                .authenticated()
                 .and()
                 //设置登录方式,和登录接口，登录请求方式必须是Post
-                .formLogin().loginPage("/login")
-               // 自定义登录成功和失败处理
+                .formLogin().loginPage("/login,/")
+
+                // 自定义登录成功和失败处理
                 .successHandler(customAuthenticationSuccessHandler)
                 .failureHandler(customAuthenticationFailureHandler)
                 .and()
-                //把jwt加到security过滤器链中
+//                把jwt加到security过滤器链中
                 .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
                 //禁止security自己创建session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -92,6 +98,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web){
         // 设置拦截忽略文件夹，可以对静态资源放行
-        web.ignoring().antMatchers("/css/**", "/js/**,/static/**");
+        web.ignoring().antMatchers("/css/**", "/js/**,/static/**","/templates/**","/img/**");
     }
 }
