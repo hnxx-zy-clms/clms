@@ -11,6 +11,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -134,6 +135,56 @@ public class ArticleController {
     public Result<Article> read(@PathVariable("id") Integer id){
         Article article = articleService.readById(id);
         return new Result<>(article);
+    }
+
+    /**
+     * 查询发表作品前三的用户文章数据信息
+     * @return
+     */
+    @PostMapping("/getArticleCountInfo")
+    public Result<Page<ArticleStatistics>> getArticleCountInfo(@RequestBody Page<ArticleStatistics> page){
+        // 获取排序方式  page对象中 封装了 sortColumn 排序列
+        String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
+        // 判断排序列不为空
+        if(StringUtils.isNotBlank(sortColumn)){
+            // 文章数 、文章点赞量、文章阅读量、文章收藏量、文章评论量
+            String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_comment"};
+            List<String> sortList = Arrays.asList(sortColumns);
+            if(!sortList.contains(newSortColumn.toLowerCase())) {
+                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
+            }
+        }
+        page = articleService.getArticleCountInfo(page);
+        return new Result<>(page);
+    }
+
+    /**
+     * 获取用户文章类型信息
+     * @return
+     */
+    @PostMapping("/getUserArticleCountInfo")
+    public Result<Page<ArticleStatistics>> getUserArticleCountInfo(@RequestBody Page<ArticleStatistics> page){
+        // 获取排序方式  page对象中 封装了 sortColumn 排序列
+        String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
+        // 判断排序列不为空
+        if(StringUtils.isNotBlank(sortColumn)){
+            // 对应类型的文章量
+            String[] sortColumns = {"article_type"};
+            List<String> sortList = Arrays.asList(sortColumns);
+            if(!sortList.contains(newSortColumn.toLowerCase())) {
+                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
+            }
+        }
+        page = articleService.getUserArticleCountInfo(page);
+        return new Result<>(page);
     }
 
 }

@@ -72,4 +72,9 @@ public class Task implements Serializable {
      */
     private Integer numDid;
 
+    /**
+     * 任务回复内容
+     */
+    private TaskUser taskUser;
+
 }

@@ -11,18 +11,23 @@ import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.security.test.services.UserService;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -154,5 +159,49 @@ public class ArticleServiceImpl implements ArticleService {
             article.getCommentList().add(comment1);
         }
         return article;
+    }
+
+    @Override
+    public Page<ArticleStatistics> getArticleCountInfo(Page<ArticleStatistics> page) {
+        // 先查询数据
+        List<Map> maps = articleMapper.getArticleCountInfo(page);
+        List<ArticleStatistics> asList = new ArrayList<>();
+        for(Map m : maps){
+            ArticleStatistics as = new ArticleStatistics();
+            as.setName((String) m.get("articleAuthor"));
+            Map<String, Integer> countMap = new HashMap<>(16);
+            countMap.put("articleCounts", Integer.valueOf(m.get("articleCounts").toString()));
+            countMap.put("readCounts", Integer.valueOf(m.get("readCounts").toString()));
+            countMap.put("goodCounts", Integer.valueOf(m.get("goodCounts").toString()));
+            countMap.put("commentCounts", Integer.valueOf(m.get("commentCounts").toString()));
+            countMap.put("collectionCounts", Integer.valueOf(m.get("collectionCounts").toString()));
+            as.setCountMap(countMap);
+            asList.add(as);
+        }
+        page.setList(asList);
+        // 再查询总数
+        int totalCount = asList.size();
+        page.setTotalCount(totalCount);
+        return page;
+    }
+
+    @Override
+    public Page<ArticleStatistics> getUserArticleCountInfo(Page<ArticleStatistics> page) {
+        // 先查询数据
+        List<Map> maps = articleMapper.getUserArticleCountInfo(page);
+        List<ArticleStatistics> asList = new ArrayList<>();
+        for(Map m : maps){
+            ArticleStatistics as = new ArticleStatistics();
+            as.setName((String) m.get("typeName"));
+            Map<String, Integer> countMap = new HashMap<>(16);
+            countMap.put("articleCounts", Integer.valueOf(m.get("articleCounts").toString()));
+            as.setCountMap(countMap);
+            asList.add(as);
+        }
+        page.setList(asList);
+        // 再查询总数
+        int totalCount = asList.size();
+        page.setTotalCount(totalCount);
+        return page;
     }
 }

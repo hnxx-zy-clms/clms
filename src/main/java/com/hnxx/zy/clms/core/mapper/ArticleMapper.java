@@ -8,10 +8,12 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Repository
@@ -152,4 +154,43 @@ public interface ArticleMapper {
      */
     @Update("update cl_article set article_collection = #{cCount} where article_id = #{aid} and is_deleted = 0")
     void updateCollectionCount(int cCount, int aid);
+
+    /**
+     * 查询用户文章排行
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select article_author articleAuthor, " +
+            "        count(article_author) articleCounts," +
+            "        sum(article_read) readCounts," +
+            "        sum(article_good) goodCounts," +
+            "        sum(article_comment) commentCounts," +
+            "        sum(article_collection) collectionCounts" +
+            "        from cl_article\n" +
+            "        where is_deleted = 0 \n" +
+            "        group by article_author \n" +
+            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "            order by ${sortColumn} ${sortMethod}\n" +
+            "        </if>\n" +
+            "        limit #{index}, #{pageSize}" +
+            "</script>")
+    List<Map> getArticleCountInfo(Page<ArticleStatistics> page);
+
+    /**
+     * 获取用户文章类型信息
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select t.type_name typeName, " +
+            "        count(a.article_type) articleCounts" +
+            "        from cl_article a left join cl_article_type t on a.article_type = t.type_id\n" +
+            "        where a.is_deleted = 0 and a.article_author = #{params.articleAuthor}\n" +
+            "        group by a.article_type \n" +
+            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "            order by count(a.${sortColumn}) ${sortMethod}\n" +
+            "        </if>\n" +
+            "</script>")
+    List<Map> getUserArticleCountInfo(Page<ArticleStatistics> page);
 }

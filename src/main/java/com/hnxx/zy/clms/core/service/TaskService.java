@@ -38,7 +38,7 @@ public interface TaskService {
      * @param userid
      * @return
      */
-    Task getTaskReply(Integer taskid, Integer userid);
+    TaskUser getTaskReply(Integer taskid, Integer userid);
 
     /**
      * 教师分页获取任务列表
@@ -103,5 +103,20 @@ public interface TaskService {
      * @param task
      */
     void update(Task task);
+
+    /**
+     * 获取单个任务
+     * @param taskid
+     * @return
+     */
+    Task selectTask(Integer taskid);
+
+    /**
+     * 设置学生任务回复等级
+     * @param level
+     * @param id
+     */
+    void setLevel(Integer level,Integer id);
+
 
 }

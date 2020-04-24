@@ -6,7 +6,9 @@
  */
 package com.hnxx.zy.clms.core.service;
 
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.ArticleType;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -61,4 +63,11 @@ public interface ArticleTypeService {
      * @param id
      */
     void disabledById(Integer id);
+
+    /**
+     * 查询各类型对应的做品数 以及 占比
+     * @param page
+     * @return
+     */
+    Page<ArticleStatistics> getArticleTypeCountInfo(Page<ArticleStatistics> page);
 }

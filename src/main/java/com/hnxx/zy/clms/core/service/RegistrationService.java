@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.core.entity.Registration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,5 +45,37 @@ public interface RegistrationService {
      * @param id
      */
     void deleteRegis(Integer id);
+
+    /**
+     * 更新签到
+     *
+     * @param sign_class
+     */
+    void updateRegistration(String sign_class, Integer sign_id);
+
+    /**
+     * 获取当天签到的情况
+     *
+     * @param user_id
+     * @param sign_time
+     * @return
+     */
+    Registration selectSignClass(Integer user_id, Date sign_time);
+
+    /**
+     * 获取所有用户本周签到
+     *
+     * @return
+     */
+    List<Registration> getRegisList();
+
+    /**
+     * 获取当天当节课签到人姓名
+     *
+     * @param classes
+     * @param date
+     * @return
+     */
+    List<Registration> getNameList(Integer classes, String date);
 
 }

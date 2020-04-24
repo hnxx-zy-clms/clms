@@ -8,6 +8,8 @@ package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
+import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.ArticleType;
 import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.service.ArticleTypeService;
@@ -15,7 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ArticleTypeServiceImpl implements ArticleTypeService {
@@ -104,6 +109,32 @@ public class ArticleTypeServiceImpl implements ArticleTypeService {
         ArticleType type = articleTypeMapper.getById(id);
         type.setIsEnabled(StateEnum.NOT_ENABLE.getCode());
         articleTypeMapper.updateEnable(type);
+    }
+
+    /**
+     * 查询各类型对应的做品数 以及 占比
+     * @param page
+     * @return
+     */
+    @Override
+    public Page<ArticleStatistics> getArticleTypeCountInfo(Page<ArticleStatistics> page) {
+        // 先查询数据
+        List<Map> maps = articleTypeMapper.getArticleTypeCountInfo(page);
+        List<ArticleStatistics> asList = new ArrayList<>();
+        for(Map m : maps){
+            ArticleStatistics as = new ArticleStatistics();
+            as.setName((String) m.get("typeName"));
+            Map<String, Integer> countMap = new HashMap<>(16);
+            countMap.put("typeCounts", Integer.valueOf(m.get("typeCounts").toString()).intValue());
+            as.setCountMap(countMap);
+            asList.add(as);
+            as.setPercent(Double.valueOf(m.get("percent").toString()).doubleValue());
+        }
+        page.setList(asList);
+        // 再查询总数
+        int totalCount = asList.size();
+        page.setTotalCount(totalCount);
+        return page;
     }
 
 }

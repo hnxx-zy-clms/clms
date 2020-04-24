@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,7 +25,7 @@ import java.util.List;
 @RequestMapping("/registration")
 public class RegistrationController {
 
-    private static Logger logger = LoggerFactory.getLogger(NoticeController.class);
+    private static Logger logger = LoggerFactory.getLogger(RegistrationController.class);
 
 
     @Autowired
@@ -36,8 +39,13 @@ public class RegistrationController {
      */
     @PostMapping("/save")
     public Result save(@RequestBody Registration registration) {
+        Registration registration1 = registrationService.selectSignClass(registration.getUserId(), registration.getSignTime());
+        if (registration1 == null) {
+            registrationService.saveRegist(registration);
+        } else {
+            registrationService.updateRegistration(registration1.getSignClass() + registration.getSignClass(), registration1.getSignId());
+        }
 
-        registrationService.saveRegist(registration);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
@@ -51,6 +59,12 @@ public class RegistrationController {
     public Result getListById(@PathVariable("id") Integer id) {
         List<Registration> regis = registrationService.getRegisListById(id);
         return new Result(regis);
+    }
+
+    @GetMapping("/getList")
+    public Result getRegisList() {
+        List<Registration> registrations = registrationService.getRegisList();
+        return new Result(registrations);
     }
 
     /**
@@ -75,6 +89,12 @@ public class RegistrationController {
     public Result delete(@PathVariable("id") Integer id) {
         registrationService.deleteRegis(id);
         return new Result("取消成功");
+    }
+
+    @GetMapping("/getNameList/{classes}/{date}")
+    public Result getNameList(@PathVariable("classes") Integer classes, @PathVariable("date") String date) {
+        List<Registration> registrations = registrationService.getNameList(classes, date);
+        return new Result(registrations);
     }
 
 }
