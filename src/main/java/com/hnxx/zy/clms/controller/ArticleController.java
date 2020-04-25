@@ -145,18 +145,13 @@ public class ArticleController {
     public Result<Page<ArticleStatistics>> getArticleCountInfo(@RequestBody Page<ArticleStatistics> page){
         // 获取排序方式  page对象中 封装了 sortColumn 排序列
         String sortColumn = page.getSortColumn();
-        // 驼峰转下划线
-        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
         // 下划线的 排序列
-        page.setSortColumn(newSortColumn);
+        page.setSortColumn(sortColumn);
         // 判断排序列不为空
         if(StringUtils.isNotBlank(sortColumn)){
             // 文章数 、文章点赞量、文章阅读量、文章收藏量、文章评论量
-            String[] sortColumns = {"article_author", "article_good", "article_read", "article_collection", "article_comment"};
+            String[] sortColumns = {"articleCounts", "readCounts", "goodCounts", "commentCounts", "collectionCounts"};
             List<String> sortList = Arrays.asList(sortColumns);
-            if(!sortList.contains(newSortColumn.toLowerCase())) {
-                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
-            }
         }
         page = articleService.getArticleCountInfo(page);
         return new Result<>(page);
