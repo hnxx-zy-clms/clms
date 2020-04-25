@@ -37,9 +37,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException{
         response.setContentType("application/json;charset=utf-8");
         String jwtToken = jwtProvider.generateJwtToken(authentication);
-        SysUser user = new SysUser();
-        user.setUserName(authentication.getName());
-        user.setUserId(userMapper.selectUserId(user.getUserName()));
+        SysUser user = userMapper.selectByName(authentication.getName());
         response.getWriter().write(JSON.toJSONString(new Result<Object>(jwtToken,user)));
     }
 }

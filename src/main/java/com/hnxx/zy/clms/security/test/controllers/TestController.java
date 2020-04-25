@@ -1,44 +1,32 @@
-//package com.hnxx.zy.clms.security.test.controllers;
-//
-//import com.hnxx.zy.clms.security.jwt.JwtProvider;
-//import com.hnxx.zy.clms.security.test.entity.SysUser;
-//import org.apache.ibatis.annotations.Result;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.security.core.context.SecurityContextHolder;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.ResponseBody;
-//
-//import javax.validation.Valid;
-//
-///**
-// * @program: clms
-// * @description: 测试控制类
-// * @author: nile
-// * @create: 2020-03-18 12:12
-// **/
-//
-//@Controller
-//public class TestController {
-//
-//    private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-//
-//    @GetMapping("/login")
-////    @ResponseBody
-//    public String authenticateUser(){
-//        return "index";
-//    }
-//
-//    @GetMapping("/ttttt")
-//    @ResponseBody
-//    public String User() {
-//        logger.info("当前登录用户名: "+SecurityContextHolder.getContext().getAuthentication().getName());
-//        return "s";
-//    }
-//
-//
-//}
+package com.hnxx.zy.clms.security.test.controllers;
+
+import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
+import com.hnxx.zy.clms.security.test.entity.SysUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+
+/**
+ * @program: clms
+ * @description: 测试控制类
+ * @author: nile
+ * @create: 2020-03-18 12:12
+ **/
+
+@RestController
+public class TestController {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @GetMapping("/getUserInfo")
+    public Result<Object> authenticateUser(){
+        SysUser user = userMapper.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        user.setUserPassword(null);
+        return new Result<>(user);
+    }
+
+
+}
