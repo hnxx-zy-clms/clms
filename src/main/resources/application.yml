@@ -23,8 +23,7 @@ spring:
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 300000
 server:
-#  port: 8080
-   port: 8887
+  port: 8080
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
