@@ -79,7 +79,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 //设置登录方式,和登录接口，登录请求方式必须是Post
-                .formLogin().loginPage("/login,/")
+                .formLogin().loginPage("/login")
 
                 // 自定义登录成功和失败处理
                 .successHandler(customAuthenticationSuccessHandler)
