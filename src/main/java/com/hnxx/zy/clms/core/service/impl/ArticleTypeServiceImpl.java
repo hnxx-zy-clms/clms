@@ -124,9 +124,9 @@ public class ArticleTypeServiceImpl implements ArticleTypeService {
         for(Map m : maps){
             ArticleStatistics as = new ArticleStatistics();
             as.setName((String) m.get("typeName"));
-            Map<String, Integer> countMap = new HashMap<>(16);
-            countMap.put("typeCounts", Integer.valueOf(m.get("typeCounts").toString()).intValue());
-            as.setCountMap(countMap);
+            as.setTypeCounts(Integer.valueOf(m.get("typeCounts").toString()).intValue());
+            // countMap.put("typeCounts", Integer.valueOf(m.get("").toString()).intValue());
+            // as.setCountMap(countMap);
             asList.add(as);
             as.setPercent(Double.valueOf(m.get("percent").toString()).doubleValue());
         }
