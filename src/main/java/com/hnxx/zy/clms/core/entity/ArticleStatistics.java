@@ -6,14 +6,11 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import org.apache.poi.ss.formula.functions.T;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ArticleStatistics {
 
     /**
@@ -24,7 +21,17 @@ public class ArticleStatistics {
     /**
      * 数据统计数量
      */
-    public Map<String, Integer> countMap = new HashMap<>(16);
+    private Integer typeCounts;
+
+    private Integer goodCounts;
+
+    private Integer readCounts;
+
+    private Integer collectionCounts;
+
+    private Integer articleCounts;
+
+    private Integer commentCounts;
 
     /**
      * 百分比

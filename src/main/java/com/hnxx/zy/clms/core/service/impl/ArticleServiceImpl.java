@@ -169,13 +169,11 @@ public class ArticleServiceImpl implements ArticleService {
         for(Map m : maps){
             ArticleStatistics as = new ArticleStatistics();
             as.setName((String) m.get("articleAuthor"));
-            Map<String, Integer> countMap = new HashMap<>(16);
-            countMap.put("articleCounts", Integer.valueOf(m.get("articleCounts").toString()));
-            countMap.put("readCounts", Integer.valueOf(m.get("readCounts").toString()));
-            countMap.put("goodCounts", Integer.valueOf(m.get("goodCounts").toString()));
-            countMap.put("commentCounts", Integer.valueOf(m.get("commentCounts").toString()));
-            countMap.put("collectionCounts", Integer.valueOf(m.get("collectionCounts").toString()));
-            as.setCountMap(countMap);
+            as.setArticleCounts(Integer.valueOf(m.get("articleCounts").toString()).intValue());
+            as.setReadCounts(Integer.valueOf(m.get("readCounts").toString()).intValue());
+            as.setGoodCounts(Integer.valueOf(m.get("goodCounts").toString()).intValue());
+            as.setCommentCounts(Integer.valueOf(m.get("commentCounts").toString()).intValue());
+            as.setCollectionCounts(Integer.valueOf(m.get("collectionCounts").toString()).intValue());
             asList.add(as);
         }
         page.setList(asList);
@@ -193,9 +191,7 @@ public class ArticleServiceImpl implements ArticleService {
         for(Map m : maps){
             ArticleStatistics as = new ArticleStatistics();
             as.setName((String) m.get("typeName"));
-            Map<String, Integer> countMap = new HashMap<>(16);
-            countMap.put("articleCounts", Integer.valueOf(m.get("articleCounts").toString()));
-            as.setCountMap(countMap);
+            as.setArticleCounts(Integer.valueOf(m.get("articleCounts").toString()).intValue());
             asList.add(as);
         }
         page.setList(asList);
