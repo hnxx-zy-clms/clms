@@ -32,4 +32,4 @@ github:
     id: 6ec6304bbb35b05f0194
     secret: c4661c64b6e9a79a887ca694d88b45de9ccdba70
   redirect:
-    uri: http://localhost:8887/callback
+    uri: http://localhost:8080/callback

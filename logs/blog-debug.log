@@ -59,3 +59,23 @@
 2020-04-26 00:42:10.905 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
 2020-04-26 00:42:10.905 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /login(String), ******(String), 1(Integer), null, GET(String), 0(Long), ******(String), 0:0:0:0:0:0:0:1(String)
 2020-04-26 00:42:10.995 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-26 00:53:11.598 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-26 00:53:20.173 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-26 00:53:41.274 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-26 00:53:41.346 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /(String), ******(String), 1(Integer), null, GET(String), 12(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-04-26 00:53:41.434 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-26 00:53:42.029 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-26 00:53:42.029 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /login(String), ******(String), 1(Integer), null, GET(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-04-26 00:53:42.113 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-26 00:53:42.173 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-26 00:53:42.177 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /login(String), ******(String), 1(Integer), null, GET(String), 0(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-04-26 00:53:42.257 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-26 00:53:51.822 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.insert.debug:159 -==>  Preparing: insert into cl_github_user(name,account_id,token,created_time,update_time) values(?,?,?,?,?) 
+2020-04-26 00:53:51.834 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.insert.debug:159 -==> Parameters: 南街北巷(String), 57308175(String), 5d59f95c-791d-4205-921f-7f0ae42030a4(String), 2020-04-26 00:53:51.778(Timestamp), 2020-04-26 00:53:51.778(Timestamp)
+2020-04-26 00:53:51.918 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.insert.debug:159 -<==    Updates: 1
+2020-04-26 00:53:51.970 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-26 00:53:51.974 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /callback(String), ******(String), 1(Integer), null, GET(String), 6264(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-04-26 00:53:52.050 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-26 00:53:52.129 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-26 00:53:52.129 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /home(String), ******(String), 1(Integer), null, GET(String), 0(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-04-26 00:53:52.216 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
