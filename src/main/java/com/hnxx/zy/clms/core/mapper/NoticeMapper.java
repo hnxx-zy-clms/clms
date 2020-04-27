@@ -60,8 +60,18 @@ public interface NoticeMapper {
      * @param id
      * @return
      */
-    @Select("SELECT a.*,IFNULL(b.if_read,0) as if_read,c.user_name from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id LEFT JOIN cl_user c ON a.created_id=c.user_id WHERE a.is_deleted =0 and a.is_enabled=1 ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize} ")
+    @Select("<script>"+
+            "SELECT a.*,IFNULL(b.if_read,0) as if_read,c.user_name from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id LEFT JOIN cl_user c ON a.created_id=c.user_id WHERE a.is_deleted =0 and a.is_enabled=1"+
+            "        <if test=\"page.params.type==1\">\n" +
+            "             and if_read = true" +
+            "        </if>" +
+            "        <if test=\"page.params.type==2\">\n" +
+            "             and if_read = false" +
+            "        </if>" +
+            "ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize} "+
+            "</script>")
     List<Notice> getByPage(@Param("page") Page page, Integer id);
+
 
     /**
      * 分页获取通知
@@ -128,7 +138,7 @@ public interface NoticeMapper {
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
-            "           and is_deleted =0 and is_enabled=1" +
+            "             and is_deleted =0 and is_enabled=1" +
             "        </if>" +
             "        </script>")
     int getCountByPage(@Param("page") Page page);

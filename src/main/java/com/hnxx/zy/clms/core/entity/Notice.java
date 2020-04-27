@@ -60,10 +60,11 @@ public class Notice implements Serializable {
      */
     private Boolean isDeleted;
 
-//    /**
-//     * 用户id
-//     */
-//    private Integer userId;
+    /**
+     * 是否已阅：1是0否
+     */
+    @JsonProperty("ifRead")
+    private boolean ifRead;
 
     /**
      * 创建者姓名
