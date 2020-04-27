@@ -1,9 +1,13 @@
 package com.hnxx.zy.clms.controller;
 
+import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.utils.Result;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.swing.text.html.parser.Entity;
 
 /**
  * @author 南街北巷
@@ -20,8 +24,9 @@ public class LoginController {
         return "index";
     }
     @GetMapping("/login")
-    public String callbackLogin(){
-        return "index";
+    @ResponseBody
+    public ResponseEntity<Object> callbackLogin(){
+        return new ResponseEntity<>(new Result<>(ResultEnum.NOT_LOGIN), HttpStatus.FORBIDDEN);
     }
     @GetMapping("/register")
     public String register(){

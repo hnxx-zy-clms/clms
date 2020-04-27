@@ -23,7 +23,7 @@ public enum  ResultEnum {
     ERROR(400, "请求错误！"),
     PARAMS_ERROR(401,"参数错误！"),
     PARAMS_NULL_ERROR(402,"参数为空错误！"),
-    DATA_NOT_FOUND(403,"查询失败！"),
+    DATA_NOT_FOUND(406,"查询失败！"),
     NOT_LOGIN(410, "账号未登陆！"),
     FORBIDDEN(403,"无权限，禁止访问"),
     UNAUTHORIZED(501,"未授权"),

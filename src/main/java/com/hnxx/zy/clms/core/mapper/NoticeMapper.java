@@ -128,7 +128,7 @@ public interface NoticeMapper {
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
-            "           WHERE is_deleted =0 and is_enabled=1" +
+            "           and is_deleted =0 and is_enabled=1" +
             "        </if>" +
             "        </script>")
     int getCountByPage(@Param("page") Page page);
