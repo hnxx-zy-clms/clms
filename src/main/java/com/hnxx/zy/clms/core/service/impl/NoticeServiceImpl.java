@@ -26,8 +26,8 @@ public class NoticeServiceImpl implements NoticeService {
     private NoticeMapper noticeMapper;
 
     @Override
-    public void setChange(Notice notice) {
-        noticeMapper.setChange(notice);
+    public void setChange(Integer noticeId,Integer userId) {
+        noticeMapper.setChange(noticeId,userId);
     }
 
     @Override

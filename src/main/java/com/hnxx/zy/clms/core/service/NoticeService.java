@@ -19,9 +19,9 @@ public interface NoticeService {
     /**
      * 设置为已读
      *
-     * @param notice
+     * @param noticeId,userId
      */
-    void setChange(Notice notice);
+    void setChange(Integer noticeId,Integer userId);
 
     /**
      * 新建通知

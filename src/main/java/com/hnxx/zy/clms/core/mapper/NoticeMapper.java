@@ -22,10 +22,10 @@ public interface NoticeMapper {
     /**
      * 设置已读
      *
-     * @param notice
+     * @param noticeId,userId
      */
-    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{notice.noticeId},#{notice.userId},1)")
-    void setChange(@Param("notice") Notice notice);
+    @Insert("insert into cl_notice_user(notice_id,user_id,if_read) values (#{noticeId},#{userId},1)")
+    void setChange(Integer noticeId,Integer userId);
 
     /**
      * 新建通知
@@ -66,7 +66,7 @@ public interface NoticeMapper {
             "             and if_read = true" +
             "        </if>" +
             "        <if test=\"page.params.type==2\">\n" +
-            "             and if_read = false" +
+            "             and if_read IS NULL" +
             "        </if>" +
             "ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize} "+
             "</script>")

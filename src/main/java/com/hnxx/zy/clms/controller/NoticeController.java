@@ -36,13 +36,13 @@ public class NoticeController {
     /**
      * 设置已读
      *
-     * @param notice
+     * @param noticeId,userId
      * @return
      */
-    @PostMapping("/changeRead")
-    public Result changeRead(@RequestBody Notice notice) {
+    @PostMapping("/changeRead/{noticeId}/{userId}")
+    public Result changeRead(@PathVariable("noticeId") Integer noticeId,@PathVariable("userId") Integer userId) {
        // notice.setIfRead(true);
-        noticeService.setChange(notice);
+        noticeService.setChange(noticeId,userId);
         return new Result<>(ResultEnum.SUCCESS);
     }
 
