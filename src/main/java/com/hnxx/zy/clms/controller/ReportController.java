@@ -48,12 +48,12 @@ public class ReportController {
             return new Result<>("时间已截止");
         }else if(report.getReportType() == 0){
             if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),0, null) != 0) {
-                return new Result<>("已存在报告数据");
+                return new Result<>(401,"已存在报告数据");
             }
         }else if (report.getReportType() == 1){
             String[] results = dateUtils.getDateWeek(sdf.format(new Date()));
             if(reportService.getTodayUserReport(userId.getUserId(),null,1,results) != 0) {
-                return new Result<>("已存在报告数据");
+                return new Result<>(401,"已存在报告数据");
             }
         }
         reportService.save(report);
@@ -100,6 +100,8 @@ public class ReportController {
      */
     @PostMapping("/getByUserId")
     public Result<Page<Report>> getByUserId(@RequestBody Page<Report> page){
+        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        page.params.put("userId",userId.getUserId());
         List<Report> reports=reportService.getReportByUserId(page);
         page.setList(reports);
         page.setTotalCount(reports.size());
