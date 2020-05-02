@@ -4,10 +4,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.GithubCount;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -77,14 +74,27 @@ public interface UserMapper {
             "and user_classes_id = #{params.userClassesId}\n" +
             "</script>"})
     Integer[] getGroupIds(Page<ReportStatistics> page);
+
     /**
-     * 插入github用户信息
+     * 新增github用户
      * @param githubCount
      */
     @Insert("insert into cl_github_user(name,account_id,token,created_time,update_time)\n" +
             "values(#{name},#{accountId},#{token},#{createdTime},#{updateTime})")
     void insert(GithubCount githubCount);
 
+    /**
+     * 删除所有github账号
+     * 重置自增Id
+     */
+    @Delete("truncate table cl_github_user")
+    void deleteAllUser();
 
+    /**
+     * 根据ID删除github用户
+     * @param id
+     */
+    @Delete("delete from cl_github_user where id=#{id}")
+    void deleteUserById(int id);
 }
 
