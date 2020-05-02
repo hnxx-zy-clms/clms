@@ -24,8 +24,8 @@ public interface ArticleMapper {
      *
      * @param article
      */
-    @Insert("insert into cl_article(article_title, article_author, article_image, article_content, article_type, article_source) " +
-            "values (#{articleTitle}, #{articleAuthor}, #{articleImage}, #{articleContent}, #{articleType}, #{articleSource})")
+    @Insert("insert into cl_article(article_title, article_author, article_image, article_desc, article_content, article_type, article_source) " +
+            "values (#{articleTitle}, #{articleAuthor}, #{articleImage}, #{articleDesc}, #{articleContent}, #{articleType}, #{articleSource})")
     void save(Article article);
 
     /**
@@ -52,6 +52,9 @@ public interface ArticleMapper {
             "        </if>\n" +
             "        <if test=\"articleImage!=null and articleImage!=''\">\n" +
             "            ,article_image = #{articleImage}\n" +
+            "        </if>\n" +
+            "        <if test=\"articleDesc!=null and articleDesc!=''\">\n" +
+            "            ,article_desc = #{articleDesc}\n" +
             "        </if>\n" +
             "        <if test=\"articleContent!=null and articleContent!=''\">\n" +
             "            ,article_content = #{articleContent}\n" +
