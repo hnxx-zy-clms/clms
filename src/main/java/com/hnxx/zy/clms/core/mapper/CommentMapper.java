@@ -109,6 +109,24 @@ public interface CommentMapper {
     void updateCCommentCount(int cCount, int cid);
 
     /**
+     * 根据文章id 分页查询一级评论列表
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select c.*, a.article_title  from cl_comment c left join cl_article a on c.comment_article = a.article_id\n" +
+            "        where c.is_deleted = 0 and c.pid = 0\n" +
+            "        <if test=\"params.commentArticle!=null\">\n" +
+            "            and c.comment_article = #{params.commentArticle}\n" +
+            "        </if>\n" +
+            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
+            "            order by ${sortColumn} ${sortMethod}\n" +
+            "        </if>\n" +
+            "        limit #{index}, #{pageSize}" +
+            "</script>")
+    List<Comment> getCommentList(Page<Comment> page);
+
+    /**
      * 分页查询
      * @param page
      * @return
@@ -169,4 +187,7 @@ public interface CommentMapper {
             "        </if>\n" +
             "</script>")
     int getCountByPage(Page<Comment> page);
+
+
+
 }
