@@ -41,7 +41,6 @@ public class NoticeController {
      */
     @PostMapping("/changeRead/{noticeId}/{userId}")
     public Result changeRead(@PathVariable("noticeId") Integer noticeId,@PathVariable("userId") Integer userId) {
-       // notice.setIfRead(true);
         noticeService.setChange(noticeId,userId);
         return new Result<>(ResultEnum.SUCCESS);
     }

@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Commission implements Serializable {
+public class Todo implements Serializable {
 
 
     private static final long serialVersionUID = -8724518310083269150L;

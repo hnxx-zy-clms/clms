@@ -1,6 +1,6 @@
 package com.hnxx.zy.clms.core.service;
 
-import com.hnxx.zy.clms.core.entity.Commission;
+import com.hnxx.zy.clms.core.entity.Todo;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ import java.util.List;
  * @version: 1.0
  * @desc:
  */
-public interface CommissionService {
+public interface TodoService {
     /**
      * 新增代办
      *
-     * @param commission
+     * @param todo
      */
-    void saveCommission(Commission commission);
+    void saveTodo(Todo todo);
 
     /**
      * 修改代办状态
@@ -30,7 +30,7 @@ public interface CommissionService {
      *
      * @param id
      */
-    void deleteCom(Integer id);
+    void deleteTodo(Integer id);
 
     /**
      * 根据日期和用户id来查询代办
@@ -39,7 +39,7 @@ public interface CommissionService {
      * @param time
      * @return
      */
-    List<Commission> getComByIdAndTime(Integer id, String time);
+    List<Todo> getTodoByIdAndTime(Integer id, String time);
 
 
 }

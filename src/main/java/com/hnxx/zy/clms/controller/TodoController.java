@@ -2,9 +2,8 @@ package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Result;
-import com.hnxx.zy.clms.core.entity.Commission;
-import com.hnxx.zy.clms.core.service.CommissionService;
-import org.apache.ibatis.annotations.Delete;
+import com.hnxx.zy.clms.core.entity.Todo;
+import com.hnxx.zy.clms.core.service.TodoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +18,22 @@ import java.util.List;
  * @desc:
  */
 @RestController
-@RequestMapping("/commission")
-public class CommissionController {
-    private static Logger logger = LoggerFactory.getLogger(CommissionController.class);
+@RequestMapping("/todo")
+public class TodoController {
+    private static Logger logger = LoggerFactory.getLogger(TodoController.class);
 
     @Autowired
-    private CommissionService commissionService;
+    private TodoService todoService;
 
     /**
      * 保存今日代办
      *
-     * @param commission
+     * @param todo
      * @return
      */
-    @PostMapping("/saveCommission")
-    public Result saveCommission(@RequestBody Commission commission) {
-        commissionService.saveCommission(commission);
+    @PostMapping("/saveTodo")
+    public Result saveTodo(@RequestBody Todo todo) {
+        todoService.saveTodo(todo);
         return new Result("保存成功");
     }
 
@@ -46,7 +45,7 @@ public class CommissionController {
      */
     @PutMapping("/setIsDo/{id}")
     public Result setIsDo(@PathVariable("id") Integer id) {
-        commissionService.setDid(id);
+        todoService.setDid(id);
         return new Result(ResultEnum.SUCCESS);
     }
 
@@ -56,9 +55,9 @@ public class CommissionController {
      * @param id
      * @return
      */
-    @PutMapping("/deleteCommission/{id}")
-    public Result deleteCom(@PathVariable("id") Integer id) {
-        commissionService.deleteCom(id);
+    @DeleteMapping("/deleteTodo/{id}")
+    public Result deleteTodo(@PathVariable("id") Integer id) {
+        todoService.deleteTodo(id);
         return new Result("删除成功");
     }
 
@@ -69,10 +68,10 @@ public class CommissionController {
      * @param time
      * @return
      */
-    @GetMapping("/getCommissionByIdAndTime/{id}/{time}")
-    public Result getComByIdAndTime(@PathVariable("id") Integer id, @PathVariable("time") String time) {
-        List<Commission> commissions = commissionService.getComByIdAndTime(id, time);
-        return new Result<>(commissions);
+    @GetMapping("/getTodoByIdAndTime/{id}/{time}")
+    public Result getTodoByIdAndTime(@PathVariable("id") Integer id, @PathVariable("time") String time) {
+        List<Todo> todos = todoService.getTodoByIdAndTime(id, time);
+        return new Result<>(todos);
     }
 
 
