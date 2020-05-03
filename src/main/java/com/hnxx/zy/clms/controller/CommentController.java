@@ -85,7 +85,32 @@ public class CommentController {
     }
 
     /**
-     * 分页查询
+     * 根据文章id分页查询 一级评论列表
+     * @param page
+     * @return
+     */
+    @PostMapping("/getCommentList")
+    public Result<Page<Comment>> getCommentList(@RequestBody Page<Comment> page){
+        String sortColumn = page.getSortColumn();
+        // 驼峰转下划线
+        String newSortColumn = StringUtils.upperCharToUnderLine(sortColumn);
+        // 下划线的 排序列
+        page.setSortColumn(newSortColumn);
+        // 判断排序列不为空
+        if(StringUtils.isNotBlank(sortColumn)){
+            // 评论的评论量 评论的点赞量 评论时间
+            String[] sortColumns = {"comment_count", "comment_good", "comment_time"};
+            List<String> sortList = Arrays.asList(sortColumns);
+            if(!sortList.contains(newSortColumn.toLowerCase())) {
+                return new Result<>(ResultEnum.PARAMS_ERROR.getCode(),"参数错误！");
+            }
+        }
+        page = commentService.getCommentList(page);
+        return new Result<>(page);
+    }
+
+    /**
+     * 根据一级评论id分页查询 二级评论列表
      * @param page
      * @return
      */

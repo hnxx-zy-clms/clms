@@ -10,10 +10,28 @@ import java.util.Date;
  */
 @Data
 public class GithubCount {
+    /**
+     * github用户id
+     */
     private Integer id;
+    /**
+     * 用户名
+     */
     private String name;
+    /**
+     * 账号id
+     */
     private String accountId;
+    /**
+     * 账号钥匙
+     */
     private String token;
+    /**
+     * 创建时间
+     */
     private Date createdTime;
+    /**
+     * 更新时间
+     */
     private Date updateTime;
 }

@@ -137,27 +137,27 @@ public class ArticleServiceImpl implements ArticleService {
         // 获取文章实体 根据id
         Article article = articleMapper.getById(id);
         // 获取文章评论量
-        int commentCount1 = commentMapper.getCountByAid(id);
-        article.setArticleComment(commentCount1);
-        // 获取文章下的所有文章评论
-        List<Comment> commentList = commentMapper.getCommentByAid(id);
-        for(Comment comment1 : commentList){
-            // 获取文章评论的id 这个id是评论的评论的pid
-            int pid = comment1.getCommentId();
-            // 根据 pid 获取评论的评论量
-            int commentCount2 = commentMapper.getCountByCid(pid);
-            // 设置评论的评论量
-            comment1.setCommentCount(commentCount2);
-            // 通过文章的评论id获取评论的评论list
-            List<Comment> comments = commentMapper.getCommentByPid(pid);
-            // 遍历评论下的评论
-            for (Comment comment2 : comments) {
-                // 将评论下的评论添加到评论的评论集合
-                comment1.getCommentList().add(comment2);
-            }
-            // 将文章的评论添加到文章的评论列表
-            article.getCommentList().add(comment1);
-        }
+        // int commentCount1 = commentMapper.getCountByAid(id);
+        // article.setArticleComment(commentCount1);
+        // // 获取文章下的所有文章评论
+        // List<Comment> commentList = commentMapper.getCommentByAid(id);
+        // for(Comment comment1 : commentList){
+        //     // 获取文章评论的id 这个id是评论的评论的pid
+        //     int pid = comment1.getCommentId();
+        //     // 根据 pid 获取评论的评论量
+        //     int commentCount2 = commentMapper.getCountByCid(pid);
+        //     // 设置评论的评论量
+        //     comment1.setCommentCount(commentCount2);
+        //     // 通过文章的评论id获取评论的评论list
+        //     List<Comment> comments = commentMapper.getCommentByPid(pid);
+        //     // 遍历评论下的评论
+        //     for (Comment comment2 : comments) {
+        //         // 将评论下的评论添加到评论的评论集合
+        //         comment1.getCommentList().add(comment2);
+        //     }
+        //     // 将文章的评论添加到文章的评论列表
+        //     article.getCommentList().add(comment1);
+        // }
         return article;
     }
 

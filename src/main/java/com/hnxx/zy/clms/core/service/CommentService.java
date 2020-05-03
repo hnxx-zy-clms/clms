@@ -46,9 +46,18 @@ public interface CommentService {
     List<Comment> getListById(Integer id);
 
     /**
-     * 分页查询
+     * 根据文章id 分页查询一级评论列表
+     * @param page
+     * @return
+     */
+    Page<Comment> getCommentList(Page<Comment> page);
+
+    /**
+     * 根据一级评论id 分页查询二级评论列表
      * @param page
      * @return
      */
     Page<Comment> getByPage(Page<Comment> page);
+
+
 }

@@ -114,17 +114,14 @@ public class ReportMarkingController {
     }
 
     /**
-     * 学生获取批阅数据
-     * @param page
+     * 学生感觉报告ID获取批阅数据
+     * @param id
      * @return
      */
-    @PostMapping("/getUserMarking")
-    public Result<Page<ReportMarking>> getUserMarking(@RequestBody Page<ReportMarking> page){
-        List<ReportMarking> reports = reportMarkingService.getUserMarking(page);
-        page.setList(reports);
-        page.setTotalCount(reports.size());
-        page.pagingDate();
-        return new Result<>(page);
+    @GetMapping("/getUserMarkingById/{id}")
+    public Result<ReportMarking> getUserMarking(@PathVariable("id") Integer id){
+        ReportMarking reportMarking = reportMarkingService.getUserMarkingById(id);
+        return new Result<>(reportMarking);
     }
 
     @PostMapping("/getMarkingScore")

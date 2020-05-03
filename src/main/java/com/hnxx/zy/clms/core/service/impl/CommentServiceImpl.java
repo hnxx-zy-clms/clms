@@ -129,6 +129,16 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public Page<Comment> getCommentList(Page<Comment> page) {
+        // 查询数据
+        List<Comment> commentList = commentMapper.getCommentList(page);
+        page.setList(commentList);
+        // 查询总数
+        page.setTotalCount(commentList.size());
+        return page;
+    }
+
+    @Override
     public Page<Comment> getByPage(Page<Comment> page) {
         // 查询数据
         List<Comment> commentList = commentMapper.getByPage(page);
