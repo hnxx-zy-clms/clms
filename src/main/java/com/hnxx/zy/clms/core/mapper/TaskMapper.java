@@ -41,10 +41,10 @@ public interface TaskMapper {
     /**
      * 新建回复
      *
-     * @param task
+     * @param taskUser
      */
-    @Insert("insert into cl_task_user(task_id,user_id,is_did,reply_content) values(#{task.taskId},#{task.userId},1,#{task.replyContent})")
-    void saveReply(@Param("task") Task task);
+    @Insert("insert into cl_task_user(task_id,user_id,is_did,reply_content) values(#{taskUser.taskId},#{taskUser.userId},1,#{taskUser.replyContent})")
+    void saveReply(@Param("taskUser") TaskUser taskUser);
 
     /**
      * 学生分页获取所有任务及完成情况
@@ -53,9 +53,24 @@ public interface TaskMapper {
      * @param id
      * @return
      */
-    @Select("SELECT a.*,IFNULL(b.is_did,0) as is_did,c.user_name FROM cl_task a LEFT JOIN cl_task_user b ON a.task_id=b.task_id and b.user_id=#{id}  LEFT JOIN cl_user c ON a.created_id=c.user_id where a.is_enabled=1 and a.is_deleted=0 ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize}")
+    @Select("SELECT a.task_id,a.task_title,a.task_content,a.pushed_time,c.user_name,b.id" +
+            " FROM cl_task a LEFT JOIN cl_task_user b ON a.task_id=b.task_id and b.user_id=#{id}  LEFT JOIN cl_user c ON a.created_id=c.user_id where a.is_enabled=1 and a.is_deleted=0"+
+            " ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize}")
+    @Results({
+            @Result(property = "taskUser", column = "id",
+            one = @One(select = "com.hnxx.zy.clms.core.mapper.TaskMapper.getTaskDes"))
+    })
     List<Task> getByPage(@Param("page") Page page, Integer id);
 
+    /**
+     * @Description: 根据Id获取任务回复等级
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-03 08:33:28
+     */
+    @Select("select IFNULL(level,0) AS level from cl_task_user where id = #{id}")
+    TaskUser getTaskDes(Integer id);
     /**
      * 查询总数
      *
@@ -73,7 +88,7 @@ public interface TaskMapper {
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
-            "           WHERE is_deleted =0 and is_enabled=1" +
+            "           and is_deleted =0 and is_enabled=1" +
             "        </if>" +
             "        </script>")
     int getCountByPage(@Param("page") Page page);
@@ -88,9 +103,6 @@ public interface TaskMapper {
      */
     @Select("SELECT a.*,b.user_name FROM cl_task_user a left join cl_user b on a.user_id = b.user_id where task_id=#{taskid} AND b.user_id=#{userid}")
     TaskUser getTaskReply(Integer taskid, Integer userid);
-
-    @Select("SELECT level FROM cl_task_user where id=#{id}")
-    int getTaskLevel(@Param("id") Integer id);
 
     /**
      * 教师分页获取任务列表
@@ -117,6 +129,9 @@ public interface TaskMapper {
                     one = @One(select = "com.hnxx.zy.clms.core.mapper.TaskMapper.getTaskLevel"))
     })
     List<TaskUser> getTaskSituation(@Param("page") Page page, @Param("id") Integer id);
+
+    @Select("select level from cl_task_user where id = #{id}")
+    int getTaskLevel(Integer id);
 
     /**
      * 获取回复总数

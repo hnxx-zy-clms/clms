@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: chenii
@@ -76,5 +77,7 @@ public class Task implements Serializable {
      * 任务回复内容
      */
     private TaskUser taskUser;
+
+
 
 }

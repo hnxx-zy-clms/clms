@@ -27,9 +27,9 @@ public interface TaskService {
     /**
      * 新建回复
      *
-     * @param task
+     * @param taskUser
      */
-    void saveReply(Task task);
+    void saveReply(TaskUser taskUser);
 
     /**
      * 获得已完成任务的详细内容及回复内容
