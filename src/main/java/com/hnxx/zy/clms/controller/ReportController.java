@@ -93,6 +93,16 @@ public class ReportController {
         reportService.deleteAdminById(reportId);
         return new Result<>("删除成功");
     }
+    /**
+     * 根据user_id、日期和reportType分页查询报告
+     *
+     */
+    @PostMapping("/getMinReportInfo")
+    public Result<List<Report>> getMinReportInfo(){
+        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        List<Report> reports =reportService.getMinReportInfo(userId.getUserId());
+        return new Result<>(reports);
+    }
 
     /**
      * 根据user_id、日期和reportType分页查询报告

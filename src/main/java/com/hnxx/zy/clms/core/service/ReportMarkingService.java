@@ -63,11 +63,11 @@ public interface ReportMarkingService {
     List<ReportMarking> getMyMarking(Integer reportId,String userName);
 
     /**
-     ** 学生查询报告批阅
-     * @param page
+     ** 学生通过报告ID查询报告批阅
+     * @param id
      * @return
      */
-    List<ReportMarking> getUserMarking(Page<ReportMarking> page);
+    ReportMarking getUserMarkingById(Integer id);
 
     /**
      * 获取所有报告批阅平均分数

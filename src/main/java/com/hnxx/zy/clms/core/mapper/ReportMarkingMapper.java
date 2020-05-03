@@ -134,24 +134,15 @@ public interface ReportMarkingMapper {
     List<ReportMarking> getMyMarking(Integer reportId,String userName);
 
     /**
-     * 学生查询报告批阅
-     * @param page
+     * 学生报告ID查询报告批阅
+     * @param id
      * @return
      */
     @Select({"<script> \n" +
-            "SELECT c.* FROM cl_user  a LEFT JOIN cl_user_report b on a.user_id = b.user_id LEFT JOIN cl_report_marking c on b.report_id = c.report_id LEFT JOIN cl_report d on d.report_id = b.report_id\n" +
-            "WHERE a.user_id = #{params.userId} AND  d.report_type = #{params.reportType}\n"+
-            "<if test='params.startTime!=null' > \n" +
-            "and c.created_time &lt;= #{params.startTime}\n" +
-            "</if> \n" +
-            "<if test='params.endTime!=null' > \n" +
-            "and c.created_time &gt;= #{params.endTime}\n" +
-            "</if> \n"+
-            "<if test=\"sortColumn!=null and sortColumn!=''\">\n" +
-            "order by ${sortColumn} ${sortMethod}\n" +
-            "</if>\n" +
+            "SELECT * FROM cl_report_marking \n" +
+            "WHERE report_id = #{id} \n"+
             "</script>"})
-    List<ReportMarking> getUserMarking(Page<ReportMarking> page);
+    ReportMarking getUserMarkingById(Integer id);
 
     @Select({"<script> \n" +
             "SELECT\n" +

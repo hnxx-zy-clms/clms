@@ -98,4 +98,11 @@ public interface ReportService {
     ReportStatistics  getTodayStatistics(Page<ReportStatistics> page , Integer i);
 
     List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page,Integer i);
+
+    /**
+     * 获取报告简要批阅信息
+     * @param userId
+     * @return
+     */
+    List<Report> getMinReportInfo(Integer userId);
 }
