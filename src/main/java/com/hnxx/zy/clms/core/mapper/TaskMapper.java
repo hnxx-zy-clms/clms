@@ -53,9 +53,17 @@ public interface TaskMapper {
      * @param id
      * @return
      */
-    @Select("SELECT a.task_id,a.task_title,a.task_content,a.pushed_time,c.user_name,b.id" +
+    @Select("<script>"+
+            "SELECT a.task_id,a.task_title,a.task_content,a.pushed_time,c.user_name,b.id" +
             " FROM cl_task a LEFT JOIN cl_task_user b ON a.task_id=b.task_id and b.user_id=#{id}  LEFT JOIN cl_user c ON a.created_id=c.user_id where a.is_enabled=1 and a.is_deleted=0"+
-            " ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize}")
+            "        <if test=\"page.params.type==1\">\n" +
+            "             and id IS NOT NULL" +
+            "        </if>" +
+            "        <if test=\"page.params.type==2\">\n" +
+            "             and id IS NULL" +
+            "        </if>" +
+            " ORDER BY a.created_time desc LIMIT #{page.index}, #{page.pageSize}"+
+            "</script>")
     @Results({
             @Result(property = "taskUser", column = "id",
             one = @One(select = "com.hnxx.zy.clms.core.mapper.TaskMapper.getTaskDes"))

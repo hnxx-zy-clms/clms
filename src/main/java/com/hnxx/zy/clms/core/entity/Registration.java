@@ -45,9 +45,4 @@ public class Registration implements Serializable {
      */
     private String userName;
 
-    /**
-     * 星期
-     */
-    private Integer signDay;
-
 }
