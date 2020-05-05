@@ -134,7 +134,8 @@ public class CommentServiceImpl implements CommentService {
         List<Comment> commentList = commentMapper.getCommentList(page);
         page.setList(commentList);
         // 查询总数
-        page.setTotalCount(commentList.size());
+        int totalCount = commentMapper.getCountByPage(page);
+        page.setTotalCount(totalCount);
         return page;
     }
 
