@@ -27,6 +27,6 @@ public class SysUser {
     /**
      *权限信息：0 1 2
      */
-    private String userPositionId;
+    private Integer userPositionId;
 
 }

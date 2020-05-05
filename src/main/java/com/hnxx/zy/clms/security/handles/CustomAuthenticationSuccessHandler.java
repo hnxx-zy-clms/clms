@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
@@ -38,6 +40,6 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         response.setContentType("application/json;charset=utf-8");
         String jwtToken = jwtProvider.generateJwtToken(authentication);
         SysUser user = userMapper.selectByName(authentication.getName());
-        response.getWriter().write(JSON.toJSONString(new Result<Object>(jwtToken,user)));
+        response.getWriter().write(JSON.toJSONString(new Result<Object>(jwtToken,user.getUserName())));
     }
 }

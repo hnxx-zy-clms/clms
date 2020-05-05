@@ -55,7 +55,7 @@ public class CustomUserDetailsService implements UserDetailsService {
            throw new UsernameNotFoundException("用户名不存在");
         }
         // 添加权限
-        authorities.add(new SimpleGrantedAuthority(user.getUserPositionId()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_"+user.getUserPositionId()));
        //密码加密
         String password = passwordEncoder.encode(user.getUserPassword());
 
