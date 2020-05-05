@@ -132,7 +132,15 @@ public class ReportMarkingController {
         for (String time : c) {
             page.params.put("time",time);
             reportStatisticsList.add(reportMarkingService.getAvgReportScore(page));
-            reportStatisticsList.add(reportMarkingService.getReportScore(page));
+            if(reportMarkingService.getReportScore(page) == null){
+                ReportStatistics reportStatistics =new ReportStatistics();
+                reportStatistics.setType(time);
+                reportStatistics.setState((String)page.params.get("userName"));
+                reportStatistics.setValue((float)0);
+                reportStatisticsList.add(reportStatistics);
+            }else {
+                reportStatisticsList.add(reportMarkingService.getReportScore(page));
+            }
         }
         page.setList(reportStatisticsList);
         return new Result<>(page);
