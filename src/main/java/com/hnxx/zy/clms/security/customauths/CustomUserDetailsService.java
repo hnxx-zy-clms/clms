@@ -29,18 +29,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    /**
-     * 设置密码加密方式
-     * @return
-     */
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
     /**
      * 添加认证信息
      */
@@ -57,8 +45,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         // 添加权限
         authorities.add(new SimpleGrantedAuthority("ROLE_"+user.getUserPositionId()));
        //密码加密
-        String password = passwordEncoder.encode(user.getUserPassword());
-
-        return new User(user.getUserName(),password, authorities);
+        return new User(user.getUserName(),user.getUserPassword(), authorities);
     }
 }
