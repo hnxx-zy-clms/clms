@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   datasource:
       url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
@@ -38,8 +40,10 @@ spring:
         connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
         # 合并多个DruidDataSource的监控数据
         useGlobalDataSourceStat: true
-server:
-  port: 8080
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
@@ -49,3 +53,20 @@ github:
     secret: c4661c64b6e9a79a887ca694d88b45de9ccdba70
   redirect:
     uri: http://localhost:8080/callback
+###################以下为fastdfs的配置###########################
+fdfs:
+  so-timeout: 2500
+  connect-timeout: 600
+  thumb-image:
+    width: 100
+    height: 100
+  tracker-list:
+    - 175.24.45.179:22122
+upload:
+  base-url: http://175.24.45.179/
+  allow-types:
+    - image/jpeg
+    - image/png
+    - image/bmp
+    - image/gif
+    - audio/mpeg

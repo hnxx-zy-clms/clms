@@ -185,6 +185,13 @@
             <version>1.2.10</version>
         </dependency>
 
+        <!-- fastdfs 分布式文件存储 依赖 -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.26.7</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>

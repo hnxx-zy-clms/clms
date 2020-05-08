@@ -59,8 +59,8 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public List<ReportMarking> getUserMarking(Page<ReportMarking> page) {
-        return reportMarkingMapper.getUserMarking(page);
+    public ReportMarking getUserMarkingById(Integer id) {
+        return reportMarkingMapper.getUserMarkingById(id);
     }
 
     @Override

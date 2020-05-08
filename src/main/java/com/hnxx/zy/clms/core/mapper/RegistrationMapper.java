@@ -51,7 +51,7 @@ public interface RegistrationMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_registration where user_id=#{id} and sign_time>= date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY) and sign_time<=date_sub(curdate(),INTERVAL WEEKDAY(curdate())-7 DAY)")
+    @Select("select * from cl_registration where user_id=#{id} and sign_time>= date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY) and sign_time<=date_sub(curdate(),INTERVAL WEEKDAY(curdate())-6 DAY)")
     List<Registration> getRegisListById(Integer id);
 
     /**

@@ -248,7 +248,7 @@ public interface ReportMapper {
             "LEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "LEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -294,7 +294,7 @@ public interface ReportMapper {
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -314,7 +314,7 @@ public interface ReportMapper {
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -334,7 +334,7 @@ public interface ReportMapper {
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -354,7 +354,7 @@ public interface ReportMapper {
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -375,7 +375,7 @@ public interface ReportMapper {
             "LEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "LEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
-            "b.report_type = #{page.params.reportType}\n" +
+            "b.report_type = #{page.params.reportType} and b.is_deleted = 0\n" +
             "<if test='page.params.reportType == 0' > \n" +
             "and date_format(b.created_time,'%Y-%m-%d') = #{page.params.time} \n" +
             "</if> \n"+
@@ -386,5 +386,18 @@ public interface ReportMapper {
             ") e\n" +
             "</script>"})
     List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page,Integer i);
+
+    /**
+     * 获取报告简要批阅信息
+     * @param userId
+     * @return
+     */
+    @Select({"<script> \n"+
+            "select b.report_id,b.report_type,b.created_time,b.updated_time,b.is_checked+b.is_classes_checked+b.is_teacher_checked as is_checked from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "where c.user_id = #{userId} and is_deleted = 0 and is_checked = 1\n"+
+            "order by b.updated_time desc\n" +
+            "limit 0, 3" +
+            "</script>"})
+    List<Report> getMinReportInfo(Integer userId);
 }
 

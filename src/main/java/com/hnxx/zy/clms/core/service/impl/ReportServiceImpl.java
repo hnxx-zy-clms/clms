@@ -92,5 +92,10 @@ public class ReportServiceImpl implements ReportService {
         return reportMapper.getMainReportInfo(page,i);
     }
 
+    @Override
+    public List<Report> getMinReportInfo(Integer userId) {
+        return reportMapper.getMinReportInfo(userId);
+    }
+
 
 }

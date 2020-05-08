@@ -173,6 +173,9 @@ public interface CommentMapper {
             "        <if test=\"params.commentId!=null\">\n" +
             "            and c.comment_id = #{params.commentId}\n" +
             "        </if>\n" +
+            "        <if test=\"params.commentArticle!=null\">\n" +
+            "            and c.comment_article = #{params.commentArticle}\n" +
+            "        </if>\n" +
             "        <if test=\"params.commentUser!=null and params.commentUser!=''\">\n" +
             "            and c.comment_user = #{params.commentUser}\n" +
             "        </if>\n" +

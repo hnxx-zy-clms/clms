@@ -30,8 +30,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void saveReply(Task task) {
-        taskMapper.saveReply(task);
+    public void saveReply(TaskUser taskUser) {
+        taskMapper.saveReply(taskUser);
     }
 
     @Override

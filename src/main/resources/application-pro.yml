@@ -1,26 +1,85 @@
-spring:
-  datasource:
-    druid:
-      url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
-      username: root
-      password: code-fusheng
-#      url: jdbc:mysql://175.24.45.179/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
-#      username: root
-#      password: sa123
-#      url: jdbc:mysql://127.0.0.1:3306/report?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
-#      username: root
-#      password: 123456
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
-      maxWait: 10000
-      testOnBorrow: true
-      testOnReturn: false
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
 server:
   port: 8080
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://cdb-csnz8qhs.cd.tencentcdb.com:10087/clms?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: code-fusheng
+    #      url: jdbc:mysql://127.0.0.1:3306/report?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    #      username: root
+    #      password: 123456
+    #      url: jdbc:mysql://127.0.0.1:3306/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    #      username: root
+    #      password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    ###################以下为druid的配置###########################
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 初始化连接池个数
+    initialSize: 5
+    # 最小连接池个数——》已经不再使用，配置了也没效果
+    minIdle: 2
+    # 最大连接池个数
+    maxActive: 20
+    # 配置获取连接等待超时的时间，单位毫秒，缺省启用公平锁，并发效率会有所下降
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    # 用来检测连接是否有效的sql，要求是一个查询语句。
+    # 如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用
+    validationQuery: SELECT 1 FROM DUAL
+    # 建议配置为true，不影响性能，并且保证安全性。
+    # 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+    testWhileIdle: true
+    # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+    testOnBorrow: false
+    # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+    testOnReturn: false
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 通过别名的方式配置扩展插件，多个英文逗号分隔，常用的插件有：
+    # 监控统计用的filter:stat
+    # 日志用的filter:slf4j
+    # 防御sql注入的filter:wall
+    filters: stat,wall,slf4j
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    # 合并多个DruidDataSource的监控数据
+    useGlobalDataSourceStat: true
+  jackson:
+    default-property-inclusion: non_null    # 实体类与json互转的时候 属性值为null的不参与序列化
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+github:
+  client:
+    id: 6ec6304bbb35b05f0194
+    secret: c4661c64b6e9a79a887ca694d88b45de9ccdba70
+  redirect:
+    uri: http://localhost:8080/callback
+###################以下为fastdfs的配置###########################
+fdfs:
+  so-timeout: 2500
+  connect-timeout: 600
+  thumb-image:
+    width: 100
+    height: 100
+  tracker-list:
+    - 175.24.45.179:22122
+upload:
+  base-url: http://175.24.45.179/
+  allow-types:
+    - image/jpeg
+    - image/png
+    - image/bmp
+    - image/gif
+    - audio/mpeg
+

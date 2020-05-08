@@ -114,17 +114,14 @@ public class ReportMarkingController {
     }
 
     /**
-     * 学生获取批阅数据
-     * @param page
+     * 学生感觉报告ID获取批阅数据
+     * @param id
      * @return
      */
-    @PostMapping("/getUserMarking")
-    public Result<Page<ReportMarking>> getUserMarking(@RequestBody Page<ReportMarking> page){
-        List<ReportMarking> reports = reportMarkingService.getUserMarking(page);
-        page.setList(reports);
-        page.setTotalCount(reports.size());
-        page.pagingDate();
-        return new Result<>(page);
+    @GetMapping("/getUserMarkingById/{id}")
+    public Result<ReportMarking> getUserMarking(@PathVariable("id") Integer id){
+        ReportMarking reportMarking = reportMarkingService.getUserMarkingById(id);
+        return new Result<>(reportMarking);
     }
 
     @PostMapping("/getMarkingScore")
@@ -135,7 +132,15 @@ public class ReportMarkingController {
         for (String time : c) {
             page.params.put("time",time);
             reportStatisticsList.add(reportMarkingService.getAvgReportScore(page));
-            reportStatisticsList.add(reportMarkingService.getReportScore(page));
+            if(reportMarkingService.getReportScore(page) == null){
+                ReportStatistics reportStatistics =new ReportStatistics();
+                reportStatistics.setType(time);
+                reportStatistics.setState((String)page.params.get("userName"));
+                reportStatistics.setValue((float)0);
+                reportStatisticsList.add(reportStatistics);
+            }else {
+                reportStatisticsList.add(reportMarkingService.getReportScore(page));
+            }
         }
         page.setList(reportStatisticsList);
         return new Result<>(page);

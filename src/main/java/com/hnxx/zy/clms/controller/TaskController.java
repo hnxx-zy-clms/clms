@@ -48,12 +48,12 @@ public class TaskController {
     /**
      * 新建回复
      *
-     * @param task
+     * @param taskUser
      * @return
      */
     @PostMapping("/saveReply")
-    public Result saveReply(@RequestBody Task task) {
-        taskService.saveReply(task);
+    public Result saveReply(@RequestBody TaskUser taskUser) {
+        taskService.saveReply(taskUser);
         return new Result(ResultEnum.SUCCESS);
     }
 
@@ -63,7 +63,7 @@ public class TaskController {
      * @param id
      * @return
      */
-    @GetMapping("/getUserTask/{id}")
+    @PostMapping("/getUserTask/{id}")
     public Result<Page> getUserTask(@RequestBody Page page, @PathVariable("id") Integer id) {
         page.setIndex(page.getIndex());
         page = taskService.getByPage(page, id);

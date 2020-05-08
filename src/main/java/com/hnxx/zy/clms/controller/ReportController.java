@@ -45,7 +45,7 @@ public class ReportController {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         DateUtils dateUtils =new DateUtils();
         if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
-            return new Result<>("时间已截止");
+            return new Result<>(401,"时间已截止");
         }else if(report.getReportType() == 0){
             if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),0, null) != 0) {
                 return new Result<>(401,"已存在报告数据");
@@ -92,6 +92,16 @@ public class ReportController {
     public Result<Object> deleteAdmin(@PathVariable("id") Integer reportId){
         reportService.deleteAdminById(reportId);
         return new Result<>("删除成功");
+    }
+    /**
+     * 根据user_id、日期和reportType分页查询报告
+     *
+     */
+    @PostMapping("/getMinReportInfo")
+    public Result<List<Report>> getMinReportInfo(){
+        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        List<Report> reports =reportService.getMinReportInfo(userId.getUserId());
+        return new Result<>(reports);
     }
 
     /**
@@ -236,6 +246,10 @@ public class ReportController {
     public Result<Page<ReportStatistics>> getUserNum(@RequestBody Page<ReportStatistics> page) throws ParseException {
         if((Integer)page.params.get("reportType")==1){
             DateUtils dateUtils =new DateUtils();
+            if("".equals(page.params.get("time"))){
+                SimpleDateFormat formatter  = new SimpleDateFormat("yyyy-MM-dd");
+                page.params.put("time",formatter.format(new Date()));
+            }
             String[] results = dateUtils.getDateWeek((String)page.params.get("time"));
             page.params.put("time",results);
         }
@@ -266,6 +280,10 @@ public class ReportController {
         int i = userService.getUserNum(page);
         if((Integer)page.params.get("reportType")==1){
             DateUtils dateUtils =new DateUtils();
+            if("".equals(page.params.get("time"))){
+                SimpleDateFormat formatter  = new SimpleDateFormat("yyyy-MM-dd");
+                page.params.put("time",formatter.format(new Date()));
+            }
             String[] results = dateUtils.getDateWeek((String)page.params.get("time"));
             page.params.put("time",results);
         }
