@@ -1,8 +1,11 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.core.entity.GithubCount;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.GithubUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author 南街北巷
@@ -11,6 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GithubUserServiceImpl implements GithubUserService {
 
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public GithubCount getById(Integer id) {
@@ -18,8 +23,9 @@ public class GithubUserServiceImpl implements GithubUserService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void insertUser(GithubCount githubCount) {
-
+        userMapper.insert(githubCount);
     }
 
     @Override

@@ -22,7 +22,10 @@ import java.util.Map;
 public interface UserMapper {
 
     /**
+     * *
      * 从数据拿出用户信息
+     * @param username
+     * @return
      */
     @Select("select user_id,user_name,user_password,user_position_id from cl_user where user_name=#{username}")
     SysUser selectByName(String username);
@@ -52,6 +55,7 @@ public interface UserMapper {
 
     /**
      * 获取人数
+     * @param page
      * @return
      */
     @Select({"<script> \n"+
@@ -67,6 +71,7 @@ public interface UserMapper {
 
     /**
      * 获取人数
+     * @param page
      * @return
      */
     @Select({"<script> \n"+
