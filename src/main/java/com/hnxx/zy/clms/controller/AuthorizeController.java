@@ -2,18 +2,19 @@ package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.core.entity.GithubCount;
 import com.hnxx.zy.clms.core.entity.GithubCountParameterFactory;
+import com.hnxx.zy.clms.core.mapper.GithubUserMapper;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.dto.AccessTokenDTO;
 import com.hnxx.zy.clms.dto.GithubUser;
 import com.hnxx.zy.clms.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -30,7 +31,7 @@ public class AuthorizeController {
     private GithubCountParameterFactory githubCountParameterFactory;
 
     @Autowired
-    private UserMapper userMapper;
+    private GithubUserMapper githubUserMapper;
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
@@ -61,7 +62,7 @@ public class AuthorizeController {
             System.out.println(now);
             githubCount.setCreatedTime(date);
             githubCount.setUpdateTime(githubCount.getCreatedTime());
-            userMapper.insert(githubCount);
+            githubUserMapper.insert(githubCount);
             request.getSession().setAttribute("user", githubUser);
 //            System.out.println(githubCountFactory.getClientId());测试yml自定义参数传值
             return "redirect:/home";

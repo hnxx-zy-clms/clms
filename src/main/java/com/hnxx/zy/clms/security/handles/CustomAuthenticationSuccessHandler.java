@@ -5,7 +5,6 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.security.jwt.JwtProvider;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
-import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
