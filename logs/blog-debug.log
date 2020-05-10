@@ -131,3 +131,184 @@
 2020-05-10 02:38:27.371 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
 2020-05-10 02:38:27.372 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), POST(String), 3(Long), ******(String), 0:0:0:0:0:0:0:1(String)
 2020-05-10 02:38:27.457 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:12:47.527 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-10 23:12:51.348 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-10 23:21:48.882 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-10 23:21:53.123 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-10 23:22:27.390 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:22:27.420 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:22:27.489 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:22:27.492 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:22:27.494 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:22:27.536 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:22:27.537 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:22:27.540 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:22:27.583 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:22:27.584 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-05-10 23:22:27.586 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-05-10 23:22:27.634 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 10
+2020-05-10 23:22:27.803 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:22:27.804 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:22:27.849 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:22:27.852 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:22:27.855 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 98(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:22:27.921 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.GroupMapper.findAllByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_group 
+2020-05-10 23:22:27.922 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.GroupMapper.findAllByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:22:27.946 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:22:27.948 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==>  Preparing: select * from cl_menu where user_position_id <= ? 
+2020-05-10 23:22:27.950 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==> Parameters: 0(Integer)
+2020-05-10 23:22:27.967 DEBUG [http-nio-8080-exec-2]c.h.zy.clms.core.mapper.GroupMapper.findAllByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:22:27.971 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GroupMapper.findAllByPage.debug:159 -==>  Preparing: select * from cl_group LIMIT ? 
+2020-05-10 23:22:27.972 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GroupMapper.findAllByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:22:27.995 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -<==      Total: 3
+2020-05-10 23:22:28.016 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.GroupMapper.findAllByPage.debug:159 -<==      Total: 8
+2020-05-10 23:22:28.117 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:22:28.120 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /group/all/1/10(String), ******(String), 1(Integer), null, GET(String), 566(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:22:28.212 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:23:20.791 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:23:20.793 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:23:20.838 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:23:20.910 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id 
+2020-05-10 23:23:20.911 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:23:21.006 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:23:21.008 DEBUG [http-nio-8080-exec-5]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id LIMIT ? 
+2020-05-10 23:23:21.010 DEBUG [http-nio-8080-exec-5]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:23:21.230 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:23:21.231 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 0(Integer), ******(String), GET(String), 0(Long), null, 127.0.0.1(String)
+2020-05-10 23:23:21.320 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:23:21.365 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:23:21.366 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), GET(String), 9(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:23:21.454 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:25:59.205 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-10 23:26:02.763 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-10 23:26:18.237 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:26:18.269 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:26:18.354 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:26:18.356 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:26:18.358 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:26:18.408 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:26:18.412 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:26:18.413 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:26:18.458 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:26:18.463 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:26:18.465 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:26:18.514 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:26:18.516 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-05-10 23:26:18.519 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-05-10 23:26:18.569 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 10
+2020-05-10 23:26:18.657 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==>  Preparing: select * from cl_menu where user_position_id <= ? 
+2020-05-10 23:26:18.659 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==> Parameters: 0(Integer)
+2020-05-10 23:26:18.707 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -<==      Total: 3
+2020-05-10 23:26:18.837 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:26:18.851 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 147(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:26:18.907 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id 
+2020-05-10 23:26:18.909 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:26:18.955 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:26:18.962 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id LIMIT ? 
+2020-05-10 23:26:18.964 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:26:18.982 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:26:19.012 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 9
+2020-05-10 23:26:19.117 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:26:19.120 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 649(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:26:19.208 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:26:28.039 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:26:28.040 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:26:28.087 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:26:28.147 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -==>  Preparing: select * from cl_college 
+2020-05-10 23:26:28.148 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -==> Parameters: 
+2020-05-10 23:26:28.193 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -<==      Total: 4
+2020-05-10 23:26:28.283 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:26:28.286 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /college/findAll(String), ******(String), 1(Integer), null, POST(String), 188(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:26:28.376 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:28:33.963 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-10 23:28:37.643 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-10 23:29:19.829 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:19.922 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.034 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.042 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.044 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.088 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.090 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.091 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.136 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.153 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.155 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.206 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.207 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.208 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.236 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.238 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.251 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.260 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-05-10 23:29:20.262 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-05-10 23:29:20.280 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.285 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-05-10 23:29:20.286 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-05-10 23:29:20.308 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 10
+2020-05-10 23:29:20.339 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 10
+2020-05-10 23:29:20.351 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.354 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.397 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.399 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:20.400 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:20.491 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.493 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==>  Preparing: select * from cl_menu where user_position_id <= ? 
+2020-05-10 23:29:20.494 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==> Parameters: 0(Integer)
+2020-05-10 23:29:20.538 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -<==      Total: 3
+2020-05-10 23:29:20.543 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==>  Preparing: select * from cl_menu where user_position_id <= ? 
+2020-05-10 23:29:20.546 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -==> Parameters: 0(Integer)
+2020-05-10 23:29:20.590 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.MenuMapper.getMenuByRole.debug:159 -<==      Total: 3
+2020-05-10 23:29:20.618 DEBUG [http-nio-8080-exec-2]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id 
+2020-05-10 23:29:20.620 DEBUG [http-nio-8080-exec-2]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:29:20.686 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id 
+2020-05-10 23:29:20.689 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:29:20.711 DEBUG [http-nio-8080-exec-2]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.717 DEBUG [http-nio-8080-exec-2]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id LIMIT ? 
+2020-05-10 23:29:20.719 DEBUG [http-nio-8080-exec-2]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:29:20.737 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:29:20.740 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id LIMIT ? 
+2020-05-10 23:29:20.745 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:29:20.794 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 9
+2020-05-10 23:29:20.795 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:20.797 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 241(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:20.837 DEBUG [http-nio-8080-exec-2]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 9
+2020-05-10 23:29:20.883 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:20.885 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 59(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:20.940 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:20.943 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 780(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:20.947 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:20.951 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:20.953 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 597(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:20.972 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:21.048 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:21.048 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:24.380 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:24.386 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:24.435 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:24.557 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -==>  Preparing: select * from cl_college 
+2020-05-10 23:29:24.558 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -==> Parameters: 
+2020-05-10 23:29:24.601 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.CollegeMapper.findAllByPage.debug:159 -<==      Total: 4
+2020-05-10 23:29:24.689 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:24.690 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /college/findAll(String), ******(String), 1(Integer), null, POST(String), 243(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:24.779 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:37.877 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:37.878 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:37.920 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:37.999 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ClassesMapper.save.debug:159 -==>  Preparing: insert into `cl_classes`(classes_name,classes_states,classes_college_id) values(?,?,?) 
+2020-05-10 23:29:38.000 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ClassesMapper.save.debug:159 -==> Parameters: 电子商务一班(String), 1(Integer), 3(Integer)
+2020-05-10 23:29:38.083 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.ClassesMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:38.173 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:38.174 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/save(String), ******(String), 1(Integer), null, POST(String), 217(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:38.262 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-10 23:29:38.343 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-05-10 23:29:38.344 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-05-10 23:29:38.391 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-05-10 23:29:38.454 DEBUG [http-nio-8080-exec-9]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id 
+2020-05-10 23:29:38.456 DEBUG [http-nio-8080-exec-9]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-05-10 23:29:38.505 DEBUG [http-nio-8080-exec-9]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-05-10 23:29:38.506 DEBUG [http-nio-8080-exec-9]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name FROM cl_classes c LEFT JOIN cl_college p ON c.classes_college_id = p.college_id LIMIT ? 
+2020-05-10 23:29:38.508 DEBUG [http-nio-8080-exec-9]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-05-10 23:29:38.608 DEBUG [http-nio-8080-exec-9]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 10
+2020-05-10 23:29:38.699 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-10 23:29:38.701 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 300(Long), ******(String), 127.0.0.1(String)
+2020-05-10 23:29:38.787 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1

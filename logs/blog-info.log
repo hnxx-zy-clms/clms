@@ -407,3 +407,215 @@
 2020-05-10 02:38:27.369 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
 2020-05-10 02:38:27.369 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 3
 2020-05-10 02:38:27.370 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:12:47.515 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on WIN-20190617RXB with PID 7540 (D:\clms\target\classes started by Administrator in D:\clms)
+2020-05-10 23:12:47.528 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-05-10 23:12:47.647 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-05-10 23:12:47.647 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-05-10 23:12:47.648 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 23:12:47.649 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 23:12:50.243 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:12:50.257 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:12:50.258 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-05-10 23:12:50.259 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-10 23:12:50.500 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-05-10 23:12:50.502 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2852 ms
+2020-05-10 23:12:51.326 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Filter webStatFilter was not registered (possibly already registered?)
+2020-05-10 23:12:51.328 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Servlet statViewServlet was not registered (possibly already registered?)
+2020-05-10 23:12:52.355 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-05-10 23:12:52.355 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-05-10 23:12:52.356 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/templates/**'], []
+2020-05-10 23:12:52.356 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/img/**'], []
+2020-05-10 23:12:52.584 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-05-10 23:12:52.836 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e32bf49, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ec0d940, org.springframework.security.web.header.HeaderWriterFilter@4a958cc6, org.springframework.web.filter.CorsFilter@3bb607bc, org.springframework.security.web.authentication.logout.LogoutFilter@148e645f, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@6681d1cb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6228d4e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3604e9c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a0dd8b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a35215b, org.springframework.security.web.session.SessionManagementFilter@6a306a30, org.springframework.security.web.access.ExceptionTranslationFilter@3b7c1989, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@115c5dcc]
+2020-05-10 23:12:52.974 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:12:53.700 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-05-10 23:12:53.844 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-05-10 23:12:53.896 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:12:53.925 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:12:53.930 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 7.915 seconds (JVM running for 10.111)
+2020-05-10 23:21:48.874 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on WIN-20190617RXB with PID 836 (D:\clms\target\classes started by Administrator in D:\clms)
+2020-05-10 23:21:48.883 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-05-10 23:21:48.956 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-05-10 23:21:48.956 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-05-10 23:21:48.957 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 23:21:48.958 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 23:21:51.710 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:21:51.850 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:21:51.852 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-05-10 23:21:51.853 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-10 23:21:52.085 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-05-10 23:21:52.086 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 3128 ms
+2020-05-10 23:21:53.087 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Filter webStatFilter was not registered (possibly already registered?)
+2020-05-10 23:21:53.090 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Servlet statViewServlet was not registered (possibly already registered?)
+2020-05-10 23:21:54.700 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-05-10 23:21:54.701 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-05-10 23:21:54.702 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/templates/**'], []
+2020-05-10 23:21:54.702 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/img/**'], []
+2020-05-10 23:21:55.044 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-05-10 23:21:55.356 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ee5eaa0, org.springframework.security.web.context.SecurityContextPersistenceFilter@16b8a595, org.springframework.security.web.header.HeaderWriterFilter@3309613d, org.springframework.web.filter.CorsFilter@d86d75c, org.springframework.security.web.authentication.logout.LogoutFilter@7562e086, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@6d0435c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@591e1bd2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79b3875e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@490d3832, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@548b423, org.springframework.security.web.session.SessionManagementFilter@6e5c453c, org.springframework.security.web.access.ExceptionTranslationFilter@57efb7f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a6c643e]
+2020-05-10 23:21:55.511 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:21:56.516 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-05-10 23:21:56.716 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-05-10 23:21:56.824 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:21:56.873 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:21:56.881 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 9.277 seconds (JVM running for 13.419)
+2020-05-10 23:22:25.727 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 23:22:25.729 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-05-10 23:22:25.772 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 42 ms
+2020-05-10 23:22:26.808 INFO  [http-nio-8080-exec-2]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-05-10 23:22:27.535 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /group/all/1/10
+2020-05-10 23:22:27.538 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-05-10 23:22:27.538 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:22:27.539 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:22:27.542 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:22:27.543 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:22:27.548 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-05-10 23:22:27.548 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.GroupController.findAllByPage
+2020-05-10 23:22:27.549 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:22:27.549 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:22:27.636 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 98
+2020-05-10 23:22:27.780 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:22:28.100 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 566
+2020-05-10 23:22:28.115 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:23:20.844 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-05-10 23:23:20.845 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:23:20.845 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:23:20.846 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-05-10 23:23:20.847 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:23:21.355 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /error
+2020-05-10 23:23:21.355 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:23:21.357 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:23:21.358 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.MyErrorController.handleError
+2020-05-10 23:23:21.359 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:23:21.363 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 9
+2020-05-10 23:23:21.364 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:25:59.196 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on WIN-20190617RXB with PID 10560 (D:\clms\target\classes started by Administrator in D:\clms)
+2020-05-10 23:25:59.207 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-05-10 23:25:59.354 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-05-10 23:25:59.354 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-05-10 23:25:59.355 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 23:25:59.355 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 23:26:01.705 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:26:01.829 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:26:01.830 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-05-10 23:26:01.831 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-10 23:26:02.024 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-05-10 23:26:02.026 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2670 ms
+2020-05-10 23:26:02.743 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Filter webStatFilter was not registered (possibly already registered?)
+2020-05-10 23:26:02.745 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Servlet statViewServlet was not registered (possibly already registered?)
+2020-05-10 23:26:03.751 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-05-10 23:26:03.752 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-05-10 23:26:03.752 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/templates/**'], []
+2020-05-10 23:26:03.753 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/img/**'], []
+2020-05-10 23:26:03.976 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-05-10 23:26:04.218 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cfc71ef, org.springframework.security.web.context.SecurityContextPersistenceFilter@786a1e50, org.springframework.security.web.header.HeaderWriterFilter@7e226450, org.springframework.web.filter.CorsFilter@91edb58, org.springframework.security.web.authentication.logout.LogoutFilter@6ccf0296, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@d7b2d6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cd10a57, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66f04971, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bcb3ca8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6962e743, org.springframework.security.web.session.SessionManagementFilter@606c1699, org.springframework.security.web.access.ExceptionTranslationFilter@61b2c310, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11e3be39]
+2020-05-10 23:26:04.338 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:26:05.121 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-05-10 23:26:05.255 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-05-10 23:26:05.317 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:26:05.349 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:26:05.354 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 7.364 seconds (JVM running for 9.397)
+2020-05-10 23:26:15.111 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 23:26:15.114 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-05-10 23:26:15.162 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 46 ms
+2020-05-10 23:26:16.587 INFO  [http-nio-8080-exec-1]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-05-10 23:26:18.427 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-05-10 23:26:18.431 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:26:18.434 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:26:18.442 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-05-10 23:26:18.445 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:26:18.450 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-05-10 23:26:18.452 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:26:18.453 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:26:18.457 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-05-10 23:26:18.458 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:26:18.572 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 147
+2020-05-10 23:26:18.836 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:26:19.099 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 649
+2020-05-10 23:26:19.116 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:26:28.090 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /college/findAll
+2020-05-10 23:26:28.091 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-05-10 23:26:28.092 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:26:28.094 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.CollegeController.findAll
+2020-05-10 23:26:28.095 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:26:28.278 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 188
+2020-05-10 23:26:28.282 INFO  [http-nio-8080-exec-4]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:28:33.957 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on WIN-20190617RXB with PID 11072 (D:\clms\target\classes started by Administrator in D:\clms)
+2020-05-10 23:28:33.964 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-05-10 23:28:34.059 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-05-10 23:28:34.059 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-05-10 23:28:34.060 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-10 23:28:34.061 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-10 23:28:36.634 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-05-10 23:28:36.785 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:28:36.787 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-05-10 23:28:36.788 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-10 23:28:36.982 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-05-10 23:28:36.982 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2921 ms
+2020-05-10 23:28:37.623 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Filter webStatFilter was not registered (possibly already registered?)
+2020-05-10 23:28:37.625 INFO  [restartedMain]org.springframework.boot.web.servlet.RegistrationBean.register:110 -Servlet statViewServlet was not registered (possibly already registered?)
+2020-05-10 23:28:38.633 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-05-10 23:28:38.634 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-05-10 23:28:38.635 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/templates/**'], []
+2020-05-10 23:28:38.635 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/img/**'], []
+2020-05-10 23:28:38.867 INFO  [restartedMain]o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:58 -Adding welcome page template: index
+2020-05-10 23:28:39.154 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50652e2, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f35b4c6, org.springframework.security.web.header.HeaderWriterFilter@7f7dcb67, org.springframework.web.filter.CorsFilter@69b4286d, org.springframework.security.web.authentication.logout.LogoutFilter@5c0855ea, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@4aef9c06, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@61f3d2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a099f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@373ecf8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9b0e4f5, org.springframework.security.web.session.SessionManagementFilter@18bbde5b, org.springframework.security.web.access.ExceptionTranslationFilter@6b3734e0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cfa9350]
+2020-05-10 23:28:39.265 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 23:28:40.010 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-05-10 23:28:40.174 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-05-10 23:28:40.234 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-05-10 23:28:40.265 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-10 23:28:40.269 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 8.1 seconds (JVM running for 9.963)
+2020-05-10 23:28:56.813 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-10 23:28:56.814 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-05-10 23:28:56.880 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 65 ms
+2020-05-10 23:28:58.075 INFO  [http-nio-8080-exec-2]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-05-10 23:29:20.103 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-05-10 23:29:20.106 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:29:20.108 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:20.112 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-05-10 23:29:20.114 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:20.158 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-05-10 23:29:20.159 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:29:20.160 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:20.161 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-05-10 23:29:20.162 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:20.253 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-05-10 23:29:20.254 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:29:20.256 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:20.257 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-05-10 23:29:20.258 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:20.286 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-05-10 23:29:20.287 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:29:20.288 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:20.289 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-05-10 23:29:20.290 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:20.312 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 59
+2020-05-10 23:29:20.341 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 241
+2020-05-10 23:29:20.534 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:20.577 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:20.883 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 597
+2020-05-10 23:29:20.894 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:20.937 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 780
+2020-05-10 23:29:20.938 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:24.442 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /college/findAll
+2020-05-10 23:29:24.445 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-05-10 23:29:24.446 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:24.447 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.CollegeController.findAll
+2020-05-10 23:29:24.450 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:24.685 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 243
+2020-05-10 23:29:24.688 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:37.955 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/save
+2020-05-10 23:29:37.956 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : POST
+2020-05-10 23:29:37.956 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:37.956 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.save
+2020-05-10 23:29:37.957 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:38.172 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 217
+2020-05-10 23:29:38.172 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-05-10 23:29:38.394 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-05-10 23:29:38.395 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-05-10 23:29:38.396 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-05-10 23:29:38.403 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-05-10 23:29:38.405 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-05-10 23:29:38.694 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 300
+2020-05-10 23:29:38.695 INFO  [http-nio-8080-exec-9]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"

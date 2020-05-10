@@ -50,4 +50,10 @@ public class CollegeServiceImpl implements CollegeService {
             collegeMapper.disableClasses(id);
         }
     }
+
+    @Override
+    public List<College> findAll() {
+        List<College> colleges = collegeMapper.findAllByPage();
+        return colleges;
+    }
 }

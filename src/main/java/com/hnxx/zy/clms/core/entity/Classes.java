@@ -23,4 +23,13 @@ public class Classes implements Serializable {
      */
     private int classesStates;
 
+    /**
+     * 所属学院id
+     */
+    private int classesCollegeId;
+
+    /**
+     * 所属学院名称
+     */
+    private String collegeName;
 }
