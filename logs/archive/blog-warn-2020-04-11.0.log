@@ -1,0 +1,4 @@
+2020-04-11 15:31:28.799 WARN  [http-nio-8080-exec-3]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-04-11 15:31:39.506 WARN  [http-nio-8080-exec-4]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-04-11 15:31:43.017 WARN  [http-nio-8080-exec-5]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-04-11 15:32:01.431 WARN  [http-nio-8080-exec-6]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1

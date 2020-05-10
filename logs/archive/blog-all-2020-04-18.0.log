@@ -1,0 +1,142 @@
+2020-04-18 14:09:02.372 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:55 -Starting ClmsApplication on WIN-20190617RXB with PID 4592 (D:\clms\target\classes started by Administrator in D:\clms)
+2020-04-18 14:09:02.372 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-18 14:09:02.388 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-04-18 14:09:02.481 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2020-04-18 14:09:02.481 INFO  [restartedMain]org.springframework.boot.devtools.restart.ChangeableUrls.logTo:225 -The Class-Path manifest attribute in C:\repo\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/C:/repo/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2020-04-18 14:09:02.481 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-18 14:09:02.481 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-18 14:09:05.072 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:92 -Tomcat initialized with port(s): 8080 (http)
+2020-04-18 14:09:05.087 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-18 14:09:05.087 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-04-18 14:09:05.087 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-18 14:09:05.337 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-04-18 14:09:05.337 INFO  [restartedMain]org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 -Root WebApplicationContext: initialization completed in 2840 ms
+2020-04-18 14:09:05.696 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-04-18 14:09:18.163 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-04-18 14:09:18.553 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-04-18 14:09:19.509 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/css/**'], []
+2020-04-18 14:09:19.509 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: Ant [pattern='/js/**,/static/**'], []
+2020-04-18 14:09:19.975 INFO  [restartedMain]o.s.security.web.DefaultSecurityFilterChain.<init>:43 -Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c6ade96, org.springframework.security.web.context.SecurityContextPersistenceFilter@6447f684, org.springframework.security.web.header.HeaderWriterFilter@4beceb1e, org.springframework.web.filter.CorsFilter@2cc6b7db, org.springframework.security.web.authentication.logout.LogoutFilter@6e9e66b2, com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter@60bb0e3a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b80c035, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dd8b38, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cf39820, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@447daefd, org.springframework.security.web.session.SessionManagementFilter@6c7039e9, org.springframework.security.web.access.ExceptionTranslationFilter@200e983a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7787a8ce]
+2020-04-18 14:09:20.086 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-18 14:09:20.522 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskScheduler.initialize:181 -Initializing ExecutorService 'taskScheduler'
+2020-04-18 14:09:20.647 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-04-18 14:09:20.703 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-18 14:09:20.728 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:204 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-18 14:09:20.728 INFO  [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarted:61 -Started ClmsApplication in 19.655 seconds (JVM running for 22.588)
+2020-04-18 14:11:25.307 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-18 14:11:25.307 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-04-18 14:11:25.342 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 32 ms
+2020-04-18 14:11:25.693 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:11:25.728 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:11:25.863 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:11:26.617 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:11:26.617 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:11:26.694 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:11:26.867 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /articleType/getList
+2020-04-18 14:11:26.869 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:11:26.874 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:11:26.877 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ArticleTypeController.getList
+2020-04-18 14:11:26.879 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:11:26.959 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==>  Preparing: select type_id, type_name, type_count from cl_article_type where is_deleted = 0 and is_enabled = 1 
+2020-04-18 14:11:26.959 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -==> Parameters: 
+2020-04-18 14:11:27.062 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.ArticleTypeMapper.getList.debug:159 -<==      Total: 7
+2020-04-18 14:11:27.062 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 198
+2020-04-18 14:11:27.069 INFO  [http-nio-8080-exec-2]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:11:27.182 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:11:27.189 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /articleType/getList(String), ******(String), 1(Integer), null, GET(String), 198(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:11:27.344 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-18 14:11:28.279 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:11:28.279 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:11:28.357 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:11:28.524 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-04-18 14:11:28.524 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:11:28.527 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:11:28.527 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-04-18 14:11:28.529 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:11:28.809 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes 
+2020-04-18 14:11:28.809 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-04-18 14:11:28.903 DEBUG [http-nio-8080-exec-3]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-04-18 14:11:28.903 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: select * from cl_classes LIMIT ? 
+2020-04-18 14:11:28.903 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-04-18 14:11:28.996 DEBUG [http-nio-8080-exec-3]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 10
+2020-04-18 14:11:29.137 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 613
+2020-04-18 14:11:29.152 INFO  [http-nio-8080-exec-3]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:11:29.230 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:11:29.230 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 613(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:11:29.402 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-18 14:17:37.066 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:17:37.068 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:17:37.153 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:17:37.298 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/2/10
+2020-04-18 14:17:37.298 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:17:37.301 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:17:37.301 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-04-18 14:17:37.303 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:17:37.458 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes 
+2020-04-18 14:17:37.461 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-04-18 14:17:37.538 DEBUG [http-nio-8080-exec-5]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-04-18 14:17:37.541 DEBUG [http-nio-8080-exec-5]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: select * from cl_classes LIMIT ?, ? 
+2020-04-18 14:17:37.543 DEBUG [http-nio-8080-exec-5]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer), 10(Integer)
+2020-04-18 14:17:37.623 DEBUG [http-nio-8080-exec-5]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 3
+2020-04-18 14:17:37.748 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 450
+2020-04-18 14:17:37.751 INFO  [http-nio-8080-exec-5]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:17:37.821 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:17:37.826 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/2/10(String), ******(String), 1(Integer), null, GET(String), 450(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:17:37.988 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-18 14:17:38.038 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:17:38.041 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:17:38.131 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:17:38.266 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-04-18 14:17:38.268 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:17:38.268 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:17:38.268 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-04-18 14:17:38.268 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:17:38.421 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes 
+2020-04-18 14:17:38.421 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-04-18 14:17:38.501 DEBUG [http-nio-8080-exec-6]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-04-18 14:17:38.503 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: select * from cl_classes LIMIT ? 
+2020-04-18 14:17:38.503 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-04-18 14:17:38.616 DEBUG [http-nio-8080-exec-6]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 10
+2020-04-18 14:17:38.736 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 470
+2020-04-18 14:17:38.736 INFO  [http-nio-8080-exec-6]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:17:38.806 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:17:38.808 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 470(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:17:38.953 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-18 14:17:42.218 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:17:42.221 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:17:42.296 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:17:42.423 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/2/10
+2020-04-18 14:17:42.426 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:17:42.426 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:17:42.431 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-04-18 14:17:42.431 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:17:42.578 DEBUG [http-nio-8080-exec-7]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes 
+2020-04-18 14:17:42.578 DEBUG [http-nio-8080-exec-7]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-04-18 14:17:42.641 DEBUG [http-nio-8080-exec-7]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-04-18 14:17:42.643 DEBUG [http-nio-8080-exec-7]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: select * from cl_classes LIMIT ?, ? 
+2020-04-18 14:17:42.646 DEBUG [http-nio-8080-exec-7]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer), 10(Integer)
+2020-04-18 14:17:42.718 DEBUG [http-nio-8080-exec-7]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 3
+2020-04-18 14:17:42.881 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 458
+2020-04-18 14:17:42.881 INFO  [http-nio-8080-exec-7]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:17:42.951 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:17:42.953 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/2/10(String), ******(String), 1(Integer), null, GET(String), 458(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:17:43.121 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-04-18 14:17:45.346 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select user_id,user_name,user_password,user_position_id from cl_user where user_name=? 
+2020-04-18 14:17:45.346 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: admin(String)
+2020-04-18 14:17:45.421 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 1
+2020-04-18 14:17:45.561 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:142 -请求地址 : /classes/all/1/10
+2020-04-18 14:17:45.563 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:143 -请求方式 : GET
+2020-04-18 14:17:45.563 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:146 -IP : 127.0.0.1
+2020-04-18 14:17:45.566 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:148 -方法 : com.hnxx.zy.clms.controller.ClassesController.findAllClassesByPage
+2020-04-18 14:17:45.566 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.printRequestLog:152 -请求参数：******
+2020-04-18 14:17:45.706 DEBUG [http-nio-8080-exec-8]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==>  Preparing: SELECT count(0) FROM cl_classes 
+2020-04-18 14:17:45.706 DEBUG [http-nio-8080-exec-8]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -==> Parameters: 
+2020-04-18 14:17:45.791 DEBUG [http-nio-8080-exec-8]c.h.z.c.c.m.ClassesMapper.findAllClassesByPage_COUNT.debug:159 -<==      Total: 1
+2020-04-18 14:17:45.796 DEBUG [http-nio-8080-exec-8]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==>  Preparing: select * from cl_classes LIMIT ? 
+2020-04-18 14:17:45.798 DEBUG [http-nio-8080-exec-8]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -==> Parameters: 10(Integer)
+2020-04-18 14:17:45.878 DEBUG [http-nio-8080-exec-8]c.h.z.c.core.mapper.ClassesMapper.findAllClassesByPage.debug:159 -<==      Total: 10
+2020-04-18 14:17:46.036 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAround:91 -耗时 : 475
+2020-04-18 14:17:46.036 INFO  [http-nio-8080-exec-8]com.hnxx.zy.clms.common.aspect.RequestAspect.doAfterReturning:109 -返回值:"******"
+2020-04-18 14:17:46.108 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-18 14:17:46.111 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /classes/all/1/10(String), ******(String), 1(Integer), null, GET(String), 475(Long), ******(String), 127.0.0.1(String)
+2020-04-18 14:17:46.278 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
