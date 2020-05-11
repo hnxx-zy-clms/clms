@@ -13,6 +13,9 @@ import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.XxxMapper;
 import com.hnxx.zy.clms.core.service.XxxService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +37,7 @@ public class XxxServiceImpl implements XxxService {
         xxxMapper.save(xxx);
     }
 
+    @CacheEvict(cacheNames = "xxx",key = "#id")
     @Override
     public void deleteById(Integer id) {
         xxxMapper.deleteById(id);
@@ -44,11 +48,13 @@ public class XxxServiceImpl implements XxxService {
         xxxMapper.deleteByIds(ids);
     }
 
+    @CachePut(cacheNames = "xxx",key = "#xxx.xxId")
     @Override
     public void update(Xxx xxx) {
         xxxMapper.update(xxx);
     }
 
+    @Cacheable(cacheNames = "xxx",key = "#id")
     @Override
     public Xxx getById(Integer id) {
         return xxxMapper.getById(id);

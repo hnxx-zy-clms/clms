@@ -53,13 +53,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * 配置Nginx部署代理是请求参数特殊字符问题
+     * 配置地址栏不能识别 // 的情况
      * @return
      */
     @Bean
     public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
         StrictHttpFirewall firewall = new StrictHttpFirewall();
-        firewall.setAllowUrlEncodedSlash(true);
+        //此处可添加别的规则,目前只设置 允许双 //
+        firewall.setAllowUrlEncodedDoubleSlash(true);
         return firewall;
     }
 
@@ -99,7 +100,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //设置登录方式,和登录接口，登录请求方式必须是Post
                 .formLogin().loginPage("/login")
-
                 // 自定义登录成功和失败处理
                 .successHandler(customAuthenticationSuccessHandler)
                 .failureHandler(customAuthenticationFailureHandler)

@@ -8,6 +8,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Xxx;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 

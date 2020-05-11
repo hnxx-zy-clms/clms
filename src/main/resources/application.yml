@@ -44,6 +44,20 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 100MB
+  #以下为redis的配置
+  redis:
+    host: 175.24.45.179
+    port: 6390
+    password: 123456
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 8
+        min-idle: 0
+        max-wait: 200
+  cache:
+    type: redis
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
