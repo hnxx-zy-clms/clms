@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.controller;
 import com.hnxx.zy.clms.common.utils.*;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
@@ -40,7 +41,7 @@ public class ReportController {
      */
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Report report) throws ParseException {
-        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         Calendar rightNow = Calendar.getInstance();
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         DateUtils dateUtils =new DateUtils();
@@ -99,7 +100,7 @@ public class ReportController {
      */
     @PostMapping("/getMinReportInfo")
     public Result<List<Report>> getMinReportInfo(){
-        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         List<Report> reports =reportService.getMinReportInfo(userId.getUserId());
         return new Result<>(reports);
     }
@@ -110,7 +111,7 @@ public class ReportController {
      */
     @PostMapping("/getByUserId")
     public Result<Page<Report>> getByUserId(@RequestBody Page<Report> page){
-        SysUser userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         page.params.put("userId",userId.getUserId());
         List<Report> reports=reportService.getReportByUserId(page);
         page.setList(reports);

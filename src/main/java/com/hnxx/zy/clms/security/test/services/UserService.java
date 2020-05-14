@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.security.test.services;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public interface UserService {
     /**
      * 打印测试用户信息
      */
-    SysUser selectByName(String username);
+    User selectByName(String username);
 
     /**
      * 获取登录用户名
@@ -38,6 +39,17 @@ public interface UserService {
      */
     int getUserNum(Page<ReportStatistics> page);
 
-
+    /**
+     *获取班级各组组名
+     * @param page
+     * @return
+     */
     Integer[] getGroupIds(Page<ReportStatistics> page);
+
+    /**
+     * 用户更新头像
+     * @param userId
+     * @param userIcon
+     */
+    void updateUserIconById(Integer userId,String userIcon);
 }

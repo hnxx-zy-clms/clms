@@ -7,18 +7,15 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
-import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
-import com.hnxx.zy.clms.core.entity.Collection;
 import com.hnxx.zy.clms.core.entity.Good;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.GoodService;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +40,7 @@ public class GoodController {
     @PutMapping("/doGood")
     @Transactional(rollbackFor = Exception.class)
     public Result<Object> doGood(@RequestBody Good good){
-        SysUser user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         good.setUserId(user.getUserId());
         goodService.doGood(good);
         return new Result<>("点赞成功!");

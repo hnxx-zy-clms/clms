@@ -11,6 +11,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Collection;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.service.CollectionService;
 import com.hnxx.zy.clms.security.test.entity.SysUser;
@@ -39,7 +40,7 @@ public class CollectionController {
      */
     @PostMapping("/save")
     public Result<Collection> save(@RequestBody Collection collection){
-        SysUser user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         collection.setUserId(user.getUserId());
         collectionService.save(collection);
         return new Result<>("添加成功!");
@@ -73,7 +74,7 @@ public class CollectionController {
      */
     @GetMapping("/getList")
     public Result<List<Collection>> getList(){
-        SysUser user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        User user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         int id = user.getUserId();
         List<Collection> collectionList = collectionService.getListByUserId(id);
         return new Result<>(collectionList);

@@ -1,10 +1,8 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.core.entity.GithubCount;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -26,8 +24,8 @@ public interface UserMapper {
      * @param username
      * @return
      */
-    @Select("select user_id,user_name,user_password,user_position_id from cl_user where user_name=#{username}")
-    SysUser selectByName(String username);
+    @Select("select * from cl_user where user_name=#{username}")
+    User selectByName(String username);
 
     /**
      * 获取总人数
@@ -135,6 +133,14 @@ public interface UserMapper {
      */
     @Update("update mybatis set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
     void updateUserById(User user);
+
+    /**
+     * 用户更新头像
+     * @param userId
+     * @param userIcon
+     */
+    @Update("update cl_user set user_icon = #{userIcon} where user_id = #{userId}")
+    void updateUserIconById(Integer userId,String userIcon);
 }
 
 
