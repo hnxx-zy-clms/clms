@@ -4,10 +4,6 @@ package com.hnxx.zy.clms.security.test.services;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
-import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 /**
  * @description: 测试security用户服务层接口
@@ -52,4 +48,5 @@ public interface UserService {
      * @param userIcon
      */
     void updateUserIconById(Integer userId,String userIcon);
+
 }

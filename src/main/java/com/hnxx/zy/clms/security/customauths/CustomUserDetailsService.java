@@ -36,11 +36,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userService.selectByName(username);
         // 判断用户是否存在
         if(user == null) {
-           throw new UsernameNotFoundException("用户名不存在");
+                throw new UsernameNotFoundException("账号不存在");
         }
         // 添加权限
         authorities.add(new SimpleGrantedAuthority("ROLE_"+user.getUserPositionId()));
-       //密码加密
-        return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getUserPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(username,user.getUserPassword(), authorities);
     }
 }

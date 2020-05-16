@@ -1,6 +1,6 @@
 package com.hnxx.zy.clms.security.jwt;
 
-import com.hnxx.zy.clms.security.test.entity.SysUser;
+import com.hnxx.zy.clms.core.entity.User;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,7 @@ public class JwtProvider {
      */
     public String generateJwtToken(Authentication authentication) {
 
-        SysUser userPrincipal = new SysUser();
+        User userPrincipal = new User();
         userPrincipal.setUserName(authentication.getName());
 
         return Jwts.builder()

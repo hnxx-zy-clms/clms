@@ -5,7 +5,6 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.security.jwt.JwtProvider;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;

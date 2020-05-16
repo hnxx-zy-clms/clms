@@ -24,7 +24,7 @@ public interface UserMapper {
      * @param username
      * @return
      */
-    @Select("select * from cl_user where user_name=#{username}")
+    @Select("select * from cl_user where user_name=#{username} or mobile = #{username}")
     User selectByName(String username);
 
     /**
@@ -141,6 +141,14 @@ public interface UserMapper {
      */
     @Update("update cl_user set user_icon = #{userIcon} where user_id = #{userId}")
     void updateUserIconById(Integer userId,String userIcon);
+
+    /**
+     * 根据电话号码取用户信息
+     * @param mobile
+     * @return
+     */
+    @Select("SELECT * FROM cl_user WHERE mobile= #{mobile}")
+    User selectByMobile(String mobile);
 }
 
 
