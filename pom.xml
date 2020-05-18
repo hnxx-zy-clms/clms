@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!-- 自定义es版本依赖，保证和本地一致 -->
+        <elasticsearch.version>7.6.1</elasticsearch.version>
     </properties>
 
     <dependencies>
@@ -36,8 +38,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-
-
         <!-- AOP 通过切面获取日志信息 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -207,6 +207,16 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.9</version>
+        </dependency>
+        <!-- elasticsearch 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <!-- 整合 rabbitmq -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
     </dependencies>

@@ -54,6 +54,9 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 100MB
+  elasticsearch:
+    rest:
+      uris: http://120.92.150.229:9200
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
