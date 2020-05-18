@@ -45,4 +45,12 @@ public interface CollectionService {
      * @return
      */
     List<Collection> getListByUserId(Integer id);
+
+    /**
+     * 根据uid和aid查询收藏情况
+     * @param aid
+     * @param uid
+     * @return
+     */
+    int getCollectionCount(Integer aid, Integer uid);
 }

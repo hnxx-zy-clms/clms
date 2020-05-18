@@ -39,4 +39,12 @@ public interface GoodService {
      * @param id
      */
     void deleteById(Integer id);
+
+    /**
+     * 根据uid和aid查询点赞情况
+     * @param aid
+     * @param uid
+     * @return
+     */
+    int getGoodCount(Integer uid, Integer aid);
 }

@@ -196,7 +196,7 @@ public class ArticleController {
      * @return
      * @throws IOException
      */
-    @GetMapping("/search")
+    @GetMapping("/highLightSearch")
     public Result<SearchPage<Article>> search(@RequestBody SearchPage searchPage) throws IOException {
         String keyword = searchPage.getKeyword();
         int pageNo = searchPage.getPageNo();

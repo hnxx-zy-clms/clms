@@ -12,6 +12,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Good;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.mapper.GoodMapper;
 import com.hnxx.zy.clms.core.service.GoodService;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +33,50 @@ public class GoodController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private GoodMapper goodMapper;
+
     /**
      * 点赞
      * @param good
      * @return
      */
-    @PutMapping("/doGood")
+    @PostMapping("/save")
     @Transactional(rollbackFor = Exception.class)
-    public Result<Object> doGood(@RequestBody Good good){
+    public Result<Object> save(@RequestBody Good good){
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         good.setUserId(user.getUserId());
+        // 获取用户id
+        int uid = good.getUserId();
+        List<Good> goodList = goodMapper.getListByUserId(uid);
+        // 判断是否为文章的点赞 判断是否为评论的点赞
+        if (good.getArticleId() != null) {
+            // 获取文章id
+            int aid = good.getArticleId();
+            for (Good oldGood : goodList) {
+                if(oldGood.getArticleId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && aid == oldGood.getArticleId()) {
+                        return new Result<>("点赞成功!");
+                    }
+                }
+            }
+            goodMapper.goodArticle(aid);
+        } else if (good.getCommentId() != null) {
+            // 获取评论id
+            int cid = good.getCommentId();
+            for (Good oldGood : goodList) {
+                if(oldGood.getCommentId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && cid == oldGood.getCommentId()) {
+                        return new Result<>("点赞成功!");
+                    }
+                }
+            }
+            goodMapper.goodComment(cid);
+        }
         goodService.doGood(good);
         return new Result<>("点赞成功!");
     }
@@ -55,6 +90,18 @@ public class GoodController {
     public Result<List<Good>> getList(@PathVariable("id") Integer id){
         List<Good> goodList = goodService.getListByUserId(id);
         return new Result<>(goodList);
+    }
+
+    /**
+     * 根据登录用户id查询当前文章点赞信息
+     * @return
+     */
+    @GetMapping("/getGood/{articleId}")
+    public Result<Integer> getGood(@PathVariable("articleId") Integer aid){
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Integer uid = user.getUserId();
+        int count = goodService.getGoodCount(uid,aid);
+        return new Result<>(count);
     }
 
     /**

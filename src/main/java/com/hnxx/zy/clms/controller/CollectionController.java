@@ -41,7 +41,7 @@ public class CollectionController {
         User user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         collection.setUserId(user.getUserId());
         collectionService.save(collection);
-        return new Result<>("添加成功!");
+        return new Result<>("收藏成功!");
     }
 
     /**
@@ -76,6 +76,18 @@ public class CollectionController {
         int id = user.getUserId();
         List<Collection> collectionList = collectionService.getListByUserId(id);
         return new Result<>(collectionList);
+    }
+
+    /**
+     * 根据登录用户id查询当前文章收藏信息
+     * @return
+     */
+    @GetMapping("/getCollection/{articleId}")
+    public Result<Integer> getCollection(@PathVariable("articleId") Integer aid){
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Integer uid = user.getUserId();
+        int count = collectionService.getCollectionCount(uid,aid);
+        return new Result<>(count);
     }
 
     /**

@@ -48,10 +48,14 @@ public interface GoodMapper {
     List<Good> getListByUserId(Integer id);
 
     /**
-     * 分页查询
-     * @param page
+     * 根据用户id和文章id查询文章点赞信息集合
+     * @param uid
+     * @param aid
      * @return
      */
+    @Select("select * from cl_good where user_id = #{userId} and article_id = #{articleId}")
+    List<Good> getGoodCount(@Param("userId") Integer uid, @Param("articleId") Integer aid);
+
     /**
      * 分页查询
      * @param page
