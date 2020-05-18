@@ -33,6 +33,8 @@ public class ReportController {
     @Autowired
     private UserService userService;
 
+    private Calendar rightNow = Calendar.getInstance();
+
     /**
      * 新增报告
      * @param report
@@ -41,7 +43,6 @@ public class ReportController {
     @PostMapping("/save")
     public Result<Object> save(@RequestBody Report report) throws ParseException {
         User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
-        Calendar rightNow = Calendar.getInstance();
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         DateUtils dateUtils =new DateUtils();
         if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
@@ -68,6 +69,9 @@ public class ReportController {
      */
     @PutMapping("/update")
     public Result<Object> update(@RequestBody Report report){
+        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+            return new Result<>(401,"时间已截止");
+        }
         reportService.update(report);
         return new Result<>("更新成功");
     }
@@ -79,6 +83,9 @@ public class ReportController {
      */
     @DeleteMapping("/delete/{id}")
     public Result<Object> delete(@PathVariable("id") Integer reportId){
+        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+            return new Result<>(401,"时间已截止");
+        }
         reportService.deleteById(reportId);
         return new Result<>("删除成功");
     }

@@ -396,7 +396,7 @@ public interface ReportMapper {
             "select b.report_id,b.report_type,b.created_time,b.updated_time,b.is_checked+b.is_classes_checked+b.is_teacher_checked as is_checked from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
             "where c.user_id = #{userId} and b.is_deleted = 0 and b.is_checked = 1\n"+
             "order by b.updated_time desc\n" +
-            "limit 0, 3" +
+            "limit 0, 5" +
             "</script>"})
     List<Report> getMinReportInfo(Integer userId);
 }
