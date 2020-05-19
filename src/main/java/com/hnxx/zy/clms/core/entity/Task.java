@@ -78,6 +78,34 @@ public class Task implements Serializable {
      */
     private TaskUser taskUser;
 
+    /**
+     * @Description: 截止时间
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-19 21:26:23
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date deadLine;
+
+    /**
+     * @Description: 文件名
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-19 21:26:46
+     */
+    private String fileName;
+
+    /**
+     * @Description: 文件地址
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-19 21:26:54
+     */
+    private String fileUrl;
+
 
 
 }
