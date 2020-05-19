@@ -39,7 +39,13 @@ public class CollectionController {
     @PostMapping("/save")
     public Result<Collection> save(@RequestBody Collection collection){
         User user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
-        collection.setUserId(user.getUserId());
+        Integer uid = user.getUserId();
+        Integer aid = collection.getArticleId();
+        int count = collectionService.getCollectionCount(uid,aid);
+        if(count != 0){
+            return new Result<>("收藏成功，请勿重复收藏！");
+        }
+        collection.setUserId(uid);
         collectionService.save(collection);
         return new Result<>("收藏成功!");
     }
