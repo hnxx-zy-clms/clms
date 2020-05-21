@@ -34,8 +34,8 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public List<Report> getGroupMarking(Page<Report> page) {
-        return reportMarkingMapper.getGroupMarking(page);
+    public List<Report> getNotMarkingReport(Page<Report> page) {
+        return reportMarkingMapper.getNotMarkingReport(page);
     }
 
     @Override
@@ -54,8 +54,8 @@ public class ReportMarkingServiceImpl implements ReportMarkingService {
     }
 
     @Override
-    public  List<ReportMarking> getMyMarking(Integer reportId,String userName){
-        return reportMarkingMapper.getMyMarking(reportId,userName);
+    public  List<Report> getMarkingReport(Page<Report> page){
+        return reportMarkingMapper.getMarkingReport(page);
     }
 
     @Override

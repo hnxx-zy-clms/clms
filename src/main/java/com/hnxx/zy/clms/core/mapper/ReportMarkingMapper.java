@@ -77,13 +77,50 @@ public interface ReportMarkingMapper {
     void deleteAdminById(Integer markingId);
 
     /**
-     * 返回本组未批阅的报告
+     * 返回用户未批阅的报告
      * @param page
      * @return
      */
-    @Select("select b.*,c.user_name,c.user_group_id,c.user_classes_id from cl_user_report a left join cl_report b on a.report_id=b.report_id left join cl_user c on a.user_id=c.user_id " +
-            "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and b.is_checked = 0 and b.is_deleted = 0")
-    List<Report> getGroupMarking(Page<Report> page);
+    @Select({"<script> \n" +
+            "select b.*,c.name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
+            "where b.is_enabled = 1 and b.report_type = #{params.reportType} and b.is_deleted = 0 \n"+
+            "<if test=\" params.UserPositionId == 1 \"  > \n" +
+            "and b.is_checked = 0 and  c.user_classes_id = #{params.UserClassesId} and c.user_group_id = #{params.UserGroupId}\n" +
+            "</if> \n"+
+            "<if test=\" params.UserPositionId == 2 \"  > \n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 0 and c.user_classes_id = #{params.UserClassesId}\n" +
+            "</if> \n"+
+            "<if test=\" params.UserPositionId == 3 \"  > \n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 1 and b.is_teacher_checked = 0" +
+            "</if> \n"+
+            "order by ${sortColumn} ${sortMethod}\n" +
+            "</script>"})
+    List<Report> getNotMarkingReport(Page<Report> page);
+
+    /**
+     * 用户名获取批阅信息
+     * @param page
+     * @return
+     */
+    @Select({"<script> \n" +
+            "select b.*,c.name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
+            "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
+            "where b.is_enabled = 1 and b.report_type = #{params.reportType} and b.is_deleted = 0 \n"+
+            "<if test=\" params.UserPositionId == 1 \"  > \n" +
+            "and b.is_checked = 1 and  c.user_classes_id = #{params.UserClassesId} and c.user_group_id = #{params.UserGroupId}\n" +
+            "</if> \n"+
+            "<if test=\" params.UserPositionId == 2 \"  > \n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 1 and c.user_classes_id = #{params.UserClassesId}\n" +
+            "</if> \n"+
+            "<if test=\" params.UserPositionId == 3 \"  > \n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 1 and b.is_teacher_checked = 1" +
+            "</if> \n"+
+            "order by ${sortColumn} ${sortMethod}\n" +
+            "</script>"})
+    List<Report> getMarkingReport(Page<Report> page);
 
     /**
      * 组长提交批阅报告
@@ -124,14 +161,6 @@ public interface ReportMarkingMapper {
             "</script>"})
     void setTeacherMarking(@Param("reportMarkings") List<ReportMarking> reportMarkings);
 
-    /**
-     * 根据report_id和当前用户名获取批阅信息
-     * @param reportId
-     * @param userName
-     * @return
-     */
-    @Select("select * from cl_report_marking where report_id = #{reportId} and user_name = #{userName}")
-    List<ReportMarking> getMyMarking(Integer reportId,String userName);
 
     /**
      * 学生报告ID查询报告批阅

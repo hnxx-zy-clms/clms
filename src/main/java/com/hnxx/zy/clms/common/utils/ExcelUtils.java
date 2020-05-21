@@ -101,7 +101,7 @@ public class ExcelUtils {
             HSSFCell cell2 = row1.createCell(3);
             cell2.setCellValue(report.getUserGroupId());
             cell2.setCellStyle(headstyle);
-            utils(row1,4,headstyle,report.getUserName());
+            utils(row1,4,headstyle,report.getName());
             utils(row1,5,headstyle,report.getWorkContent());
             utils(row1,6,headstyle,report.getDifficulty());
             utils(row1,7,headstyle,report.getSolution());
