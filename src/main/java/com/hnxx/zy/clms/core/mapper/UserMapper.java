@@ -60,7 +60,7 @@ public interface UserMapper {
      * @return
      */
     @Select({"<script> \n" +
-            "select count(*) from cl_user where is_enabled = 0 and is_deleted = 0 \n" +
+            "select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 \n" +
             "<if test=\" params.userClassesId != null and params.userClassesId  != '' \"  > \n" +
             "and user_classes_id = #{params.userClassesId}\n" +
             "<if test='params.isClasses == 0  and params.userGroupId!=null' > \n" +
@@ -77,7 +77,7 @@ public interface UserMapper {
      * @return
      */
     @Select({"<script> \n" +
-            "select DISTINCT(user_group_id) from cl_user where is_enabled = 0 and is_deleted = 0 \n" +
+            "select DISTINCT(user_group_id) from cl_user where is_enabled = 1 and is_deleted = 0 \n" +
             "and user_classes_id = #{params.userClassesId}\n" +
             "</script>"})
     Integer[] getGroupIds(Page<ReportStatistics> page);
