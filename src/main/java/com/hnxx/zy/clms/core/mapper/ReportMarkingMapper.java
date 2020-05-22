@@ -129,7 +129,7 @@ public interface ReportMarkingMapper {
     @Update({"<script> \n" +
             "update cl_report_marking set \n"+
             "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            "group_leader_score = #{item.groupLeaderScore},group_leader_comment = #{item.groupLeaderComment},group_name = #{item.groupName} ,group_time = #{item.groupTime}\n" +
+            "group_leader_score = #{item.Score},group_leader_comment = #{item.Comment},group_name = #{item.Name} ,group_time = #{item.Time}\n" +
             " where report_id = #{item.reportId} \n" +
             "</foreach> \n" +
             "</script>"})
@@ -142,7 +142,7 @@ public interface ReportMarkingMapper {
     @Update({"<script> \n" +
             "update cl_report_marking set \n"+
             "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            "monitor_score = #{item.monitorScore},monitor_comment = #{item.monitorComment},monitor_name = #{item.monitorName} ,monitor_time = #{item.monitorTime}\n" +
+            "monitor_score = #{item.Score},monitor_comment = #{item.Comment},monitor_name = #{item.Name} ,monitor_time = #{item.Time}\n" +
             " where report_id = #{item.reportId}\n" +
             "</foreach> \n" +
             "</script>"})
@@ -155,7 +155,7 @@ public interface ReportMarkingMapper {
     @Update({"<script> \n" +
             "update cl_report_marking set \n"+
             "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            " teacher_score = #{item.teacherScore} ,teacher_comment = #{item.teacherComment},teacher_name = #{item.teacherName} ,teacher_time = #{item.teacherTime}\n" +
+            " teacher_score = #{item.Score} ,teacher_comment = #{item.Comment},teacher_name = #{item.Name} ,teacher_time = #{item.Time}\n" +
             " where report_id = #{item.reportId} \n" +
             "</foreach> \n" +
             "</script>"})
