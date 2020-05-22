@@ -93,9 +93,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login","/","/register","druid/**","/home","/callback","/github/**").permitAll()
                 .anyRequest()
 //                允许所有请求通过(开发测试时设置，不设置登录,else测试要抓狂)
-//                .permitAll()
+                .permitAll()
                 //坑爹de认证方法
-                .authenticated()
+//                .authenticated()
                 .and()
                 //设置登录方式,和登录接口，登录请求方式必须是Post
                 .formLogin().loginPage("/login")

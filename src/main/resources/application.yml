@@ -53,7 +53,7 @@ github:
     secret: c4661c64b6e9a79a887ca694d88b45de9ccdba70
   redirect:
     uri: http://localhost:8080/callback
-###################以下为fastdfs的配置###########################
+###################以下为FastDfs的配置###########################
 fdfs:
   so-timeout: 2500
   connect-timeout: 600

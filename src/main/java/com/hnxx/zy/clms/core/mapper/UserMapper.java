@@ -90,7 +90,7 @@ public interface UserMapper {
      * @param name
      * @return
      */
-    @Select("select * from mybatis where name=#{name}")
+    @Select("select * from cl_user where name=#{name}")
     List<User> getByName(String name);
 
     /**
@@ -117,7 +117,10 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    @Insert("insert into mybatis(name,age,created_time,updated_time) values(#{name},#{age},#{createdTime},#{updatedTime})")
+    @Insert("<script>" +
+            "        insert into cl_user(user_id,user_name,user_password,created_time,updated_time)\n" +
+            "        values(#{userId},#{userName},#{userPassword},#{createdTime},#{updatedTime})\n"+
+            "</script>")
     void insertUser(User user);
 
     /**
@@ -125,7 +128,7 @@ public interface UserMapper {
      *
      * @param id
      */
-    @Delete("delete from mybatis where id=#{id}")
+    @Delete("delete from cl_user where id=#{id}")
     void deleteUserById(int id);
 
     /**
@@ -133,7 +136,7 @@ public interface UserMapper {
      *
      * @param user
      */
-    @Update("update mybatis set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
+    @Update("update cl_user set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
     void updateUserById(User user);
 }
 
