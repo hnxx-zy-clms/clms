@@ -32,7 +32,7 @@ public interface UserMapper {
      *
      * @return
      */
-    @Select("select count(*) from cl_user")
+    @Select("select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 and user_position_id in (1,2)")
     int selectUserNum();
 
     /**

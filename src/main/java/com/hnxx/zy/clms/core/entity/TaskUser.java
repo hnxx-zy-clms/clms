@@ -47,7 +47,7 @@ public class TaskUser implements Serializable {
     /**
      * 完成时间
      */
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date didTime;
 
 
@@ -60,4 +60,22 @@ public class TaskUser implements Serializable {
      * 评分等级，1优秀-2良好-3及格-4未及格
      */
     private Integer Level;
+
+    /**
+     * @Description: 文件名
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-19 21:26:46
+     */
+    private String fileName;
+
+    /**
+     * @Description: 文件地址
+     * @Param:
+     * @return:
+     * @Author: CHENLH
+     * @Date: 2020-05-19 21:26:54
+     */
+    private String fileUrl;
 }
