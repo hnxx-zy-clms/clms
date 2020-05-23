@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Group;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,11 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired(required = true)
+    @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private UserService userService;
 
     /**
      * 根据用户id查询组名
@@ -27,7 +31,7 @@ public class UserController {
      */
     @PostMapping("/selectByGroup/{id}")
     public String selectByGroupId(@PathVariable("id") Integer id) {
-        String groupId = userMapper.selectByGroupId(id);
+        String groupId = userService.selectByGroupId(id);
         return groupId;
     }
 
@@ -38,7 +42,7 @@ public class UserController {
      */
     @PostMapping("/get/byGroup")
     public String selectByGroup(@RequestBody User user){
-        String group = userMapper.getByGroup(user);
+        String group = userService.getByGroup(user);
         return group;
     }
 

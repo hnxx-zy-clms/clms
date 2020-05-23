@@ -1,287 +1,44 @@
-2020-05-23 13:50:34.436 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 13:51:00.671 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:36:24.126 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:36:34.284 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:36:58.663 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user order by group_id asc) 
-2020-05-23 14:36:58.738 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: 
-2020-05-23 14:36:58.838 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 3
-2020-05-23 14:36:58.854 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:36:58.854 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 0(Integer), ******(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:36:58.950 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:36:59.326 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:36:59.326 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), GET(String), 8(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:36:59.417 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:44:00.725 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:44:05.534 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:44:11.571 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user order by asc) 
-2020-05-23 14:44:11.607 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: null
-2020-05-23 14:44:11.855 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:44:11.859 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 0(Integer), ******(String), GET(String), 0(Long), null, 127.0.0.1(String)
-2020-05-23 14:44:11.947 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:44:12.070 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:44:12.074 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), GET(String), 8(Long), ******(String), 127.0.0.1(String)
-2020-05-23 14:44:12.162 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:45:10.340 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:46:34.057 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:46:36.468 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:46:45.275 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:46:45.279 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 8(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:46:45.359 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:47:11.489 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:47:11.497 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 12(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:47:11.581 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:47:54.666 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:47:54.670 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 12(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:47:54.754 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:48:32.473 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:48:32.477 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /(String), ******(String), 1(Integer), null, GET(String), 16(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:48:32.557 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:48:36.444 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:48:36.444 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 0(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:48:36.528 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:48:48.471 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:48:48.481 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /login(String), ******(String), 1(Integer), null, GET(String), 18(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:48:48.558 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:48:49.937 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:48:49.940 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /login(String), ******(String), 1(Integer), null, GET(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:48:50.021 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:51:05.038 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:51:17.639 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:51:41.168 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user order by ) 
-2020-05-23 14:51:41.172 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: null
-2020-05-23 14:51:41.212 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:51:41.216 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 0(Integer), ******(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:51:41.284 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:51:41.324 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:51:41.328 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), GET(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:51:41.396 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:59:15.694 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 14:59:19.325 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 14:59:41.545 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:59:41.585 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 16(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 14:59:41.665 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 14:59:59.954 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 14:59:59.962 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 20(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:00:00.050 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:00:12.421 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:00:12.425 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:00:12.521 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:00:21.949 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:00:21.949 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 0(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:00:22.041 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:02:05.860 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:02:05.864 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 8(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:02:05.948 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:02:15.371 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from cl_user where user_name=? or mobile = ? 
-2020-05-23 15:02:15.371 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: anonymousUser(String), anonymousUser(String)
-2020-05-23 15:02:15.511 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
-2020-05-23 15:02:15.567 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:02:15.567 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 8(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:02:15.651 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:02:42.274 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 15:02:45.903 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 15:02:56.149 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from cl_user where user_name=? or mobile = ? 
-2020-05-23 15:02:56.153 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: anonymousUser(String), anonymousUser(String)
-2020-05-23 15:02:56.193 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
-2020-05-23 15:02:56.213 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:02:56.217 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 8(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:02:56.301 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:03:09.679 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==>  Preparing: select * from cl_user where user_name=? or mobile = ? 
-2020-05-23 15:03:09.679 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -==> Parameters: anonymousUser(String), anonymousUser(String)
-2020-05-23 15:03:09.719 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByName.debug:159 -<==      Total: 0
-2020-05-23 15:03:09.727 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:03:09.727 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, GET(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:03:09.815 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:06:19.428 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:06:19.432 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: 1(Integer)
-2020-05-23 15:06:19.485 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 1
-2020-05-23 15:06:19.489 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:06:19.489 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 137(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:06:19.577 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:39:29.210 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 15:49:16.208 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 15:49:24.005 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 15:51:14.831 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:51:14.886 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 1(Integer)
-2020-05-23 15:51:14.966 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 15:51:15.180 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:51:15.182 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 1260(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:51:15.267 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:51:23.716 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:51:23.716 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 2(Integer)
-2020-05-23 15:51:23.756 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 15:51:23.759 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:51:23.760 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 45(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:51:23.840 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:51:32.790 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:51:32.791 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 2(Integer)
-2020-05-23 15:51:32.830 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 15:51:32.833 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:51:32.834 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 46(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:51:32.914 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:51:47.056 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:51:47.058 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 5(Integer)
-2020-05-23 15:51:47.107 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 0
-2020-05-23 15:51:47.110 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:51:47.112 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 57(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:51:47.193 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:51:59.518 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:51:59.520 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 2(Integer)
-2020-05-23 15:51:59.559 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 15:51:59.561 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:51:59.562 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 46(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:51:59.644 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:52:03.901 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:52:03.902 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 3(Integer)
-2020-05-23 15:52:03.942 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 15:52:03.945 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:52:03.946 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 47(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:52:04.026 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:52:07.732 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:52:07.733 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 4(Integer)
-2020-05-23 15:52:07.773 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 0
-2020-05-23 15:52:07.775 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:52:07.776 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 46(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:52:07.859 DEBUG [http-nio-8080-exec-9]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:52:11.752 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:52:11.754 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 6(Integer)
-2020-05-23 15:52:11.796 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 0
-2020-05-23 15:52:11.800 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:52:11.802 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 1(Integer), null, POST(String), 49(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:52:11.899 DEBUG [http-nio-8080-exec-8]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:52:36.711 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:52:36.714 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: null
-2020-05-23 15:52:36.753 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 0
-2020-05-23 15:52:36.841 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:52:36.842 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 70(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:52:36.926 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:53:11.324 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:53:11.327 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: null
-2020-05-23 15:53:11.368 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 0
-2020-05-23 15:53:11.373 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:53:11.375 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 68(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:53:11.458 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:54:14.011 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 15:54:18.751 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 15:54:53.218 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:54:53.222 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: null
-2020-05-23 15:54:53.266 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 0
-2020-05-23 15:54:53.272 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:54:53.273 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 582(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:54:53.355 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:55:49.909 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:55:49.911 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: 1(Integer)
-2020-05-23 15:55:50.138 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 1
-2020-05-23 15:55:50.141 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:55:50.143 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 235(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:55:50.748 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 15:57:18.505 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id = ? in (select user_group_id from cl_user) 
-2020-05-23 15:57:18.510 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -==> Parameters: 1(Integer)
-2020-05-23 15:57:18.556 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroup.debug:159 -<==      Total: 1
-2020-05-23 15:57:18.563 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 15:57:18.566 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroup(String), ******(String), 1(Integer), null, POST(String), 142(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 15:57:18.651 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:09:38.905 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 16:09:45.912 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 16:09:55.151 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group in (select user_group_id from cl_user) 
-2020-05-23 16:09:55.185 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 
-2020-05-23 16:09:55.383 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:09:55.386 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 0(Integer), ******(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:09:55.472 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:09:55.613 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:09:55.614 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), POST(String), 6(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:09:55.700 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:10:02.599 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group in (select user_group_id from cl_user) 
-2020-05-23 16:10:02.601 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 
-2020-05-23 16:10:02.647 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:10:02.648 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 0(Integer), ******(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:10:02.734 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:10:02.741 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:10:02.743 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), POST(String), 2(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:10:02.830 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:10:56.469 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 16:10:59.007 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 16:11:05.483 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group in (select user_group_id from cl_user) 
-2020-05-23 16:11:05.485 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 
-2020-05-23 16:11:05.530 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:11:05.531 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 0(Integer), ******(String), GET(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:11:05.614 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:11:05.627 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:11:05.628 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), GET(String), 5(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:11:05.709 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:15:20.665 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 16:15:23.252 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 16:15:40.638 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group in (select user_group_id from cl_user) 
-2020-05-23 16:15:40.639 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 
-2020-05-23 16:15:40.681 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:15:40.682 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/select/byGroupId(String), ******(String), 0(Integer), ******(String), POST(String), 0(Long), null, 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:15:40.758 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:15:40.769 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:15:40.771 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), ******(String), POST(String), 5(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:15:40.846 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:25:23.252 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 16:25:28.930 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 16:25:42.176 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ?) 
-2020-05-23 16:25:42.180 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 1(Integer)
-2020-05-23 16:25:42.294 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 16:25:42.299 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:25:42.300 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/selectByGroup/1(String), ******(String), 1(Integer), null, POST(String), 562(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:25:42.368 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:25:48.772 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ?) 
-2020-05-23 16:25:48.773 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 3(Integer)
-2020-05-23 16:25:48.807 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 16:25:48.810 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:25:48.811 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/selectByGroup/3(String), ******(String), 1(Integer), null, POST(String), 42(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:25:48.880 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:58:47.569 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 16:58:57.332 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 16:59:24.736 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
-2020-05-23 16:59:24.985 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: 1(Integer), null
-2020-05-23 16:59:25.105 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
-2020-05-23 16:59:25.366 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:59:25.368 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 1418(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:59:25.445 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 16:59:36.991 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
-2020-05-23 16:59:36.993 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: 4(Integer), null
-2020-05-23 16:59:37.031 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
-2020-05-23 16:59:37.035 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 16:59:37.036 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 47(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 16:59:37.112 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:00:31.360 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
-2020-05-23 17:00:31.363 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: null, test(String)
-2020-05-23 17:00:31.401 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
-2020-05-23 17:00:31.405 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:00:31.408 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 49(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:00:31.485 DEBUG [http-nio-8080-exec-4]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:00:47.287 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:00:47.288 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 16(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:00:47.365 DEBUG [http-nio-8080-exec-5]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:00:53.629 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:00:53.631 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 17(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:00:53.708 DEBUG [http-nio-8080-exec-6]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:01:02.351 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:01:02.352 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 2(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:01:02.427 DEBUG [http-nio-8080-exec-10]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:01:26.458 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:01:26.459 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /error(String), ******(String), 1(Integer), null, POST(String), 4(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:01:26.536 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:01:53.463 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
-2020-05-23 17:01:53.465 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: 1(Integer), null
-2020-05-23 17:01:53.505 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
-2020-05-23 17:01:53.509 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:01:53.510 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 51(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:01:53.587 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 17:03:04.278 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
-2020-05-23 17:03:04.279 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: null, test1(String)
-2020-05-23 17:03:04.318 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
-2020-05-23 17:03:04.321 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 17:03:04.322 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 101(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 17:03:04.400 DEBUG [http-nio-8080-exec-7]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
-2020-05-23 21:21:26.068 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2020-05-23 21:21:38.719 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
-2020-05-23 21:22:00.803 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select group_id from cl_group where group_id in (select user_group_id from cl_user where user_id = ?) 
-2020-05-23 21:22:00.859 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 3(Integer)
-2020-05-23 21:22:00.947 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
-2020-05-23 21:22:01.183 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
-2020-05-23 21:22:01.183 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/selectByGroup/3(String), ******(String), 1(Integer), null, POST(String), 1949(Long), ******(String), 0:0:0:0:0:0:0:1(String)
-2020-05-23 21:22:01.259 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-24 01:01:58.646 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 01:02:33.928 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 01:03:03.624 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
+2020-05-24 01:03:03.783 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: null, test1(String)
+2020-05-24 01:03:03.867 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
+2020-05-24 01:03:04.055 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-24 01:03:04.056 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 1637(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-05-24 01:03:04.137 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-24 01:20:21.539 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 01:20:35.882 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 01:31:10.038 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 01:31:21.852 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 01:38:25.800 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 01:38:48.343 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 01:39:43.332 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 01:39:47.268 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 02:26:48.303 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 02:26:58.948 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 03:05:03.681 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 03:05:15.552 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 03:17:31.752 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 03:17:38.928 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 03:26:47.304 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 03:27:03.010 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 03:33:36.197 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
+2020-05-24 03:33:36.299 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: null, test(String)
+2020-05-24 03:33:36.364 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
+2020-05-24 03:33:36.678 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-24 03:33:36.681 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 1336(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-05-24 03:33:36.754 DEBUG [http-nio-8080-exec-1]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-24 03:33:57.451 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==>  Preparing: select group_name from cl_group where group_id in (select user_group_id from cl_user where user_id = ? or user_name = ?) 
+2020-05-24 03:33:57.452 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -==> Parameters: null, student(String)
+2020-05-24 03:33:57.487 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.UserMapper.getByGroup.debug:159 -<==      Total: 1
+2020-05-24 03:33:57.559 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-24 03:33:57.561 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/get/byGroup(String), ******(String), 1(Integer), null, POST(String), 149(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-05-24 03:33:57.633 DEBUG [http-nio-8080-exec-3]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1
+2020-05-24 03:41:10.150 DEBUG [restartedMain]com.hnxx.zy.clms.ClmsApplication.logStarting:56 -Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-05-24 03:41:17.008 DEBUG [restartedMain]com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter.init:242 -Filter 'authenticationJwtTokenFilter' configured for use
+2020-05-24 03:42:04.270 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==>  Preparing: select user_group_id from cl_user where user_id = ? 
+2020-05-24 03:42:04.274 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -==> Parameters: 3(Integer)
+2020-05-24 03:42:04.316 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.UserMapper.selectByGroupId.debug:159 -<==      Total: 1
+2020-05-24 03:42:04.322 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==>  Preparing: insert into cl_log(log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-05-24 03:42:04.324 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -==> Parameters: /user/selectByGroup/3(String), ******(String), 1(Integer), null, POST(String), 513(Long), ******(String), 0:0:0:0:0:0:0:1(String)
+2020-05-24 03:42:04.406 DEBUG [http-nio-8080-exec-2]com.hnxx.zy.clms.core.mapper.LogMapper.save.debug:159 -<==    Updates: 1

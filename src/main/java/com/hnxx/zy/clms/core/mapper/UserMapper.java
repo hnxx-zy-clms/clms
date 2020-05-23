@@ -158,10 +158,7 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    @Select("<script>" +
-            "       select group_id from cl_group where group_id in\n" +
-            "       (select user_group_id from cl_user where user_id = #{userId}) " +
-            "</script>")
+    @Select("select user_group_id from cl_user where user_id = #{userId}")
     String selectByGroupId(Integer id);
 
     /**
