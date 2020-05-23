@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Position {
 
-    private int positionId;
+    private Integer positionId;
+
     private String positionName;
-    private int positionStatus;
+
+    private Integer positionStatus;
 
 }
