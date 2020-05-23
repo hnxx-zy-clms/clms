@@ -7,8 +7,12 @@ import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportMarking;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.ReportMarkingService;
+import com.hnxx.zy.clms.security.sms.ValidateCodeException;
+import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -26,6 +30,9 @@ public class ReportMarkingController {
 
     @Autowired
     private ReportMarkingService reportMarkingService;
+
+    @Autowired
+    private UserService userService;
 
     /**
      *管理员获取批阅报告
@@ -54,13 +61,39 @@ public class ReportMarkingController {
     }
 
     /**
-     *组长获取本组未批阅报告
+     *用户获取未批阅报告
      * @param page
      * @return
      */
-    @GetMapping("/getGroupMarking")
-    public Result<Page<Report>> getGroupMarking(@RequestBody Page<Report> page){
-        List<Report> reports = reportMarkingService.getGroupMarking(page);
+    @PostMapping("/getNotMarkingReport")
+    public Result<Page<Report>> getNotMarkingReport(@RequestBody Page<Report> page){
+        User user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(user.getUserPositionId() ==0){
+            throw new ValidateCodeException("宁要给你自己批？");
+        }
+        page.params.put("UserPositionId",user.getUserPositionId());
+        page.params.put("UserClassesId",user.getUserClassesId());
+        page.params.put("UserGroupId",user.getUserGroupId());
+        List<Report> reports = reportMarkingService.getNotMarkingReport(page);
+        page.setList(reports);
+        page.setTotalCount(reports.size());
+        page.pagingDate();
+        return new Result<>(page);
+    }
+
+    /**
+     * 用户获取自己的批阅
+     * @param page
+     *
+     * @return
+     */
+    @PostMapping("/getMarkingReport")
+    public Result<Page<Report>> getMarkingReport(@RequestBody Page<Report> page){
+        User user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        page.params.put("UserPositionId",user.getUserPositionId());
+        page.params.put("UserClassesId",user.getUserClassesId());
+        page.params.put("UserGroupId",user.getUserGroupId());
+        List<Report> reports = reportMarkingService.getMarkingReport(page);
         page.setList(reports);
         page.setTotalCount(reports.size());
         page.pagingDate();
@@ -100,21 +133,9 @@ public class ReportMarkingController {
         return new Result<>("成功");
     }
 
-    /**
-     * 用户获取自己的批阅
-     * @param reportId
-     * @param userName
-     *
-     * @return
-     */
-    @GetMapping("/getMyMarking")
-    public Result<List<ReportMarking>> getMyMarking(@RequestParam("reportId") Integer reportId,@RequestParam("userName") String userName){
-        List<ReportMarking> reportMarkings = reportMarkingService.getMyMarking(reportId,userName);
-        return new Result<>(reportMarkings);
-    }
 
     /**
-     * 学生感觉报告ID获取批阅数据
+     * 学生根据报告ID获取批阅数据
      * @param id
      * @return
      */

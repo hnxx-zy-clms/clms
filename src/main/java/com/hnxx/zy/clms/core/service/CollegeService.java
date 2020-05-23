@@ -14,4 +14,6 @@ public interface CollegeService {
     PageInfo findAllByPage(int page , int size);
 
     void updateIdsClasses(List<Integer> ids);
+
+    List<College> findAll();
 }

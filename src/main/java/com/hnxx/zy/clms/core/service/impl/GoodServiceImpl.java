@@ -31,43 +31,11 @@ public class GoodServiceImpl implements GoodService {
      */
     @Override
     public void doGood(Good good) {
-        // 获取用户id
-        int uid = good.getUserId();
-        List<Good> goodList = goodMapper.getListByUserId(uid);
-        // 判断是否为文章的点赞 判断是否为评论的点赞
-        if (good.getArticleId() != null) {
-            // 获取文章id
-            int aid = good.getArticleId();
-            for (Good oldGood : goodList) {
-                if(oldGood.getArticleId() == null){
-                    continue;
-                }else {
-                    if (uid == oldGood.getUserId() && aid == oldGood.getArticleId()) {
-                        throw new ClmsException("重复文章点赞!");
-                    }
-                }
-            }
-            goodMapper.goodArticle(aid);
-        } else if (good.getCommentId() != null) {
-            // 获取评论id
-            int cid = good.getCommentId();
-            for (Good oldGood : goodList) {
-                if(oldGood.getCommentId() == null){
-                    continue;
-                }else {
-                    if (uid == oldGood.getUserId() && cid == oldGood.getCommentId()) {
-                        throw new ClmsException("重复评论点赞!");
-                    }
-                }
-            }
-            goodMapper.goodComment(cid);
-        }
         goodMapper.save(good);
     }
 
     /**
      * 根据id获取用户点赞集合
-     *
      * @param id
      * @return
      */
@@ -75,6 +43,24 @@ public class GoodServiceImpl implements GoodService {
     public List<Good> getListByUserId(Integer id) {
         List<Good> goodList = goodMapper.getListByUserId(id);
         return goodList;
+    }
+
+    /**
+     * 用户文章点赞
+     * @param aid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getGoodCount(Integer uid, Integer aid) {
+        int count = 0;
+        List<Good> goods = goodMapper.getGoodCount(uid, aid);
+        if(goods.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
     }
 
     /**
@@ -101,5 +87,7 @@ public class GoodServiceImpl implements GoodService {
     public void deleteById(Integer id) {
         goodMapper.deleteById(id);
     }
+
+
 
 }

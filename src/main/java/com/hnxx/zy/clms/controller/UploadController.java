@@ -6,11 +6,11 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.hnxx.zy.clms.common.config.UploadConfig;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
@@ -29,5 +29,17 @@ public class UploadController {
     public Result<String> uploadImage(MultipartFile file) {
         String url = uploadService.uploadImage(file);
         return new Result<>("操作成功: 文件上传！", url);
+    }
+
+    @RequestMapping("/uploadFile")
+    public Result<String> uploadFile(MultipartFile file) {
+        String url = uploadService.uploadFile(file);
+        return new Result<>("操作成功: 文件上传！", url);
+    }
+
+    @PostMapping("/deleteFile")
+    public Result<String> deleteFile(@RequestBody UploadConfig uploadConfig) {
+        uploadService.deleteFile(uploadConfig.getBaseUrl());
+        return new Result<>("操作成功: 文件删除！");
     }
 }

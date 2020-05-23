@@ -2,9 +2,9 @@ package com.hnxx.zy.clms.security.handles;
 
 import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.security.jwt.JwtProvider;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -36,7 +36,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException{
         response.setContentType("application/json;charset=utf-8");
         String jwtToken = jwtProvider.generateJwtToken(authentication);
-        SysUser user = userMapper.selectByName(authentication.getName());
+        User user = userMapper.selectByName(authentication.getName());
         response.getWriter().write(JSON.toJSONString(new Result<Object>(jwtToken,user.getUserName())));
     }
 }

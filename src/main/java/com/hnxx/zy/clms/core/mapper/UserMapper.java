@@ -1,10 +1,8 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.core.entity.GithubCount;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -26,15 +24,15 @@ public interface UserMapper {
      * @param username
      * @return
      */
-    @Select("select user_id,user_name,user_password,user_position_id from cl_user where user_name=#{username}")
-    SysUser selectByName(String username);
+    @Select("select * from cl_user where user_name=#{username} or mobile = #{username}")
+    User selectByName(String username);
 
     /**
      * 获取总人数
      *
      * @return
      */
-    @Select("select count(*) from cl_user")
+    @Select("select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 and user_position_id in (1,2)")
     int selectUserNum();
 
     /**
@@ -62,7 +60,7 @@ public interface UserMapper {
      * @return
      */
     @Select({"<script> \n" +
-            "select count(*) from cl_user where user_status = 1 \n" +
+            "select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 \n" +
             "<if test=\" params.userClassesId != null and params.userClassesId  != '' \"  > \n" +
             "and user_classes_id = #{params.userClassesId}\n" +
             "<if test='params.isClasses == 0  and params.userGroupId!=null' > \n" +
@@ -79,7 +77,7 @@ public interface UserMapper {
      * @return
      */
     @Select({"<script> \n" +
-            "select DISTINCT(user_group_id) from cl_user where user_status = 1 \n" +
+            "select DISTINCT(user_group_id) from cl_user where is_enabled = 1 and is_deleted = 0 \n" +
             "and user_classes_id = #{params.userClassesId}\n" +
             "</script>"})
     Integer[] getGroupIds(Page<ReportStatistics> page);
@@ -138,6 +136,22 @@ public interface UserMapper {
      */
     @Update("update cl_user set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
     void updateUserById(User user);
+
+    /**
+     * 用户更新头像
+     * @param userId
+     * @param userIcon
+     */
+    @Update("update cl_user set user_icon = #{userIcon} where user_id = #{userId}")
+    void updateUserIconById(Integer userId,String userIcon);
+
+    /**
+     * 根据电话号码取用户信息
+     * @param mobile
+     * @return
+     */
+    @Select("SELECT * FROM cl_user WHERE mobile= #{mobile}")
+    User selectByMobile(String mobile);
 }
 
 

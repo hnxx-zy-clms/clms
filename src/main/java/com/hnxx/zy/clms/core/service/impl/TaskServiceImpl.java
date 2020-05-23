@@ -5,6 +5,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Task;
 import com.hnxx.zy.clms.core.entity.TaskUser;
 import com.hnxx.zy.clms.core.mapper.TaskMapper;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.TaskService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ import java.util.List;
 public class TaskServiceImpl implements TaskService {
     @Autowired
     private TaskMapper taskMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public void saveTask(Task task) {
@@ -55,7 +59,7 @@ public class TaskServiceImpl implements TaskService {
         List<TaskUser> tasks = taskMapper.getTaskSituation(taskuser, id);
         taskuser.setList(tasks);
 
-        int totalCount = taskMapper.getSituationCountByPage();
+        int totalCount = userMapper.selectUserNum();
         taskuser.setTotalCount(totalCount);
         return taskuser;
     }

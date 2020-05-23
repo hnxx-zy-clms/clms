@@ -34,7 +34,7 @@ public interface ReportMarkingService {
      * @param page
      * @return
      */
-    List<Report> getGroupMarking(Page<Report> page);
+    List<Report> getNotMarkingReport(Page<Report> page);
 
     /**
      * 组长提交批阅报告
@@ -56,11 +56,10 @@ public interface ReportMarkingService {
 
     /**
      * 获取批阅信息
-     * @param reportId
-     * @param userName
+     * @param page
      * @return
      */
-    List<ReportMarking> getMyMarking(Integer reportId,String userName);
+    List<Report> getMarkingReport(Page<Report> page);
 
     /**
      ** 学生通过报告ID查询报告批阅

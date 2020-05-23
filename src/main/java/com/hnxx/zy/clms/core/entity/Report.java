@@ -27,7 +27,7 @@ public class Report {
     /**
      * 用户名
      */
-    private String userName;
+    private String name;
 
     /**
      * 组名

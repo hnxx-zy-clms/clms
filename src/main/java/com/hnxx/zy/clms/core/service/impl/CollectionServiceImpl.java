@@ -9,6 +9,7 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Collection;
+import com.hnxx.zy.clms.core.entity.Good;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.CollectionMapper;
 import com.hnxx.zy.clms.core.service.CollectionService;
@@ -61,6 +62,24 @@ public class CollectionServiceImpl implements CollectionService {
     @Override
     public Collection getById(Integer id) {
         return collectionMapper.getById(id);
+    }
+
+    /**
+     * 用户文章收藏
+     * @param aid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getCollectionCount(Integer uid, Integer aid) {
+        int count;
+        List<Collection> collections = collectionMapper.getCollectionCount(uid, aid);
+        if(collections.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
     }
 
     /**

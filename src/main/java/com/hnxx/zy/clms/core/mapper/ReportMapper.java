@@ -131,7 +131,7 @@ public interface ReportMapper {
             "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
             "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
             "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
-            "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and is_deleted = 0 \n" +
+            "where c.user_classes_id = #{params.userClassesId} and c.user_group_id = #{params.userGroupId} and b.report_type = #{params.reportType} and b.is_deleted = 0 \n" +
             "<if test=\" params.userName != null and params.userName != '' \"  > \n" +
             "and c.user_name like concat('%',#{params.userName},'%') \n" +
             "</if> \n" +
@@ -154,7 +154,7 @@ public interface ReportMapper {
             "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId  from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
             "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
             "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
-            "where c.user_id = #{params.userId} and b.report_type = #{params.reportType} and is_deleted = 0 \n"+
+            "where c.user_id = #{params.userId} and b.report_type = #{params.reportType} and b.is_deleted = 0 \n"+
             "<if test=\"params.reportDate !=null and params.reportDate[0] != null  and params.reportDate[0] !='' \"  > \n" +
             "and b.created_time &gt;= #{params.reportDate[0]}\n" +
             "</if> \n"+
@@ -394,9 +394,9 @@ public interface ReportMapper {
      */
     @Select({"<script> \n"+
             "select b.report_id,b.report_type,b.created_time,b.updated_time,b.is_checked+b.is_classes_checked+b.is_teacher_checked as is_checked from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
-            "where c.user_id = #{userId} and is_deleted = 0 and is_checked = 1\n"+
+            "where c.user_id = #{userId} and b.is_deleted = 0 and b.is_checked = 1\n"+
             "order by b.updated_time desc\n" +
-            "limit 0, 3" +
+            "limit 0, 5" +
             "</script>"})
     List<Report> getMinReportInfo(Integer userId);
 }

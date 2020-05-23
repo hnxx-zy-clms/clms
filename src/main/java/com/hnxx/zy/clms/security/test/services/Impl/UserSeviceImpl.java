@@ -2,8 +2,8 @@ package com.hnxx.zy.clms.security.test.services.Impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,7 +23,7 @@ public class UserSeviceImpl implements UserService {
 
 
     @Override
-    public SysUser selectByName(String username) {
+    public User selectByName(String username) {
         return userMapper.selectByName(username);
     }
 
@@ -45,6 +45,11 @@ public class UserSeviceImpl implements UserService {
     @Override
     public Integer[] getGroupIds(Page<ReportStatistics> page) {
         return userMapper.getGroupIds(page);
+    }
+
+    @Override
+    public void updateUserIconById(Integer userId, String userIcon) {
+        userMapper.updateUserIconById(userId,userIcon);
     }
 
 }

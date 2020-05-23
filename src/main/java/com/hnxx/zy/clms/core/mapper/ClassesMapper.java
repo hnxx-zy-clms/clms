@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ClassesMapper {
 
-    @Insert("insert into `cl_classes`(classes_name,classes_states) values(#{classesName},#{classesStates})")
+    @Insert("insert into `cl_classes`(classes_name,classes_states,classes_college_id) values(#{classesName},#{classesStates},#{classesCollegeId})")
     int save(Classes classes);
 
     @Update("UPDATE `cl_classes` SET classes_states = 0 WHERE classes_id = #{id}")
@@ -18,6 +18,9 @@ public interface ClassesMapper {
     @Update("UPDATE `cl_classes` SET classes_states = 1 WHERE classes_id = #{id}")
     int enableClasses(int id);
 
-    @Select("select * from cl_classes")
+    @Select("SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name " +
+            "FROM cl_classes c " +
+            "LEFT JOIN cl_college p " +
+            "ON c.classes_college_id = p.college_id")
     List<Classes> findAllClassesByPage();
 }

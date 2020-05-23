@@ -26,6 +26,13 @@ public class CollegeController {
         return new Result<>(pages);
     }
 
+    @PostMapping("findAll")
+    public Result<List<College>> findAll(){
+        List<College> colleges = collegeService.findAll();
+        return new Result<>(colleges);
+    }
+
+
     @PostMapping("save")
     public Result save(@RequestBody College college){
         collegeService.save(college);

@@ -7,10 +7,14 @@
 package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.ArticleStatistics;
+import org.elasticsearch.action.search.SearchResponse;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public interface ArticleService {
     /**
@@ -77,4 +81,13 @@ public interface ArticleService {
      * @return
      */
     Page<ArticleStatistics> getUserArticleCountInfo(Page<ArticleStatistics> page);
+
+    /**
+     * 高亮搜索
+     * @param keyword
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    SearchResponse searchPageHighlightBuilder(String keyword, int pageNo, int pageSize) throws IOException;
 }

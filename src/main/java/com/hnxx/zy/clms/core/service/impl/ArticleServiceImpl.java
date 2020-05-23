@@ -19,15 +19,27 @@ import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.security.test.services.UserService;
 import org.apache.poi.ss.formula.functions.T;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -40,6 +52,11 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     private ArticleTypeMapper articleTypeMapper;
+
+    //面向对象操作
+    @Autowired
+    @Qualifier("restHighLevelClient")  //如定义的名称与配置文件一直则不需要这个
+    private RestHighLevelClient client;
 
     /**
      * 保存
@@ -199,5 +216,32 @@ public class ArticleServiceImpl implements ArticleService {
         int totalCount = asList.size();
         page.setTotalCount(totalCount);
         return page;
+    }
+
+    @Override
+    public SearchResponse searchPageHighlightBuilder(String keyword, int pageNo, int pageSize) throws IOException {
+        if(pageNo <= 1){ pageNo=1; }
+        // 1、创建查询索引
+        SearchRequest searchRequest = new SearchRequest("article_index");
+        // 2、条件查询
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        // 3、分页
+        sourceBuilder.from(pageNo);
+        sourceBuilder.size(pageSize);
+        // 4、精准匹配(中文)
+        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("articleTitle", keyword);
+        sourceBuilder.query(matchQueryBuilder);
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+        // 5、高亮设置(替换返回结果文本中目标值的文本内容)
+        HighlightBuilder highlightBuilder = new HighlightBuilder();
+        highlightBuilder.field("articleTitle");
+        highlightBuilder.requireFieldMatch(true);
+        highlightBuilder.preTags("<span style='color:red'>");
+        highlightBuilder.postTags("</span>");
+        sourceBuilder.highlighter(highlightBuilder);
+        // 6、执行搜索
+        searchRequest.source(sourceBuilder);
+        SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
+        return searchResponse;
     }
 }

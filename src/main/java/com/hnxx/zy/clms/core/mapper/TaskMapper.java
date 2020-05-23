@@ -3,7 +3,6 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Task;
 import com.hnxx.zy.clms.core.entity.TaskUser;
-import com.hnxx.zy.clms.security.test.entity.SysUser;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -26,11 +25,11 @@ public interface TaskMapper {
      * @param task
      */
     @Insert("<script>" +
-            "insert into cl_task(created_id,task_content,task_title,is_enabled" +
+            "insert into cl_task(created_id,task_content,task_title,is_enabled,file_name,file_url" +
             "        <if test=\"task.pushedTime!=null\">\n" +
             "             ,pushed_time\n" +
             "        </if>" +
-            ") values (#{task.createdId},#{task.taskContent},#{task.taskTitle},#{task.isEnabled}" +
+            ") values (#{task.createdId},#{task.taskContent},#{task.taskTitle},#{task.isEnabled},#{task.fileName},#{task.fileUrl}" +
             "        <if test=\"task.pushedTime!=null\">\n" +
             "             ,date_format(#{task.pushedTime}, '%Y-%m-%d %H:%i:%s')\n" +
             "        </if>" +
@@ -43,7 +42,7 @@ public interface TaskMapper {
      *
      * @param taskUser
      */
-    @Insert("insert into cl_task_user(task_id,user_id,is_did,reply_content) values(#{taskUser.taskId},#{taskUser.userId},1,#{taskUser.replyContent})")
+    @Insert("insert into cl_task_user(task_id,user_id,is_did,reply_content,file_name,file_url) values(#{taskUser.taskId},#{taskUser.userId},1,#{taskUser.replyContent},#{taskUser.fileName},#{taskUser.fileUrl})")
     void saveReply(@Param("taskUser") TaskUser taskUser);
 
     /**
@@ -96,7 +95,7 @@ public interface TaskMapper {
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
-            "           and is_deleted =0 and is_enabled=1" +
+            "           and a.is_deleted =0 and a.is_enabled=1" +
             "        </if>" +
             "        </script>")
     int getCountByPage(@Param("page") Page page);
@@ -129,7 +128,7 @@ public interface TaskMapper {
      * @return
      */
     @Select("<script>" +
-            "select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did,b.did_time,b.id FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id=2 limit #{page.index}, #{page.pageSize}" +
+            "select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did,b.did_time,b.id FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id in (1,2)  limit #{page.index}, #{page.pageSize}" +
             "</script>")
     @Results({
             @Result(property = "Level",
@@ -141,13 +140,6 @@ public interface TaskMapper {
     @Select("select level from cl_task_user where id = #{id}")
     int getTaskLevel(Integer id);
 
-    /**
-     * 获取回复总数
-     *
-     * @return
-     */
-    @Select("select count(*) from cl_user where user_position_id=2")
-    int getSituationCountByPage();
 
     /**
      * 删除任务
@@ -241,7 +233,7 @@ public interface TaskMapper {
      *
      * @param task
      */
-    @Update("update cl_task set created_time=#{task.createdTime},pushed_time=#{task.pushedTime},task_content=#{task.taskContent},task_title=#{task.taskTitle},is_enabled=#{task.isEnabled},is_deleted=#{task.isDeleted} where task_id = #{task.taskId}")
+    @Update("update cl_task set created_time=#{task.createdTime},pushed_time=#{task.pushedTime},task_content=#{task.taskContent},task_title=#{task.taskTitle},is_enabled=#{task.isEnabled},is_deleted=#{task.isDeleted},file_name=#{task.fileName},file_url=#{task.fileUrl} where task_id = #{task.taskId}")
     void update(@Param("task") Task task);
 
     /**

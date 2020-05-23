@@ -50,6 +50,15 @@ public interface CollectionMapper {
     Collection getById(Integer id);
 
     /**
+     * 根据用户id和文章id查询文章是否收藏
+     * @param uid
+     * @param aid
+     * @return
+     */
+    @Select("select * from cl_collection a where a.user_id = ${uid} and a.article_id = ${aid} and a.is_deleted = 0")
+    List<Collection> getCollectionCount(@Param("uid") Integer uid,@Param("aid") Integer aid);
+
+    /**
      * 分页查询
      * @param page
      * @return
