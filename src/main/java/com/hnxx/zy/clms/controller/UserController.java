@@ -26,11 +26,20 @@ public class UserController {
      * @return
      */
     @PostMapping("/selectByGroup/{id}")
-    public String selectByGroup(@PathVariable("id") Integer id) {
+    public String selectByGroupId(@PathVariable("id") Integer id) {
         String groupName = userMapper.selectByGroupId(id);
         return groupName;
     }
 
-
+    /**
+     * 根据用户id或用户名查询组名
+     * @param user
+     * @return
+     */
+    @PostMapping("/get/byGroup")
+    public String selectByGroup(@RequestBody User user){
+        String group = userMapper.getByGroup(user);
+        return group;
+    }
 
 }
