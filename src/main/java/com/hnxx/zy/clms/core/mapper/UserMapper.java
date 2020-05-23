@@ -154,12 +154,12 @@ public interface UserMapper {
     User selectByMobile(String mobile);
 
     /**
-     * 根据用户id查询组名
+     * 根据用户id查询组Id
      * @param id
      * @return
      */
     @Select("<script>" +
-            "       select group_name from cl_group where group_id in\n" +
+            "       select group_id from cl_group where group_id in\n" +
             "       (select user_group_id from cl_user where user_id = #{userId}) " +
             "</script>")
     String selectByGroupId(Integer id);

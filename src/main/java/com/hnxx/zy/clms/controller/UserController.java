@@ -27,8 +27,8 @@ public class UserController {
      */
     @PostMapping("/selectByGroup/{id}")
     public String selectByGroupId(@PathVariable("id") Integer id) {
-        String groupName = userMapper.selectByGroupId(id);
-        return groupName;
+        String groupId = userMapper.selectByGroupId(id);
+        return groupId;
     }
 
     /**
