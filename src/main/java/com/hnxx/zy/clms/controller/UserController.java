@@ -1,7 +1,13 @@
 package com.hnxx.zy.clms.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.entity.Group;
+import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author 南街北巷
@@ -10,5 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    @Autowired(required = true)
+    private UserMapper userMapper;
+
+    /**
+     * 根据用户id查询组名
+     *
+     * @return
+     */
+    @PostMapping("/selectByGroup/{id}")
+    public String selectByGroup(@PathVariable("id") Integer id) {
+        String groupName = userMapper.selectByGroupId(id);
+        return groupName;
+    }
+
+
 
 }

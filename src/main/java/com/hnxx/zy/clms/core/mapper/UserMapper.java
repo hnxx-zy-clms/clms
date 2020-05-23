@@ -152,6 +152,28 @@ public interface UserMapper {
      */
     @Select("SELECT * FROM cl_user WHERE mobile= #{mobile}")
     User selectByMobile(String mobile);
+
+    /**
+     * 根据用户id查询组名
+     * @param id
+     * @return
+     */
+    @Select("<script>" +
+            "       select group_name from cl_group where group_id in\n" +
+            "       (select user_group_id from cl_user where user_id = #{userId}) " +
+            "</script>")
+    String selectByGroupId(Integer id);
+
+    /**
+     * 根据用户id或者姓名查询组
+     * @param user
+     * @return
+     */
+    @Select("<script>" +
+            "       select group_name from cl_group where group_id = #{userGroupId} in\n" +
+            "       (select user_group_id from cl_user) " +
+            "</script>")
+    List<User> selectByGroup(User user);
 }
 
 

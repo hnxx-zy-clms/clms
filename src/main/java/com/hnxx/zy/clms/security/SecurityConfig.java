@@ -103,7 +103,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // 如果有允许匿名的url，填在下面
-                .antMatchers("/code/sms","/login","/","/register","/druid/**","/home","/callback","/github/**").permitAll()
+                .antMatchers("/code/sms","/login","/**","/register","/druid/**","/home","/callback","/github/**","/user/**")
+                .permitAll()
                 .anyRequest()
 //                允许所有请求通过(开发测试时设置，不设置登录,else测试要抓狂)
                 .permitAll()
