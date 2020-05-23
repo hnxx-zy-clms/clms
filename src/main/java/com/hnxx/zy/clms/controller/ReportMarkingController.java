@@ -107,7 +107,14 @@ public class ReportMarkingController {
      */
     @PostMapping("/setGroupMarkings")
     public Result<Object> setGroupMarking(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setGroupMarking(reportMarkings);
+        User user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        if(user.getUserPositionId() == 1){
+            reportMarkingService.setGroupMarking(reportMarkings);
+        }else if (user.getUserPositionId() == 2){
+            reportMarkingService.setClassesMarking(reportMarkings);
+        }else{
+            reportMarkingService.setTeacherMarking(reportMarkings);
+        }
         return new Result<>("成功");
     }
 
@@ -116,8 +123,8 @@ public class ReportMarkingController {
      * @param reportMarkings
      * @return
      */
-    @PostMapping("/setClassesMarkings")
-    public Result<Object> setClassesMarking(@RequestBody List<ReportMarking> reportMarkings){
+    @PostMapping("/setMarkings")
+    public Result<Object> setMarking(@RequestBody List<ReportMarking> reportMarkings){
         reportMarkingService.setClassesMarking(reportMarkings);
         return new Result<>("成功");
     }
