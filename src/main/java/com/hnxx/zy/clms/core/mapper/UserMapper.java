@@ -165,7 +165,7 @@ public interface UserMapper {
     String selectByGroupId(Integer id);
 
     /**
-     * 根据用户id或者姓名查询组
+     * 根据用户id或者用户名查询组
      * @param user
      * @return
      */
