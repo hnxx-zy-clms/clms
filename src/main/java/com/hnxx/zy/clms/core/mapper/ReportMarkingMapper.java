@@ -127,9 +127,9 @@ public interface ReportMarkingMapper {
      * @param reportMarkings
      */
     @Update({"<script> \n" +
-            "update cl_report_marking set \n"+
-            "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            "group_leader_score = #{item.Score},group_leader_comment = #{item.Comment},group_name = #{item.Name} ,group_time = #{item.Time}\n" +
+            "<foreach collection='reportMarkings' item='item' index='index' separator=';' > \n" +
+            "update cl_report_marking set\n"+
+            "group_leader_score = #{item.groupLeaderScore},group_leader_comment = #{item.groupLeaderComment},group_name = #{item.groupName} ,group_time = #{item.groupTime}\n" +
             " where report_id = #{item.reportId} \n" +
             "</foreach> \n" +
             "</script>"})
@@ -140,9 +140,9 @@ public interface ReportMarkingMapper {
      * @param reportMarkings
      */
     @Update({"<script> \n" +
+            "<foreach collection='reportMarkings' item='item' index='index' separator=';' > \n" +
             "update cl_report_marking set \n"+
-            "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            "monitor_score = #{item.Score},monitor_comment = #{item.Comment},monitor_name = #{item.Name} ,monitor_time = #{item.Time}\n" +
+            "monitor_score = #{item.groupLeaderScore},monitor_comment = #{item.groupLeaderComment},monitor_name = #{item.groupName} ,monitor_time = #{item.groupTime}\n" +
             " where report_id = #{item.reportId}\n" +
             "</foreach> \n" +
             "</script>"})
@@ -153,9 +153,9 @@ public interface ReportMarkingMapper {
      * @param reportMarkings
      */
     @Update({"<script> \n" +
+            "<foreach collection='reportMarkings' item='item' index='index' separator=';' > \n" +
             "update cl_report_marking set \n"+
-            "<foreach collection='reportMarkings' item='item' index='index' separator=',' > \n" +
-            " teacher_score = #{item.Score} ,teacher_comment = #{item.Comment},teacher_name = #{item.Name} ,teacher_time = #{item.Time}\n" +
+            " teacher_score = #{item.groupLeaderScore} ,teacher_comment = #{item.groupLeaderComment},teacher_name = #{item.groupName} ,teacher_time = #{item.groupTime}\n" +
             " where report_id = #{item.reportId} \n" +
             "</foreach> \n" +
             "</script>"})
