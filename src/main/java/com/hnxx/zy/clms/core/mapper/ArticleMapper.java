@@ -98,7 +98,7 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id\n" +
+            "        select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id \n" +
             "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +

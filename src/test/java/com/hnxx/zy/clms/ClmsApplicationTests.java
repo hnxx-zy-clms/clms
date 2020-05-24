@@ -39,7 +39,6 @@ class ClmsApplicationTests {
     //测试索引的创建
     @Test
     void testCreateIndex() throws IOException {
-
         //1.创建索引请求   类似于 kibana 中的put命令
         CreateIndexRequest request = new CreateIndexRequest("clms_article");
         //2.客户端执行创建请求 IndicesClient,请求后获得响应

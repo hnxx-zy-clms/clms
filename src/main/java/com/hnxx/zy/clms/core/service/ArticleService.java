@@ -88,6 +88,7 @@ public interface ArticleService {
      * @param pageNo
      * @param pageSize
      * @return
+     * @throws IOException
      */
     SearchResponse searchPageHighlightBuilder(String keyword, int pageNo, int pageSize) throws IOException;
 }
