@@ -16,7 +16,6 @@ import java.util.List;
 public interface UserService {
     /**
      * 分页查询
-     *
      * @param page
      * @return
      */
@@ -52,25 +51,9 @@ public interface UserService {
     void deleteUserById(Integer id);
 
     /**
-     * 修改用户
+     * 更新用户
      *
      * @param user
      */
     void updateUserById(User user);
-
-    /**
-     * 根据用户id查询组Id
-     *
-     * @param id
-     * @return
-     */
-    String selectByGroupId(Integer id);
-
-    /**
-     * 根据用户id或用户名查询组名
-     *
-     * @param user
-     * @return
-     */
-    String getByGroup(User user);
 }

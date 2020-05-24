@@ -3,7 +3,6 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.entity.ClassesReport;
 import com.hnxx.zy.clms.core.mapper.ClassesMapper;
 import com.hnxx.zy.clms.core.service.ClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,11 +49,5 @@ public class ClassesServiceImpl implements ClassesService {
         for (Integer id : ids){
             classesMapper.disableClasses(id);
         }
-    }
-
-    @Override
-    public List<ClassesReport> report() {
-        List<ClassesReport> classesReportList = classesMapper.report();
-        return classesReportList;
     }
 }

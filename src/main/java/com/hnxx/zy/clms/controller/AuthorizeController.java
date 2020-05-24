@@ -62,7 +62,6 @@ public class AuthorizeController {
             System.out.println(now);
             githubCount.setCreatedTime(date);
             githubCount.setUpdateTime(githubCount.getCreatedTime());
-            githubCount.setAvatarUrl(githubUser.getAvatarUrl());
             githubUserMapper.insert(githubCount);
             request.getSession().setAttribute("user", githubUser);
 //            System.out.println(githubCountFactory.getClientId());测试yml自定义参数传值

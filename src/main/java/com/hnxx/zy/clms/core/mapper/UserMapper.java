@@ -88,7 +88,7 @@ public interface UserMapper {
      * @param name
      * @return
      */
-    @Select("select * from cl_user where name=#{name}")
+    @Select("select * from mybatis where name=#{name}")
     List<User> getByName(String name);
 
     /**
@@ -115,10 +115,7 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    @Insert("<script>" +
-            "        insert into cl_user(user_id,user_name,user_password,created_time,updated_time)\n" +
-            "        values(#{userId},#{userName},#{userPassword},#{createdTime},#{updatedTime})\n"+
-            "</script>")
+    @Insert("insert into mybatis(name,age,created_time,updated_time) values(#{name},#{age},#{createdTime},#{updatedTime})")
     void insertUser(User user);
 
     /**
@@ -126,7 +123,7 @@ public interface UserMapper {
      *
      * @param id
      */
-    @Delete("delete from cl_user where id=#{id}")
+    @Delete("delete from mybatis where id=#{id}")
     void deleteUserById(int id);
 
     /**
@@ -134,7 +131,7 @@ public interface UserMapper {
      *
      * @param user
      */
-    @Update("update cl_user set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
+    @Update("update mybatis set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
     void updateUserById(User user);
 
     /**
@@ -152,25 +149,6 @@ public interface UserMapper {
      */
     @Select("SELECT * FROM cl_user WHERE mobile= #{mobile}")
     User selectByMobile(String mobile);
-
-    /**
-     * 根据用户id查询组Id
-     * @param id
-     * @return
-     */
-    @Select("select user_group_id from cl_user where user_id = #{userId}")
-    String selectByGroupId(Integer id);
-
-    /**
-     * 根据用户id或者用户名查询组
-     * @param user
-     * @return
-     */
-    @Select("<script>" +
-            "       select group_name from cl_group where group_id in\n" +
-            "       (select user_group_id from cl_user where user_id = #{userId} or user_name = #{userName}) " +
-            "</script>")
-    String getByGroup(User user);
 }
 
 
