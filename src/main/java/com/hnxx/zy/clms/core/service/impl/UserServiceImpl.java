@@ -5,8 +5,6 @@ import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.naming.spi.DirStateFactory;
 import java.util.List;
@@ -15,10 +13,9 @@ import java.util.List;
  * @author 南街北巷
  * @data 2020/5/9 9:26
  */
-@Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Autowired()
     private UserMapper userMapper;
 
     @Override
@@ -48,28 +45,5 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUserById(User user) {
 
-    }
-
-    /**
-     * 根据用户id查询组Id
-     * @param id
-     * @return
-     */
-    @Override
-    public String selectByGroupId(Integer id) {
-        String groupId = userMapper.selectByGroupId(id);
-        return groupId;
-    }
-
-    /**
-     * 根据用户id或用户名查询组名
-     * @param user
-     * @return
-     */
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public String getByGroup(User user) {
-       String groupName = userMapper.getByGroup(user);
-        return groupName;
     }
 }

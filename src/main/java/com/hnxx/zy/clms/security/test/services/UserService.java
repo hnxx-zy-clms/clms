@@ -49,5 +49,4 @@ public interface UserService {
      */
     void updateUserIconById(Integer userId,String userIcon);
 
-    String getByGroup(User user);
 }

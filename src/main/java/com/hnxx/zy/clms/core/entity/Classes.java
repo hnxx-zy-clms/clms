@@ -11,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Classes implements Serializable {
 
-    private Integer classesId;
+    private int classesId;
 
     /**
      * 班级名称
@@ -21,12 +21,12 @@ public class Classes implements Serializable {
     /**
      * 班级是否开启
      */
-    private Integer classesStates;
+    private int classesStates;
 
     /**
      * 所属学院id
      */
-    private Integer classesCollegeId;
+    private int classesCollegeId;
 
     /**
      * 所属学院名称

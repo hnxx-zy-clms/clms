@@ -2,7 +2,6 @@ package com.hnxx.zy.clms.core.service;
 
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.entity.ClassesReport;
 
 import java.util.List;
 
@@ -14,6 +13,4 @@ public interface ClassesService {
     PageInfo findAllClassesByPage(int page , int size);
 
     void updateIdsClasses(List<Integer> ids);
-
-    List<ClassesReport> report();
 }

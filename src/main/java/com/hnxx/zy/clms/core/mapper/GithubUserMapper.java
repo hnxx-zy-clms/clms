@@ -50,8 +50,8 @@ public interface GithubUserMapper {
      *
      * @param githubCount
      */
-    @Insert("insert into cl_github_user(name,account_id,token,avatar_url,created_time,update_time)\n" +
-            "values(#{name},#{accountId},#{token},#{avatarUrl},#{createdTime},#{updateTime})")
+    @Insert("insert into cl_github_user(name,account_id,token,created_time,update_time)\n" +
+            "values(#{name},#{accountId},#{token},#{createdTime},#{updateTime})")
     void insert(GithubCount githubCount);
 
     /**

@@ -1,7 +1,6 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.entity.ClassesReport;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -24,12 +23,4 @@ public interface ClassesMapper {
             "LEFT JOIN cl_college p " +
             "ON c.classes_college_id = p.college_id")
     List<Classes> findAllClassesByPage();
-
-    @Select("SELECT cl_classes.classes_name item , COUNT(*) count, count(*)/(SELECT COUNT(*) FROM cl_user) percent " +
-            "FROM cl_user " +
-            "LEFT JOIN cl_classes " +
-            "ON cl_user.user_classes_id = cl_classes.classes_id " +
-            "WHERE cl_user.is_enabled = 1 AND cl_user.is_deleted=0 AND cl_classes.classes_states=1 " +
-            "GROUP BY cl_classes.classes_id")
-    List<ClassesReport> report();
 }

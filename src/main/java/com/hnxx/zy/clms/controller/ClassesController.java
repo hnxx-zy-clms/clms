@@ -5,7 +5,6 @@ import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Classes;
-import com.hnxx.zy.clms.core.entity.ClassesReport;
 import com.hnxx.zy.clms.core.service.ClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,11 +45,5 @@ public class ClassesController {
     public Result<String> updateClasses(@RequestBody List<Integer> ids){
         classesService.updateIdsClasses(ids);
         return new Result<>(ResultEnum.SUCCESS);
-    }
-
-    @GetMapping("report")
-    public Result<List<ClassesReport>> report(){
-        List<ClassesReport> classesReportList = classesService.report();
-        return new Result<>(classesReportList);
     }
 }
