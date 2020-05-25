@@ -101,7 +101,7 @@ public class ReportMarkingController {
     }
 
     /**
-     * 组长提交批阅数据
+     * 提交批阅数据
      * @param reportMarkings
      * @return
      */
@@ -115,28 +115,6 @@ public class ReportMarkingController {
         }else{
             reportMarkingService.setTeacherMarking(reportMarkings);
         }
-        return new Result<>("成功");
-    }
-
-    /**
-     * 班长提交批阅数据
-     * @param reportMarkings
-     * @return
-     */
-    @PostMapping("/setMarkings")
-    public Result<Object> setMarking(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setClassesMarking(reportMarkings);
-        return new Result<>("成功");
-    }
-
-    /**
-     * 教师提交批阅数据
-     * @param reportMarkings
-     * @return
-     */
-    @PostMapping("/setTeacherMarkings")
-    public Result<Object> setTeacherMarking(@RequestBody List<ReportMarking> reportMarkings){
-        reportMarkingService.setTeacherMarking(reportMarkings);
         return new Result<>("成功");
     }
 

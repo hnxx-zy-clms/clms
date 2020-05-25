@@ -393,7 +393,11 @@ public interface ReportMapper {
      * @return
      */
     @Select({"<script> \n"+
-            "select b.report_id,b.report_type,b.created_time,b.updated_time,b.is_checked+b.is_classes_checked+b.is_teacher_checked as is_checked from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "select b.report_id,b.report_type,b.created_time,\n" +
+            "CASE b.is_checked+b.is_classes_checked+b.is_teacher_checked WHEN 1 THEN d.group_time WHEN 2 THEN d.monitor_time WHEN 3 THEN d.teacher_time ELSE b.updated_time END as updated_time,\n" +
+            "b.is_checked+b.is_classes_checked+b.is_teacher_checked as is_checked from \n" +
+            "cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "left join cl_report_marking d on a.report_id = d.report_id \n"+
             "where c.user_id = #{userId} and b.is_deleted = 0 and b.is_checked = 1\n"+
             "order by b.updated_time desc\n" +
             "limit 0, 5" +
