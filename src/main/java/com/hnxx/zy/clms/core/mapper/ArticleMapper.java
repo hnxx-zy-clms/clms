@@ -89,6 +89,8 @@ public interface ArticleMapper {
     @Update("update cl_article set is_deleted = 1 where article_id = #{id}")
     void deleteById(Integer id);
 
+
+
     /**
      * 分页查询
      *

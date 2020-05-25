@@ -8,6 +8,7 @@ import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @program: news
@@ -47,9 +48,28 @@ public class UserSeviceImpl implements UserService {
         return userMapper.getGroupIds(page);
     }
 
+    /**
+     * 更新用户头像
+     *
+     * @param userId
+     * @param userIcon
+     */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void updateUserIconById(Integer userId, String userIcon) {
-        userMapper.updateUserIconById(userId,userIcon);
+        userMapper.updateUserIconById(userId, userIcon);
+    }
+
+    /**
+     * 根据用户id或用户名查询组名
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public String getByGroup(User user) {
+        String groupName = userMapper.getByGroup(user);
+        return groupName;
     }
 
 }

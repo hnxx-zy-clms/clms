@@ -11,7 +11,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Group implements Serializable {
 
-    private int groupId;
+    private Integer groupId;
+
     private String groupName;
-    private int groupStates;
+
+    private Integer groupStates;
 }

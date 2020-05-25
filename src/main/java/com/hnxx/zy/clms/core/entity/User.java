@@ -44,7 +44,7 @@ public class User {
     /**
      * 用户组id
      */
-    private String userGroupId;
+    private Integer userGroupId;
 
     /**
      * 头像

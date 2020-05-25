@@ -11,10 +11,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class College implements Serializable {
 
-    private int collegeId;
+    private Integer collegeId;
 
     private String collegeName;
 
-    private int collegeStates;
+    private Integer collegeStates;
 
 }
