@@ -3,8 +3,10 @@ package com.hnxx.zy.clms.controller;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Group;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,9 +43,9 @@ public class UserController {
      * @return
      */
     @PostMapping("/get/byGroup")
-    public Result<Object> selectByGroup(@RequestBody User user){
-        User group = userService.getByGroup(user);
-        return new Result<>(group);
+    public List<User> selectByGroup(@RequestBody User user){
+        List<User> users = userService.getByGroup(user);
+        return users;
     }
 
 }

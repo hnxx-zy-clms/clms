@@ -88,9 +88,4 @@ public class User {
      * 是否已删除(1为已删除，0为未删除，默认为0)
      */
     private int is_deleted;
-
-    /**
-     * 组名
-     */
-    private String groupName;
 }

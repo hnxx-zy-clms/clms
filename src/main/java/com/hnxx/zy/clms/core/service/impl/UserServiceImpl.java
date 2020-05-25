@@ -70,8 +70,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public User getByGroup(User user) {
-        User group = userMapper.getByGroup(user);
+    public List<User> getByGroup(User user) {
+        List<User> group = userMapper.getByGroup(user);
         return group;
     }
 }

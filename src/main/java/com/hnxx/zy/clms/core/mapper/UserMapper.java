@@ -174,6 +174,6 @@ public interface UserMapper {
             "       where a.user_id = a.user_id= #{userId} or a.user_name = #{userName}\n" +
             "       group by a.user_id asc" +
             "</script>")
-    User getByGroup(User user);
+    List<User> getByGroup(User user);
 }
 
