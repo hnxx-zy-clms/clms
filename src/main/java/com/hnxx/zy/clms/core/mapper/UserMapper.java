@@ -170,7 +170,7 @@ public interface UserMapper {
             "       select group_name from cl_group where group_id in\n" +
             "       (select user_group_id from cl_user where user_id = #{userId} or user_name = #{userName}) " +
             "</script>")
-    String getByGroup(User user);
+    User getByGroup(User user);
 }
 
 
