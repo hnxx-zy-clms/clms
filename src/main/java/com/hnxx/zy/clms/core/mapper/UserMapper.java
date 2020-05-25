@@ -162,15 +162,18 @@ public interface UserMapper {
     String selectByGroupId(Integer id);
 
     /**
-     * 根据用户id或者用户名查询组
+     * 根据用户id或者用户名查询用户信息
+     * 左连接查询
      * @param user
      * @return
      */
     @Select("<script>" +
-            "       select group_name from cl_group where group_id in\n" +
-            "       (select user_group_id from cl_user where user_id = #{userId} or user_name = #{userName}) " +
+            "       select a.*, b.group_name\n" +
+            "       from cl_user as a left join cl_group as b\n" +
+            "       on a.user_group_id = group_id\n" +
+            "       where a.user_id = a.user_id= #{userId} or a.user_name = #{userName}\n" +
+            "       group by a.user_id asc" +
             "</script>")
     User getByGroup(User user);
 }
-
 

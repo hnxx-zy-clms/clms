@@ -5,6 +5,8 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 
+import java.util.List;
+
 /**
  * @description: 测试security用户服务层接口
  * @author: nile
@@ -49,5 +51,5 @@ public interface UserService {
      */
     void updateUserIconById(Integer userId,String userIcon);
 
-    String getByGroup(User user);
+    List<User> getByGroup(User user);
 }

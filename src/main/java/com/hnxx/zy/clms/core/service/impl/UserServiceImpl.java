@@ -1,12 +1,14 @@
 package com.hnxx.zy.clms.core.service.impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -68,8 +70,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public String getByGroup(User user) {
-       String groupName = userMapper.getByGroup(user);
-        return groupName;
+    public User getByGroup(User user) {
+        User group = userMapper.getByGroup(user);
+        return group;
     }
 }

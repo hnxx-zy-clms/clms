@@ -1,6 +1,7 @@
 package com.hnxx.zy.clms.security.test.services.Impl;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @program: news
@@ -60,16 +63,21 @@ public class UserSeviceImpl implements UserService {
         userMapper.updateUserIconById(userId, userIcon);
     }
 
+    @Override
+    public List<User> getByGroup(User user) {
+        return null;
+    }
+
     /**
      * 根据用户id或用户名查询组名
      *
      * @param user
      * @return
      */
-    @Override
-    public String getByGroup(User user) {
-        String groupName = userMapper.getByGroup(user);
-        return groupName;
-    }
+//    @Override
+//    public User getByGroup(User user) {
+//        User groupName = userMapper.getByGroup(user);
+//        return groupName;
+//    }
 
 }

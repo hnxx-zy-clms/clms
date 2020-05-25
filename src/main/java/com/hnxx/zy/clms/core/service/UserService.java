@@ -72,5 +72,5 @@ public interface UserService {
      * @param user
      * @return
      */
-    String getByGroup(User user);
+    User getByGroup(User user);
 }
