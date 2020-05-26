@@ -17,12 +17,26 @@ import java.util.List;
 public class SearchPage<T> implements Serializable {
 
     private static final long serialVersionUID = -5177498529969801742L;
-
+    /**
+     * 输入关键字 eg:测试
+     */
     private String keyword;
-
+    /**
+     * 当前页号 eg:1
+     */
     private Integer pageNo;
-
+    /**
+     * 分页大小 eg:10
+     */
     private Integer pageSize;
+    /**
+     * 目前 eg:articleTitle
+     */
+    private String params;
+    /**
+     * 索引 eg:clms_article_index
+     */
+    private String index;
 
     /**
      * 数据

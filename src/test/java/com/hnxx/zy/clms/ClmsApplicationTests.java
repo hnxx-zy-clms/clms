@@ -2,8 +2,12 @@ package com.hnxx.zy.clms;
 
 import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.core.entity.Article;
+import com.hnxx.zy.clms.core.entity.Question;
 import com.hnxx.zy.clms.core.service.ArticleService;
+import com.hnxx.zy.clms.core.service.QuestionService;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.elasticsearch.action.bulk.BulkRequest;
+import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
@@ -20,12 +24,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.List;
 
 @SpringBootTest
 class ClmsApplicationTests {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private QuestionService questionService;
 
     @Test
     void contextLoads() {
@@ -40,7 +48,7 @@ class ClmsApplicationTests {
     @Test
     void testCreateIndex() throws IOException {
         //1.创建索引请求   类似于 kibana 中的put命令
-        CreateIndexRequest request = new CreateIndexRequest("clms_article");
+        CreateIndexRequest request = new CreateIndexRequest("clms_article_index");
         //2.客户端执行创建请求 IndicesClient,请求后获得响应
         CreateIndexResponse createIndexResponse =
                 client.indices().create(request, RequestOptions.DEFAULT);
@@ -50,7 +58,7 @@ class ClmsApplicationTests {
     //测试获取索引 判断其是否存在
     @Test
     void testExistIndex() throws IOException {
-        GetIndexRequest request = new GetIndexRequest("clms_article");
+        GetIndexRequest request = new GetIndexRequest("clms_article_index");
         boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);
         System.out.println(exists);
     }
@@ -58,7 +66,7 @@ class ClmsApplicationTests {
     //删除索引
     @Test
     void testDeleteIndex() throws IOException {
-        DeleteIndexRequest request = new DeleteIndexRequest("clms_article");
+        DeleteIndexRequest request = new DeleteIndexRequest("clms_article_index");
         AcknowledgedResponse delete = client.indices().delete(request, RequestOptions.DEFAULT);
         System.out.println(delete.isAcknowledged());   //判断是否删除成功
     }
@@ -82,6 +90,35 @@ class ClmsApplicationTests {
 
         System.out.println(indexResponse.toString());
         System.out.println(indexResponse.status());
+    }
+
+    //批量处理数据(全量同步)
+    @Test
+    void testBulkRequest() throws IOException {
+        BulkRequest request = new BulkRequest();
+        request.timeout("10s");
+        // 获取数据库的article数据
+        // List<Article> articleList = articleService.getList();
+        // for(Article article : articleList) {
+        //     request.add(
+        //             new IndexRequest("clms_question_index")
+        //                     .id(""+article.getArticleId())
+        //                     .source(JSON.toJSONString(article), XContentType.JSON)
+        //     );
+        // }
+
+        List<Question> questionList = questionService.getList();
+        for(Question question : questionList) {
+            request.add(
+                    new IndexRequest("clms_question_index")
+                        .id(""+question.getQuestionId())
+                        .source(JSON.toJSONString(question), XContentType.JSON)
+            );
+        }
+        // 客户端执行请求
+        BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
+        // 返回是否失败状态
+        System.out.println(responses.hasFailures());
     }
 
 }

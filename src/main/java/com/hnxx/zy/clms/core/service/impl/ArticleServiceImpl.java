@@ -107,6 +107,11 @@ public class ArticleServiceImpl implements ArticleService {
         articleMapper.deleteById(id);
     }
 
+    @Override
+    public List<Article> getList() {
+        return articleMapper.getList();
+    }
+
     /**
      * 分页查询
      * @param page

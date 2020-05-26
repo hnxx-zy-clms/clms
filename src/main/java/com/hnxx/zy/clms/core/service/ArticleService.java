@@ -43,6 +43,12 @@ public interface ArticleService {
     void deleteById(Integer id);
 
     /**
+     * 查询所有
+     * @return
+     */
+    List<Article> getList();
+
+    /**
      * 分页查询
      * @param page
      * @return

@@ -43,6 +43,11 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
+    public List<Question> getList() {
+        return questionMapper.getList();
+    }
+
+    @Override
     public void update(Question question) {
         questionMapper.update(question);
     }

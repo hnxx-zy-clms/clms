@@ -9,6 +9,8 @@ package com.hnxx.zy.clms.core.service;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Question;
 
+import java.util.List;
+
 public interface QuestionService {
 
     /**
@@ -23,6 +25,12 @@ public interface QuestionService {
      * @return
      */
     Question getById(Integer id);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    List<Question> getList();
 
     /**
      * 更新

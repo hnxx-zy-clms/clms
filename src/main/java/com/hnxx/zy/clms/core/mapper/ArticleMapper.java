@@ -196,4 +196,11 @@ public interface ArticleMapper {
             "        </if>\n" +
             "</script>")
     List<Map> getUserArticleCountInfo(Page<ArticleStatistics> page);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    @Select("select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id  where a.is_deleted = 0")
+    List<Article> getList();
 }

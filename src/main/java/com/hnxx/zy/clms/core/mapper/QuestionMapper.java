@@ -146,4 +146,11 @@ public interface QuestionMapper {
      */
     @Update("update cl_question set question_mark = #{mark} where question_id = #{id}")
     void changeSolve(Integer id, int mark);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    @Select("select * from cl_question where is_deleted = 0")
+    List<Question> getList();
 }
