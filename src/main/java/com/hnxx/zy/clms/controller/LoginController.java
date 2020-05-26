@@ -39,4 +39,15 @@ public class LoginController {
     public String mainPage(){
         return "home";
     }
+
+
+    /**
+     * chat专属
+     * @return  黑鲨-code
+     */
+    @PostMapping("/isLogin")
+    @ResponseBody
+    public String isLogin(){
+        return "ok";
+    }
 }
