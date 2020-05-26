@@ -20,8 +20,8 @@ public class SendSms {
 
     public static void send(String mobile, String code, String templateCode) {
         // 创建DefaultAcsClient实例并初始化  地域ID   RAM账号的AccessKey ID  RAM账号AccessKey Secret
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4G8LxvcCdoZvtaTg97vj",
-                "92Ha08bqE07q27u3tAHgHPMNkQ7Qg0");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4G6pyEy5dzvC4X2WnFnD",
+                "rx3iPHs9iWogLH04cY8Dc5makLmhly");
         IAcsClient client = new DefaultAcsClient(profile);
         // 创建API请求并设置参数
         CommonRequest request = new CommonRequest();

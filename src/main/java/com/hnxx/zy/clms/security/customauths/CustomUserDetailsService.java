@@ -40,6 +40,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
         // 添加权限
         authorities.add(new SimpleGrantedAuthority("ROLE_"+user.getUserPositionId()));
-        return new org.springframework.security.core.userdetails.User(username,user.getUserPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getUserPassword(), authorities);
     }
 }

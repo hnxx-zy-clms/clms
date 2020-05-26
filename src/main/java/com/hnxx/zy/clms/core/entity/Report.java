@@ -67,7 +67,7 @@ public class Report {
     /**
      * 写日报的时间，返回时转成正常日期格式 年-月-日
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date createdTime;
 
     /**
