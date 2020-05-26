@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.UserSearch;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -116,7 +117,7 @@ public interface UserMapper {
      * @return
      */
     @Insert("<script>" +
-            "        insert into cl_user(user_id,user_name,user_password,created_time,updated_time)\n" +
+            "        insert into cl_user(user_id,user_name,user_password,name,created_time,updated_time,is4)\n" +
             "        values(#{userId},#{userName},#{userPassword},#{createdTime},#{updatedTime})\n"+
             "</script>")
     void insertUser(User user);
@@ -174,6 +175,6 @@ public interface UserMapper {
             "       where a.user_id = a.user_id= #{userId} or a.user_name = #{userName}\n" +
             "       group by a.user_id asc" +
             "</script>")
-    List<User> getByGroup(User user);
+    List<UserSearch> getByGroup(User user);
 }
 

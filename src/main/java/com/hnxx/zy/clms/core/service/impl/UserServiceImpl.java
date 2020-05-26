@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service.impl;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,14 +65,14 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 根据用户id或用户名查询组名
+     * 根据用户id或用户名查询组名和用户信息
      * @param user
      * @return
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<User> getByGroup(User user) {
-        List<User> group = userMapper.getByGroup(user);
+    public List<UserSearch> getByGroup(User user) {
+        List<UserSearch> group = userMapper.getByGroup(user);
         return group;
     }
 }

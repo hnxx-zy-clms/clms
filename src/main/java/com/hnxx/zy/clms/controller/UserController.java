@@ -38,14 +38,14 @@ public class UserController {
     }
 
     /**
-     * 根据用户id或用户名查询组名
+     * 根据用户id或用户名查询所有用户
      * @param user
      * @return
      */
     @PostMapping("/get/byGroup")
-    public List<User> selectByGroup(@RequestBody User user){
-        List<User> users = userService.getByGroup(user);
-        return users;
+    public Result<List<UserSearch>> selectByGroup(@RequestBody User user){
+        List<UserSearch> users = userService.getByGroup(user);
+        return new Result<>(users);
     }
 
 }

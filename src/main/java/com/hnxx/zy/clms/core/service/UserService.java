@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.UserSearch;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -72,5 +73,5 @@ public interface UserService {
      * @param user
      * @return
      */
-    List<User> getByGroup(User user);
+    List<UserSearch> getByGroup(User user);
 }
