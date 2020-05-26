@@ -1,7 +1,8 @@
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
@@ -9,7 +10,6 @@ import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -25,11 +25,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<User> getByPage(Page<User> page) {
-        return null;
-    }
-
-    @Override
-    public List<User> getByName(String name) {
         return null;
     }
 
@@ -74,5 +69,20 @@ public class UserServiceImpl implements UserService {
     public List<UserSearch> getByGroup(User user) {
         List<UserSearch> group = userMapper.getByGroup(user);
         return group;
+    }
+
+    /**
+     * 获取用户详细信息(分页)
+     *
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public PageInfo getUserByPage(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<UserSearch> list = userMapper.getUserByPage();
+        PageInfo pageInfo =new PageInfo<>(list);
+        return pageInfo;
     }
 }

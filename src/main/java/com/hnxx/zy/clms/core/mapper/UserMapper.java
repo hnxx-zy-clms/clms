@@ -84,31 +84,17 @@ public interface UserMapper {
     Integer[] getGroupIds(Page<ReportStatistics> page);
 
     /**
-     * 根据名字查询
-     *
-     * @param name
-     * @return
-     */
-    @Select("select * from cl_user where name=#{name}")
-    List<User> getByName(String name);
-
-    /**
-     * 分页查询用户
-     *
+     * 查询用户详细信息(分页)
+     * 左连接查询
      * @return
      */
     @Select("<script>" +
-            "        select user_id, user_name, created_time, update_time, is_enabled from cl_user\n" +
-            "        where is_deleted = 0 \n" +
-            "        <if test=\"params.userName!=null and params.userName!=''\">\n" +
-            "            and user_name like CONCAT('%', #{params.userName}, '%')\n" +
-            "        </if>\n" +
-            "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
-            "            order by ${sortColumn} ${sortMethod}\n" +
-            "        </if>\n" +
-            "        limit #{index}, #{pageSize}" +
+            "       select a.*, b.group_name\n" +
+            "       from cl_user as a left join cl_group as b\n" +
+            "       on a.user_group_id = group_id\n" +
+            "       group by a.user_id asc" +
             "</script>")
-    List<User> getUserByPage();
+    List<UserSearch> getUserByPage();
 
     /**
      * 新增用户

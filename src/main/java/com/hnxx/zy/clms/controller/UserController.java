@@ -1,5 +1,7 @@
 package com.hnxx.zy.clms.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Group;
 import com.hnxx.zy.clms.core.entity.User;
@@ -19,9 +21,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    @Autowired
-    private UserMapper userMapper;
 
     @Autowired
     private UserService userService;
@@ -46,6 +45,18 @@ public class UserController {
     public Result<List<UserSearch>> selectByGroup(@RequestBody User user){
         List<UserSearch> users = userService.getByGroup(user);
         return new Result<>(users);
+    }
+
+    /**
+     * 获取用户详细信息
+     * 分页查询
+     * @param page
+     * @return
+     */
+    @PostMapping("/get/byPage")
+    public Result<PageInfo<UserSearch>> getUserByPage(@RequestBody Page page){
+        PageInfo<UserSearch> userPage= userService.getUserByPage(page.getCurrentPage(), page.getPageSize());
+        return new Result<>(userPage);
     }
 
 }

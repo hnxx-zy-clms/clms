@@ -1,12 +1,9 @@
 package com.hnxx.zy.clms.core.service;
 
+import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -22,14 +19,6 @@ public interface UserService {
      * @return
      */
     Page<User> getByPage(Page<User> page);
-
-    /**
-     * 根据名字查询
-     *
-     * @param name
-     * @return
-     */
-    List<User> getByName(String name);
 
     /**
      * 新增用户
@@ -68,10 +57,19 @@ public interface UserService {
     String selectByGroupId(Integer id);
 
     /**
-     * 根据用户id或用户名查询组名
+     * 根据用户id或用户名查询用户详细信息
      *
      * @param user
      * @return
      */
     List<UserSearch> getByGroup(User user);
+
+    /**
+     * 获取用户详细信息(分页)
+     *
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    PageInfo getUserByPage(Integer pageNum, Integer pageSize);
 }

@@ -27,6 +27,11 @@ public class User {
     private String userPassword;
 
     /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
      * 姓名
      */
     private String name;
