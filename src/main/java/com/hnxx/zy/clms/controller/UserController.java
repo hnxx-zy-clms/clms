@@ -42,7 +42,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/get/byGroup")
-    public Result<List<UserSearch>> selectByGroup(@RequestBody User user){
+    public Result<List<UserSearch>> getByGroup(@RequestBody User user){
         List<UserSearch> users = userService.getByGroup(user);
         return new Result<>(users);
     }
