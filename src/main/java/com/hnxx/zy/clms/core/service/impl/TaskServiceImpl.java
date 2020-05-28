@@ -67,6 +67,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void deleteTask(Integer id) {
         taskMapper.deleteTask(id);
+        taskMapper.deleteUserReply(id);
     }
 
     @Override
@@ -97,6 +98,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void deleteTasks(Integer[] params) {
         taskMapper.deleteTasks(params);
+        taskMapper.deleteTaskUsers(params);
     }
 
     @Override

@@ -213,12 +213,35 @@ public interface TaskMapper {
     void deleteTasks(@Param("params") Integer[] params);
 
     /**
+     * @Description: 批量删除任务回复
+     * @Param: [params]
+     * @return: void
+     * @Author: CHENLH
+     * @Date: 2020-05-28 09:04:19
+     */
+    @Update("<script>"+
+            "delete from cl_task_user WHERE task_id in "+
+            "<foreach collection='params' item='param' open='(' separator=',' close=')'>"+
+            "   #{param}"+
+            "</foreach>"+
+            "</script>")
+    void deleteTaskUsers(@Param("params") Integer[] params);
+
+    /**
      * 物理删除
      *
      * @param id
      */
-    @Delete("delete from cl_task where task_id = #{id}")
+    @Delete("DELETE FROM cl_task WHERE task_id = #{id}")
     void delete(@Param("id") Integer id);
+
+    /**
+     * 物理删除回复
+     *
+     * @param id
+     */
+    @Delete("DELETE FROM cl_task_user WHERE task_id = #{id}")
+    void deleteUserReply(@Param("id") Integer id);
 
     /**
      * 将已保存状态改为发布状态

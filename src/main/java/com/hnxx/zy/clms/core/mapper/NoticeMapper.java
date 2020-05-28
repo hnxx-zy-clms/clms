@@ -144,7 +144,7 @@ public interface NoticeMapper {
     int getCountByPage(@Param("page") Page page);
 
     /**
-     * 批量删除
+     * 批量删除(逻辑删除)
      * @param params
      */
     @Update("<script>"+
@@ -154,6 +154,22 @@ public interface NoticeMapper {
                     "</foreach>"+
             "</script>")
     void deleteNotices(@Param("params") Integer [] params);
+
+
+    /**
+     * @Description: 物理批量删除已读
+     * @Param: [params]
+     * @return: void
+     * @Author: CHENLH
+     * @Date: 2020-05-27 23:32:22
+     */
+    @Delete("<script>"+
+            "delete from cl_notice_user WHERE notice_id in "+
+            "<foreach collection='params' item='param' open='(' separator=',' close=')'>"+
+            "   #{param}"+
+            "</foreach>"+
+            "</script>")
+    void deleteNoticesUser(@Param("params") Integer [] params);
 
     /**
      * 将已保存状态改为发布状态
@@ -166,8 +182,15 @@ public interface NoticeMapper {
      * 物理删除
      * @param id
      */
-    @Delete("delete from cl_notice where notice_id = #{id}")
+    @Delete("DELETE FROM cl_notice WHERE notice_id=#{id}")
     void delete(@Param("id") Integer id);
+
+    /**
+     * 物理删除已读
+     * @param id
+     */
+    @Delete("DELETE FROM cl_notice_user WHERE notice_id=#{id}")
+    void deleteUserRead(@Param("id") Integer id);
 
     /**
      * 更新通知

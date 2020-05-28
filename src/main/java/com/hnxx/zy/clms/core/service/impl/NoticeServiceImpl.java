@@ -38,10 +38,13 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public void delNotice(Integer id) {
         noticeMapper.delNotice(id);
+        noticeMapper.deleteUserRead(id);
     }
 
     @Override
-    public void delete(Integer id) { noticeMapper.delete(id);}
+    public void delete(Integer id) {
+        noticeMapper.delete(id);
+    }
 
     @Override
     public Page<Notice> getByPage(Page<Notice> page, Integer id) {
@@ -66,6 +69,7 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public void deleteNotices(Integer[] params) {
         noticeMapper.deleteNotices(params);
+        noticeMapper.deleteNoticesUser(params);
     }
 
     @Override
