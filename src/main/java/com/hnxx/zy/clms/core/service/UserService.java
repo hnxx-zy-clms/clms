@@ -26,20 +26,22 @@ public interface UserService {
      * @param user
      * @return
      */
-    void addUser(User user);
+    void insertUser(User user);
 
     /**
-     * 删除所有用户
-     * 并重置自增Id为1
+     * 根据id查询用户信息
+     *
+     * @param id
+     * @return
      */
-    void deleteAllUser();
+    UserSearch getById(Integer id);
 
     /**
-     * 根据ID删除用户
+     * 根据用户id删除用户(将删除标识位置为1)
      *
      * @param id
      */
-    void deleteUserById(Integer id);
+    void deleteOneById(Integer id);
 
     /**
      * 修改用户

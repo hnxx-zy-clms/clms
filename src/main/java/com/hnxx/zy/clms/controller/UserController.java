@@ -12,6 +12,7 @@ import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,6 +48,18 @@ public class UserController {
         return new Result<>(users);
     }
 
+
+    /**
+     * 根据id查询用户信息
+     *
+     * @return
+     */
+    @PostMapping("/get/by/{id}")
+    public Result<UserSearch> getById(@PathVariable("id") Integer id){
+       UserSearch user = userService.getById(id);
+       return new Result<>(user);
+    }
+
     /**
      * 获取用户详细信息
      * 分页查询
@@ -54,9 +67,35 @@ public class UserController {
      * @return
      */
     @PostMapping("/get/byPage")
-    public Result<PageInfo<UserSearch>> getUserByPage(@RequestBody Page page){
-        PageInfo<UserSearch> userPage= userService.getUserByPage(page.getCurrentPage(), page.getPageSize());
-        return new Result<>(userPage);
+    public Result<PageInfo<UserSearch>> getByPage(@RequestBody Page page){
+        PageInfo<UserSearch> pages= userService.getUserByPage(page.getCurrentPage(), page.getPageSize());
+        return new Result<>(pages);
     }
 
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/add")
+    public Result insertUser(@RequestBody User user){
+        userService.insertUser(user);
+        return new Result<>("保存成功");
+    }
+
+    /**
+     * 根据id删除用户
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/delete/by/{id}")
+    public Result deleteOneById(@PathVariable("id") Integer id){
+        UserSearch user = userService.getById(id);
+        if (user.getIsDeleted() == 1){
+            return new Result("请勿重复删除");
+        }else {
+            userService.deleteOneById(id);
+            return new Result("删除成功");
+        }
+    }
 }

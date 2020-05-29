@@ -7,6 +7,7 @@ import com.hnxx.zy.clms.core.entity.UserSearch;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -103,25 +104,41 @@ public interface UserMapper {
      * @return
      */
     @Insert("<script>" +
-            "        insert into cl_user(user_id,user_name,user_password,name,created_time,updated_time,is4)\n" +
-            "        values(#{userId},#{userName},#{userPassword},#{createdTime},#{updatedTime})\n"+
+            "       insert into cl_user(user_id,user_name,user_password,user_icon,\n" +
+            "       created_time,update_time,is_enabled)\n" +
+            "       values(#{userId},#{userName},#{userPassword},#{userIcon},\n" +
+            "       #{createdTime},#{updatedTime},#{isEnabled})\n"+
             "</script>")
     void insertUser(User user);
+
+    /**
+     * 根据id查询用户信息
+     * 包括弃用的和删除的
+     * @param id
+     * @return
+     */
+    @Select("<script>" +
+            "       select a.*, b.group_name\n" +
+            "       from cl_user as a left join cl_group as b\n" +
+            "       on a.user_group_id = group_id\n" +
+            "       where a.user_id = #{id}\n" +
+            "</script>")
+    UserSearch getById(Integer id);
 
     /**
      * 根据ID删除用户
      *
      * @param id
      */
-    @Delete("delete from cl_user where id=#{id}")
-    void deleteUserById(int id);
+    @Update("update cl_user set is_deleted = 1 where user_id = #{id}")
+    void deleteOneById(Integer id);
 
     /**
-     * 更新用户信息
+     * 更新用户操作时间
      *
      * @param user
      */
-    @Update("update cl_user set name=#{name},age=#{age},updated_time=#{updatedTime} where id=#{id}")
+    @Update("update cl_user set user_id=#{userId updated_time=#{updatedTime}where id=#{id}")
     void updateUserById(User user);
 
     /**
@@ -158,7 +175,7 @@ public interface UserMapper {
             "       select a.*, b.group_name\n" +
             "       from cl_user as a left join cl_group as b\n" +
             "       on a.user_group_id = group_id\n" +
-            "       where a.user_id = a.user_id= #{userId} or a.user_name = #{userName}\n" +
+            "       where (a.user_id = #{userId} or a.user_name = #{userName} )and is_deleted = 0\n" +
             "       group by a.user_id asc" +
             "</script>")
     List<UserSearch> getByGroup(User user);

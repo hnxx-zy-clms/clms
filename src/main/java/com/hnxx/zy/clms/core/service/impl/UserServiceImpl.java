@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,19 +30,37 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    /**
+     * 新增用户(登录信息)
+     * @param user
+     */
     @Override
-    public void addUser(User user) {
-
+    @Transactional(rollbackFor = Exception.class)
+    public void insertUser(User user) {
+        userMapper.insertUser(user);
     }
 
+    /**
+     * 根据id查询用户信息
+     *
+     * @param id
+     * @return
+     */
     @Override
-    public void deleteAllUser() {
-
+    public UserSearch getById(Integer id) {
+        UserSearch user = userMapper.getById(id);
+        return user;
     }
 
+    /**
+     * 根据用户id删除用户(将删除标识位置为1)
+     * @param id
+     * @return
+     */
     @Override
-    public void deleteUserById(Integer id) {
-
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteOneById(Integer id) { ;
+        userMapper.deleteOneById(id);
     }
 
     @Override
