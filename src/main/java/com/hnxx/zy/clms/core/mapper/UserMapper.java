@@ -7,7 +7,6 @@ import com.hnxx.zy.clms.core.entity.UserSearch;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,6 +27,16 @@ public interface UserMapper {
      */
     @Select("select * from cl_user where user_name=#{username} or mobile = #{username}")
     User selectByName(String username);
+
+    /**
+     * *
+     * 从数据拿出用户信息
+     *
+     * @param userId
+     * @return
+     */
+    @Select("select * from cl_user where user_id=#{userId}")
+    User selectById(Integer userId);
 
     /**
      * 获取总人数

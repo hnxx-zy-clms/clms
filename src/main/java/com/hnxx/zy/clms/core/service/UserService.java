@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
 
@@ -74,4 +75,47 @@ public interface UserService {
      * @return
      */
     PageInfo getUserByPage(Integer pageNum, Integer pageSize);
+
+    /**
+     * 打印测试用户信息
+     * @return
+     */
+    User selectByName(String username);
+
+    /**
+     * 打印测试用户信息
+     * @return
+     */
+    User selectById(Integer userId);
+
+    /**
+     * 获取登录用户名
+     * @return
+     */
+    String getUserName();
+
+    /**
+     * 获取登录用户名
+     * @return
+     */
+    Integer selectUserId(String name);
+    /**
+     * 获取班级、组人数
+     * @return
+     */
+    int getUserNum(Page<ReportStatistics> page);
+
+    /**
+     *获取班级各组组名
+     * @param page
+     * @return
+     */
+    Integer[] getGroupIds(Page<ReportStatistics> page);
+
+    /**
+     * 用户更新头像
+     * @param userId
+     * @param userIcon
+     */
+    void updateUserIconById(Integer userId,String userIcon);
 }

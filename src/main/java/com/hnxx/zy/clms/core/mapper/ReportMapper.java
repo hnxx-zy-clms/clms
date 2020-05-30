@@ -69,7 +69,7 @@ public interface ReportMapper {
      * 管理员查看所有报告
      */
     @Select({"<script> \n" +
-            "select b.*,c.user_name,x.codename userGroupId,y.codename userClassesId from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
+            "select b.*,c.name,x.codename userGroupId,y.codename userClassesId from cl_user_report a left join cl_report b on a.report_id = b.report_id left join cl_user c on a.user_id = c.user_id \n"+
             "left join cl_dict x on x.type='group' and x.code = c.user_group_id \n" +
             "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where b.report_type = #{params.reportType}\n" +

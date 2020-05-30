@@ -14,7 +14,7 @@ import com.hnxx.zy.clms.core.entity.Good;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.GoodMapper;
 import com.hnxx.zy.clms.core.service.GoodService;
-import com.hnxx.zy.clms.security.test.services.UserService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;

@@ -12,9 +12,8 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Question;
-import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.service.QuestionService;
-import com.hnxx.zy.clms.security.test.services.UserService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

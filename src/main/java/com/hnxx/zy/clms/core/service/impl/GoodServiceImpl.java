@@ -12,7 +12,6 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Good;
 import com.hnxx.zy.clms.core.mapper.GoodMapper;
 import com.hnxx.zy.clms.core.service.GoodService;
-import com.hnxx.zy.clms.security.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

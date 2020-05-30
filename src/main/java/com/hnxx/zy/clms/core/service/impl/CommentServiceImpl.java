@@ -13,7 +13,7 @@ import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.CommentService;
-import com.hnxx.zy.clms.security.test.services.UserService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -13,7 +13,7 @@ import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Collection;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.CollectionService;
-import com.hnxx.zy.clms.security.test.services.UserService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;

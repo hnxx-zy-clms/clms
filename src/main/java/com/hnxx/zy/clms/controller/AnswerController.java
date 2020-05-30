@@ -13,8 +13,7 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Answer;
 import com.hnxx.zy.clms.core.service.AnswerService;
-import com.hnxx.zy.clms.security.test.services.UserService;
-import org.omg.PortableInterceptor.INACTIVE;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

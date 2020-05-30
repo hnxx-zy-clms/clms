@@ -15,7 +15,7 @@ import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.service.ArticleService;
-import com.hnxx.zy.clms.security.test.services.UserService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.text.Text;
 import org.elasticsearch.search.SearchHit;

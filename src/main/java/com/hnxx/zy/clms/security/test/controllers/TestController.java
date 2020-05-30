@@ -59,6 +59,12 @@ public class TestController {
         return new Result<>(map);
     }
 
+    @GetMapping("/getUserById/{id}")
+    public Result<User> getUserById(@PathVariable Integer id){
+        User user=userMapper.selectById(id);
+        user.setUserPassword(null);
+        return new Result<>(user);
+    }
     @PutMapping("/updateUserIconById")
     public Result<Object> updateUserIconById(@RequestBody User user){
         userMapper.updateUserIconById(user.getUserId(),user.getUserIcon());

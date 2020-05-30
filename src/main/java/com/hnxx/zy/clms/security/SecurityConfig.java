@@ -4,6 +4,7 @@ import com.hnxx.zy.clms.common.utils.RedisUtil;
 import com.hnxx.zy.clms.security.customauths.CustomUserDetailsService;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationFailureHandler;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationSuccessHandler;
+import com.hnxx.zy.clms.security.handles.CustomLogoutSuccessHandler;
 import com.hnxx.zy.clms.security.jwt.JwtAuthTokenFilter;
 import com.hnxx.zy.clms.security.sms.SmsCodeAuthenticationSecurityConfig;
 import com.hnxx.zy.clms.security.sms.ValidateCodeFilter;
@@ -50,6 +51,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private CustomLogoutSuccessHandler logoutSuccessHandler;
 
     @Autowired
     private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
@@ -103,12 +107,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // 如果有允许匿名的url，填在下面
-                .antMatchers("/code/sms","/login","/**","/register","/druid/**","/home","/callback","/github/**").permitAll()
+                .antMatchers("/code/sms","/login","/register","/druid/**","/home","/callback","/github/**").permitAll()
                 .anyRequest()
-                .permitAll()
 //                允许所有请求通过(开发测试时设置，不设置登录,else测试要抓狂)
                 //坑爹de认证方法
-//                .authenticated()
+                .authenticated()
                 .and()
                 //设置登录方式,和登录接口，登录请求方式必须是Post
                 .formLogin().loginPage("/login")
@@ -124,6 +127,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //禁止security自己创建session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
+        http.logout()
+                //指定退出登录url
+                .logoutUrl("/logout")
+                //清除cookies
+                //.deleteCookies("JSESSIONID")
+                .logoutSuccessHandler(logoutSuccessHandler);
         // 关闭CSRF跨域,开发和测试时较方便，上线时需要开启
        http.cors().and().csrf().disable();
 

@@ -17,7 +17,6 @@ import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
-import com.hnxx.zy.clms.security.test.services.UserService;
 import org.apache.poi.ss.formula.functions.T;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
