@@ -71,22 +71,22 @@ public interface AnswerMapper {
      * @return
      */
     @Select("<script>" +
-            "        select answer_id, question_id, answer_content, answer_good, answer_time, update_time, answer_author, answer_mark from cl_answer\n" +
-            "        where is_deleted = 0 \n" +
+            "        select a.*, u.user_icon userIcon from cl_answer a left join cl_user u on a.answer_author = u.user_name\n" +
+            "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.questionId!=null\">\n" +
-            "            and question_id = #{params.questionId}\n" +
+            "            and a.question_id = #{params.questionId}\n" +
             "        </if>\n" +
             "        <if test=\"params.answerContent!=null and params.answerContent!=''\">\n" +
-            "            and answer_content like CONCAT('%', #{params.answerContent}, '%')\n" +
+            "            and a.answer_content like CONCAT('%', #{params.answerContent}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.answerAuthor!=null and params.answerAuthor!=''\">\n" +
-            "            and answer_author like CONCAT('%', #{params.answerAuthor}, '%')\n" +
+            "            and a.answer_author like CONCAT('%', #{params.answerAuthor}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.answerTime!=null\">\n" +
-            "            and answer_time between #{params.answerTime[0]} and #{params.answerTime[1]}\n" +
+            "            and a.answer_time between #{params.answerTime[0]} and #{params.answerTime[1]}\n" +
             "        </if>\n" +
             "        <if test=\"params.answerMark!=null\">\n" +
-            "            and answer_mark = #{params.answerMark}\n" +
+            "            and a.answer_mark = #{params.answerMark}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +

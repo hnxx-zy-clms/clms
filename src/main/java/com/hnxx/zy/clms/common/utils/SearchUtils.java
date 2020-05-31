@@ -83,7 +83,7 @@ public class SearchUtils {
         List<Question> questionList = questionService.getList();
         for(Question question : questionList) {
             request.add(
-                    new IndexRequest("clms_article_index")
+                    new IndexRequest("clms_question_index")
                             .id(""+question.getQuestionId())
                             .source(JSON.toJSONString(question), XContentType.JSON)
             );

@@ -36,9 +36,9 @@ public class SearchServiceImpl implements SearchService {
 
     @Override
     public SearchResponse searchPageHighlight(SearchPage searchPage) throws IOException {
-        if(searchPage.getPageNo() <= 1){
-            searchPage.setPageNo(1);
-        }
+        // if(searchPage.getPageNo() <= 1){
+        //     searchPage.setPageNo(1);
+        // }
         // 1、创建查询索引
         SearchRequest searchRequest = new SearchRequest(searchPage.getIndex());
         // 2、条件查询

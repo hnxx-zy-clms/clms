@@ -52,6 +52,8 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private ArticleTypeMapper articleTypeMapper;
 
+
+
     //面向对象操作
     @Autowired
     @Qualifier("restHighLevelClient")  //如定义的名称与配置文件一直则不需要这个

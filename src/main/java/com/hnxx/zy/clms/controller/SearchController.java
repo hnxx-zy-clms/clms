@@ -1,17 +1,10 @@
 package com.hnxx.zy.clms.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.SearchPage;
-import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.service.SearchService;
-import org.elasticsearch.action.bulk.BulkRequest;
-import org.elasticsearch.action.bulk.BulkResponse;
-import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.common.text.Text;
-import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**

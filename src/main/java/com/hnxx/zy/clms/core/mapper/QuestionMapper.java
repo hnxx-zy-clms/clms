@@ -35,7 +35,7 @@ public interface QuestionMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_question where is_deleted = 0 and question_id = #{id}")
+    @Select("select q.*, u.user_icon userIcon from cl_question q left join cl_user u on q.question_author = u.user_name where q.is_deleted = 0 and q.question_id = #{id}")
     Question getById(Integer id);
 
     /**
@@ -73,22 +73,22 @@ public interface QuestionMapper {
      * @return
      */
     @Select("<script>" +
-            "        select question_id, question_description, question_content, question_author, question_time, update_time, question_good, answer_count, question_mark from cl_question\n" +
-            "        where is_deleted = 0 \n" +
+            "        select q.*, u.user_icon userIcon from cl_question q left join cl_user u on q.question_author = u.user_name\n" +
+            "        where q.is_deleted = 0 \n" +
             "        <if test=\"params.questionDescription!=null and params.questionDescription!=''\">\n" +
-            "            and question_description like CONCAT('%', #{params.questionDescription}, '%')\n" +
+            "            and q.question_description like CONCAT('%', #{params.questionDescription}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.questionContent!=null and params.questionContent!=''\">\n" +
-            "            and question_content like CONCAT('%', #{params.questionContent}, '%')\n" +
+            "            and q.question_content like CONCAT('%', #{params.questionContent}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.questionAuthor!=null and params.questionAuthor!=''\">\n" +
-            "            and question_author like CONCAT('%', #{params.questionAuthor}, '%')\n" +
+            "            and q.question_author like CONCAT('%', #{params.questionAuthor}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.questionTime!=null\">\n" +
-            "            and question_time between #{params.questionTime[0]} and #{params.questionTime[1]}\n" +
+            "            and q.question_time between #{params.questionTime[0]} and #{params.questionTime[1]}\n" +
             "        </if>\n" +
             "        <if test=\"params.questionMark!=null\">\n" +
-            "            and question_mark = #{params.questionMark}\n" +
+            "            and q.question_mark = #{params.questionMark}\n" +
             "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
@@ -151,6 +151,6 @@ public interface QuestionMapper {
      * 查询所有
      * @return
      */
-    @Select("select * from cl_question where is_deleted = 0")
+    @Select("select q.*, u.user_icon userIcon from cl_question q left join cl_user u on q.question_author = u.user_name where q.is_deleted = 0")
     List<Question> getList();
 }

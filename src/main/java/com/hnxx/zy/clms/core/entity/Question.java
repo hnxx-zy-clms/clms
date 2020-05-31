@@ -86,4 +86,9 @@ public class Question {
      */
     private Integer isDeleted;
 
+    /**
+     * 作者头像 vo属性
+     */
+    private String userIcon;
+
 }

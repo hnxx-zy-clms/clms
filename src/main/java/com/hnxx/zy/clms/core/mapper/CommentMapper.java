@@ -114,7 +114,7 @@ public interface CommentMapper {
      * @return
      */
     @Select("<script>" +
-            "        select c.*, a.article_title  from cl_comment c left join cl_article a on c.comment_article = a.article_id\n" +
+            "        select c.*, a.article_title, u.user_icon userIcon from cl_comment c left join cl_article a on c.comment_article = a.article_id left join cl_user u on c.comment_user = u.user_name\n" +
             "        where c.is_deleted = 0 and c.pid = 0\n" +
             "        <if test=\"params.commentArticle!=null\">\n" +
             "            and c.comment_article = #{params.commentArticle}\n" +

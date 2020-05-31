@@ -111,5 +111,10 @@ public class Article {
      */
     private List<Comment> commentList = new ArrayList<>();
 
+    /**
+     * 作者头像 vo属性
+     */
+    private String userIcon;
+
 }
 

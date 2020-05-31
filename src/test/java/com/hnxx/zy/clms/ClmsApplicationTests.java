@@ -98,23 +98,23 @@ class ClmsApplicationTests {
         BulkRequest request = new BulkRequest();
         request.timeout("10s");
         // 获取数据库的article数据
-        List<Article> articleList = articleService.getList();
-        for(Article article : articleList) {
-            request.add(
-                    new IndexRequest("clms_article_index")
-                            .id(""+article.getArticleId())
-                            .source(JSON.toJSONString(article), XContentType.JSON)
-            );
-        }
-
-        // List<Question> questionList = questionService.getList();
-        // for(Question question : questionList) {
+        // List<Article> articleList = articleService.getList();
+        // for(Article article : articleList) {
         //     request.add(
-        //             new IndexRequest("clms_question_index")
-        //                 .id(""+question.getQuestionId())
-        //                 .source(JSON.toJSONString(question), XContentType.JSON)
+        //             new IndexRequest("clms_article_index")
+        //                     .id(""+article.getArticleId())
+        //                     .source(JSON.toJSONString(article), XContentType.JSON)
         //     );
         // }
+
+        List<Question> questionList = questionService.getList();
+        for(Question question : questionList) {
+            request.add(
+                    new IndexRequest("clms_question_index")
+                        .id(""+question.getQuestionId())
+                        .source(JSON.toJSONString(question), XContentType.JSON)
+            );
+        }
         // 客户端执行请求
         BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
         // 返回是否失败状态

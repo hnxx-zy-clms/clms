@@ -34,7 +34,7 @@ public interface ArticleMapper {
      * @param id
      * @return
      */
-    @Select("select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id  where a.article_id = #{id} and a.is_deleted = 0")
+    @Select("select a.*, t.type_name, u.user_icon userIcon from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name  where a.article_id = #{id} and a.is_deleted = 0")
     Article getById(Integer id);
 
     /**
@@ -98,7 +98,7 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id \n" +
+            "        select a.*, t.type_name, u.user_icon userIcon from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name \n" +
             "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
@@ -122,7 +122,7 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select count(*) from cl_article a left join cl_article_type t on a.article_type = t.type_id\n" +
+            "        select count(*) from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name\n" +
             "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
@@ -201,6 +201,6 @@ public interface ArticleMapper {
      * 查询所有
      * @return
      */
-    @Select("select a.*, t.type_name from cl_article a left join cl_article_type t on a.article_type = t.type_id  where a.is_deleted = 0")
+    @Select("select a.*, t.type_name, u.user_icon userIcon from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name  where a.is_deleted = 0")
     List<Article> getList();
 }

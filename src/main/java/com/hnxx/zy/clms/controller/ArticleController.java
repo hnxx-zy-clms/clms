@@ -63,6 +63,17 @@ public class ArticleController {
     }
 
     /**
+     * 查询所有
+     * @param
+     * @return
+     */
+    @GetMapping("/getList")
+    public Result<List<Article>> getList(){
+        List<Article> articleList = articleService.getList();
+        return new Result<>(articleList);
+    }
+
+    /**
      * 更新成功
      * @param article
      * @return

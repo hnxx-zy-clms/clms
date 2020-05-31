@@ -83,4 +83,9 @@ public class Comment implements Serializable {
      * 评论列表
      */
     private List<Comment> commentList = new ArrayList<>();
+
+    /**
+     * 作者头像 vo属性
+     */
+    private String userIcon;
 }
