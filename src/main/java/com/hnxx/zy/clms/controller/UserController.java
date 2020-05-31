@@ -48,7 +48,6 @@ public class UserController {
         return new Result<>(users);
     }
 
-
     /**
      * 根据id查询用户信息
      *

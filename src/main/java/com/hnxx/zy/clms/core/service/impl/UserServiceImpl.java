@@ -82,15 +82,15 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 根据用户id或用户名查询组名和用户信息
+     * 根据用户id或用户名查询用户信息
      * @param user
      * @return
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public List<UserSearch> getByGroup(User user) {
-        List<UserSearch> group = userMapper.getByGroup(user);
-        return group;
+        List<UserSearch> users = userMapper.getByGroup(user);
+        return users;
     }
 
     /**

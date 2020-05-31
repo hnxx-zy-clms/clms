@@ -22,6 +22,16 @@ public class UserSearch<T> implements Serializable {
     private String groupName;
 
     /**
+     * 班级名
+     */
+    private String classesName;
+
+    /**
+     * 学院名
+     */
+    private String collegeName;
+
+    /**
      * 用户id
      */
     private Integer userId;
@@ -82,11 +92,6 @@ public class UserSearch<T> implements Serializable {
      * 用户职称id
      */
     private int userPositionId;
-
-    /**
-     * 用户状态(0,1)
-     */
-    private Long userStatus;
 
     /**
      * 是否启用(1为启用，0为弃用，默认为1)

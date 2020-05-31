@@ -60,7 +60,7 @@ public interface UserService {
     String selectByGroupId(Integer id);
 
     /**
-     * 根据用户id或用户名查询用户详细信息
+     * 根据用户id或用户名获取用户详细信息
      *
      * @param user
      * @return
@@ -78,12 +78,14 @@ public interface UserService {
 
     /**
      * 打印测试用户信息
+     * @param username
      * @return
      */
     User selectByName(String username);
 
     /**
      * 打印测试用户信息
+     * @param userId
      * @return
      */
     User selectById(Integer userId);
@@ -96,11 +98,13 @@ public interface UserService {
 
     /**
      * 获取登录用户名
+     * @param name
      * @return
      */
     Integer selectUserId(String name);
     /**
      * 获取班级、组人数
+     * @param page
      * @return
      */
     int getUserNum(Page<ReportStatistics> page);

@@ -99,9 +99,11 @@ public interface UserMapper {
      * @return
      */
     @Select("<script>" +
-            "       select a.*, b.group_name\n" +
-            "       from cl_user as a left join cl_group as b\n" +
+            "       select a.*, b.group_name, c.classes_name, d.college_name\n" +
+            "       from (cl_user as a left join cl_group as b\n" +
             "       on a.user_group_id = group_id\n" +
+            "       left join cl_classes as c on user_classes_id = classes_id\n" +
+            "       left join cl_college as d on user_college_id = college_id)\n" +
             "       group by a.user_id asc" +
             "</script>")
     List<UserSearch> getUserByPage();
@@ -114,7 +116,7 @@ public interface UserMapper {
      */
     @Insert("<script>" +
             "       insert into cl_user(user_id,user_name,user_password,user_icon,\n" +
-            "       created_time,update_time,is_enabled)\n" +
+            "       created_time,updated_time,is_enabled)\n" +
             "       values(#{userId},#{userName},#{userPassword},#{userIcon},\n" +
             "       #{createdTime},#{updatedTime},#{isEnabled})\n"+
             "</script>")
@@ -127,9 +129,11 @@ public interface UserMapper {
      * @return
      */
     @Select("<script>" +
-            "       select a.*, b.group_name\n" +
-            "       from cl_user as a left join cl_group as b\n" +
+            "       select a.*, b.group_name, c.classes_name, d.college_name\n" +
+            "       from (cl_user as a left join cl_group as b\n" +
             "       on a.user_group_id = group_id\n" +
+            "       left join cl_classes as c on user_classes_id = classes_id\n" +
+            "       left join cl_college as d on user_college_id = college_id)\n" +
             "       where a.user_id = #{id}\n" +
             "</script>")
     UserSearch getById(Integer id);
@@ -147,7 +151,7 @@ public interface UserMapper {
      *
      * @param user
      */
-    @Update("update cl_user set user_id=#{userId updated_time=#{updatedTime}where id=#{id}")
+    @Update("update cl_user set user_id=#{userId} updated_time=#{updatedTime} where id=#{id}")
     void updateUserById(User user);
 
     /**
@@ -176,17 +180,18 @@ public interface UserMapper {
 
     /**
      * 根据用户id或者用户名查询用户信息
-     * 左连接查询
+     * 四表左连接查询
      * @param user
      * @return
      */
     @Select("<script>" +
-            "       select a.*, b.group_name\n" +
-            "       from cl_user as a left join cl_group as b\n" +
+            "       select a.*, b.group_name, c.classes_name, d.college_name\n" +
+            "       from (cl_user as a left join cl_group as b\n" +
             "       on a.user_group_id = group_id\n" +
+            "       left join cl_classes as c on user_classes_id = classes_id\n" +
+            "       left join cl_college as d on user_college_id = college_id)\n" +
             "       where (a.user_id = #{userId} or a.user_name = #{userName} )and is_deleted = 0\n" +
             "       group by a.user_id asc" +
             "</script>")
     List<UserSearch> getByGroup(User user);
 }
-
