@@ -33,13 +33,32 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 新增用户(登录信息)
+     * 新增用户
+     *
      * @param user
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void insertUser(User user) {
-        userMapper.insertUser(user);
+        User userTable = new User();
+        userTable.setUserId(user.getUserId());
+        userTable.setUserName(user.getUserName());
+        userTable.setUserPassword(user.getUserPassword());
+        userTable.setMobile(user.getMobile());
+        userTable.setSex(user.getSex());
+        userTable.setName(user.getName());
+        userTable.setUserCollegeId(user.getUserCollegeId());
+        userTable.setUserClassesId(user.getUserClassesId());
+        userTable.setUserGroupId(user.getUserGroupId());
+        userTable.setUserIcon(user.getUserIcon());
+        userTable.setUserDescription(user.getUserDescription());
+        Date date = new Date();
+        userTable.setCreatedTime(date);
+        userTable.setUpdatedTime(user.getCreatedTime());
+        userTable.setUserPositionId(user.getUserPositionId());
+        userTable.setIsEnabled(user.getIsEnabled());
+        userTable.setIsDeleted(user.getIsDeleted());
+        userMapper.insertUser(userTable);
     }
 
     /**
@@ -56,22 +75,29 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据用户id删除用户(将删除标识位置为1)
+     *
      * @param id
      * @return
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void deleteOneById(Integer id) { ;
+    public void deleteOneById(Integer id) {
         userMapper.deleteOneById(id);
     }
 
+    /**
+     * 更新用户操作时间
+     *
+     * @param id
+     */
     @Override
-    public void updateUserById(User user) {
-
+    public void updateTimeById(Integer id) {
+        userMapper.updateTimeById(id);
     }
 
     /**
      * 根据用户id查询组Id
+     *
      * @param id
      * @return
      */
@@ -83,6 +109,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据用户id或用户名查询用户信息
+     *
      * @param user
      * @return
      */
@@ -95,6 +122,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 获取用户详细信息(分页)
+     * 直接查询所有用户然后交给PageInfo分割
      *
      * @param pageNum
      * @param pageSize
@@ -102,9 +130,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public PageInfo getUserByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         List<UserSearch> list = userMapper.getUserByPage();
-        PageInfo pageInfo =new PageInfo<>(list);
+        PageInfo pageInfo = new PageInfo<>(list);
         return pageInfo;
     }
 
@@ -150,4 +178,15 @@ public class UserServiceImpl implements UserService {
         userMapper.updateUserIconById(userId, userIcon);
     }
 
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    @Override
+//    @Transactional(rollbackFor = Exception.class)
+    public void updateById(UserSearch user) {
+        user.setUpdatedTime(new Date());
+        userMapper.updateById(user);
+    }
 }

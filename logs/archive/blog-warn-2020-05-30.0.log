@@ -1,0 +1,1 @@
+2020-05-30 04:37:01.543 WARN  [http-nio-8080-exec-2]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'id' for method parameter of type Integer]

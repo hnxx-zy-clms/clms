@@ -77,9 +77,18 @@ public class UserController {
      * @return
      */
     @PostMapping("/add")
-    public Result insertUser(@RequestBody User user){
-        userService.insertUser(user);
-        return new Result<>("保存成功");
+    public Result<Object> insertUser(@RequestBody User user){
+        if (user.getUserName()==null||user.getUserName()==""){
+            return new Result("用户名不能为空");
+        }else if (user.getUserPassword()==null||user.getUserPassword()==""){
+            return new Result("密码不能为空");
+        }
+        else {
+            userService.insertUser(user);
+            UserSearch ss = userService.getById(user.getUserId());
+            System.out.println(ss);
+            return new Result<>("保存成功");
+        }
     }
 
     /**
@@ -94,7 +103,26 @@ public class UserController {
             return new Result("请勿重复删除");
         }else {
             userService.deleteOneById(id);
+            userService.updateTimeById(id);
             return new Result("删除成功");
+        }
+    }
+
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    @PutMapping("/update/byId")
+    public Result updateById(@RequestBody UserSearch user){
+        if (user.getUserName()==null||user.getUserName()==""){
+            return new Result("用户名不能为空");
+        }else if (user.getUserPassword()==null||user.getUserPassword()==""){
+            return new Result("密码不能为空");
+        }
+        else {
+            userService.updateById(user);
+            return new Result("更新成功");
         }
     }
 }

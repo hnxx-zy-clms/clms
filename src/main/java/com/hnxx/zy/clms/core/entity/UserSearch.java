@@ -5,7 +5,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author 南街北巷
@@ -47,6 +46,16 @@ public class UserSearch<T> implements Serializable {
     private String userPassword;
 
     /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
+     * 性别
+     */
+    private String sex;
+
+    /**
      * 姓名
      */
     private String name;
@@ -54,7 +63,7 @@ public class UserSearch<T> implements Serializable {
     /**
      * 学院id
      */
-    private String useCollegeId;
+    private String userCollegeId;
 
     /**
      * 班级id

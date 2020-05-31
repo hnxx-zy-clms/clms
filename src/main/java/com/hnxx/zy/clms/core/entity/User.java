@@ -32,6 +32,11 @@ public class User {
     private String mobile;
 
     /**
+     * 性别
+     */
+    private String sex;
+
+    /**
      * 姓名
      */
     private String name;
@@ -39,7 +44,7 @@ public class User {
     /**
      * 学院id
      */
-    private String useCollegeId;
+    private String userCollegeId;
 
     /**
      * 班级id
@@ -77,11 +82,6 @@ public class User {
      * 用户职称id
      */
     private int userPositionId;
-
-    /**
-     * 用户状态(0,1)
-     */
-    private Long userStatus;
 
     /**
      * 是否启用(1为启用，0为弃用，默认为1)

@@ -22,16 +22,8 @@ public interface UserService {
     Page<User> getByPage(Page<User> page);
 
     /**
-     * 新增用户
-     *
-     * @param user
-     * @return
-     */
-    void insertUser(User user);
-
-    /**
      * 根据id查询用户信息
-     *
+     * 包括弃用的和删除的
      * @param id
      * @return
      */
@@ -45,11 +37,11 @@ public interface UserService {
     void deleteOneById(Integer id);
 
     /**
-     * 修改用户
+     * 更新用户操作时间
      *
-     * @param user
+     * @param id
      */
-    void updateUserById(User user);
+    void updateTimeById(Integer id);
 
     /**
      * 根据用户id查询组Id
@@ -122,4 +114,20 @@ public interface UserService {
      * @param userIcon
      */
     void updateUserIconById(Integer userId,String userIcon);
+
+    /**
+     * 新增用户
+     *
+     * @param user
+     * @return
+     */
+    void insertUser(User user);
+
+
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    void updateById(UserSearch user);
 }
