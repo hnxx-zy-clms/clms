@@ -45,15 +45,87 @@ public class GoodServiceImpl implements GoodService {
     }
 
     /**
-     * 用户文章点赞
+     * 用户文章是否点赞
      * @param aid
      * @param uid
      * @return
      */
     @Override
-    public int getGoodCount(Integer uid, Integer aid) {
+    public int getGoodCountForArticle(Integer uid, Integer aid) {
         int count = 0;
-        List<Good> goods = goodMapper.getGoodCount(uid, aid);
+        List<Good> goods = goodMapper.getGoodCountForArticle(uid, aid);
+        if(goods.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户评论是否点赞
+     * @param cid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getGoodCountForComment(Integer uid, Integer cid) {
+        int count = 0;
+        List<Good> goods = goodMapper.getGoodCountForComment(uid, cid);
+        if(goods.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户提问是否点赞
+     * @param qid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getGoodCountForQuestion(Integer uid, Integer qid) {
+        int count = 0;
+        List<Good> goods = goodMapper.getGoodCountForQuestion(uid, qid);
+        if(goods.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户答复是否点赞
+     * @param sid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getGoodCountForAnswer(Integer uid, Integer sid) {
+        int count = 0;
+        List<Good> goods = goodMapper.getGoodCountForAnswer(uid, sid);
+        if(goods.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户视频是否点赞
+     * @param vid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getGoodCountForVideo(Integer uid, Integer vid) {
+        int count = 0;
+        List<Good> goods = goodMapper.getGoodCountForVideo(uid, vid);
         if(goods.size() == 0) {
             count = 0;
         }else {

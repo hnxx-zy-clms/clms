@@ -88,4 +88,9 @@ public class Comment implements Serializable {
      * 作者头像 vo属性
      */
     private String userIcon;
+
+    /**
+     * 评论点赞标识 仅用于前端展示，不做数据持久化
+     */
+    private boolean goodCommentFlag = false;
 }

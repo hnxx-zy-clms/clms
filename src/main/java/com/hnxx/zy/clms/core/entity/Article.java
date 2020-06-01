@@ -116,5 +116,10 @@ public class Article {
      */
     private String userIcon;
 
+    /**
+     * 文章点赞标识符
+     */
+    private boolean goodArticleFlag = false;
+
 }
 

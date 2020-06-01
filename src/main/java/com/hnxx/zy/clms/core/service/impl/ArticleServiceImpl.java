@@ -13,10 +13,13 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import com.hnxx.zy.clms.core.entity.Comment;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.ArticleService;
+import com.hnxx.zy.clms.core.service.GoodService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.apache.poi.ss.formula.functions.T;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -51,6 +54,12 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     private ArticleTypeMapper articleTypeMapper;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private GoodService goodService;
 
 
 
@@ -123,6 +132,16 @@ public class ArticleServiceImpl implements ArticleService {
     public Page<Article> getByPage(Page<Article> page) {
         // 先查询数据
         List<Article> articleList = articleMapper.getByPage(page);
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        int uid = user.getUserId();
+        articleList.forEach( article -> {
+            int count = goodService.getGoodCountForArticle(uid, article.getArticleId());
+            if(count == 0){
+                article.setGoodArticleFlag(false);
+            }else {
+                article.setGoodArticleFlag(true);
+            }
+        } );
         page.setList(articleList);
         // 再查询总数
         int totalCount = articleMapper.getCountByPage(page);

@@ -10,10 +10,14 @@ import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.AnswerMapper;
 import com.hnxx.zy.clms.core.mapper.QuestionMapper;
+import com.hnxx.zy.clms.core.service.GoodService;
 import com.hnxx.zy.clms.core.service.QuestionService;
+import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +31,12 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
     private AnswerMapper answerMapper;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private GoodService goodService;
 
 
     @Override
@@ -61,6 +71,16 @@ public class QuestionServiceImpl implements QuestionService {
     public Page<Question> getByPage(Page<Question> page) {
         // 先查询数据
         List<Question> questionList = questionMapper.getByPage(page);
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        int uid = user.getUserId();
+        questionList.forEach( question -> {
+            int count = goodService.getGoodCountForQuestion(uid, question.getQuestionId());
+            if(count == 0){
+                question.setGoodQuestionFlag(false);
+            }else {
+                question.setGoodQuestionFlag(true);
+            }
+        } );
         page.setList(questionList);
         // 在查询总数
         int totalCount = questionMapper.getCountByPage(page);

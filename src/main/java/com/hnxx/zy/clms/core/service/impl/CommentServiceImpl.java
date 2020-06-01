@@ -10,21 +10,25 @@ import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Comment;
+import com.hnxx.zy.clms.core.entity.Good;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.Xxx;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
 import com.hnxx.zy.clms.core.service.CommentService;
+import com.hnxx.zy.clms.core.service.GoodService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -34,6 +38,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private GoodService goodService;
 
     /**
      * 保存,添加
@@ -132,6 +139,16 @@ public class CommentServiceImpl implements CommentService {
     public Page<Comment> getCommentList(Page<Comment> page) {
         // 查询数据
         List<Comment> commentList = commentMapper.getCommentList(page);
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        int uid = user.getUserId();
+        commentList.forEach( comment -> {
+            int count = goodService.getGoodCountForComment(uid, comment.getCommentId());
+            if(count == 0){
+                comment.setGoodCommentFlag(false);
+            }else {
+                comment.setGoodCommentFlag(true);
+            }
+        } );
         page.setList(commentList);
         // 查询总数
         int totalCount = commentMapper.getCountByPage(page);
@@ -143,9 +160,20 @@ public class CommentServiceImpl implements CommentService {
     public Page<Comment> getByPage(Page<Comment> page) {
         // 查询数据
         List<Comment> commentList = commentMapper.getByPage(page);
+        // 查询点赞状态
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        int uid = user.getUserId();
+        commentList.forEach( comment -> {
+            int count = goodService.getGoodCountForComment(uid, comment.getCommentId());
+            if(count == 0){
+                comment.setGoodCommentFlag(false);
+            }else {
+                comment.setGoodCommentFlag(true);
+            }
+        } );
         page.setList(commentList);
         // 查询总数
-        int totalCount = commentMapper.getCountByPage(page);
+        int totalCount = commentMapper.getChildCountByPage(page);
         page.setTotalCount(totalCount);
         return page;
     }

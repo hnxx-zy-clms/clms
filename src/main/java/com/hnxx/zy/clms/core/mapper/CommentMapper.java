@@ -132,7 +132,7 @@ public interface CommentMapper {
      * @return
      */
     @Select("<script>" +
-            "        select c.*, a.article_title  from cl_comment c left join cl_article a on c.comment_article = a.article_id\n" +
+            "        select c.*, a.article_title, u.user_icon userIcon from cl_comment c left join cl_article a on c.comment_article = a.article_id left join cl_user u on c.comment_user = u.user_name\n" +
             "        where c.is_deleted = 0 \n" +
             "        <if test=\"params.commentContent!=null and params.commentContent!=''\">\n" +
             "            and c.comment_content like CONCAT('%', #{params.commentContent}, '%')\n" +
@@ -165,16 +165,27 @@ public interface CommentMapper {
      * @return
      */
     @Select("<script>" +
-            "        select count(*) from cl_comment c left join cl_article a on c.comment_article = a.article_id\n" +
-            "        where c.is_deleted = 0\n" +
+            "        select count(*) from cl_comment c left join cl_article a on c.comment_article = a.article_id left join cl_user u on c.comment_user = u.user_name\n" +
+            "        where c.is_deleted = 0 and c.pid = 0\n" +
+            "        <if test=\"params.commentArticle!=null\">\n" +
+            "            and c.comment_article = #{params.commentArticle}\n" +
+            "        </if>\n" +
+            "</script>")
+    int getCountByPage(Page<Comment> page);
+
+    /**
+     * 统计总数
+     * @param page
+     * @return
+     */
+    @Select("<script>" +
+            "        select count(*) from cl_comment c left join cl_article a on c.comment_article = a.article_id left join cl_user u on c.comment_user = u.user_name\n" +
+            "        where c.is_deleted = 0 \n" +
             "        <if test=\"params.commentContent!=null and params.commentContent!=''\">\n" +
             "            and c.comment_content like CONCAT('%', #{params.commentContent}, '%')\n" +
             "        </if>\n" +
             "        <if test=\"params.commentId!=null\">\n" +
             "            and c.comment_id = #{params.commentId}\n" +
-            "        </if>\n" +
-            "        <if test=\"params.commentArticle!=null\">\n" +
-            "            and c.comment_article = #{params.commentArticle}\n" +
             "        </if>\n" +
             "        <if test=\"params.commentUser!=null and params.commentUser!=''\">\n" +
             "            and c.comment_user = #{params.commentUser}\n" +
@@ -189,8 +200,5 @@ public interface CommentMapper {
             "            and c.pid = #{params.pid}\n" +
             "        </if>\n" +
             "</script>")
-    int getCountByPage(Page<Comment> page);
-
-
-
+    int getChildCountByPage(Page<Comment> page);
 }

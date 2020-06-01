@@ -91,4 +91,9 @@ public class Question {
      */
     private String userIcon;
 
+    /**
+     * 提问点赞标识 仅用于前端展示，不做数据持久化
+     */
+    private boolean goodQuestionFlag = false;
+
 }

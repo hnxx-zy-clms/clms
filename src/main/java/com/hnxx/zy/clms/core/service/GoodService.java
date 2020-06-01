@@ -46,5 +46,37 @@ public interface GoodService {
      * @param uid
      * @return
      */
-    int getGoodCount(Integer uid, Integer aid);
+    int getGoodCountForArticle(Integer uid, Integer aid);
+
+    /**
+     * 根据uid和cid查询点赞情况
+     * @param cid
+     * @param uid
+     * @return
+     */
+    int getGoodCountForComment(Integer uid, Integer cid);
+
+    /**
+     * 根据uid和qid查询点赞情况
+     * @param uid
+     * @param qid
+     * @return
+     */
+    int getGoodCountForQuestion(Integer uid, Integer qid);
+
+    /**
+     * 根据uid和aid查询点赞情况
+     * @param uid
+     * @param sid
+     * @return
+     */
+    int getGoodCountForAnswer(Integer uid, Integer sid);
+
+    /**
+     * 根据uid和vid查询点赞情况
+     * @param uid
+     * @param vid
+     * @return
+     */
+    int getGoodCountForVideo(Integer uid, Integer vid);
 }

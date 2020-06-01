@@ -58,7 +58,7 @@ public class GoodController {
                     continue;
                 }else {
                     if (uid == oldGood.getUserId() && aid == oldGood.getArticleId()) {
-                        return new Result<>("点赞成功!");
+                        return new Result<>("文章点赞成功!(重复点赞)");
                     }
                 }
             }
@@ -71,11 +71,50 @@ public class GoodController {
                     continue;
                 }else {
                     if (uid == oldGood.getUserId() && cid == oldGood.getCommentId()) {
-                        return new Result<>("点赞成功!");
+                        return new Result<>("评论点赞成功!(重复点赞)");
                     }
                 }
             }
             goodMapper.goodComment(cid);
+        } else if (good.getQuestionId() != null) {
+            // 获取提问id
+            int qid = good.getQuestionId();
+            for (Good oldGood : goodList) {
+                if(oldGood.getQuestionId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && qid == oldGood.getQuestionId()) {
+                        return new Result<>("提问点赞成功!(重复点赞)");
+                    }
+                }
+            }
+            goodMapper.goodQuestion(qid);
+        } else if (good.getAnswerId() != null) {
+            // 获取答复id
+            int sid = good.getAnswerId();
+            for (Good oldGood : goodList) {
+                if(oldGood.getAnswerId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && sid == oldGood.getAnswerId()) {
+                        return new Result<>("答复点赞成功!(重复点赞)");
+                    }
+                }
+            }
+            goodMapper.goodAnswer(sid);
+        } else if (good.getVideoId() != null) {
+            // 获取视频id
+            int vid = good.getVideoId();
+            for (Good oldGood : goodList) {
+                if(oldGood.getVideoId() == null){
+                    continue;
+                }else {
+                    if (uid == oldGood.getUserId() && vid == oldGood.getVideoId()) {
+                        return new Result<>("视频点赞成功!(重复点赞)");
+                    }
+                }
+            }
+            goodMapper.goodVideo(vid);
         }
         goodService.doGood(good);
         return new Result<>("点赞成功!");
@@ -83,24 +122,45 @@ public class GoodController {
 
     /**
      * 根据用户id查询点赞信息
-     * @param id
      * @return
      */
-    @GetMapping("/getList/{id}")
-    public Result<List<Good>> getList(@PathVariable("id") Integer id){
+    @GetMapping("/getList")
+    public Result<List<Good>> getList(){
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Integer id = user.getUserId();
         List<Good> goodList = goodService.getListByUserId(id);
         return new Result<>(goodList);
     }
 
     /**
-     * 根据登录用户id查询当前文章点赞信息
+     * 根据登录用户id查询当前目标点赞信息
      * @return
      */
-    @GetMapping("/getGood/{articleId}")
-    public Result<Integer> getGood(@PathVariable("articleId") Integer aid){
+    @PostMapping("/getGood")
+    public Result<Integer> getGood(@RequestBody Good good){
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         Integer uid = user.getUserId();
-        int count = goodService.getGoodCount(uid,aid);
+        int count = 0;
+        // 获取查询对象的id
+        // 走文章、评论、提问、答复、视频 点赞查询
+        if(good.getArticleId() != null) {
+            int aid = good.getArticleId();
+            count = goodService.getGoodCountForArticle(uid,aid);
+        }else if(good.getCommentId() != null) {
+            int cid = good.getCommentId();
+            count = goodService.getGoodCountForComment(uid,cid);
+        }else if(good.getQuestionId() != null) {
+            int qid = good.getQuestionId();
+            count = goodService.getGoodCountForQuestion(uid, qid);
+        }else if(good.getAnswerId() != null) {
+            int sid = good.getAnswerId();
+            count = goodService.getGoodCountForAnswer(uid, sid);
+        }else if(good.getVideoId() != null) {
+            int vid = good.getVideoId();
+            count = goodService.getGoodCountForVideo(uid, vid);
+        }else {
+            return new Result<>("参数操作");
+        }
         return new Result<>(count);
     }
 

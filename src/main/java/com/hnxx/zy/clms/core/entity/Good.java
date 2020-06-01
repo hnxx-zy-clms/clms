@@ -32,6 +32,21 @@ public class Good {
     private Integer commentId;
 
     /**
+     * 问题id
+     */
+    private Integer questionId;
+
+    /**
+     * 答复id
+     */
+    private Integer answerId;
+
+    /**
+     * 视屏id
+     */
+    private Integer videoId;
+
+    /**
      * 点赞时间
      */
     private String goodTime;

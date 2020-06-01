@@ -7,7 +7,10 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
+import com.hnxx.zy.clms.core.entity.Answer;
+import com.hnxx.zy.clms.core.entity.Comment;
 import com.hnxx.zy.clms.core.entity.Good;
+import com.hnxx.zy.clms.core.entity.Question;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -33,10 +36,32 @@ public interface GoodMapper {
     void goodComment(int cid);
 
     /**
+     * 问题 点赞 good +1
+     * @param qid
+     */
+    @Update("update cl_question set question_good = question_good + 1 where question_id = #{qid}")
+    void goodQuestion(int qid);
+
+    /**
+     * 答复 点赞 good +1
+     * @param sid
+     */
+    @Update("update cl_answer set answer_good = answer_good + 1 where answer_id = #{sid}")
+    void goodAnswer(int sid);
+
+    /**
+     * 视频 点赞 good +1
+     * @param vid
+     */
+    @Update("update cl_video set like = like + 1 where video_id = #{vid}")
+    void goodVideo(int vid);
+
+    /**
      * 保存点赞
      * @param good
      */
-    @Insert("insert into cl_good(good_id, user_id, article_id, comment_id) values (#{goodId}, #{userId}, #{articleId}, #{commentId})")
+    @Insert("insert into cl_good(user_id, article_id, comment_id, question_id, answer_id, video_id) " +
+            "values (#{userId}, #{articleId}, #{commentId}, #{questionId}, #{answerId}, #{videoId})")
     void save(Good good);
 
     /**
@@ -54,7 +79,43 @@ public interface GoodMapper {
      * @return
      */
     @Select("select * from cl_good where user_id = #{userId} and article_id = #{articleId}")
-    List<Good> getGoodCount(@Param("userId") Integer uid, @Param("articleId") Integer aid);
+    List<Good> getGoodCountForArticle(@Param("userId") Integer uid, @Param("articleId") Integer aid);
+
+    /**
+     * 根据用户id和评论id查询评论点赞信息集合
+     * @param uid
+     * @param cid
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{userId} and comment_id = #{commentId}")
+    List<Good> getGoodCountForComment(@Param("userId") Integer uid, @Param("commentId") Integer cid);
+
+    /**
+     * 根据用户id和提问id查询提问点赞信息集合
+     * @param uid
+     * @param qid
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{userId} and question_id = #{questionId}")
+    List<Good> getGoodCountForQuestion(@Param("userId") Integer uid, @Param("questionId") Integer qid);
+
+    /**
+     * 根据用户id和答复id查询答复点赞信息集合
+     * @param uid
+     * @param sid
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{userId} and answer_id = #{answerId}")
+    List<Good> getGoodCountForAnswer(@Param("userId") Integer uid, @Param("answerId") Integer sid);
+
+    /**
+     * 根据用户id和视频id查询视频点赞信息集合
+     * @param uid
+     * @param vid
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{userId} and video_id = #{videoId}")
+    List<Good> getGoodCountForVideo(@Param("userId") Integer uid, @Param("videoId") Integer vid);
 
     /**
      * 分页查询
