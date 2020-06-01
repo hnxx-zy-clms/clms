@@ -28,10 +28,24 @@ public class VideoCommentServiceImpl implements VideoCommentService {
         for (VideoComment videoComment : videoCommentList){
             List<VideoComment> list=videoCommentMapper.getVideoCommentParentById(videoComment.getVideoCommentId());
             i = i+list.size()+1;
+            videoComment.setVideoCommentParentSum(list.size());
+            if (list.size() > 2){
+                list=list.subList(0,2);
+            }
             videoComment.setVideoCommentList(list);
         }
         page.params.put("videoCommentParentSum",i);
         return videoCommentList;
+    }
+
+    @Override
+    public List<VideoComment> getVideoCommentParentById(Integer id) {
+        return videoCommentMapper.getVideoCommentParentById(id);
+    }
+
+    @Override
+    public void setVideoComment(VideoComment videoComment) {
+        videoCommentMapper.setVideoComment(videoComment);
     }
 
 }

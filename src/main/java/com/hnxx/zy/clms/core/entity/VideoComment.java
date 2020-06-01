@@ -32,7 +32,7 @@ public class VideoComment implements Serializable {
     /**
      * 评论人
      */
-    private String videoCommentUserId;
+    private Integer videoCommentUserId;
 
     /**
      * 评论人

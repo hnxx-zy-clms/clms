@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.VideoComment;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -19,5 +20,19 @@ public interface VideoCommentService {
      * @return
      */
     List<VideoComment> getVideoCommentById(Page<VideoComment> page);
+
+    /**
+     * 根据视频ID查询
+     * @param id
+     * @return
+     */
+    List<VideoComment>  getVideoCommentParentById(Integer id);
+
+    /**
+     * 添加评论
+     * @param videoComment
+     * @return
+     */
+    void setVideoComment(VideoComment videoComment);
 
 }

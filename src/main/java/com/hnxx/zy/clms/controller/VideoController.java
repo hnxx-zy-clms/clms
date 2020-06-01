@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @program: clms
  * @description: 视频控制类
@@ -30,6 +32,12 @@ public class VideoController {
     @GetMapping("/getVideo/{id}")
     public Result<Video> getVideo(@PathVariable Integer id){
         Video video = videoService.getVideoById(id);
+        return new Result<>(video);
+    }
+
+    @GetMapping("/recommendVideo/{id}/{type}")
+    public Result<List<Video>> recommendVideo(@PathVariable String id, @PathVariable Integer type){
+        List<Video> video = videoService.recommendVideo(id, type);
         return new Result<>(video);
     }
 }
