@@ -201,7 +201,7 @@ public interface UserMapper {
             "                #{userCollegeId},#{userClassesId}, #{userGroupId}, #{userIcon}, #{userDescription},\n" +
             "                #{createdTime}, #{updatedTime}, #{userPositionId}, #{isEnabled}, #{isDeleted})" +
             "</script>")
-    void insertUser(User user);
+    void insertUser(UserSearch user);
 
     /**
      * 更新用户信息
@@ -230,4 +230,18 @@ public interface UserMapper {
             "           where user_id = #{userId}\n" +
             "</script>")
     void updateById(UserSearch user);
+
+    /**
+     * 启用
+     * @param id
+     */
+    @Update("update cl_user set is_enabled = 1 where user_id = #{id}")
+    void updateEnable(Integer id);
+
+    /**
+     * 弃用
+     * @param id
+     */
+    @Update("update cl_user set is_enabled = 0 where user_id = #{id}")
+    void updateDisable(Integer id);
 }

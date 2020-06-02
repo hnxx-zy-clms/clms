@@ -77,7 +77,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/add")
-    public Result<Object> insertUser(@RequestBody User user){
+    public Result<Object> insertUser(@RequestBody UserSearch user){
         if (user.getUserName()==null||user.getUserName()==""){
             return new Result("用户名不能为空");
         }else if (user.getUserPassword()==null||user.getUserPassword()==""){
@@ -85,8 +85,6 @@ public class UserController {
         }
         else {
             userService.insertUser(user);
-            UserSearch ss = userService.getById(user.getUserId());
-            System.out.println(ss);
             return new Result<>("保存成功");
         }
     }
@@ -124,5 +122,27 @@ public class UserController {
             userService.updateById(user);
             return new Result("更新成功");
         }
+    }
+
+    /**
+     * 启用
+     * @param id
+     * @return
+     */
+    @PutMapping("/enable/{id}")
+    public Result updateEnable(@PathVariable("id") Integer id){
+        userService.updateEnable(id);
+        return new Result("启用成功");
+    }
+
+    /**
+     * 启用
+     * @param id
+     * @return
+     */
+    @PutMapping("/disable/{id}")
+    public Result updateDisable(@PathVariable("id") Integer id){
+        userService.updateDisable(id);
+        return new Result("弃用成功");
     }
 }

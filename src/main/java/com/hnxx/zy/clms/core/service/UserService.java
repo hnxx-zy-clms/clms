@@ -5,6 +5,7 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -121,7 +122,7 @@ public interface UserService {
      * @param user
      * @return
      */
-    void insertUser(User user);
+    void insertUser(UserSearch user);
 
 
     /**
@@ -130,4 +131,16 @@ public interface UserService {
      * @return
      */
     void updateById(UserSearch user);
+
+    /**
+     * 启用
+     * @param id
+     */
+    void updateEnable(Integer id);
+
+    /**
+     * 弃用
+     * @param id
+     */
+    void updateDisable(Integer id);
 }

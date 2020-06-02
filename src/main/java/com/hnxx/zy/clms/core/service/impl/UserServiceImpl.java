@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.service.impl;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.common.utils.Page;
@@ -39,26 +40,11 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void insertUser(User user) {
-        User userTable = new User();
-        userTable.setUserId(user.getUserId());
-        userTable.setUserName(user.getUserName());
-        userTable.setUserPassword(user.getUserPassword());
-        userTable.setMobile(user.getMobile());
-        userTable.setSex(user.getSex());
-        userTable.setName(user.getName());
-        userTable.setUserCollegeId(user.getUserCollegeId());
-        userTable.setUserClassesId(user.getUserClassesId());
-        userTable.setUserGroupId(user.getUserGroupId());
-        userTable.setUserIcon(user.getUserIcon());
-        userTable.setUserDescription(user.getUserDescription());
+    public void insertUser(UserSearch user) {
         Date date = new Date();
-        userTable.setCreatedTime(date);
-        userTable.setUpdatedTime(user.getCreatedTime());
-        userTable.setUserPositionId(user.getUserPositionId());
-        userTable.setIsEnabled(user.getIsEnabled());
-        userTable.setIsDeleted(user.getIsDeleted());
-        userMapper.insertUser(userTable);
+        user.setCreatedTime(date);
+        user.setUpdatedTime(user.getCreatedTime());
+        userMapper.insertUser(user);
     }
 
     /**
@@ -184,9 +170,29 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-//    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public void updateById(UserSearch user) {
         user.setUpdatedTime(new Date());
         userMapper.updateById(user);
+    }
+
+    /**
+     * 启用
+     * @param id
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateEnable(Integer id) {
+        userMapper.updateEnable(id);
+    }
+
+    /**
+     * 弃用
+     * @param id
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateDisable(Integer id) {
+        userMapper.updateDisable(id);
     }
 }
