@@ -46,7 +46,7 @@ public interface VideoMapper {
             "x.codename AS category,\n" +
             "a.created_time,\n" +
             "a.title,\n" +
-            "a.like ,\n" +
+            "a.video_good ,\n" +
             "a.video_id,\n" +
             "a.cover_url,\n" +
             "a.play_volume,\n" +

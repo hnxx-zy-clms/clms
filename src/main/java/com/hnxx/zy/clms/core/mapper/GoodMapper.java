@@ -53,7 +53,7 @@ public interface GoodMapper {
      * 视频 点赞 good +1
      * @param vid
      */
-    @Update("update cl_video set like = like + 1 where video_id = #{vid}")
+    @Update("update cl_video set video_good = video_good + 1 where video_id = #{vid}")
     void goodVideo(int vid);
 
     /**

@@ -10,10 +10,7 @@ import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
-import com.hnxx.zy.clms.core.entity.Article;
-import com.hnxx.zy.clms.core.entity.ArticleStatistics;
-import com.hnxx.zy.clms.core.entity.Comment;
-import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.ArticleMapper;
 import com.hnxx.zy.clms.core.mapper.ArticleTypeMapper;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
@@ -102,10 +99,20 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void update(Article article) {
+        // 获取 article 的新旧分类id
+        int oldTypeId = articleMapper.getById(article.getArticleId()).getArticleType();
+        int newTypeId = article.getArticleType();
+        if(oldTypeId != newTypeId) {
+            // 更新旧分类文章数
+            ArticleType oldType = articleTypeMapper.getById(oldTypeId);
+            oldType.setTypeCount(oldType.getTypeCount() - 1);
+            articleTypeMapper.update(oldType);
+            // 更新新分类文章数
+            ArticleType newType = articleTypeMapper.getById(newTypeId);
+            newType.setTypeCount(newType.getTypeCount() - 1);
+            articleTypeMapper.update(newType);
+        }
         articleMapper.update(article);
-        int tid = article.getArticleType();
-        int aCount = articleTypeMapper.getArticleCountByType(tid);
-        articleTypeMapper.updateArticleCount(tid, aCount);
     }
 
     /**

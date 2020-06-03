@@ -52,7 +52,7 @@ public class Video {
     /**
      * 点赞量
      */
-    private Integer like;
+    private Integer videoGood;
 
     /**
      * 收藏数

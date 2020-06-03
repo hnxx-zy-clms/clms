@@ -159,7 +159,7 @@ public class GoodController {
             int vid = good.getVideoId();
             count = goodService.getGoodCountForVideo(uid, vid);
         }else {
-            return new Result<>("参数操作");
+            return new Result<>("参数错误");
         }
         return new Result<>(count);
     }
