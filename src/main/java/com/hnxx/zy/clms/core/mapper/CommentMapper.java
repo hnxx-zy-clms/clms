@@ -25,8 +25,8 @@ public interface CommentMapper {
      * 保存,添加
      * @param comment
      */
-    @Insert("Insert into cl_comment(comment_content, comment_user, comment_article, comment_type, pid)" +
-            "values (#{commentContent}, #{commentUser}, #{commentArticle}, #{commentType}, #{pid})")
+    @Insert("Insert into cl_comment(comment_content, comment_user, comment_article, comment_type, pid, parent_comment_user)" +
+            "values (#{commentContent}, #{commentUser}, #{commentArticle}, #{commentType}, #{pid}, #{parentCommentUser})")
     void save(Comment comment);
 
     /**

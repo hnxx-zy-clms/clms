@@ -61,6 +61,8 @@ public class Comment implements Serializable {
 
     /**
      * 评论类型
+     * 0:直接评论   ？（评论） @ ？（文章）
+     * 1:评论的评论 带有指定的父级评论对象 存在回复的用户 ？（评论） @ ？（评论）
      */
     private Integer commentType;
 
@@ -88,6 +90,11 @@ public class Comment implements Serializable {
      * 作者头像 vo属性
      */
     private String userIcon;
+
+    /**
+     * 对应父级的评论的 用户名
+     */
+    private String parentCommentUser;
 
     /**
      * 评论点赞标识 仅用于前端展示，不做数据持久化

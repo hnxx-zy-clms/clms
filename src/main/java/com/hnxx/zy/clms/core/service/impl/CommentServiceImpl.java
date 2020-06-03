@@ -59,6 +59,18 @@ public class CommentServiceImpl implements CommentService {
             // 更新文章评论数
             commentMapper.updateACommentCount(cCount, aid);
         } else if(comment.getCommentType() == 1) {
+            // 判断二级评论的回复对象
+            // int parentCommentId = comment.getPid();
+            // 获取父级评论的评论人
+            // String parentCommentUser = commentMapper.getById(parentCommentId).getCommentUser();
+            // 获取当前评论的评论人
+            // String nowCommentUser = comment.getCommentUser();
+            // 判断是否与当前评论人相同
+            // if(nowCommentUser == parentCommentUser){
+            //     comment.setParentCommentUser(null);
+            // } else {
+            //     comment.setParentCommentUser(parentCommentUser);
+            // }
             int cid = comment.getPid();
             int cCount = commentMapper.getCountByCid(cid);
             // 更新评论评论数
