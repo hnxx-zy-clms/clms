@@ -33,16 +33,62 @@ public class CollectionServiceImpl implements CollectionService {
      * @param collection
      */
     @Override
-    @Transactional(rollbackFor = Exception.class)
     public void save(Collection collection) {
         collectionMapper.save(collection);
-        // 获取收藏的文章id
-        int aid = collection.getArticleId();
-        // 根据文章id查询文章的收藏量
-        int cCount = collectionMapper.getCollectionCountByAid(aid);
-        // 更新文章收藏量
-        articleMapper.updateCollectionCount(cCount, aid);
+    }
 
+    /**
+     * 用户文章是否收藏
+     * @param aid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getCollectionCountForArticle(Integer uid, Integer aid) {
+        int count = 0;
+        List<Collection> collections = collectionMapper.getCollectionCountForArticle(uid, aid);
+        if(collections.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户提问是否收藏
+     * @param qid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getCollectionCountForQuestion(Integer uid, Integer qid) {
+        int count = 0;
+        List<Collection> collections = collectionMapper.getCollectionCountForQuestion(uid, qid);
+        if(collections.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
+    }
+
+    /**
+     * 用户视频是否收藏
+     * @param vid
+     * @param uid
+     * @return
+     */
+    @Override
+    public int getCollectionCountForVideo(Integer uid, Integer vid) {
+        int count = 0;
+        List<Collection> collections = collectionMapper.getCollectionCountForVideo(uid, vid);
+        if(collections.size() == 0) {
+            count = 0;
+        }else {
+            count = 1;
+        }
+        return count;
     }
 
     /**

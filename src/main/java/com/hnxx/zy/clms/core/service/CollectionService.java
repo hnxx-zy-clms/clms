@@ -53,4 +53,28 @@ public interface CollectionService {
      * @return
      */
     int getCollectionCount(Integer aid, Integer uid);
+
+    /**
+     * 根据uid和aid查询收藏情况
+     * @param aid
+     * @param uid
+     * @return
+     */
+    int getCollectionCountForArticle(Integer uid, Integer aid);
+
+    /**
+     * 根据uid和qid查询收藏情况
+     * @param uid
+     * @param qid
+     * @return
+     */
+    int getCollectionCountForQuestion(Integer uid, Integer qid);
+
+    /**
+     * 根据uid和vid查询收藏情况
+     * @param uid
+     * @param vid
+     * @return
+     */
+    int getCollectionCountForVideo(Integer uid, Integer vid);
 }

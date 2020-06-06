@@ -43,6 +43,13 @@ public enum StateEnum {
     ANSWER_COMMENT(3,"答疑的评论"),
 
     /**
+     * 收藏类型枚举
+     */
+    ARTICLE_COLLECTION(1, "文章收藏"),
+    QUESTION_COLLECTION(2, "提问收藏"),
+    VIDEO_COLLECTION(3, "视频收藏"),
+
+    /**
      * 问题状态枚举
      */
     NO_SOLVE_QUESTION(0, "未解决"),

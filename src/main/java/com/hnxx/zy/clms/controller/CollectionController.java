@@ -12,10 +12,12 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Collection;
 import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.mapper.CollectionMapper;
 import com.hnxx.zy.clms.core.service.CollectionService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -29,6 +31,9 @@ public class CollectionController {
     private CollectionService collectionService;
 
     @Autowired
+    private CollectionMapper collectionMapper;
+
+    @Autowired
     private UserService userService;
 
     /**
@@ -37,18 +42,84 @@ public class CollectionController {
      * @return
      */
     @PostMapping("/save")
-    public Result<Collection> save(@RequestBody Collection collection){
-        User user =userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
-        Integer uid = user.getUserId();
-        Integer aid = collection.getArticleId();
-        int count = collectionService.getCollectionCount(uid,aid);
-        if(count != 0){
-            return new Result<>("收藏成功，请勿重复收藏！");
+    @Transactional(rollbackFor = Exception.class)
+    public Result<Object> save(@RequestBody Collection collection) {
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        collection.setUserId(user.getUserId());
+        // 获取收藏的用户id
+        int uid = collection.getUserId();
+        // 获取用户收藏列表
+        List<Collection> collectionList = collectionMapper.getListByUserId(uid);
+        // 收藏类型判断
+        // 收藏类型为 文章
+        if (collection.getArticleId() != null) {
+            // 获取文章id
+            int aid = collection.getArticleId();
+            for (Collection collectionItem : collectionList) {
+                if(collectionItem.getArticleId() == null) {
+                    continue;
+                } else {
+                    if(uid == collectionItem.getUserId() && aid == collectionItem.getArticleId()) {
+                        return new Result<>("文章已经收藏!(重复收藏)");
+                    }
+                }
+            }
+            collectionMapper.collectionArticle(aid);
         }
-        collection.setUserId(uid);
+        else if (collection.getQuestionId() != null) {
+            // 获取问题id
+            int qid = collection.getQuestionId();
+            for (Collection collectionItem : collectionList) {
+                if(collectionItem.getQuestionId() == null) {
+                    continue;
+                } else {
+                    if(uid == collectionItem.getUserId() && qid == collectionItem.getQuestionId()) {
+                        return new Result<>("问题已经收藏!(重复收藏)");
+                    }
+                }
+            }
+            collectionMapper.collectionQuestion(qid);
+        }
+        else if(collection.getVideoId() != null) {
+            // 获取视频id
+            int vid = collection.getVideoId();
+            for (Collection collectionItem : collectionList) {
+                if (collectionItem.getVideoId() == null) {
+                    continue;
+                } else {
+                    if (uid == collectionItem.getUserId() && vid == collectionItem.getVideoId()) {
+                        return new Result<>("视频收藏成功!(重复收藏)");
+                    }
+                }
+            }
+            collectionMapper.collectionVideo(vid);
+        }
         collectionService.save(collection);
         return new Result<>("收藏成功!");
     }
+
+    @PostMapping("/getCollection")
+    public Result<Integer> getCollection(@RequestBody Collection collection) {
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Integer uid = user.getUserId();
+        int count = 0;
+        // 获取查询对象的id
+        // 走文章、提问、视频 收藏查询
+        if(collection.getArticleId() != null) {
+            int aid = collection.getArticleId();
+            count = collectionService.getCollectionCountForArticle(uid,aid);
+        }else if(collection.getQuestionId() != null) {
+            int qid = collection.getQuestionId();
+            count = collectionService.getCollectionCountForQuestion(uid, qid);
+        }else if(collection.getVideoId() != null) {
+            int vid = collection.getVideoId();
+            count = collectionService.getCollectionCountForVideo(uid, vid);
+        }else {
+            return new Result<>("参数错误");
+        }
+        return new Result<>(count);
+    }
+
 
     /**
      * 根据id删除 取消收藏

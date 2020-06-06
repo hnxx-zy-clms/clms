@@ -8,6 +8,7 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Collection;
+import com.hnxx.zy.clms.core.entity.Good;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -17,14 +18,60 @@ import java.util.List;
 @Repository
 public interface CollectionMapper {
 
+    /**
+     * 收藏文章 文章收藏数 +1
+     * @param aid
+     */
+    @Update("update cl_article set article_collection = article_collection + 1 where article_id = #{aid}")
+    void collectionArticle(int aid);
 
+    /**
+     * 收藏提问 文章收藏数 +1
+     * @param qid
+     */
+    @Update("update cl_question set question_collection = question_collection + 1 where question_id = #{qid}")
+    void collectionQuestion(int qid);
+
+    /**
+     * 收藏视频 视频收藏数 +1
+     * @param vid
+     */
+    @Update("update cl_video set collect = collect + 1 where video_id = #{vid}")
+    void collectionVideo(int vid);
 
     /**
      * 添加收藏
      * @param collection
      */
-    @Insert("insert into cl_collection(article_id, user_id) values(#{articleId}, #{userId})")
+    @Insert("insert into cl_collection(user_id, article_id, question_id, video_id, collection_type) values(#{userId}, #{articleId}, #{questionId}, #{videoId}, #{collectionType})")
     void save(Collection collection);
+
+    /**
+     * 根据用户id和文章id查询文章收藏信息集合
+     * @param uid
+     * @param aid
+     * @return
+     */
+    @Select("select * from cl_collection where user_id = #{userId} and article_id = #{articleId}")
+    List<Collection> getCollectionCountForArticle(@Param("userId") Integer uid, @Param("articleId") Integer aid);
+
+    /**
+     * 根据用户id和提问id查询提问收藏信息集合
+     * @param uid
+     * @param qid
+     * @return
+     */
+    @Select("select * from cl_collection where user_id = #{userId} and question_id = #{questionId}")
+    List<Collection> getCollectionCountForQuestion(@Param("userId") Integer uid, @Param("questionId") Integer qid);
+
+    /**
+     * 根据用户id和视频id查询视频收藏信息集合
+     * @param uid
+     * @param vid
+     * @return
+     */
+    @Select("select * from cl_collection where user_id = #{userId} and video_id = #{videoId}")
+    List<Collection> getCollectionCountForVideo(@Param("userId") Integer uid, @Param("videoId") Integer vid);
 
     /**
      * 因为这些是历史记录,所以使用逻辑删除
@@ -91,10 +138,12 @@ public interface CollectionMapper {
     int getCountByPage(Page<Collection> page);
 
     /**
-     * 根据用户id查询收藏列表 前台
+     * 根据用户id查询收藏列表 后台管理
      * @param id
      * @return
      */
-    @Select("select c.*, a.article_title from cl_collection c left join cl_article a on c.article_id = a.article_id where user_id = #{id} and c.is_deleted = 0")
+    @Select("select * from cl_collection where user_id = #{id}")
     List<Collection> getListByUserId(Integer id);
+
+
 }
