@@ -13,8 +13,10 @@ import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
 import com.hnxx.zy.clms.core.entity.Answer;
 import com.hnxx.zy.clms.core.service.AnswerService;
+import com.hnxx.zy.clms.core.service.QuestionService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -26,6 +28,9 @@ public class AnswerController {
 
     @Autowired
     private AnswerService answerService;
+
+    @Autowired
+    private QuestionService questionService;
 
     @Autowired
     private UserService userService;
@@ -50,8 +55,10 @@ public class AnswerController {
      * @return
      */
     @PutMapping("/isAdopt/{id}")
+    @Transactional(rollbackFor = Exception.class)
     public Result<Object> isAdopt(@PathVariable Integer id){
         answerService.isAdopt(id);
+        questionService.isSolve(answerService.getById(id).getQuestionId());
         return new Result<>("答复状态更新成功:已采纳!");
     }
 
@@ -129,5 +136,5 @@ public class AnswerController {
         return new Result<>(page);
     }
 
-    
+
 }
