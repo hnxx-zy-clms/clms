@@ -5,9 +5,11 @@ import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.core.service.QuestionService;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
@@ -54,6 +56,8 @@ public class SearchUtils {
      */
     @Scheduled(cron = "0 0 1 * * ?")
     void articleFullUpdate() throws IOException {
+        DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_article_index");
+        client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
         BulkRequest request = new BulkRequest();
         request.timeout("10s");
         // 获取数据库的article数据
@@ -72,10 +76,10 @@ public class SearchUtils {
     }
 
     /**
-     * 批量处理文章数据(全量同步) 每天凌晨1点执行一次
+     * 批量处理提问数据(全量同步) 每天凌晨1点执行一次
      * @throws IOException
      */
-    @Scheduled(cron = "0 0 1 * * ?")
+    @Scheduled(cron = "0 0 2 * * ?")
     void questionFullUpdate() throws IOException {
         BulkRequest request = new BulkRequest();
         request.timeout("10s");

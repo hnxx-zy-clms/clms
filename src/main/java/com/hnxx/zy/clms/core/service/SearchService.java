@@ -20,4 +20,12 @@ public interface SearchService {
      * @throws IOException
      */
     SearchResponse searchPageHighlight(SearchPage searchPage) throws IOException;
+
+    /**
+     * 基础高亮 + 多字段
+     * @param searchPage
+     * @throws IOException
+     * @return
+     */
+    SearchResponse searchPageHighlightWithFields(SearchPage searchPage) throws IOException;
 }

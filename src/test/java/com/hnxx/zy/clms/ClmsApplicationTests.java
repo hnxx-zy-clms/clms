@@ -10,18 +10,28 @@ import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.client.indices.GetIndexRequest;
+import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.sort.SortBuilder;
+import org.elasticsearch.search.sort.SortBuilders;
+import org.elasticsearch.search.sort.SortOrder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.io.IOException;
 import java.util.List;
@@ -92,6 +102,57 @@ class ClmsApplicationTests {
         System.out.println(indexResponse.status());
     }
 
+    /**
+     * 批量处理文章数据(全量同步) 每天凌晨1点执行一次
+     * @throws IOException
+     */
+    @Test
+    void articleFullUpdate() throws IOException {
+        DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_article_index");
+        client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+        BulkRequest request = new BulkRequest();
+        request.timeout("10s");
+        // 获取数据库的article数据
+        List<Article> articleList = articleService.getList();
+        for(Article article : articleList) {
+            request.add(
+                    new IndexRequest("clms_article_index")
+                            .id(""+article.getArticleId())
+                            .source(JSON.toJSONString(article), XContentType.JSON)
+            );
+        }
+        // 客户端执行请求
+        BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
+        // 返回是否失败状态
+        System.out.println(responses.hasFailures());
+    }
+
+    /**
+     * 批量处理提问数据(全量同步) 每天凌晨1点执行一次
+     * @throws IOException
+     */
+    @Test
+    void questionFullUpdate() throws IOException {
+        // DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_question_index");
+        // client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+        BulkRequest request = new BulkRequest();
+        request.timeout("10s");
+        // 获取数据库的article数据
+        List<Question> questionList = questionService.getList();
+        for(Question question : questionList) {
+            request.add(
+                    new IndexRequest("clms_question_index")
+                            .id(""+question.getQuestionId())
+                            .source(JSON.toJSONString(question), XContentType.JSON)
+            );
+        }
+        // 客户端执行请求
+        BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
+        // 返回是否失败状态
+        System.out.println(responses.hasFailures());
+    }
+
+
     //批量处理数据(全量同步)
     @Test
     void testBulkRequest() throws IOException {
@@ -120,5 +181,4 @@ class ClmsApplicationTests {
         // 返回是否失败状态
         System.out.println(responses.hasFailures());
     }
-
 }
