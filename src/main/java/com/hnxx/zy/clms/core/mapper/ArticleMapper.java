@@ -98,7 +98,7 @@ public interface ArticleMapper {
      * @return
      */
     @Select("<script>" +
-            "        select a.*, t.type_name, u.user_icon userIcon from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name \n" +
+            "        select a.article_id, a.article_title, a.article_author, a.article_image, a.article_desc, a.article_good, a.article_read, a.article_collection, a.article_type, a.article_comment, a.article_source, a.created_time, a.update_time, a.is_enabled, a.is_deleted, a.version, t.type_name, u.user_icon userIcon from cl_article a left join cl_article_type t on a.article_type = t.type_id left join cl_user u on a.article_author = u.user_name \n" +
             "        where a.is_deleted = 0 \n" +
             "        <if test=\"params.articleTitle!=null and params.articleTitle!=''\">\n" +
             "            and a.article_title like CONCAT('%', #{params.articleTitle}, '%')\n" +
