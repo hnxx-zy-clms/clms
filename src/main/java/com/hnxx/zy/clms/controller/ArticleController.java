@@ -202,37 +202,5 @@ public class ArticleController {
         return new Result<>(page);
     }
 
-    /**
-     * 高亮搜索
-     * @return
-     * @throws IOException
-     */
-    @GetMapping("/highLightSearch")
-    public Result<SearchPage<Article>> search(@RequestBody SearchPage searchPage) throws IOException {
-        String keyword = searchPage.getKeyword();
-        int pageNo = searchPage.getPageNo();
-        int pageSize = searchPage.getPageSize();
-        SearchResponse searchResponse = articleService.searchPageHighlightBuilder(keyword,pageNo,pageSize);
-        //解析结果
-        ArrayList<Map<String,Object>> list = new ArrayList<>();
-        for (SearchHit doc:searchResponse.getHits().getHits()){
-            // 解析高亮字段
-            Map<String, HighlightField> highlightFields = doc.getHighlightFields();
-            HighlightField articleTitle = highlightFields.get("articleTitle");
-            // 解析原来的结果
-            Map<String, Object> sourceAsMap = doc.getSourceAsMap();
-            if(articleTitle!=null){
-                Text[] fragments = articleTitle.fragments();
-                String n_articleTitle="";
-                for (Text res:fragments){
-                    n_articleTitle += res;
-                }
-                //将原来的替换为高亮的
-                sourceAsMap.put("articleTitle",n_articleTitle);
-            }
-            list.add(sourceAsMap);
-        }
-        searchPage.setList(list);
-        return new Result<>(searchPage);
-    }
+
 }

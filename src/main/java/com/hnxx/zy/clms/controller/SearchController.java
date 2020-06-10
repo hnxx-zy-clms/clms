@@ -3,7 +3,6 @@ package com.hnxx.zy.clms.controller;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.SearchPage;
 import com.hnxx.zy.clms.core.service.SearchService;
-import net.sf.jsqlparser.statement.select.Distinct;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.text.Text;
 import org.elasticsearch.search.SearchHit;

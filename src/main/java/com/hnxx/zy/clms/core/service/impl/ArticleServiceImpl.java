@@ -6,6 +6,7 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
@@ -18,11 +19,15 @@ import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.core.service.GoodService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.apache.poi.ss.formula.functions.T;
+import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -76,6 +81,17 @@ public class ArticleServiceImpl implements ArticleService {
         int tid = article.getArticleType();
         int aCount = articleTypeMapper.getArticleCountByType(tid);
         articleTypeMapper.updateArticleCount(tid, aCount);
+        // 更新Elasticsearch数据
+        Article articleDoc = articleMapper.getById(article.getArticleId());
+        IndexRequest request = new IndexRequest("clms_article_index");
+        request.id(article.getArticleId().toString());
+        request.timeout("5s");
+        request.source(JSON.toJSONString(articleDoc), XContentType.JSON);
+        try {
+            client.index(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -113,6 +129,15 @@ public class ArticleServiceImpl implements ArticleService {
             articleTypeMapper.update(newType);
         }
         articleMapper.update(article);
+        Article articleDoc = articleMapper.getById(article.getArticleId());
+        UpdateRequest request = new UpdateRequest("clms_article_index", articleDoc.getArticleId().toString());
+        request.timeout("5s");
+        request.doc(JSON.toJSONString(articleDoc), XContentType.JSON);
+        try {
+            client.update(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -122,6 +147,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void deleteById(Integer id) {
         articleMapper.deleteById(id);
+        DeleteRequest request = new DeleteRequest("clms_article_index", id.toString());
+        request.timeout("5s");
+        try {
+            client.delete(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -165,6 +198,16 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleMapper.getById(id);
         article.setIsEnabled(StateEnum.ENABLED.getCode());
         articleMapper.updateEnable(article);
+        Article articleDoc = articleMapper.getById(id);
+        IndexRequest request = new IndexRequest("clms_article_index");
+        request.id(articleDoc.getArticleId().toString());
+        request.timeout("5s");
+        request.source(JSON.toJSONString(articleDoc), XContentType.JSON);
+        try {
+            client.index(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -176,6 +219,13 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = articleMapper.getById(id);
         article.setIsEnabled(StateEnum.NOT_ENABLE.getCode());
         articleMapper.updateEnable(article);
+        DeleteRequest request = new DeleteRequest("clms_article_index", id.toString());
+        request.timeout("5s");
+        try {
+            client.delete(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -185,28 +235,6 @@ public class ArticleServiceImpl implements ArticleService {
         articleMapper.addRead(id);
         // 获取文章实体 根据id
         Article article = articleMapper.getById(id);
-        // 获取文章评论量
-        // int commentCount1 = commentMapper.getCountByAid(id);
-        // article.setArticleComment(commentCount1);
-        // // 获取文章下的所有文章评论
-        // List<Comment> commentList = commentMapper.getCommentByAid(id);
-        // for(Comment comment1 : commentList){
-        //     // 获取文章评论的id 这个id是评论的评论的pid
-        //     int pid = comment1.getCommentId();
-        //     // 根据 pid 获取评论的评论量
-        //     int commentCount2 = commentMapper.getCountByCid(pid);
-        //     // 设置评论的评论量
-        //     comment1.setCommentCount(commentCount2);
-        //     // 通过文章的评论id获取评论的评论list
-        //     List<Comment> comments = commentMapper.getCommentByPid(pid);
-        //     // 遍历评论下的评论
-        //     for (Comment comment2 : comments) {
-        //         // 将评论下的评论添加到评论的评论集合
-        //         comment1.getCommentList().add(comment2);
-        //     }
-        //     // 将文章的评论添加到文章的评论列表
-        //     article.getCommentList().add(comment1);
-        // }
         return article;
     }
 
@@ -248,32 +276,5 @@ public class ArticleServiceImpl implements ArticleService {
         int totalCount = asList.size();
         page.setTotalCount(totalCount);
         return page;
-    }
-
-    @Override
-    public SearchResponse searchPageHighlightBuilder(String keyword, int pageNo, int pageSize) throws IOException {
-        if(pageNo <= 1){ pageNo=1; }
-        // 1、创建查询索引
-        SearchRequest searchRequest = new SearchRequest("article_index");
-        // 2、条件查询
-        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-        // 3、分页
-        sourceBuilder.from(pageNo);
-        sourceBuilder.size(pageSize);
-        // 4、精准匹配(中文)
-        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("articleTitle", keyword);
-        sourceBuilder.query(matchQueryBuilder);
-        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
-        // 5、高亮设置(替换返回结果文本中目标值的文本内容)
-        HighlightBuilder highlightBuilder = new HighlightBuilder();
-        highlightBuilder.field("articleTitle");
-        highlightBuilder.requireFieldMatch(true);
-        highlightBuilder.preTags("<span style='color:red'>");
-        highlightBuilder.postTags("</span>");
-        sourceBuilder.highlighter(highlightBuilder);
-        // 6、执行搜索
-        searchRequest.source(sourceBuilder);
-        SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
-        return searchResponse;
     }
 }

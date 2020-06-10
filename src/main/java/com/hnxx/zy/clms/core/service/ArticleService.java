@@ -87,14 +87,4 @@ public interface ArticleService {
      * @return
      */
     Page<ArticleStatistics> getUserArticleCountInfo(Page<ArticleStatistics> page);
-
-    /**
-     * 高亮搜索
-     * @param keyword
-     * @param pageNo
-     * @param pageSize
-     * @return
-     * @throws IOException
-     */
-    SearchResponse searchPageHighlightBuilder(String keyword, int pageNo, int pageSize) throws IOException;
 }
