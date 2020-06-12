@@ -44,16 +44,16 @@ public class ReportController {
         User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         DateUtils dateUtils =new DateUtils();
-        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+        if(Calendar.getInstance().get(Calendar.HOUR_OF_DAY) >= reportService.getTime() ){
             return new Result<>(401,"时间已截止");
         }else if(report.getReportType() == 0){
             if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),0, null) != 0) {
-                return new Result<>(401,"已存在报告数据");
+                return new Result<>(401,"已存在今日日报数据");
             }
         }else if (report.getReportType() == 1){
             String[] results = dateUtils.getDateWeek(sdf.format(new Date()));
             if(reportService.getTodayUserReport(userId.getUserId(),null,1,results) != 0) {
-                return new Result<>(401,"已存在报告数据");
+                return new Result<>(401,"已存在本周周报数据");
             }
         }
         reportService.save(report);
@@ -68,7 +68,7 @@ public class ReportController {
      */
     @PutMapping("/update")
     public Result<Object> update(@RequestBody Report report){
-        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+        if(Calendar.getInstance().get(Calendar.HOUR_OF_DAY) >= reportService.getTime()){
             return new Result<>(401,"时间已截止");
         }
         reportService.update(report);
@@ -82,7 +82,7 @@ public class ReportController {
      */
     @DeleteMapping("/delete/{id}")
     public Result<Object> delete(@PathVariable("id") Integer reportId){
-        if(rightNow.get(Calendar.HOUR_OF_DAY) >= 22 ){
+        if(Calendar.getInstance().get(Calendar.HOUR_OF_DAY) >= reportService.getTime()){
             return new Result<>(401,"时间已截止");
         }
         reportService.deleteById(reportId);
@@ -298,4 +298,8 @@ public class ReportController {
         return new Result<>(page);
     }
 
+    @GetMapping("/getTime")
+    public Result<Integer> getTime(){
+        return new Result<>(reportService.getTime());
+    }
 }

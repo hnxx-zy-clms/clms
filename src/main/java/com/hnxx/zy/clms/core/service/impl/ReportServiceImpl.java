@@ -97,5 +97,10 @@ public class ReportServiceImpl implements ReportService {
         return reportMapper.getMinReportInfo(userId);
     }
 
+    @Override
+    public Integer getTime() {
+        return reportMapper.getTime();
+    }
+
 
 }

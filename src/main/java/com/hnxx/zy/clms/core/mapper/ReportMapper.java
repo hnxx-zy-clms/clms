@@ -403,5 +403,12 @@ public interface ReportMapper {
             "limit 0, 5" +
             "</script>"})
     List<Report> getMinReportInfo(Integer userId);
+
+    /**
+     * 获取日报截止时间
+     * @return
+     */
+    @Select("select code from cl_dict where type='report' and typename='报告截止时间' and codename='日报截止时间' ")
+    Integer getTime();
 }
 
