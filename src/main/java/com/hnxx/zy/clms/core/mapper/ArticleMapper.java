@@ -12,6 +12,7 @@ import com.hnxx.zy.clms.core.entity.ArticleStatistics;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PropertyKey;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +25,7 @@ public interface ArticleMapper {
      *
      * @param article
      */
+    @Options(useGeneratedKeys = true, keyProperty = "articleId", keyColumn = "article_id")
     @Insert("insert into cl_article(article_title, article_author, article_image, article_desc, article_content, article_type, article_source) " +
             "values (#{articleTitle}, #{articleAuthor}, #{articleImage}, #{articleDesc}, #{articleContent}, #{articleType}, #{articleSource})")
     void save(Article article);
@@ -109,6 +111,9 @@ public interface ArticleMapper {
             "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
             "            and a.article_author = #{params.articleAuthor}\n" +
             "        </if>\n" +
+            "        <if test=\"params.articleTime!=null\">\n" +
+            "            and a.article_time between #{params.articleTime[0]} and #{params.articleTime[1]}\n" +
+            "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
             "        </if>\n" +
@@ -129,6 +134,9 @@ public interface ArticleMapper {
             "        </if>\n" +
             "        <if test=\"params.articleType!=null\">\n" +
             "            and a.article_type = #{params.articleType}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.articleTime!=null\">\n" +
+            "            and a.article_time between #{params.articleTime[0]} and #{params.articleTime[1]}\n" +
             "        </if>\n" +
             "        <if test=\"params.articleAuthor!=null and params.articleAuthor!=''\">\n" +
             "            and a.article_author = #{params.articleAuthor}\n" +

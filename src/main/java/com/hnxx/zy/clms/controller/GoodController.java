@@ -7,6 +7,7 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
@@ -48,9 +49,10 @@ public class GoodController {
         good.setUserId(user.getUserId());
         // 获取用户id
         int uid = good.getUserId();
-        List<Good> goodList = goodMapper.getListByUserId(uid);
-        // 判断是否为文章的点赞 判断是否为评论的点赞
         if (good.getArticleId() != null) {
+            // 设置点赞类型 文章 0
+            good.setGoodType(StateEnum.ARTICLE_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.ARTICLE_GOOD.getCode());
             // 获取文章id
             int aid = good.getArticleId();
             for (Good oldGood : goodList) {
@@ -64,6 +66,9 @@ public class GoodController {
             }
             goodMapper.goodArticle(aid);
         } else if (good.getCommentId() != null) {
+            // 设置点赞类型 评论 1
+            good.setGoodType(StateEnum.COMMENT_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.COMMENT_GOOD.getCode());
             // 获取评论id
             int cid = good.getCommentId();
             for (Good oldGood : goodList) {
@@ -77,6 +82,9 @@ public class GoodController {
             }
             goodMapper.goodComment(cid);
         } else if (good.getQuestionId() != null) {
+            // 设置点赞类型 提问 2
+            good.setGoodType(StateEnum.QUESTION_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.QUESTION_GOOD.getCode());
             // 获取提问id
             int qid = good.getQuestionId();
             for (Good oldGood : goodList) {
@@ -90,6 +98,9 @@ public class GoodController {
             }
             goodMapper.goodQuestion(qid);
         } else if (good.getAnswerId() != null) {
+            // 设置点赞类型 答复 3
+            good.setGoodType(StateEnum.ANSWER_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.ANSWER_GOOD.getCode());
             // 获取答复id
             int sid = good.getAnswerId();
             for (Good oldGood : goodList) {
@@ -103,6 +114,9 @@ public class GoodController {
             }
             goodMapper.goodAnswer(sid);
         } else if (good.getVideoId() != null) {
+            // 设置点赞类型 视频 4
+            good.setGoodType(StateEnum.VIDEO_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.VIDEO_GOOD.getCode());
             // 获取视频id
             int vid = good.getVideoId();
             for (Good oldGood : goodList) {

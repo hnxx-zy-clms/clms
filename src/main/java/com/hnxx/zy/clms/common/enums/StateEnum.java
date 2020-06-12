@@ -43,6 +43,15 @@ public enum StateEnum {
     ANSWER_COMMENT(3,"答疑的评论"),
 
     /**
+     * 点赞类型枚举
+     */
+    ARTICLE_GOOD(0, "文章的点赞"),
+    COMMENT_GOOD(1, "评论的点赞"),
+    QUESTION_GOOD(2, "问题的点赞"),
+    ANSWER_GOOD(3, "答复的点赞"),
+    VIDEO_GOOD(4, "视屏的点赞"),
+
+    /**
      * 收藏类型枚举
      */
     ARTICLE_COLLECTION(1, "文章收藏"),

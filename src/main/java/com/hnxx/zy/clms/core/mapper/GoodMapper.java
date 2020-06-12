@@ -60,8 +60,8 @@ public interface GoodMapper {
      * 保存点赞
      * @param good
      */
-    @Insert("insert into cl_good(user_id, article_id, comment_id, question_id, answer_id, video_id) " +
-            "values (#{userId}, #{articleId}, #{commentId}, #{questionId}, #{answerId}, #{videoId})")
+    @Insert("insert into cl_good(user_id, article_id, comment_id, question_id, answer_id, video_id, good_type) " +
+            "values (#{userId}, #{articleId}, #{commentId}, #{questionId}, #{answerId}, #{videoId}, #{goodType})")
     void save(Good good);
 
     /**
@@ -71,6 +71,15 @@ public interface GoodMapper {
      */
     @Select("select * from cl_good where user_id = #{id}")
     List<Good> getListByUserId(Integer id);
+
+    /**
+     * 根据用户id和点赞类型查询点赞列表
+     * @param uid
+     * @param tid
+     * @return
+     */
+    @Select("select * from cl_good where user_id = #{uid} and good_type = #{tid}")
+    List<Good> getListByUserIdWithGoodType(Integer uid, Integer tid);
 
     /**
      * 根据用户id和文章id查询文章点赞信息集合
@@ -134,6 +143,18 @@ public interface GoodMapper {
             "        <if test=\"params.commentId!=null\">\n" +
             "            and comment_id = #{params.commentId}\n" +
             "        </if>\n" +
+            "        <if test=\"params.questionId!=null\">\n" +
+            "            and question_id = #{params.questionId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.answerId!=null\">\n" +
+            "            and answer_id = #{params.answerId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.videoId!=null\">\n" +
+            "            and video_id = #{params.videoId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.goodType!=null\">\n" +
+            "            and good_type = #{params.goodType}\n" +
+            "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
             "        </if>\n" +
@@ -157,6 +178,18 @@ public interface GoodMapper {
             "        </if>\n" +
             "        <if test=\"params.commentId!=null\">\n" +
             "            and comment_id = #{params.commentId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.questionId!=null\">\n" +
+            "            and question_id = #{params.questionId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.answerId!=null\">\n" +
+            "            and answer_id = #{params.answerId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.videoId!=null\">\n" +
+            "            and video_id = #{params.videoId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.goodType!=null\">\n" +
+            "            and good_type = #{params.goodType}\n" +
             "        </if>\n" +
             "</script>")
     int getCountByPage(Page<Good> page);
