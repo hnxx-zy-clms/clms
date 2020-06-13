@@ -7,14 +7,13 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
-import com.hnxx.zy.clms.core.entity.Collection;
-import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.CollectionMapper;
-import com.hnxx.zy.clms.core.service.CollectionService;
-import com.hnxx.zy.clms.core.service.UserService;
+import com.hnxx.zy.clms.core.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,6 +35,21 @@ public class CollectionController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MessageService messageService;
+
+    @Autowired
+    private ArticleService articleService;
+
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private QuestionService questionService;
+
+    @Autowired
+    private AnswerService answerService;
+
     /**
      * 添加保存收藏
      * @param collection
@@ -45,6 +59,9 @@ public class CollectionController {
     @Transactional(rollbackFor = Exception.class)
     public Result<Object> save(@RequestBody Collection collection) {
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Message message = new Message();
+        message.setSendUser(user.getUserName());
+        message.setMessageType(StateEnum.MESSAGE_NO_READ.getCode());
         collection.setUserId(user.getUserId());
         // 获取收藏的用户id
         int uid = collection.getUserId();
@@ -55,6 +72,7 @@ public class CollectionController {
         if (collection.getArticleId() != null) {
             // 获取文章id
             int aid = collection.getArticleId();
+            Article article = articleService.getById(aid);
             for (Collection collectionItem : collectionList) {
                 if(collectionItem.getArticleId() == null) {
                     continue;
@@ -64,11 +82,16 @@ public class CollectionController {
                     }
                 }
             }
+            message.setReceiveUser(article.getArticleAuthor());
+            message.setMessageContent(aid);
+            message.setMessageDesc(article.getArticleTitle());
+            message.setMessageType(StateEnum.ARTICLE_COLLECTION_MESSAGE.getCode());
             collectionMapper.collectionArticle(aid);
         }
         else if (collection.getQuestionId() != null) {
             // 获取问题id
             int qid = collection.getQuestionId();
+            Question question = questionService.getById(qid);
             for (Collection collectionItem : collectionList) {
                 if(collectionItem.getQuestionId() == null) {
                     continue;
@@ -78,6 +101,10 @@ public class CollectionController {
                     }
                 }
             }
+            message.setReceiveUser(question.getQuestionAuthor());
+            message.setMessageContent(qid);
+            message.setMessageDesc(question.getQuestionDescription());
+            message.setMessageType(StateEnum.QUESTION_COLLECTION_MESSAGE.getCode());
             collectionMapper.collectionQuestion(qid);
         }
         else if(collection.getVideoId() != null) {
@@ -94,6 +121,8 @@ public class CollectionController {
             }
             collectionMapper.collectionVideo(vid);
         }
+        // 保存消息
+        messageService.save(message);
         collectionService.save(collection);
         return new Result<>("收藏成功!");
     }

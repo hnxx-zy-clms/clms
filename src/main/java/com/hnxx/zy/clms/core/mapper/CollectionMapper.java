@@ -116,6 +116,9 @@ public interface CollectionMapper {
             "        <if test=\"params.userId!=null\">\n" +
             "            and c.user_id = #{params.userId}\n" +
             "        </if>\n" +
+            "        <if test=\"params.collectionType!=null\">\n" +
+            "            and collection_type = #{params.collectionType}\n" +
+            "        </if>\n" +
             "        <if test=\"sortColumn!=null and sortColumn!=''\">\n" +
             "            order by ${sortColumn} ${sortMethod}\n" +
             "        </if>\n" +
@@ -133,6 +136,9 @@ public interface CollectionMapper {
             "        where c.is_deleted = 0 \n" +
             "        <if test=\"params.userId!=null\">\n" +
             "            and c.user_id = #{params.userId}\n" +
+            "        </if>\n" +
+            "        <if test=\"params.collectionType!=null\">\n" +
+            "            and collection_type = #{params.collectionType}\n" +
             "        </if>\n" +
             "</script>")
     int getCountByPage(Page<Collection> page);
