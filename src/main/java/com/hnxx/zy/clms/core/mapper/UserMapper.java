@@ -203,6 +203,19 @@ public interface UserMapper {
             "</script>")
     void insertUser(UserSearch user);
 
+
+    /**
+     * 前台用户注册
+     *
+     * @param user
+     * @return
+     */
+    @Insert("<script>" +
+            "insert into cl_user(user_name, user_password, mobile)\n" +
+            "         values( #{userName}, #{userPassword}, #{mobile})" +
+            "</script>")
+    void addUser(User user);
+
     /**
      * 更新用户信息
      *

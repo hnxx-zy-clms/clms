@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.service.impl;
 import ch.qos.logback.core.encoder.EchoEncoder;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
@@ -10,7 +11,10 @@ import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,6 +36,10 @@ public class UserServiceImpl implements UserService {
     public Page<User> getByPage(Page<User> page) {
         return null;
     }
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     /**
      * 新增用户
@@ -194,5 +202,21 @@ public class UserServiceImpl implements UserService {
     @Transactional(rollbackFor = Exception.class)
     public void updateDisable(Integer id) {
         userMapper.updateDisable(id);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Integer addUser(User user) {
+        if (userMapper.selectByName(user.getUserName()) != null){
+            return 0;
+        } else if(userMapper.selectByMobile(user.getMobile()) != null){
+            return 1;
+        } else {
+            //密码加密
+            user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
+            userMapper.addUser(user);
+            return 2;
+        }
+
     }
 }

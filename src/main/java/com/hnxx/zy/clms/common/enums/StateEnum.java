@@ -70,6 +70,12 @@ public enum StateEnum {
     NO_ADOPT_ANSWER(0, "未采纳"),
     IS_ADOPT_ANSWER(1, "已采纳"),
 
+    /**
+     * 用户注册响应
+     */
+    USERNAME_EXIT(0,"用户名已存在"),
+    USER_MOBILE_EXIT(0,"电话号码已被注册"),
+
     ;
 
     /**

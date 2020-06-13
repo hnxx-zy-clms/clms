@@ -1,12 +1,21 @@
 package com.hnxx.zy.clms.controller;
 
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.enums.StateEnum;
+import com.hnxx.zy.clms.common.utils.RedisUtil;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.core.service.UserService;
+import com.hnxx.zy.clms.security.sms.SmsCode;
+import com.hnxx.zy.clms.security.sms.ValidateCodeException;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.swing.text.html.parser.Entity;
 
 /**
@@ -15,29 +24,22 @@ import javax.swing.text.html.parser.Entity;
  */
 @Controller
 public class LoginController {
-    /**
-     *
-     * 登录与注册路径导航
-     */
-    @GetMapping("/")
-    public String login(){
-        return "index";
-    }
-    @GetMapping("/login")
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/register")
     @ResponseBody
-    public ResponseEntity<Object> callbackLogin(){
-        return new ResponseEntity<>(new Result<>(ResultEnum.NOT_LOGIN), HttpStatus.FORBIDDEN);
-    }
-    @GetMapping("/register")
-    public String register(){
-        return "register";
-    }
-    /**
-     * 主页导航
-     */
-    @GetMapping("/home")
-    public String mainPage(){
-        return "home";
+    public Result<String> register(@RequestBody User user){
+        System.out.println(user.toString());
+        Integer state = userService.addUser(user);
+        if (state == 0){
+            return new Result<>(401,StateEnum.USERNAME_EXIT.getMsg());
+        }else if(state == 1){
+            return new Result<>(401,StateEnum.USER_MOBILE_EXIT.getMsg());
+        }else {
+            return new Result<>("注册成功");
+        }
     }
 
 
@@ -50,4 +52,5 @@ public class LoginController {
     public String isLogin(){
         return "ok";
     }
+
 }
