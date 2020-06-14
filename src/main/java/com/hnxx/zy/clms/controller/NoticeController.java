@@ -173,5 +173,16 @@ public class NoticeController {
         return new Result(ResultEnum.SUCCESS);
     }
 
+    /**
+     * @Description: 获取教师发布的通知数
+     * @Param:
+     * @return:
+     */
+    @GetMapping("getTeacherNoticeNum/{teacherId}")
+    public Result getTeacherTaskNum(@PathVariable Integer teacherId) {
+        Integer num = noticeService.getTeacherNoticeNum(teacherId);
+        return new Result(num);
+    }
+
 
 }

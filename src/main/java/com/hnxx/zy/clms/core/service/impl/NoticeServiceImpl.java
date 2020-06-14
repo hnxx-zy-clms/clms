@@ -82,5 +82,10 @@ public class NoticeServiceImpl implements NoticeService {
         noticeMapper.update(notice);
     }
 
+    @Override
+    public Integer getTeacherNoticeNum(Integer teacherId) {
+        return noticeMapper.getTeacherNoticeNum(teacherId);
+    }
+
 
 }

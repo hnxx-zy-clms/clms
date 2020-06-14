@@ -121,4 +121,10 @@ public class TaskServiceImpl implements TaskService {
     public void setLevel(Integer level, Integer id) {
         taskMapper.setLevel(level, id);
     }
+
+    @Override
+    public Integer getTeacherTaskNum(Integer teacherId) {
+        return taskMapper.getTeacherTaskNum(teacherId);
+    }
+
 }

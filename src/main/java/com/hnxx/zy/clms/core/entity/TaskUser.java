@@ -37,7 +37,7 @@ public class TaskUser implements Serializable {
     /**
      * 用户姓名
      */
-    private String userName;
+    private String Name;
 
     /**
      * 是否已完成

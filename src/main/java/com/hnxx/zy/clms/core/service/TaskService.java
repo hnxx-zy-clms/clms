@@ -119,4 +119,5 @@ public interface TaskService {
     void setLevel(Integer level,Integer id);
 
 
+    Integer getTeacherTaskNum(Integer teacherId);
 }
