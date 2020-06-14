@@ -6,11 +6,13 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
+import com.hnxx.zy.clms.common.utils.WebSocketServer;
 import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.CollectionMapper;
 import com.hnxx.zy.clms.core.service.*;
@@ -61,7 +63,7 @@ public class CollectionController {
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         Message message = new Message();
         message.setSendUser(user.getUserName());
-        message.setMessageType(StateEnum.MESSAGE_NO_READ.getCode());
+        message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
         collection.setUserId(user.getUserId());
         // 获取收藏的用户id
         int uid = collection.getUserId();
@@ -123,6 +125,11 @@ public class CollectionController {
         }
         // 保存消息
         messageService.save(message);
+        try {
+            WebSocketServer.sendInfo(JSON.toJSONString(message));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         collectionService.save(collection);
         return new Result<>("收藏成功!");
     }

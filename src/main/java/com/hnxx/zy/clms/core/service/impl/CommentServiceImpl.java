@@ -6,17 +6,14 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.exception.ClmsException;
 import com.hnxx.zy.clms.common.utils.Page;
-import com.hnxx.zy.clms.core.entity.Comment;
-import com.hnxx.zy.clms.core.entity.Good;
-import com.hnxx.zy.clms.core.entity.User;
-import com.hnxx.zy.clms.core.entity.Xxx;
+import com.hnxx.zy.clms.common.utils.WebSocketServer;
+import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.CommentMapper;
-import com.hnxx.zy.clms.core.service.CommentService;
-import com.hnxx.zy.clms.core.service.GoodService;
-import com.hnxx.zy.clms.core.service.UserService;
+import com.hnxx.zy.clms.core.service.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +39,12 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private GoodService goodService;
 
+    @Autowired
+    private ArticleService articleService;
+
+    @Autowired
+    private MessageService messageService;
+
     /**
      * 保存,添加
      *
@@ -50,21 +53,42 @@ public class CommentServiceImpl implements CommentService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void save(Comment comment) {
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Message message = new Message();
+        message.setSendUser(user.getUserName());
+        message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
         // 评论类型为0 文章评论 父类id为空
         commentMapper.save(comment);
         // 根据评论类型， 文章评论 commentType = 0, 评论的评论 commentType = 1
         if(comment.getCommentType() == 0){
             int aid = comment.getCommentArticle();
+            Article article = articleService.getById(aid);
             int cCount = commentMapper.getCountByAid(aid);
             // 更新文章评论数
             commentMapper.updateACommentCount(cCount, aid);
+            message.setReceiveUser(article.getArticleAuthor());
+            message.setMessageContent(aid);
+            message.setMessageDesc(article.getArticleDesc());
+            message.setMessageType(StateEnum.ARTICLE_COMMENT_MESSAGE.getCode());
         } else if(comment.getCommentType() == 1) {
+            // 存在逻辑设计问题
             int cid = comment.getPid();
+            Comment comment1 = commentMapper.getById(cid);
             int cCount = commentMapper.getCountByCid(cid);
             // 更新评论评论数
             commentMapper.updateCCommentCount(cCount, cid);
+            message.setReceiveUser(comment1.getCommentUser());
+            message.setMessageContent(cid);
+            message.setMessageDesc(comment1.getCommentContent());
+            message.setMessageType(StateEnum.REPLAY_COMMENT_MESSAGE.getCode());
         }
-
+        // 保存消息
+        messageService.save(message);
+        try {
+            WebSocketServer.sendInfo(JSON.toJSONString(message));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**

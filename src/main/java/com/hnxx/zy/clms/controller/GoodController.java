@@ -109,7 +109,7 @@ public class GoodController {
                 }
             }
             message.setReceiveUser(comment.getCommentUser());
-            message.setMessageContent(cid);
+            message.setMessageContent(comment.getCommentArticle());
             message.setMessageDesc(comment.getCommentContent());
             message.setMessageType(StateEnum.COMMENT_GOOD_MESSAGE.getCode());
             goodMapper.goodComment(cid);
@@ -151,7 +151,7 @@ public class GoodController {
                 }
             }
             message.setReceiveUser(answer.getAnswerAuthor());
-            message.setMessageContent(sid);
+            message.setMessageContent(answer.getQuestionId());
             message.setMessageDesc(answer.getAnswerContent());
             message.setMessageType(StateEnum.ANSWER_GOOD_MESSAGE.getCode());
             goodMapper.goodAnswer(sid);
@@ -174,7 +174,6 @@ public class GoodController {
         }
         // 保存消息
         messageService.save(message);
-        String testText = "点赞了";
         try {
             WebSocketServer.sendInfo(JSON.toJSONString(message));
         }catch (Exception e){
