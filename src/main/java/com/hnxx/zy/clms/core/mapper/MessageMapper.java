@@ -25,6 +25,7 @@ public interface MessageMapper {
      * 保存
      * @param message
      */
+    @Options(useGeneratedKeys = true, keyProperty = "messageId", keyColumn = "message_id")
     @Insert("insert into cl_message(message_content, message_desc ,send_user, receive_user, message_type, message_state) " +
             "values (#{messageContent}, #{messageDesc} ,#{sendUser}, #{receiveUser}, #{messageType}, #{messageState})")
     void save(Message message);
@@ -99,9 +100,6 @@ public interface MessageMapper {
             "        where 1=1 \n" +
             "        <if test=\"params.sendUser!=null and params.sendUser!=''\">\n" +
             "            and send_user = #{params.sendUser}\n" +
-            "        </if>\n" +
-            "        <if test=\"params.receiveUser!=null and params.receiveUser!=''\">\n" +
-            "            and receive_user = #{params.receiveUser}\n" +
             "        </if>\n" +
             "        <if test=\"params.receiveUser!=null and params.receiveUser!=''\">\n" +
             "            and receive_user = #{params.receiveUser}\n" +

@@ -6,11 +6,13 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
+import com.hnxx.zy.clms.common.utils.WebSocketServer;
 import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.GoodMapper;
 import com.hnxx.zy.clms.core.mapper.MessageMapper;
@@ -172,6 +174,12 @@ public class GoodController {
         }
         // 保存消息
         messageService.save(message);
+        String testText = "点赞了";
+        try {
+            WebSocketServer.sendInfo(JSON.toJSONString(message));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         // 保存点赞信息
         goodService.doGood(good);
         return new Result<>("点赞成功!");
