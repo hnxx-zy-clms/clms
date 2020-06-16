@@ -96,7 +96,7 @@ public class TaskController {
     }
 
     /**
-     * 教师分页获取所有任务
+     * 后台管理员分页获取所有任务
      *
      * @return
      */
@@ -106,6 +106,7 @@ public class TaskController {
         page = taskService.getAllTaskByPage(page);
         return new Result(page);
     }
+
 
     /**
      * 教师分页查看某任务的完成详情
@@ -210,6 +211,18 @@ public class TaskController {
     public Result setLevel(@PathVariable("level") Integer level, @PathVariable("id") Integer id) {
         taskService.setLevel(level, id);
         return new Result(ResultEnum.SUCCESS);
+    }
+
+    /**
+     * @Description:获取教师发布的任务数量
+     * @Param:
+     * @return:
+     */
+
+    @GetMapping("getTeacherTaskNum/{teacherId}")
+    public Result getTeacherTaskNum(@PathVariable Integer teacherId) {
+        Integer num = taskService.getTeacherTaskNum(teacherId);
+        return new Result(num);
     }
 
 

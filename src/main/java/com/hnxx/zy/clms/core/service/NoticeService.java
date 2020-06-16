@@ -79,5 +79,5 @@ public interface NoticeService {
     void update(Notice notice);
 
 
-
+    Integer getTeacherNoticeNum(Integer teacherId);
 }

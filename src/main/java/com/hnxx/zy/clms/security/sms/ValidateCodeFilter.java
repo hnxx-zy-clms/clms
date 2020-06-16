@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.security.sms;
 
 import com.hnxx.zy.clms.common.utils.RedisUtil;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.lang.NonNull;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -24,10 +25,10 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
     private RedisUtil redisUtil;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain)
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, @NonNull HttpServletResponse httpServletResponse,@NonNull FilterChain filterChain)
             throws ServletException, IOException {
-        if(StringUtils.equals("/authentication/mobile", httpServletRequest.getRequestURI())
-                && StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(), "post")){
+        boolean red = StringUtils.equals("/authentication/mobile", httpServletRequest.getRequestURI())||StringUtils.equals("/register", httpServletRequest.getRequestURI());
+        if(red && StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(), "post")){
             try {
                 validateSmsCode(httpServletRequest);
                 redisUtil.del(httpServletRequest.getParameter("mobile"));

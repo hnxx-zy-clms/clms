@@ -105,4 +105,10 @@ public interface ReportService {
      * @return
      */
     List<Report> getMinReportInfo(Integer userId);
+
+    /**
+     * 获取日报截止时间
+     * @return
+     */
+    Integer getTime();
 }

@@ -6,16 +6,23 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
+import com.hnxx.zy.clms.common.utils.WebSocketServer;
 import com.hnxx.zy.clms.core.entity.Answer;
+import com.hnxx.zy.clms.core.entity.Message;
+import com.hnxx.zy.clms.core.entity.Question;
+import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.AnswerService;
+import com.hnxx.zy.clms.core.service.MessageService;
 import com.hnxx.zy.clms.core.service.QuestionService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,17 +42,37 @@ public class AnswerController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MessageService messageService;
+
     /**
      * 保存
      * @param answer
      * @return
      */
     @PostMapping("/save")
+    @Transactional(rollbackFor = Exception.class)
     public Result<Object> save(@RequestBody Answer answer){
+        User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         answer.setAnswerAuthor(userService.getUserName());
         // 答复初始创建时 默认为 未采纳
         answer.setAnswerMark(StateEnum.NO_ADOPT_ANSWER.getCode());
         answerService.save(answer);
+        Message message = new Message();
+        message.setSendUser(user.getUserName());
+        message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
+        Question question = new Question();
+        message.setReceiveUser(question.getQuestionAuthor());
+        message.setMessageDesc(question.getQuestionDescription());
+        message.setMessageContent(answer.getQuestionId());
+        message.setMessageType(StateEnum.ANSWER_MESSAGE.getCode());
+        // 保存消息
+        messageService.save(message);
+        try {
+            WebSocketServer.sendInfo(JSON.toJSONString(message));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return new Result<>("保存成功!");
     }
 

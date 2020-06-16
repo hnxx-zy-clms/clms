@@ -39,11 +39,11 @@ public interface UserMapper {
     User selectById(Integer userId);
 
     /**
-     * 获取总人数
+     * 获取学生人数
      *
      * @return
      */
-    @Select("select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 and user_position_id in (1,2)")
+    @Select("select count(*) from cl_user where is_enabled = 1 and is_deleted = 0 and user_position_id in (0,1,2)")
     int selectUserNum();
 
     /**
@@ -203,6 +203,19 @@ public interface UserMapper {
             "                #{createdTime}, #{updatedTime}, #{userPositionId}, #{isEnabled}, #{isDeleted})" +
             "</script>")
     void insertUser(UserSearch user);
+
+
+    /**
+     * 前台用户注册
+     *
+     * @param user
+     * @return
+     */
+    @Insert("<script>" +
+            "insert into cl_user(user_name, user_password, mobile)\n" +
+            "         values( #{userName}, #{userPassword}, #{mobile})" +
+            "</script>")
+    void addUser(User user);
 
     /**
      * 更新用户信息

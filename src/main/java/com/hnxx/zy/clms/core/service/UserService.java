@@ -1,10 +1,12 @@
 package com.hnxx.zy.clms.core.service;
 
 import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
@@ -143,4 +145,12 @@ public interface UserService {
      * @param userId
      */
     void updateDisable(Integer userId);
+
+    /**
+     * 前台用户注册
+     *
+     * @param user
+     * @return
+     */
+    Integer addUser(User user);
 }

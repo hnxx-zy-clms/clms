@@ -53,7 +53,7 @@ public interface TaskMapper {
      * @return
      */
     @Select("<script>"+
-            "SELECT a.task_id,a.task_title,a.task_content,a.pushed_time,c.user_name,b.id" +
+            "SELECT a.task_id,a.task_title,a.task_content,a.pushed_time,c.name,b.id" +
             " FROM cl_task a LEFT JOIN cl_task_user b ON a.task_id=b.task_id and b.user_id=#{id}  LEFT JOIN cl_user c ON a.created_id=c.user_id where a.is_enabled=1 and a.is_deleted=0"+
             "        <if test=\"page.params.type==1\">\n" +
             "             and id IS NOT NULL" +
@@ -89,10 +89,13 @@ public interface TaskMapper {
             "           and task_title like CONCAT('%', #{page.params.Title}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
-            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "             and b.name like CONCAT('%', #{page.params.createdName}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"teacher\"\'>\n" +
+            "             and a.created_id = #{page.params.userId} and a.is_deleted = 0\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
             "           and a.is_deleted =0 and a.is_enabled=1" +
@@ -108,7 +111,7 @@ public interface TaskMapper {
      * @param userid
      * @return
      */
-    @Select("SELECT a.*,b.user_name FROM cl_task_user a left join cl_user b on a.user_id = b.user_id where task_id=#{taskid} AND b.user_id=#{userid}")
+    @Select("SELECT a.*,b.name FROM cl_task_user a left join cl_user b on a.user_id = b.user_id where task_id=#{taskid} AND b.user_id=#{userid}")
     TaskUser getTaskReply(Integer taskid, Integer userid);
 
     /**
@@ -128,7 +131,7 @@ public interface TaskMapper {
      * @return
      */
     @Select("<script>" +
-            "select a.user_id,a.user_name ,IFNULL(b.is_did,0) as is_did,b.did_time,b.id FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id in (1,2)  limit #{page.index}, #{page.pageSize}" +
+            "select a.user_id,a.name ,IFNULL(b.is_did,0) as is_did,b.did_time,b.id FROM cl_user a LEFT JOIN cl_task_user b ON a.user_id=b.user_id and b.task_id=#{id} where a.user_position_id in (0,1,2)  limit #{page.index}, #{page.pageSize}" +
             "</script>")
     @Results({
             @Result(property = "Level",
@@ -156,12 +159,12 @@ public interface TaskMapper {
      * @return
      */
     @Select("<script>" +
-            "        SELECT a.*,b.user_name from cl_task a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
+            "        SELECT a.*,b.name from cl_task a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
             "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
             "             and a.task_title like CONCAT('%', #{page.params.Title}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
-            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "             and b.name like CONCAT('%', #{page.params.createdName}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
@@ -171,6 +174,9 @@ public interface TaskMapper {
             "        </if>" +
             "        <if test=\'page.params.statu==\"pushed\"\'>\n" +
             "             and a.is_enabled=1 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"teacher\"\'>\n" +
+            "             and a.created_id = #{page.params.userId} and a.is_deleted = 0\n" +
             "        </if>" +
             "        <if test=\'page.params.statu==\"deleted\"\'>\n" +
             "             and a.is_deleted=1\n" +
@@ -276,6 +282,12 @@ public interface TaskMapper {
     void setLevel(@Param("level") Integer level ,@Param("id") Integer id);
 
 
-
+    /**
+     * @Description: 获取教师发布的任务数量
+     * @Param:
+     * @return:
+     */
+    @Select("select count(*) from cl_task where created_id = #{teacherId} and is_deleted = 0 and is_enabled = 1")
+    Integer getTeacherTaskNum(Integer teacherId);
 
 }

@@ -133,8 +133,8 @@ class ClmsApplicationTests {
      */
     @Test
     void questionFullUpdate() throws IOException {
-        // DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_question_index");
-        // client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+        DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_question_index");
+        client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
         BulkRequest request = new BulkRequest();
         request.timeout("10s");
         // 获取数据库的article数据

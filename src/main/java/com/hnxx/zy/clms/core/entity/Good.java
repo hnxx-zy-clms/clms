@@ -47,6 +47,12 @@ public class Good {
     private Integer videoId;
 
     /**
+     * 点赞类型
+     * 文章 0; 评论 1; 问题 2; 答复 3; 视频 4;
+     */
+    private Integer goodType;
+
+    /**
      * 点赞时间
      */
     private String goodTime;

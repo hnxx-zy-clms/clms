@@ -66,7 +66,7 @@ public class Task implements Serializable {
     /**
      * 创建人姓名
      */
-    private String userName;
+    private String name;
 
     /**
      * 完成人数

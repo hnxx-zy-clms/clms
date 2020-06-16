@@ -69,7 +69,7 @@ public class Notice implements Serializable {
     /**
      * 创建者姓名
      */
-    private String userName;
+    private String name;
 
     /**
      * 是否启用-1是0否

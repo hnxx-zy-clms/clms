@@ -61,7 +61,7 @@ public interface NoticeMapper {
      * @return
      */
     @Select("<script>"+
-            "SELECT a.*,IFNULL(b.if_read,0) as if_read,c.user_name from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id LEFT JOIN cl_user c ON a.created_id=c.user_id WHERE a.is_deleted =0 and a.is_enabled=1"+
+            "SELECT a.*,IFNULL(b.if_read,0) as if_read,c.name from cl_notice a left JOIN cl_notice_user b ON  b.user_id=#{id} and a.notice_id=b.notice_id LEFT JOIN cl_user c ON a.created_id=c.user_id WHERE a.is_deleted =0 and a.is_enabled=1"+
             "        <if test=\"page.params.type==1\">\n" +
             "             and if_read = true" +
             "        </if>" +
@@ -80,12 +80,12 @@ public interface NoticeMapper {
      * @return
      */
     @Select("<script>" +
-            "        SELECT a.*,b.user_name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
+            "        SELECT a.*,b.name from cl_notice a left JOIN cl_user b ON a.created_id=b.user_id where 1 > 0" +
             "        <if test=\"page.params.Title!=null and page.params.Title!=''\">\n" +
             "             and a.notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
-            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "             and b.name like CONCAT('%', #{page.params.createdName}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
@@ -95,6 +95,9 @@ public interface NoticeMapper {
             "        </if>" +
             "        <if test=\'page.params.statu==\"pushed\"\'>\n" +
             "             and a.is_enabled=1 and a.is_deleted=0\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"teacher\"\'>\n" +
+            "             and a.created_id = #{page.params.userId} and a.is_deleted = 0\n" +
             "        </if>" +
             "        <if test=\'page.params.statu==\"deleted\"\'>\n" +
             "             and a.is_deleted=1\n" +
@@ -132,10 +135,13 @@ public interface NoticeMapper {
             "           and notice_title like CONCAT('%', #{page.params.Title}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdName!=null and page.params.createdName!=''\">\n" +
-            "             and b.user_name like CONCAT('%', #{page.params.createdName}, '%')\n" +
+            "             and b.name like CONCAT('%', #{page.params.createdName}, '%')\n" +
             "        </if>" +
             "        <if test=\"page.params.createdTime!=null and page.params.createdTime!=''\">\n" +
             "             and a.created_time like CONCAT('%', #{page.params.createdTime}, '%')\n" +
+            "        </if>" +
+            "        <if test=\'page.params.role==\"teacher\"\'>\n" +
+            "             and a.created_id = #{page.params.userId} and a.is_deleted = 0\n" +
             "        </if>" +
             "        <if test=\'page.params.role==\"student\" \'>\n" +
             "             and is_deleted =0 and is_enabled=1" +
@@ -198,4 +204,12 @@ public interface NoticeMapper {
      */
     @Update("update cl_notice set created_time=#{notice.createdTime},pushed_time=#{notice.pushedTime},notice_content=#{notice.noticeContent},notice_title=#{notice.noticeTitle},is_enabled=#{notice.isEnabled},is_deleted=#{notice.isDeleted} where notice_id = #{notice.noticeId}")
     void update(@Param("notice") Notice notice);
+
+    /**
+     * @Description: 获取教师发布的任务数量
+     * @Param:
+     * @return:
+     */
+    @Select("select count(*) from cl_notice where created_id = #{teacherId} and is_enabled = 1 and is_deleted = 0")
+    Integer getTeacherNoticeNum(Integer teacherId);
 }

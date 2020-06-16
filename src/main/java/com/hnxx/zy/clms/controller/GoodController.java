@@ -6,15 +6,17 @@
  */
 package com.hnxx.zy.clms.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.ResultEnum;
+import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
 import com.hnxx.zy.clms.common.utils.StringUtils;
-import com.hnxx.zy.clms.core.entity.Good;
-import com.hnxx.zy.clms.core.entity.User;
+import com.hnxx.zy.clms.common.utils.WebSocketServer;
+import com.hnxx.zy.clms.core.entity.*;
 import com.hnxx.zy.clms.core.mapper.GoodMapper;
-import com.hnxx.zy.clms.core.service.GoodService;
-import com.hnxx.zy.clms.core.service.UserService;
+import com.hnxx.zy.clms.core.mapper.MessageMapper;
+import com.hnxx.zy.clms.core.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,6 +38,24 @@ public class GoodController {
     @Autowired
     private GoodMapper goodMapper;
 
+    @Autowired
+    private MessageService messageService;
+
+    @Autowired
+    private ArticleService articleService;
+
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private QuestionService questionService;
+
+    @Autowired
+    private AnswerService answerService;
+
+    @Autowired
+    private VideoService videoService;
+
     /**
      * 点赞
      * @param good
@@ -45,14 +65,19 @@ public class GoodController {
     @Transactional(rollbackFor = Exception.class)
     public Result<Object> save(@RequestBody Good good){
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        Message message = new Message();
+        message.setSendUser(user.getUserName());
+        message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
         good.setUserId(user.getUserId());
         // 获取用户id
         int uid = good.getUserId();
-        List<Good> goodList = goodMapper.getListByUserId(uid);
-        // 判断是否为文章的点赞 判断是否为评论的点赞
         if (good.getArticleId() != null) {
+            // 设置点赞类型 文章 0
+            good.setGoodType(StateEnum.ARTICLE_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.ARTICLE_GOOD.getCode());
             // 获取文章id
             int aid = good.getArticleId();
+            Article article = articleService.getById(aid);
             for (Good oldGood : goodList) {
                 if(oldGood.getArticleId() == null){
                     continue;
@@ -62,10 +87,18 @@ public class GoodController {
                     }
                 }
             }
+            message.setReceiveUser(article.getArticleAuthor());
+            message.setMessageContent(aid);
+            message.setMessageDesc(article.getArticleTitle());
+            message.setMessageType(StateEnum.ARTICLE_GOOD_MESSAGE.getCode());
             goodMapper.goodArticle(aid);
         } else if (good.getCommentId() != null) {
+            // 设置点赞类型 评论 1
+            good.setGoodType(StateEnum.COMMENT_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.COMMENT_GOOD.getCode());
             // 获取评论id
             int cid = good.getCommentId();
+            Comment comment = commentService.getById(cid);
             for (Good oldGood : goodList) {
                 if(oldGood.getCommentId() == null){
                     continue;
@@ -75,10 +108,18 @@ public class GoodController {
                     }
                 }
             }
+            message.setReceiveUser(comment.getCommentUser());
+            message.setMessageContent(comment.getCommentArticle());
+            message.setMessageDesc(comment.getCommentContent());
+            message.setMessageType(StateEnum.COMMENT_GOOD_MESSAGE.getCode());
             goodMapper.goodComment(cid);
         } else if (good.getQuestionId() != null) {
+            // 设置点赞类型 提问 2
+            good.setGoodType(StateEnum.QUESTION_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.QUESTION_GOOD.getCode());
             // 获取提问id
             int qid = good.getQuestionId();
+            Question question = questionService.getById(qid);
             for (Good oldGood : goodList) {
                 if(oldGood.getQuestionId() == null){
                     continue;
@@ -88,10 +129,18 @@ public class GoodController {
                     }
                 }
             }
+            message.setReceiveUser(question.getQuestionAuthor());
+            message.setMessageContent(qid);
+            message.setMessageDesc(question.getQuestionDescription());
+            message.setMessageType(StateEnum.QUESTION_GOOD_MESSAGE.getCode());
             goodMapper.goodQuestion(qid);
         } else if (good.getAnswerId() != null) {
+            // 设置点赞类型 答复 3
+            good.setGoodType(StateEnum.ANSWER_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.ANSWER_GOOD.getCode());
             // 获取答复id
             int sid = good.getAnswerId();
+            Answer answer = answerService.getById(sid);
             for (Good oldGood : goodList) {
                 if(oldGood.getAnswerId() == null){
                     continue;
@@ -101,8 +150,15 @@ public class GoodController {
                     }
                 }
             }
+            message.setReceiveUser(answer.getAnswerAuthor());
+            message.setMessageContent(answer.getQuestionId());
+            message.setMessageDesc(answer.getAnswerContent());
+            message.setMessageType(StateEnum.ANSWER_GOOD_MESSAGE.getCode());
             goodMapper.goodAnswer(sid);
         } else if (good.getVideoId() != null) {
+            // 设置点赞类型 视频 4
+            good.setGoodType(StateEnum.VIDEO_GOOD.getCode());
+            List<Good> goodList = goodMapper.getListByUserIdWithGoodType(uid, StateEnum.VIDEO_GOOD.getCode());
             // 获取视频id
             int vid = good.getVideoId();
             for (Good oldGood : goodList) {
@@ -116,6 +172,14 @@ public class GoodController {
             }
             goodMapper.goodVideo(vid);
         }
+        // 保存消息
+        messageService.save(message);
+        try {
+            WebSocketServer.sendInfo(JSON.toJSONString(message));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        // 保存点赞信息
         goodService.doGood(good);
         return new Result<>("点赞成功!");
     }

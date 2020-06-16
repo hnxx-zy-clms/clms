@@ -73,7 +73,7 @@ public interface QuestionMapper {
      * @return
      */
     @Select("<script>" +
-            "        select q.*, u.user_icon userIcon from cl_question q left join cl_user u on q.question_author = u.user_name\n" +
+            "        select q.question_id, q.question_description, q.question_author, q.question_time, q.update_time, q.question_good, q.question_collection, q.answer_count, q.question_mark , u.user_icon userIcon from cl_question q left join cl_user u on q.question_author = u.user_name\n" +
             "        where q.is_deleted = 0 \n" +
             "        <if test=\"params.questionDescription!=null and params.questionDescription!=''\">\n" +
             "            and q.question_description like CONCAT('%', #{params.questionDescription}, '%')\n" +

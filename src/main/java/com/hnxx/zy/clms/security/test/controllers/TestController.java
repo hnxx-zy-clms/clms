@@ -75,7 +75,11 @@ public class TestController {
     public  Result<Object> createSmsCode(@RequestParam String mobile){
         SmsCode smsCode = smsCodeGenerator.generate();
         if(redisUtil.set(mobile, smsCode, ExpireTime)){
-            SendSms.send(mobile,smsCode.getCode(),"SMS_190266443");
+            if ("re".equals(mobile.substring(0,2))){
+                SendSms.send(mobile.substring(2),smsCode.getCode(),"SMS_190266443");
+            }else{
+                SendSms.send(mobile,smsCode.getCode(),"SMS_190266443");
+            }
         }else{
             throw new ValidateCodeException("验证码写入缓存错误");
         }
