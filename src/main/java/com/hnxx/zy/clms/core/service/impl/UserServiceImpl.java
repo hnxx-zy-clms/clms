@@ -178,21 +178,21 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 启用
-     * @param id
+     * @param userId
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateEnable(Integer id) {
-        userMapper.updateEnable(id);
+    public void updateEnable(Integer userId) {
+        userMapper.updateEnable(userId);
     }
 
     /**
      * 弃用
-     * @param id
+     * @param userId
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateDisable(Integer id) {
-        userMapper.updateDisable(id);
+    public void updateDisable(Integer userId) {
+        userMapper.updateDisable(userId);
     }
 }

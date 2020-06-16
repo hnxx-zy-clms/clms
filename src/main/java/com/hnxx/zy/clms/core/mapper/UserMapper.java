@@ -105,6 +105,7 @@ public interface UserMapper {
             "       on a.user_group_id = b.group_id\n" +
             "       left join cl_classes as c on a.user_classes_id = c.classes_id\n" +
             "       left join cl_college as d on a.user_college_id = d.college_id)\n" +
+            "       where is_deleted = 0\n" +
             "       group by a.user_id asc" +
             "</script>")
     List<UserSearch> getUserByPage();
@@ -233,15 +234,15 @@ public interface UserMapper {
 
     /**
      * 启用
-     * @param id
+     * @param userId
      */
-    @Update("update cl_user set is_enabled = 1 where user_id = #{id}")
-    void updateEnable(Integer id);
+    @Update("update cl_user set is_enabled = 1 where user_id = #{userId}")
+    void updateEnable(Integer userId);
 
     /**
      * 弃用
-     * @param id
+     * @param userId
      */
-    @Update("update cl_user set is_enabled = 0 where user_id = #{id}")
-    void updateDisable(Integer id);
+    @Update("update cl_user set is_enabled = 0 where user_id = #{userId}")
+    void updateDisable(Integer userId);
 }

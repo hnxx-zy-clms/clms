@@ -134,13 +134,13 @@ public interface UserService {
 
     /**
      * 启用
-     * @param id
+     * @param userId
      */
-    void updateEnable(Integer id);
+    void updateEnable(Integer userId);
 
     /**
      * 弃用
-     * @param id
+     * @param userId
      */
-    void updateDisable(Integer id);
+    void updateDisable(Integer userId);
 }
