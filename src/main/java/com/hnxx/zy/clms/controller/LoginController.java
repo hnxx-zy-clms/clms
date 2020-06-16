@@ -42,6 +42,15 @@ public class LoginController {
         }
     }
 
+    /**
+     * 处理未登录
+     * @return
+     */
+    @GetMapping("/login")
+    @ResponseBody
+    public ResponseEntity<Object> callbackLogin(){
+        return new ResponseEntity<>(new Result<>(ResultEnum.NOT_LOGIN), HttpStatus.FORBIDDEN);
+    }
 
     /**
      * chat专属
