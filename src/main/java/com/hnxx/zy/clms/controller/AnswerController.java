@@ -61,7 +61,7 @@ public class AnswerController {
         Message message = new Message();
         message.setSendUser(user.getUserName());
         message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
-        Question question = new Question();
+        Question question = questionService.getById(answer.getQuestionId());
         message.setReceiveUser(question.getQuestionAuthor());
         message.setMessageDesc(question.getQuestionDescription());
         message.setMessageContent(answer.getQuestionId());
