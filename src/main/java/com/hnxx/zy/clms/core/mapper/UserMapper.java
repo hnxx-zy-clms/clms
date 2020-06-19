@@ -7,6 +7,7 @@ import com.hnxx.zy.clms.core.entity.UserSearch;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -138,10 +139,11 @@ public interface UserMapper {
     /**
      * 更新用户操作时间
      *
+     * @param updatedTime
      * @param id
      */
     @Update("update cl_user set updated_time=#{updatedTime} where user_id=#{id}")
-    void updateTimeById(Integer id);
+    void updateTimeById(Date updatedTime,Integer id);
 
     /**
      * 用户更新头像

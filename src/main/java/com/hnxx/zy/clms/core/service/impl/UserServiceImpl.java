@@ -86,7 +86,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void updateTimeById(Integer id) {
-        userMapper.updateTimeById(id);
+        UserSearch user = userMapper.getById(id);
+        user.setUpdatedTime(new Date());
+        userMapper.updateTimeById(user.getUpdatedTime(),id);
     }
 
     /**

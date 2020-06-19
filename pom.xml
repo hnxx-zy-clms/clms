@@ -29,10 +29,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
       <!--聊天所需的依赖包  websocket        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -85,7 +85,7 @@
 <!--            <artifactId>flyway-core</artifactId>-->
 <!--            <version>6.2.4</version>-->
 <!--        </dependency>-->
-        <!-- 阿里 Durid 依赖 -->
+        <!-- 阿里 Druid 依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>

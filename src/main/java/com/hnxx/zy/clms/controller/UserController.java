@@ -7,6 +7,7 @@ import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

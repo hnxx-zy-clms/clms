@@ -51,10 +51,10 @@ public class Role {
     /**
      * 启用
      */
-    private String isEnabled;
+    private int isEnabled;
 
     /**
      * 弃用
      */
-    private String isDeleted;
+    private int isDeleted;
 }
