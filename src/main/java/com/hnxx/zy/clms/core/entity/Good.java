@@ -8,8 +8,10 @@ package com.hnxx.zy.clms.core.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Good {
+public class Good implements Serializable {
 
     /**
      * 点赞id

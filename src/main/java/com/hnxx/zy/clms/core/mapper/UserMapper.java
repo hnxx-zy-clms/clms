@@ -17,6 +17,7 @@ import java.util.List;
 
 @Mapper
 @Repository
+@CacheNamespace
 public interface UserMapper {
 
     /**

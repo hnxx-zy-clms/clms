@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * @data 2020/5/9 8:54
  */
 @Data
-public class User {
+public class User implements Serializable {
     /**
      * 用户id
      */

@@ -2,6 +2,8 @@ package com.hnxx.zy.clms.core.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @program: clms
  * @description: 前端用户菜单类
@@ -9,7 +11,7 @@ import lombok.Data;
  * @create: 2020-05-05 15:53
  **/
 @Data
-public class Menu {
+public class Menu implements Serializable {
 
     /**
      * 路由地址

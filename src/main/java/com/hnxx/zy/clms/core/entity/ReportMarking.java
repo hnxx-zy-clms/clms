@@ -3,6 +3,7 @@ package com.hnxx.zy.clms.core.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -13,7 +14,7 @@ import java.util.Date;
  * @create: 2020-03-24 15:56
  **/
 @Data
-public class ReportMarking {
+public class ReportMarking implements Serializable {
 
     /**
      * 批阅ID

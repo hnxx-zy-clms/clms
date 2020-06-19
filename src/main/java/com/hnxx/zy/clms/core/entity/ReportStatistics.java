@@ -2,6 +2,8 @@ package com.hnxx.zy.clms.core.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @program: clms
  * @description: 报告数据统计实体类
@@ -9,7 +11,7 @@ import lombok.Data;
  * @create: 2020-04-15 10:52
  **/
 @Data
-public class ReportStatistics {
+public class ReportStatistics implements Serializable {
 
     private String type;
 

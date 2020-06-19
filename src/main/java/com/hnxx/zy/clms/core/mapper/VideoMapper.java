@@ -1,6 +1,7 @@
 package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.core.entity.Video;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -16,6 +17,7 @@ import java.util.List;
  **/
 @Mapper
 @Repository
+@CacheNamespace
 public interface VideoMapper {
 
     /**

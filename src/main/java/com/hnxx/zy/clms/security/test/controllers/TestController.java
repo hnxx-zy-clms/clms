@@ -14,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -46,9 +47,6 @@ public class TestController {
     @Resource
     private RedisUtil redisUtil;
 
-    @Autowired
-    private SendSms sendSms;
-
     @GetMapping("/getUserInfo")
     public Result<Object> authenticateUser(){
         User user = userMapper.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
@@ -72,16 +70,26 @@ public class TestController {
     }
 
     @GetMapping("/code/sms")
-    public  Result<Object> createSmsCode(@RequestParam String mobile){
-        SmsCode smsCode = smsCodeGenerator.generate();
-        if(redisUtil.set(mobile, smsCode, ExpireTime)){
-            if ("re".equals(mobile.substring(0,2))){
-                SendSms.send(mobile.substring(2),smsCode.getCode(),"SMS_190266443");
+    public  Result<Object> createSmsCode(@RequestParam String mobile, HttpServletRequest request){
+        String ip = request.getHeader("x-forwarded-for");
+        if(redisUtil.get(ip) == null){
+            redisUtil.set(ip,1,58);
+            SmsCode smsCode = smsCodeGenerator.generate();
+            if(redisUtil.set(mobile, smsCode, ExpireTime)){
+                if ("re".equals(mobile.substring(0,2))){
+                    SendSms.send(mobile.substring(2),smsCode.getCode(),"SMS_190266443");
+                }else{
+                    SendSms.send(mobile,smsCode.getCode(),"SMS_190266443");
+                }
             }else{
-                SendSms.send(mobile,smsCode.getCode(),"SMS_190266443");
+                return new Result<>(401,"验证码未发送，请稍后再试！");
             }
-        }else{
-            throw new ValidateCodeException("验证码写入缓存错误");
+        } else {
+            redisUtil.set(ip,(Integer)redisUtil.get(ip)+1,58);
+            if ( (Integer)redisUtil.get(ip) > 10 ){
+                redisUtil.set("rf"+ip,1,60*60*24);
+            }
+            return new Result<>(401,"请勿频繁操作");
         }
         return new Result<>();
     }

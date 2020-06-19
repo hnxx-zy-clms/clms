@@ -2,12 +2,14 @@ package com.hnxx.zy.clms.core.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author 南街北巷
  * @data 2020/4/10 18:59
  */
 @Data
-public class Login {
+public class Login implements Serializable {
     private Integer user_id;
     private String user_name;
     private String user_password;

@@ -37,7 +37,7 @@ public class FissionWantedTask {
         if(rightNow.get(Calendar.HOUR_OF_DAY) == ti ){
              DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String startTime = df.format(rightNow.getTime());
-            List<Report> reports=reportService.getToDayAllReport(startTime+" "+ ti +":00:00" , startTime);
+            List<Report> reports=reportService.getToDayAllReport(startTime+" "+ ti +":00:00" , "2020-03-24");
             for(Report report:reports){
                 reportService.setReportNotEnable(report);
             }

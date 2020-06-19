@@ -9,9 +9,11 @@ package com.hnxx.zy.clms.core.entity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ArticleStatistics {
+public class ArticleStatistics implements Serializable {
 
     /**
      * 数据统计模型名称

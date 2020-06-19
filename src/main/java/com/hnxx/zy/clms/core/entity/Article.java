@@ -9,12 +9,13 @@ package com.hnxx.zy.clms.core.entity;
         import com.fasterxml.jackson.annotation.JsonInclude;
         import lombok.Data;
 
+        import java.io.Serializable;
         import java.util.ArrayList;
         import java.util.List;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Article {
+public class Article implements Serializable {
 
     /**
      * 文章id编号

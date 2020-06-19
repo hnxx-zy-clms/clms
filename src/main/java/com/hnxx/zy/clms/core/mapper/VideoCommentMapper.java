@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.VideoComment;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -15,6 +16,7 @@ import java.util.List;
  * @create: 2020-05-31 13:45
  **/
 @Mapper
+@CacheNamespace
 public interface VideoCommentMapper {
 
     /**
