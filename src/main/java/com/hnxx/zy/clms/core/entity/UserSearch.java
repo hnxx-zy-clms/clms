@@ -106,7 +106,6 @@ public class UserSearch<T> implements Serializable {
      * 是否启用(1为启用，0为弃用，默认为1)
      */
     private int isEnabled;
-    ;
 
     /**
      * 是否已删除(1为已删除，0为未删除，默认为0)
