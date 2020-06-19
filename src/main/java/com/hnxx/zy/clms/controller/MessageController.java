@@ -66,15 +66,26 @@ public class MessageController {
     }
 
     /**
-     * 修改
-     * @param message
+     * 根据id确认消息
      * @return
      */
-    @PutMapping("/update")
-    public Result<Object> update(@RequestBody Message message){
-        messageService.update(message);
-        return new Result<>("修改成功!");
+    @PutMapping("confirmMessageById/{id}")
+    public Result<Object> confirmMessageById(@PathVariable("id") Integer id){
+        messageService.confirmMessageById(id);
+        return new Result<>("确认消息！");
     }
+
+    /**
+     * 批量确认消息
+     * @return
+     */
+    @PutMapping("confirmMessageByIds")
+    public Result<Object> confirmMessageByIds(@RequestBody List<Integer> ids){
+        messageService.confirmMessageByIds(ids);
+        return new Result<>("确认消息！");
+    }
+
+
 
     /**
      * 根据id查询

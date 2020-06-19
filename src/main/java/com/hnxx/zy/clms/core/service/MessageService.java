@@ -63,4 +63,16 @@ public interface MessageService {
      * @return
      */
     List<Message> getList(String user);
+
+    /**
+     * 根据id确认消息
+     * @param id
+     */
+    void confirmMessageById(Integer id);
+
+    /**
+     * 批量确认消息
+     * @param ids
+     */
+    void confirmMessageByIds(List<Integer> ids);
 }
