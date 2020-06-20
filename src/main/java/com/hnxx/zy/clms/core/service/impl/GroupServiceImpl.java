@@ -39,9 +39,9 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public PageInfo findAllByPage(int page, int size) {
+    public PageInfo findAllByPage(int page, int size,String groupName) {
         PageHelper.startPage(page, size);
-        List<Group> list = groupMapper.findAllByPage();
+        List<Group> list = groupMapper.findAllByPage(groupName);
         PageInfo info = new PageInfo(list);
         return info;
     }
@@ -51,5 +51,26 @@ public class GroupServiceImpl implements GroupService {
         for (Integer id : ids){
             groupMapper.disableClasses(id);
         }
+    }
+
+    @Override
+    public void deleteClassesById(int id) {
+        groupMapper.deleteClassesById(id);
+    }
+
+    @Override
+    public Group findClassById(int id) {
+        Group group = groupMapper.findClassById(id);
+        return group;
+    }
+
+    @Override
+    public List<Group> findAll() {
+        return groupMapper.findAll();
+    }
+
+    @Override
+    public void alter(Group group) {
+        groupMapper.alter(group);
     }
 }

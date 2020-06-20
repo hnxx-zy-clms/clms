@@ -12,7 +12,15 @@ public interface GroupService {
 
     void updateClasses(int id, int type);
 
-    PageInfo findAllByPage(int page , int size);
+    PageInfo findAllByPage(int page , int size , String groupName);
 
     void updateIdsClasses(List<Integer> ids);
+
+    void deleteClassesById(int id);
+
+    Group findClassById(int id);
+
+    List<Group> findAll();
+
+    void alter(Group group);
 }

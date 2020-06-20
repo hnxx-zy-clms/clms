@@ -39,9 +39,9 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
-    public PageInfo findAllByPage(int page, int size) {
+    public PageInfo findAllByPage(int page, int size,String positionName) {
         PageHelper.startPage(page, size);
-        List<Position> list = positionMapper.findAllByPage();
+        List<Position> list = positionMapper.findAllByPage(positionName);
         PageInfo info = new PageInfo(list);
         return info;
     }
@@ -51,5 +51,26 @@ public class PositionServiceImpl implements PositionService {
         for (Integer id : ids){
             positionMapper.disableClasses(id);
         }
+    }
+
+    @Override
+    public void deleteClassesById(int id) {
+        positionMapper.deleteClassesById(id);
+    }
+
+    @Override
+    public Position findClassById(int id) {
+        Position position = positionMapper.findClassById(id);
+        return position;
+    }
+
+    @Override
+    public List<Position> findAll() {
+        return positionMapper.findAll();
+    }
+
+    @Override
+    public void alter(Position position) {
+        positionMapper.alter(position);
     }
 }

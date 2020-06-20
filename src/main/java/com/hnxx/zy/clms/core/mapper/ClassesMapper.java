@@ -3,9 +3,7 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -20,11 +18,18 @@ public interface ClassesMapper {
     @Update("UPDATE `cl_classes` SET classes_states = 1 WHERE classes_id = #{id}")
     int enableClasses(int id);
 
-    @Select("SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name " +
+    @Select("<script>" +
+            "SELECT c.classes_id,c.classes_name,c.classes_states,p.college_name " +
             "FROM cl_classes c " +
             "LEFT JOIN cl_college p " +
-            "ON c.classes_college_id = p.college_id")
-    List<Classes> findAllClassesByPage();
+            "ON c.classes_college_id = p.college_id" +
+            "<where> " +
+            " <if test=\"name!=null and name!='null'\"> " +
+            "and classes_name like  CONCAT('%', #{name}, '%')" +
+            "</if> " +
+            "</where> " +
+            "</script>")
+    List<Classes> findAllClassesByPage(@Param("name") String name);
 
     @Select("SELECT cl_classes.classes_name item , COUNT(*) count, count(*)/(SELECT COUNT(*) FROM cl_user) percent " +
             "FROM cl_user " +
@@ -38,4 +43,16 @@ public interface ClassesMapper {
             "FROM cl_user\n" +
             "group by sex")
     List<ClassSex> findSexPercent();
+
+    @Delete("DELETE FROM cl_classes WHERE classes_id = #{id}")
+    void deleteClassesById(@Param("id") int id);
+
+    @Select("SELECT * from cl_classes where classes_id = #{id}")
+    Classes findClassById(@Param("id") int id);
+
+    @Select("SELECT * from cl_classes")
+    List<Classes> findAll();
+
+    @Update("UPDATE `cl_classes` SET classes_name = #{classesName} WHERE classes_id = #{classesId}")
+    void alter(Classes classes);
 }
