@@ -1,6 +1,7 @@
 package com.hnxx.zy.clms.core.service;
 
 import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
 
@@ -16,4 +17,6 @@ public interface ClassesService {
     void updateIdsClasses(List<Integer> ids);
 
     List<ClassesReport> report();
+
+    List<ClassSex> findSexPercent();
 }

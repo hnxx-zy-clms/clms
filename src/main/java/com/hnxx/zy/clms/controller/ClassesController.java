@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.hnxx.zy.clms.common.enums.ResultEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.common.utils.Result;
+import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
 import com.hnxx.zy.clms.core.service.ClassesService;
@@ -52,5 +53,11 @@ public class ClassesController {
     public Result<List<ClassesReport>> report(){
         List<ClassesReport> classesReportList = classesService.report();
         return new Result<>(classesReportList);
+    }
+
+    @GetMapping("findSexPercent")
+    public Result<List<ClassSex>> findSexPercent() {
+        List<ClassSex> classSexList = classesService.findSexPercent();
+        return new Result<>(classSexList);
     }
 }

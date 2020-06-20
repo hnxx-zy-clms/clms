@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
 import com.hnxx.zy.clms.core.mapper.ClassesMapper;
@@ -56,5 +57,11 @@ public class ClassesServiceImpl implements ClassesService {
     public List<ClassesReport> report() {
         List<ClassesReport> classesReportList = classesMapper.report();
         return classesReportList;
+    }
+
+    @Override
+    public List<ClassSex> findSexPercent() {
+        List<ClassSex> classSexList = classesMapper.findSexPercent();
+        return classSexList;
     }
 }
