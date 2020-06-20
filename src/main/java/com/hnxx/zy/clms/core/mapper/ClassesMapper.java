@@ -1,5 +1,6 @@
 package com.hnxx.zy.clms.core.mapper;
 
+import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
 import org.apache.ibatis.annotations.Insert;
@@ -32,4 +33,9 @@ public interface ClassesMapper {
             "WHERE cl_user.is_enabled = 1 AND cl_user.is_deleted=0 AND cl_classes.classes_states=1 " +
             "GROUP BY cl_classes.classes_id")
     List<ClassesReport> report();
+
+    @Select("SELECT sex, count(*) /(select count(*) from cl_user) as percent\n" +
+            "FROM cl_user\n" +
+            "group by sex")
+    List<ClassSex> findSexPercent();
 }
