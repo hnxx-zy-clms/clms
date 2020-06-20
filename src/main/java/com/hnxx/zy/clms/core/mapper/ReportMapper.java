@@ -411,5 +411,38 @@ public interface ReportMapper {
      */
     @Select("select code from cl_dict where type='report' and typename='报告截止时间' and codename='日报截止时间' ")
     Integer getTime();
+
+    /**
+     * 设置截止时间
+     * @param i
+     */
+    @Update("update cl_dict set code = #{i} where type='report' and typename='报告截止时间' and codename='日报截止时间'")
+    void setTime(Integer i);
+
+    /**
+     * 获取指定日期报告提交者名单
+     * @param group
+     * @param date
+     * @return
+     */
+    @Select({"<script> \n"+
+            "SELECT\n" +
+            "\tc.name\n" +
+            "FROM\n" +
+            "\tcl_user_report a\n" +
+            "\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "\tdate_format( b.created_time, '%Y-%m-%d' ) = #{date} \n" +
+            "\tAND c.is_enabled = 1 \n" +
+            "\tAND c.is_deleted = 0 \n" +
+            "\tAND b.is_enabled = 1 \n" +
+            "\tAND b.is_deleted = 0 \n" +
+            "\tAND b.report_type = 0\n" +
+            "<if test='group != 0' > \n" +
+            "\tAND c.user_group_id = #{group}"+
+            "</if> \n"+
+            "</script>"})
+    String[] getUpNames(@Param("group") Integer group,String date);
 }
 

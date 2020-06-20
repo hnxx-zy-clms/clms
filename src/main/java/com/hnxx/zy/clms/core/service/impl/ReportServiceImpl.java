@@ -5,11 +5,14 @@ import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Report;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.mapper.ReportMapper;
+import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,6 +26,9 @@ public class ReportServiceImpl implements ReportService {
 
     @Autowired
     private ReportMapper reportMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public void save(Report report) {
@@ -102,5 +108,27 @@ public class ReportServiceImpl implements ReportService {
         return reportMapper.getTime();
     }
 
+    @Override
+    public void setTime(Integer i) {
+        reportMapper.setTime(i);
+    }
+
+    @Override
+    public List<String> getNotReport(Integer group,String date) {
+        String[] allNames = userMapper.getClassNames(group);
+        String[] names = reportMapper.getUpNames(group,date);
+        return  compare(names,allNames);
+    }
+
+    public static <T> List<T> compare(T[] t1, T[] t2) {
+        List<T> list1 = Arrays.asList(t1);
+        List<T> list2 = new ArrayList<T>();
+        for (T t : t2) {
+            if (!list1.contains(t)) {
+                list2.add(t);
+            }
+        }
+        return list2;
+    }
 
 }

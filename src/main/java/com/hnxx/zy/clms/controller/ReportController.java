@@ -7,6 +7,7 @@ import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.service.ReportService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -95,6 +96,7 @@ public class ReportController {
      * @return
      */
     @DeleteMapping("/deleteAdmin/{id}")
+    @PreAuthorize("hasRole('ROLE_3')")
     public Result<Object> deleteAdmin(@PathVariable("id") Integer reportId){
         reportService.deleteAdminById(reportId);
         return new Result<>("删除成功");
@@ -132,6 +134,7 @@ public class ReportController {
      * @return
      */
     @PostMapping("/getByGroupId")
+    @PreAuthorize("hasRole('ROLE_1')")
     public Result<Page<Report>> getByGroupId(@RequestBody Page<Report> page){
         List<Report> reports=reportService.getReportByGroupId(page);
         page.setList(reports);
@@ -146,6 +149,7 @@ public class ReportController {
      * @return m
      */
     @PostMapping("/getByClassesId")
+    @PreAuthorize("hasRole('ROLE_2')")
     public Result<Page<Report>> getByClassId(@RequestBody Page<Report> page){
         List<Report> reports=reportService.getReportByClassesId(page);
         page.setList(reports);
@@ -198,6 +202,7 @@ public class ReportController {
      * @throws IOException
      */
     @PostMapping("/groupExcelDownloads")
+    @PreAuthorize("hasRole('ROLE_1')")
     public void groupExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
         String sheetName = "报告信息表";
         String fileName = "groupReportInfo" + ".xlsx";
@@ -217,6 +222,7 @@ public class ReportController {
      * @throws IOException
      */
     @PostMapping("/classesExcelDownloads")
+    @PreAuthorize("hasRole('ROLE_2')")
     public void classesExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
         String sheetName = "报告信息表";
         String fileName = "classesReportInfo" + ".xlsx";
@@ -235,6 +241,7 @@ public class ReportController {
      * @throws IOException
      */
     @PostMapping("/adminExcelDownloads")
+    @PreAuthorize("hasRole('ROLE_3')")
     public void adminExcelDownloads(@RequestBody Page<Report> page,HttpServletResponse response) throws IOException {
         String sheetName = "报告信息表";
         String fileName = "adminReportInfo" + ".xlsx";
@@ -298,8 +305,21 @@ public class ReportController {
         return new Result<>(page);
     }
 
+    @PutMapping("/setTime/{i}")
+    @PreAuthorize("hasAnyRole('ROLE_2','ROLE_3')")
+    public Result<Integer> setTime(@PathVariable Integer i){
+        reportService.setTime(i);
+        return new Result<>("修改成功");
+    }
+
     @GetMapping("/getTime")
     public Result<Integer> getTime(){
         return new Result<>(reportService.getTime());
+    }
+
+    @GetMapping("/getNotReport/{id}/{date}")
+    public Result<List<String>> getNotReport(@PathVariable Integer id,@PathVariable String date){
+        List<String> list =reportService.getNotReport(id,date);
+        return new Result<>(list);
     }
 }

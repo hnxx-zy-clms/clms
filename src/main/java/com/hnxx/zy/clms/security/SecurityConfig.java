@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.security;
 
 import com.hnxx.zy.clms.common.utils.RedisUtil;
 import com.hnxx.zy.clms.security.customauths.CustomUserDetailsService;
+import com.hnxx.zy.clms.security.filter.IpFilter;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationFailureHandler;
 import com.hnxx.zy.clms.security.handles.CustomAuthenticationSuccessHandler;
 import com.hnxx.zy.clms.security.handles.CustomLogoutSuccessHandler;
@@ -22,6 +23,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
+import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.security.web.firewall.StrictHttpFirewall;
@@ -86,6 +88,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
+     * 注入IpFilter
+     * @return
+     */
+    @Bean
+    public IpFilter ipFilter(){return new IpFilter();}
+    /**
      * 自定义DaoAuthenticationProvider
      * @return
      */
@@ -120,6 +128,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(customAuthenticationSuccessHandler)
                 .failureHandler(customAuthenticationFailureHandler)
                 .and()
+                .addFilterAfter(ipFilter(), CsrfFilter.class)
 //                把jwt加到security过滤器链中
                 .addFilterBefore(authenticationJwtTokenFilter(), LogoutFilter.class)
                 .addFilterAfter(validateCodeFilter,LogoutFilter.class)

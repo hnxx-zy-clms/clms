@@ -111,4 +111,17 @@ public interface ReportService {
      * @return
      */
     Integer getTime();
+
+    /**
+     * 设置截止时间
+     * @param i
+     */
+    void setTime(Integer i);
+
+    /**
+     * 获取未提交名单
+     * @param date
+     * @return
+     */
+    List<String> getNotReport(Integer group,String date);
 }

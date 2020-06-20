@@ -84,14 +84,13 @@ public interface UserMapper {
     int getUserNum(Page<ReportStatistics> page);
 
     /**
-     * 获取人数
+     * 获取组
      *
      * @param page
      * @return
      */
     @Select({"<script> \n" +
-            "select DISTINCT(user_group_id) from cl_user where is_enabled = 1 and is_deleted = 0 \n" +
-            "and user_classes_id = #{params.userClassesId}\n" +
+            "select code from cl_dict where type='group' and typename='组名'\n" +
             "</script>"})
     Integer[] getGroupIds(Page<ReportStatistics> page);
 
@@ -261,4 +260,26 @@ public interface UserMapper {
      */
     @Update("update cl_user set is_enabled = 0 where user_id = #{userId}")
     void updateDisable(Integer userId);
+
+    /**
+     * 获取班级成员名单
+     * @return
+     */
+    @Select("<script>" +
+            "SELECT\n" +
+            "\tNAME \n" +
+            "FROM\n" +
+            "cl_user \n" +
+            "WHERE\n" +
+            "\tis_enabled = 1 \n" +
+            "<if test='group != 0' > \n" +
+            "\tAND user_group_id = #{group}"+
+            "</if> \n"+
+            "\tAND is_deleted = 0 \n" +
+            "\tAND user_position_id IN (\n" +
+            "\t\t0,\n" +
+            "\t1,\n" +
+            "\t2)"+
+            "</script>")
+    String[] getClassNames(@Param("group") Integer group);
 }

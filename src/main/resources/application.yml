@@ -77,9 +77,9 @@ fdfs:
     width: 100
     height: 100
   tracker-list:
-    - 175.24.45.179:22122
+    - 175.24.9.127:22122
 upload:
-  base-url: http://175.24.45.179/
+  base-url: http://175.24.9.127:8888/
   allow-types:
     - image/jpeg
     - image/png

@@ -12,6 +12,7 @@ import com.hnxx.zy.clms.core.service.ReportMarkingService;
 import com.hnxx.zy.clms.core.service.UserService;
 import com.hnxx.zy.clms.security.sms.ValidateCodeException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,7 @@ public class ReportMarkingController {
      * @return
      */
     @PostMapping("/getAllMarking")
+    @PreAuthorize("hasRole('ROLE_3')")
     public Result<Page<ReportMarking>> getAllMarking(@RequestBody Page<ReportMarking> page){
         page.setSortColumn(StringUtils.upperCharToUnderLine(page.getSortColumn()));
         List<ReportMarking> reports = reportMarkingService.getAllMarking(page);
@@ -55,6 +57,7 @@ public class ReportMarkingController {
      * @return
      */
     @DeleteMapping("/deleteAdmin/{id}")
+    @PreAuthorize("hasRole('ROLE_3')")
     public Result<Object> deleteAdmin(@PathVariable("id") Integer markingId) {
         reportMarkingService.deleteAdminById(markingId);
         return new Result<>("删除成功");
@@ -66,11 +69,9 @@ public class ReportMarkingController {
      * @return
      */
     @PostMapping("/getNotMarkingReport")
+    @PreAuthorize("hasAnyRole('ROLE_1','ROLE_2','ROLE_3')")
     public Result<Page<Report>> getNotMarkingReport(@RequestBody Page<Report> page){
         User user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
-        if(user.getUserPositionId() ==0){
-            throw new ValidateCodeException("宁要给你自己批？");
-        }
         page.params.put("UserPositionId",user.getUserPositionId());
         page.params.put("UserClassesId",user.getUserClassesId());
         page.params.put("UserGroupId",user.getUserGroupId());
@@ -106,6 +107,7 @@ public class ReportMarkingController {
      * @return
      */
     @PostMapping("/setGroupMarkings")
+    @PreAuthorize("hasAnyRole('ROLE_1','ROLE_2','ROLE_3')")
     public Result<Object> setGroupMarking(@RequestBody List<ReportMarking> reportMarkings){
         User user=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         if(user.getUserPositionId() == 1){
