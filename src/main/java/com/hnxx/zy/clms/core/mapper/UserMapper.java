@@ -63,7 +63,7 @@ public interface UserMapper {
      * @param id
      * @return
      */
-    @Select("select user_name from cl_user where user_id = #{id}")
+    @Select("select name from cl_user where user_id = #{id}")
     String selectUserName(@Param("id") Integer id);
 
     /**
