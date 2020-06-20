@@ -9,10 +9,7 @@ package com.hnxx.zy.clms.core.mapper;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +23,7 @@ public interface QuestionMapper {
      * 保存
      * @param question
      */
+    @Options(useGeneratedKeys = true, keyProperty = "questionId", keyColumn = "question_id")
     @Insert("insert into cl_question(question_description, question_content, question_author) " +
             "values (#{questionDescription}, #{questionContent}, #{questionAuthor})")
     void save(Question question);

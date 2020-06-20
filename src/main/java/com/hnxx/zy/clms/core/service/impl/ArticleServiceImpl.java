@@ -63,8 +63,6 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private GoodService goodService;
 
-
-
     //面向对象操作
     @Autowired
     @Qualifier("restHighLevelClient")  //如定义的名称与配置文件一直则不需要这个
@@ -81,7 +79,7 @@ public class ArticleServiceImpl implements ArticleService {
         int tid = article.getArticleType();
         int aCount = articleTypeMapper.getArticleCountByType(tid);
         articleTypeMapper.updateArticleCount(tid, aCount);
-        // 更新Elasticsearch数据
+        // 添加Elasticsearch数据
         Article articleDoc = articleMapper.getById(article.getArticleId());
         IndexRequest request = new IndexRequest("clms_article_index");
         request.id(article.getArticleId().toString());
@@ -129,6 +127,7 @@ public class ArticleServiceImpl implements ArticleService {
             articleTypeMapper.update(newType);
         }
         articleMapper.update(article);
+        // 更新Elasticsearch数据
         Article articleDoc = articleMapper.getById(article.getArticleId());
         UpdateRequest request = new UpdateRequest("clms_article_index", articleDoc.getArticleId().toString());
         request.timeout("5s");

@@ -98,4 +98,41 @@ public class SearchController {
         searchPage.setList(newList);
         return new Result<>(searchPage);
     }
+
+    /**
+     * 根据提问的描述，自动推荐相似的问题
+     * @param searchPage
+     * @return
+     * @throws IOException
+     */
+    @PostMapping("/autoRecommend")
+    public Result<SearchPage<Object>> autoRecommend(@RequestBody SearchPage searchPage) throws IOException {
+        SearchResponse searchResponse = searchService.autoRecommend(searchPage);
+        ArrayList<Map<String, Object>> list = new ArrayList<>();
+        for (SearchHit doc:searchResponse.getHits().getHits()){
+            // 解析高亮字段
+            Map<String, HighlightField> highlightFields = doc.getHighlightFields();
+            for(int i = 0; i < searchPage.getKeyFields().length; i ++) {
+                HighlightField fieldTitle = highlightFields.get(searchPage.getKeyFields()[i]);
+                // 获取原来的结果集
+                Map<String, Object> sourceAsMap = doc.getSourceAsMap();
+                if(fieldTitle != null) {
+                    // 获取内容中匹配的片段
+                    Text[] fragments = fieldTitle.fragments();
+                    // 设置当前的目标字段为空
+                    String new_fieldTitle = "";
+                    for (Text res : fragments) {
+                        new_fieldTitle += res;
+                    }
+                    // 将原来的结果替换为新结果
+                    sourceAsMap.put(searchPage.getKeyFields()[i], new_fieldTitle);
+                }
+                list.add(sourceAsMap);
+            }
+        }
+        // List 数组去重， 多字段查询高亮解析的时候存在数组重复的情况（优化方法未知！）
+        List newList = list.stream().distinct().collect(Collectors.toList());
+        searchPage.setList(newList);
+        return new Result<>(searchPage);
+    }
 }

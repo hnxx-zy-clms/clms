@@ -10,6 +10,8 @@ import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Answer;
 import com.hnxx.zy.clms.core.entity.Question;
 
+import java.util.List;
+
 public interface AnswerService {
 
     /**
@@ -55,4 +57,10 @@ public interface AnswerService {
      * @param id
      */
     void noAdopt(Integer id);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    List<Answer> getList();
 }

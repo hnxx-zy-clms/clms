@@ -1,8 +1,10 @@
 package com.hnxx.zy.clms;
 
 import com.alibaba.fastjson.JSON;
+import com.hnxx.zy.clms.core.entity.Answer;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
+import com.hnxx.zy.clms.core.service.AnswerService;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.core.service.QuestionService;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -45,6 +47,9 @@ class ClmsApplicationTests {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private AnswerService answerService;
+
     @Test
     void contextLoads() {
     }
@@ -58,7 +63,7 @@ class ClmsApplicationTests {
     @Test
     void testCreateIndex() throws IOException {
         //1.创建索引请求   类似于 kibana 中的put命令
-        CreateIndexRequest request = new CreateIndexRequest("clms_article_index");
+        CreateIndexRequest request = new CreateIndexRequest("clms_answer_index");
         //2.客户端执行创建请求 IndicesClient,请求后获得响应
         CreateIndexResponse createIndexResponse =
                 client.indices().create(request, RequestOptions.DEFAULT);
@@ -151,6 +156,32 @@ class ClmsApplicationTests {
         // 返回是否失败状态
         System.out.println(responses.hasFailures());
     }
+
+    /**
+     * 批量处理提问数据(全量同步) 每天凌晨1点执行一次
+     * @throws IOException
+     */
+    @Test
+    void answerFullUpdate() throws IOException {
+        DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_answer_index");
+        client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+        BulkRequest request = new BulkRequest();
+        request.timeout("10s");
+        // 获取数据库的article数据
+        List<Answer> answerList = answerService.getList();
+        for(Answer answer : answerList) {
+            request.add(
+                    new IndexRequest("clms_answer_index")
+                            .id(""+answer.getAnswerId())
+                            .source(JSON.toJSONString(answer), XContentType.JSON)
+            );
+        }
+        // 客户端执行请求
+        BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
+        // 返回是否失败状态
+        System.out.println(responses.hasFailures());
+    }
+
 
 
     //批量处理数据(全量同步)

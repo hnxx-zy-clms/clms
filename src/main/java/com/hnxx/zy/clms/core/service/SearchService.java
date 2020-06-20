@@ -28,4 +28,11 @@ public interface SearchService {
      * @return
      */
     SearchResponse searchPageHighlightWithFields(SearchPage searchPage) throws IOException;
+
+    /**
+     * 相似推荐
+     * @param searchPage
+     * @return
+     */
+    SearchResponse autoRecommend(SearchPage searchPage) throws IOException;
 }

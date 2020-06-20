@@ -1,8 +1,10 @@
 package com.hnxx.zy.clms.common.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.hnxx.zy.clms.core.entity.Answer;
 import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
+import com.hnxx.zy.clms.core.service.AnswerService;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.core.service.QuestionService;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -42,6 +44,9 @@ public class SearchUtils {
     @Resource
     private QuestionService questionService;
 
+    @Resource
+    private AnswerService answerService;
+
     /**
      * 面向对象操作
      * 如定义的名称与配置文件一直则不需要这个
@@ -76,7 +81,7 @@ public class SearchUtils {
     }
 
     /**
-     * 批量处理提问数据(全量同步) 每天凌晨1点执行一次
+     * 批量处理提问数据(全量同步) 每天凌晨2点执行一次
      * @throws IOException
      */
     @Scheduled(cron = "0 0 2 * * ?")
@@ -92,6 +97,31 @@ public class SearchUtils {
                     new IndexRequest("clms_question_index")
                             .id(""+question.getQuestionId())
                             .source(JSON.toJSONString(question), XContentType.JSON)
+            );
+        }
+        // 客户端执行请求
+        BulkResponse responses = client.bulk(request, RequestOptions.DEFAULT);
+        // 返回是否失败状态
+        System.out.println(responses.hasFailures());
+    }
+
+    /**
+     * 批量处理答复数据(全量同步) 每天凌晨3点执行一次
+     * @throws IOException
+     */
+    @Scheduled(cron = "0 0 3 * * ?")
+    void answerFullUpdate() throws IOException {
+        DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest("clms_answer_index");
+        client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+        BulkRequest request = new BulkRequest();
+        request.timeout("10s");
+        // 获取数据库的article数据
+        List<Answer> answerList = answerService.getList();
+        for(Answer answer : answerList) {
+            request.add(
+                    new IndexRequest("clms_answer_index")
+                            .id(""+answer.getAnswerId())
+                            .source(JSON.toJSONString(answer), XContentType.JSON)
             );
         }
         // 客户端执行请求
