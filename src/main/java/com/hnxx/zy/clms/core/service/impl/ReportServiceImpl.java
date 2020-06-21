@@ -120,6 +120,17 @@ public class ReportServiceImpl implements ReportService {
         return  compare(names,allNames);
     }
 
+    @Override
+    public String[] getReportTime() {
+        return new String[]{reportMapper.getDailyTime(),reportMapper.getWeeklyTime()};
+    }
+
+    @Override
+    public void setReportTime(String[] reportTime) {
+        reportMapper.setDailyTime(reportTime[0]);
+        reportMapper.setWeeklyTime(reportTime[1]);
+    }
+
     public static <T> List<T> compare(T[] t1, T[] t2) {
         List<T> list1 = Arrays.asList(t1);
         List<T> list2 = new ArrayList<T>();

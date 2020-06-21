@@ -33,7 +33,6 @@ public class ReportController {
     @Autowired
     private UserService userService;
 
-    private Calendar rightNow = Calendar.getInstance();
 
     /**
      * 新增报告
@@ -44,21 +43,54 @@ public class ReportController {
     public Result<Object> save(@RequestBody Report report) throws ParseException {
         User userId=userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        DateUtils dateUtils =new DateUtils();
+        String[] reportTime = reportService.getReportTime();
+        String[] daily = reportTime[0].split(",");
+        String[] weekly = reportTime[1].split(",");
+        int ss = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)-1;
         if(Calendar.getInstance().get(Calendar.HOUR_OF_DAY) >= reportService.getTime() ){
             return new Result<>(401,"时间已截止");
-        }else if(report.getReportType() == 0){
-            if(reportService.getTodayUserReport(userId.getUserId(),sdf.format(new Date()),0, null) != 0) {
-                return new Result<>(401,"已存在今日日报数据");
+        }
+        if(report.getReportType() == 0) {
+            int item = 0;
+            for (String i : daily) {
+                if ("".equals(i)){
+                    return new Result<>(401, "日报提交未开启");
+                }
+                if (ss == Integer.parseInt(i)) {
+                    item = 1;
+                    if (reportService.getTodayUserReport(userId.getUserId(), sdf.format(new Date()), 0, null) != 0) {
+                        return new Result<>(401, "已存在今日日报数据");
+                    }
+                    reportService.save(report);
+                    reportService.addUserReport(userId.getUserId(), report.getReportId());
+                    break;
+                }
             }
-        }else if (report.getReportType() == 1){
-            String[] results = dateUtils.getDateWeek(sdf.format(new Date()));
-            if(reportService.getTodayUserReport(userId.getUserId(),null,1,results) != 0) {
-                return new Result<>(401,"已存在本周周报数据");
+            if( item == 0){
+                return new Result<>(401, "日报提交未开启");
+            }
+        } else if (report.getReportType() == 1) {
+            int item = 0;
+            for (String i : weekly) {
+                if ("".equals(i)){
+                    return new Result<>(401, "周报提交未开启");
+                }
+                if (ss == Integer.parseInt(i)) {
+                    item = 1;
+                    DateUtils dateUtils = new DateUtils();
+                    String[] results = dateUtils.getDateWeek(sdf.format(new Date()));
+                    if (reportService.getTodayUserReport(userId.getUserId(), null, 1, results) != 0) {
+                        return new Result<>(401, "已存在本周周报数据");
+                    }
+                    reportService.save(report);
+                    reportService.addUserReport(userId.getUserId(), report.getReportId());
+                    break;
+                }
+            }
+            if( item == 0){
+                return new Result<>(401, "周报提交未开启");
             }
         }
-        reportService.save(report);
-        reportService.addUserReport(userId.getUserId(),report.getReportId());
         return new Result<>("添加成功");
     }
 
@@ -288,6 +320,10 @@ public class ReportController {
         return new Result<>(page);
     }
 
+    /**
+     * 获取报告简要批阅信息
+     * @return
+     */
     @PostMapping("/getMainReportInfo")
     public Result<Page<ReportStatistics>> getMainReportInfo(@RequestBody Page<ReportStatistics> page) throws ParseException {
         int i = userService.getUserNum(page);
@@ -305,6 +341,10 @@ public class ReportController {
         return new Result<>(page);
     }
 
+    /**
+     * 设置截止时间
+     * @param i
+     */
     @PutMapping("/setTime/{i}")
     @PreAuthorize("hasAnyRole('ROLE_2','ROLE_3')")
     public Result<Integer> setTime(@PathVariable Integer i){
@@ -312,14 +352,43 @@ public class ReportController {
         return new Result<>("修改成功");
     }
 
+    /**
+     * 获取日报截止时间
+     * @return
+     */
     @GetMapping("/getTime")
     public Result<Integer> getTime(){
         return new Result<>(reportService.getTime());
     }
 
+    /**
+     * 获取未提交名单
+     * @param date
+     * @return
+     */
     @GetMapping("/getNotReport/{id}/{date}")
     public Result<List<String>> getNotReport(@PathVariable Integer id,@PathVariable String date){
         List<String> list =reportService.getNotReport(id,date);
         return new Result<>(list);
+    }
+
+    /**
+     *
+     *  获取报告可提交时间
+     * @return
+     */
+    @GetMapping("/getReportTime")
+    public Result<String[]> getReportTime(){
+        return new Result<>(reportService.getReportTime());
+    }
+
+    /**
+     * 设置报告提交日期
+     * @param reportTime
+     */
+    @PostMapping("/setReportTime")
+    public Result<Object> setReportTime(@RequestBody String[] reportTime){
+        reportService.setReportTime(reportTime);
+        return new Result<>("更新成功");
     }
 }

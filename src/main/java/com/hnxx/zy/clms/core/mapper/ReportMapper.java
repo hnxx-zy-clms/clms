@@ -406,6 +406,36 @@ public interface ReportMapper {
     List<Report> getMinReportInfo(Integer userId);
 
     /**
+     * 获取日报提交时间范围
+     * @return
+     */
+    @Select("select codename from cl_dict where type='report' and typename='日报提交范围' and code = 1")
+    String getDailyTime();
+
+    /**
+     * 获取周报提交时间范围
+     * @return
+     */
+    @Select("select codename from cl_dict where type='report' and typename='周报提交范围' and code = 2")
+    String getWeeklyTime();
+
+    /**
+     * 设置日报提交时间范围
+     * @param dailyTime
+     * @return
+     */
+    @Update("update cl_dict set codename=#{dailyTime} where type='report' and typename='日报提交范围' and code = 1")
+    void setDailyTime(String dailyTime);
+
+    /**
+     * 设置周报提交时间范围
+     * @param weeklyTime
+     * @return
+     */
+    @Update("update cl_dict set codename=#{weeklyTime} where type='report' and typename='周报提交范围' and code = 2")
+    void setWeeklyTime(String weeklyTime);
+
+    /**
      * 获取日报截止时间
      * @return
      */

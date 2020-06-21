@@ -7,6 +7,7 @@ import com.hnxx.zy.clms.core.entity.Question;
 import com.hnxx.zy.clms.core.service.AnswerService;
 import com.hnxx.zy.clms.core.service.ArticleService;
 import com.hnxx.zy.clms.core.service.QuestionService;
+import lombok.extern.apachecommons.CommonsLog;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -17,6 +18,8 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +39,9 @@ import java.util.List;
  */
 
 @Component
+@Configuration
+@EnableScheduling
+@CommonsLog
 public class SearchUtils {
 
     @Resource
