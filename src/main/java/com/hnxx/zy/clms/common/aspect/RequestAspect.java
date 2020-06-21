@@ -148,7 +148,7 @@ public class RequestAspect {
         log.info("方法 : {}.{}", controllerName, joinPoint.getSignature().getName());
         String params = Arrays.toString(joinPoint.getArgs());
         // 数据量大选择性赋值为******
-        // params = "******";
+        params = "******";
         log.info("请求参数：{}", params);
 
         // 获取日志实体

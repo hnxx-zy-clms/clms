@@ -57,7 +57,7 @@ public class SearchUtils {
      * 面向对象操作
      * 如定义的名称与配置文件一直则不需要这个
      */
-    @Resource
+    @Autowired
     @Qualifier("restHighLevelClient")
     private RestHighLevelClient client;
 
