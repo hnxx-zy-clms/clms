@@ -69,7 +69,7 @@ public class CollegeController {
     @GetMapping("/exportExcel")
     public void export(HttpServletResponse response) {
         List<College> colleges = collegeService.findAll();
-        ExceUtils.exportExcel(colleges, "学院", "学院", College.class, "商品.xls", response);
+        ExceUtils.exportExcel(colleges, "学院", "学院", College.class, "学院.xls", response);
 
     }
 

@@ -64,7 +64,7 @@ public class GroupController {
     @GetMapping("/exportExcel")
     public void export(HttpServletResponse response) {
         List<Group> groups = groupService.findAll();
-        ExceUtils.exportExcel(groups, "组", "组", Group.class, "商品.xls", response);
+        ExceUtils.exportExcel(groups, "组", "组", Group.class, "组.xls", response);
 
     }
 
