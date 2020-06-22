@@ -322,8 +322,6 @@ public interface ReportMapper {
             "<if test='page.params.reportType  == 1' > \n" +
             "and b.created_time &gt;= #{page.params.time[0]} \n" +
             "and b.created_time &lt;= #{page.params.time[1]} \n" +
-            "</if> \n"+
-            "\t\t\t) b\n" +
             "\t\t\t\tUNION\n" +
             "SELECT   '组长批阅' AS  type , 组长批阅 as  value ,'已提交' as state\n" +
             "FROM \n" +
@@ -332,6 +330,8 @@ public interface ReportMapper {
             "\t\t\tSUM( CASE b.is_checked WHEN 1 THEN 1 ELSE 0 END ) AS '组长批阅'\n" +
             "\t\tFROM\n" +
             "\t\t\tcl_user_report a\n" +
+            "</if> \n"+
+            "\t\t\t) b\n" +
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
