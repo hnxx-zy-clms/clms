@@ -1,9 +1,7 @@
 package com.hnxx.zy.clms.core.service.impl;
 
-import ch.qos.logback.core.encoder.EchoEncoder;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
@@ -11,14 +9,11 @@ import com.hnxx.zy.clms.core.entity.UserSearch;
 import com.hnxx.zy.clms.core.mapper.UserMapper;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -88,7 +83,7 @@ public class UserServiceImpl implements UserService {
     public void updateTimeById(Integer id) {
         UserSearch user = userMapper.getById(id);
         user.setUpdatedTime(new Date());
-        userMapper.updateTimeById(user.getUpdatedTime(),id);
+        userMapper.updateTimeById(user.getUpdatedTime(), id);
     }
 
     /**
@@ -176,18 +171,23 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 更新用户信息
+     *
      * @param user
      * @return
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updateById(UserSearch user) {
+        Integer id = user.getUserId();
+        Date time = userMapper.getById(id).getCreatedTime();
+        user.setCreatedTime(time);
         user.setUpdatedTime(new Date());
         userMapper.updateById(user);
     }
 
     /**
      * 启用
+     *
      * @param userId
      */
     @Override
@@ -198,6 +198,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 弃用
+     *
      * @param userId
      */
     @Override
@@ -209,9 +210,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Integer addUser(User user) {
-        if (userMapper.selectByName(user.getUserName()) != null){
+        if (userMapper.selectByName(user.getUserName()) != null) {
             return 0;
-        } else if(userMapper.selectByMobile(user.getMobile()) != null){
+        } else if (userMapper.selectByMobile(user.getMobile()) != null) {
             return 1;
         } else {
             //密码加密

@@ -13,7 +13,7 @@ spring:
 #      password: 123456
 #      url: jdbc:mysql://127.0.0.1:3306/clms_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
 #      username: root
-#      password: 123456
+#      password: pengna1314
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
       druid:

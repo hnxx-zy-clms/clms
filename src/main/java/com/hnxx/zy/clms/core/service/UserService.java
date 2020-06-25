@@ -1,13 +1,10 @@
 package com.hnxx.zy.clms.core.service;
 
 import com.github.pagehelper.PageInfo;
-import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.ReportStatistics;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.entity.UserSearch;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -27,6 +24,7 @@ public interface UserService {
     /**
      * 根据id查询用户信息
      * 包括弃用的和删除的
+     *
      * @param id
      * @return
      */
@@ -73,6 +71,7 @@ public interface UserService {
 
     /**
      * 打印测试用户信息
+     *
      * @param username
      * @return
      */
@@ -80,6 +79,7 @@ public interface UserService {
 
     /**
      * 打印测试用户信息
+     *
      * @param userId
      * @return
      */
@@ -87,25 +87,30 @@ public interface UserService {
 
     /**
      * 获取登录用户名
+     *
      * @return
      */
     String getUserName();
 
     /**
      * 获取登录用户名
+     *
      * @param name
      * @return
      */
     Integer selectUserId(String name);
+
     /**
      * 获取班级、组人数
+     *
      * @param page
      * @return
      */
     int getUserNum(Page<ReportStatistics> page);
 
     /**
-     *获取班级各组组名
+     * 获取班级各组组名
+     *
      * @param page
      * @return
      */
@@ -113,10 +118,11 @@ public interface UserService {
 
     /**
      * 用户更新头像
+     *
      * @param userId
      * @param userIcon
      */
-    void updateUserIconById(Integer userId,String userIcon);
+    void updateUserIconById(Integer userId, String userIcon);
 
     /**
      * 新增用户
@@ -129,6 +135,7 @@ public interface UserService {
 
     /**
      * 更新用户信息
+     *
      * @param user
      * @return
      */
@@ -136,12 +143,14 @@ public interface UserService {
 
     /**
      * 启用
+     *
      * @param userId
      */
     void updateEnable(Integer userId);
 
     /**
      * 弃用
+     *
      * @param userId
      */
     void updateDisable(Integer userId);

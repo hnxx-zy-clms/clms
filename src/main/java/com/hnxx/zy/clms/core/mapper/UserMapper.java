@@ -237,7 +237,6 @@ public interface UserMapper {
             "           user_college_id = #{userCollegeId},\n" +
             "           user_classes_id = #{userClassesId},\n" +
             "           user_group_id = #{userGroupId},\n" +
-            "           user_icon = #{userIcon},\n" +
             "           user_description = #{userDescription},\n" +
             "           created_time = #{createdTime},\n" +
             "           updated_time = #{updatedTime},\n" +
@@ -261,4 +260,18 @@ public interface UserMapper {
      */
     @Update("update cl_user set is_enabled = 0 where user_id = #{userId}")
     void updateDisable(Integer userId);
+
+    /**
+     * 获取总人数
+     * @return
+     */
+    @Select("select count(1) from cl_user where is_deleted = 0")
+    Integer count();
+
+    /**
+     * 获取男生的人数
+     * @return
+     */
+    @Select("select count(1) from cl_user where sex = '男' and is_deleted = 0")
+    Integer getSexCount();
 }
