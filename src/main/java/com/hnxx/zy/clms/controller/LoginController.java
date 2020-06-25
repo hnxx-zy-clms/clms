@@ -31,7 +31,6 @@ public class LoginController {
     @PostMapping("/register")
     @ResponseBody
     public Result<String> register(@RequestBody User user){
-        System.out.println(user.toString());
         Integer state = userService.addUser(user);
         if (state == 0){
             return new Result<>(401,StateEnum.USERNAME_EXIT.getMsg());

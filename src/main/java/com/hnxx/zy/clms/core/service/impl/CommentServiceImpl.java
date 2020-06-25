@@ -68,7 +68,7 @@ public class CommentServiceImpl implements CommentService {
             commentMapper.updateACommentCount(cCount, aid);
             message.setReceiveUser(article.getArticleAuthor());
             message.setMessageContent(aid);
-            message.setMessageDesc(article.getArticleDesc());
+            message.setMessageDesc(article.getArticleTitle());
             message.setMessageType(StateEnum.ARTICLE_COMMENT_MESSAGE.getCode());
         } else if(comment.getCommentType() == 1) {
             // 存在逻辑设计问题

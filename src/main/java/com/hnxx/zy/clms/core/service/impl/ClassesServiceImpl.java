@@ -2,6 +2,7 @@ package com.hnxx.zy.clms.core.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hnxx.zy.clms.core.entity.ClassSex;
 import com.hnxx.zy.clms.core.entity.Classes;
 import com.hnxx.zy.clms.core.entity.ClassesReport;
 import com.hnxx.zy.clms.core.mapper.ClassesMapper;
@@ -38,9 +39,9 @@ public class ClassesServiceImpl implements ClassesService {
     }
 
     @Override
-    public PageInfo findAllClassesByPage(int page, int size) {
+    public PageInfo findAllClassesByPage(int page, int size,String name) {
         PageHelper.startPage(page, size);
-        List<Classes> list = classesMapper.findAllClassesByPage();
+        List<Classes> list = classesMapper.findAllClassesByPage(name);
         PageInfo info = new PageInfo(list);
         return info;
     }
@@ -56,5 +57,32 @@ public class ClassesServiceImpl implements ClassesService {
     public List<ClassesReport> report() {
         List<ClassesReport> classesReportList = classesMapper.report();
         return classesReportList;
+    }
+
+    @Override
+    public List<ClassSex> findSexPercent() {
+        List<ClassSex> classSexList = classesMapper.findSexPercent();
+        return classSexList;
+    }
+
+    @Override
+    public void deleteClassesById(int id) {
+        classesMapper.deleteClassesById(id);
+    }
+
+    @Override
+    public Classes findClassById(int id) {
+        Classes classes = classesMapper.findClassById(id);
+        return classes;
+    }
+
+    @Override
+    public List<Classes> findAll() {
+        return classesMapper.findAll();
+    }
+
+    @Override
+    public void alter(Classes classes) {
+        classesMapper.alter(classes);
     }
 }

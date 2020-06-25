@@ -37,18 +37,10 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     UserDetailsService userDetailsService;
 
-    @Resource
-    private RedisUtil redisUtil;
-
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthTokenFilter.class);
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain)throws ServletException, IOException {
-        String ip = request.getHeader("x-forwarded-for");
-        if (redisUtil.get("rf" + ip) != null) {
-            response.setContentType("application/json;charset=utf-8");
-            response.getWriter().write(JSON.toJSONString(new Result<>(401, "由于您近期存在异常操作，系统已禁止您访问。")));
-        } else {
             try {
                 //获取请求头中的token
                 String jwt = getJwt(request);
@@ -71,7 +63,7 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
             }
             //token不存在，进入Security的UsernameFilter验证流程
             filterChain.doFilter(request, response);
-        }
+
     }
 
     /**

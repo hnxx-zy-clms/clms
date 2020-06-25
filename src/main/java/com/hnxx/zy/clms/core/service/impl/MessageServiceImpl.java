@@ -76,4 +76,16 @@ public class MessageServiceImpl implements MessageService {
     public List<Message> getList(String user) {
         return messageMapper.getListByUser(user);
     }
+
+    @Override
+    public void confirmMessageById(Integer id) {
+        Message message = messageMapper.getById(id);
+        message.setMessageState(StateEnum.MESSAGE_IS_READ.getCode());
+        messageMapper.updateState(message);
+    }
+
+    @Override
+    public void confirmMessageByIds(List<Integer> ids) {
+        messageMapper.updateStateByIds(ids);
+    }
 }

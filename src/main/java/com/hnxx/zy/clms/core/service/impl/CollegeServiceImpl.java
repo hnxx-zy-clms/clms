@@ -37,9 +37,9 @@ public class CollegeServiceImpl implements CollegeService {
     }
 
     @Override
-    public PageInfo findAllByPage(int page, int size) {
+    public PageInfo findAllByPage(int page, int size,String collegeName) {
         PageHelper.startPage(page, size);
-        List<College> list = collegeMapper.findAllByPage();
+        List<College> list = collegeMapper.findAllByPage(collegeName);
         PageInfo info = new PageInfo(list);
         return info;
     }
@@ -53,7 +53,23 @@ public class CollegeServiceImpl implements CollegeService {
 
     @Override
     public List<College> findAll() {
-        List<College> colleges = collegeMapper.findAllByPage();
+        List<College> colleges = collegeMapper.findAll();
         return colleges;
+    }
+
+    @Override
+    public void deleteClassesById(int id) {
+        collegeMapper.deleteClassesById(id);
+    }
+
+    @Override
+    public College findClassById(int id) {
+        College college = collegeMapper.findClassById(id);
+        return college;
+    }
+
+    @Override
+    public void alter(College college) {
+        collegeMapper.alter(college);
     }
 }

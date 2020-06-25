@@ -71,7 +71,7 @@ public interface MessageMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_message where message_id = #{id} and is_deleted = 0")
+    @Select("select * from cl_message where message_id = #{id}")
     Message getById(Integer id);
 
     /**
@@ -104,7 +104,7 @@ public interface MessageMapper {
             "        <if test=\"params.receiveUser!=null and params.receiveUser!=''\">\n" +
             "            and receive_user = #{params.receiveUser}\n" +
             "        </if>\n" +
-            "        <if test=\"params.messageState!=null and params.messageState!=''\">\n" +
+            "        <if test=\"params.messageState!=null\">\n" +
             "            and message_state = #{params.messageState}\n" +
             "        </if>\n" +
             "        <if test=\"params.messageType!=null || params.messageType[0]!=null || params.messageType[1]!=null\">\n" +
@@ -131,7 +131,7 @@ public interface MessageMapper {
             "        <if test=\"params.receiveUser!=null and params.receiveUser!=''\">\n" +
             "            and receive_user like CONCAT('%', #{params.receiveUser}, '%')\n" +
             "        </if>\n" +
-            "        <if test=\"params.messageState!=null and params.messageState!=''\">\n" +
+            "        <if test=\"params.messageState!=null\">\n" +
             "            and message_state = #{params.messageState}\n" +
             "        </if>\n" +
             "        <if test=\"params.messageType!=null || params.messageType[0]!=null || params.messageType[1]!=null\">\n" +
@@ -141,9 +141,23 @@ public interface MessageMapper {
     int getCountByPage(Page<Message> page);
 
     /**
-     * 改变文章状态 (已读和未读)
+     * 改变消息状态 (已读和未读)
      * @param message
      */
     @Update("update cl_message set message_state = #{messageState} where message_id = #{messageId}")
-    void updateEnable(Message message);
+    void updateState(Message message);
+
+    /**
+     * 根据id集合确认消息
+     * @param ids
+     */
+    @Update("<script>" +
+            "        update cl_message\n" +
+            "        set message_state = 1" +
+            "        where message_id in\n" +
+            "        <foreach collection=\"list\" separator=\",\" item=\"id\" open=\"(\" close=\")\">\n" +
+            "            #{id}\n" +
+            "        </foreach>" +
+            "</script>")
+    void updateStateByIds(List<Integer> ids);
 }

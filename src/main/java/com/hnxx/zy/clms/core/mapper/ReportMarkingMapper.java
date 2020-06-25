@@ -88,10 +88,10 @@ public interface ReportMarkingMapper {
             "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where b.is_enabled = 1 and b.report_type = #{params.reportType} and b.is_deleted = 0 \n"+
             "<if test=\" params.UserPositionId == 1 \"  > \n" +
-            "and b.is_checked = 0 and c.user_group_id = #{params.UserGroupId}\n" +
+            "and b.is_checked = 0 and  c.user_classes_id = #{params.UserClassesId} and c.user_group_id = #{params.UserGroupId}\n" +
             "</if> \n"+
             "<if test=\" params.UserPositionId == 2 \"  > \n" +
-            "and b.is_checked = 1 and b.is_classes_checked = 0\n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 0 and c.user_classes_id = #{params.UserClassesId}\n" +
             "</if> \n"+
             "<if test=\" params.UserPositionId == 3 \"  > \n" +
             "and b.is_checked = 1 and b.is_classes_checked = 1 and b.is_teacher_checked = 0" +
@@ -111,10 +111,10 @@ public interface ReportMarkingMapper {
             "left join cl_dict y on y.type='classes' and y.code = c.user_classes_id \n"+
             "where b.is_enabled = 1 and b.report_type = #{params.reportType} and b.is_deleted = 0 \n"+
             "<if test=\" params.UserPositionId == 1 \"  > \n" +
-            "and b.is_checked = 1 and  c.user_classes_id = #{params.UserClassesId} and c.user_group_id = #{params.UserGroupId}\n" +
+            "and b.is_checked = 1 and c.user_group_id = #{params.UserGroupId}\n" +
             "</if> \n"+
             "<if test=\" params.UserPositionId == 2 \"  > \n" +
-            "and b.is_checked = 1 and b.is_classes_checked = 1 and c.user_classes_id = #{params.UserClassesId}\n" +
+            "and b.is_checked = 1 and b.is_classes_checked = 1\n" +
             "</if> \n"+
             "<if test=\" params.UserPositionId == 3 \"  > \n" +
             "and b.is_checked = 1 and b.is_classes_checked = 1 and b.is_teacher_checked = 1" +

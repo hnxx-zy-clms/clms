@@ -8,10 +8,7 @@ package com.hnxx.zy.clms.core.mapper;
 
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Answer;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,6 +21,7 @@ public interface AnswerMapper {
      * 保存
      * @param answer
      */
+    @Options(useGeneratedKeys = true, keyProperty = "answerId", keyColumn = "answer_id")
     @Insert("insert into cl_answer(question_id, answer_content, answer_author, answer_mark) " +
             "values (#{questionId}, #{answerContent}, #{answerAuthor}, #{answerMark})")
     void save(Answer answer);
@@ -33,7 +31,7 @@ public interface AnswerMapper {
      * @param id
      * @return
      */
-    @Select("select * from cl_answer where is_deleted = 0 and answer_id = #{id}")
+    @Select("select a.*, u.user_icon userIcon from cl_answer a left join cl_user u on a.answer_author = u.user_name where a.answer_id = #{id} and a.is_deleted = 0")
     Answer getById(Integer id);
 
     /**
@@ -128,4 +126,11 @@ public interface AnswerMapper {
      */
     @Update("update cl_answer set answer_mark = #{mark} where answer_id = #{id}")
     void changeAdopt(Integer id, int mark);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    @Select("select a.*, u.user_icon userIcon from cl_answer a left join cl_user u on a.answer_author = u.user_name where a.is_deleted = 0")
+    List<Answer> getList();
 }

@@ -6,9 +6,11 @@
  */
 package com.hnxx.zy.clms.core.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.hnxx.zy.clms.common.enums.StateEnum;
 import com.hnxx.zy.clms.common.utils.Page;
 import com.hnxx.zy.clms.core.entity.Answer;
+import com.hnxx.zy.clms.core.entity.Article;
 import com.hnxx.zy.clms.core.entity.Question;
 import com.hnxx.zy.clms.core.entity.User;
 import com.hnxx.zy.clms.core.mapper.AnswerMapper;
@@ -17,11 +19,19 @@ import com.hnxx.zy.clms.core.service.AnswerService;
 import com.hnxx.zy.clms.core.service.GoodService;
 import com.hnxx.zy.clms.core.service.UserService;
 import org.checkerframework.checker.units.qual.A;
+import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.update.UpdateRequest;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -39,6 +49,11 @@ public class AnswerServiceImpl implements AnswerService {
     @Autowired
     private GoodService goodService;
 
+    //面向对象操作
+    @Autowired
+    @Qualifier("restHighLevelClient")  //如定义的名称与配置文件一直则不需要这个
+    private RestHighLevelClient client;
+
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void save(Answer answer) {
@@ -48,6 +63,17 @@ public class AnswerServiceImpl implements AnswerService {
         int aCount = questionMapper.getAnswerCount(qid);
         // 更新问题的答复数
         questionMapper.updateAnswerCount(qid, aCount);
+        // 添加Elasticsearch数据
+        Answer answerDoc = answerMapper.getById(answer.getAnswerId());
+        IndexRequest request = new IndexRequest("clms_answer_index");
+        request.id(answer.getAnswerId().toString());
+        request.timeout("5s");
+        request.source(JSON.toJSONString(answerDoc), XContentType.JSON);
+        try {
+            client.index(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -59,11 +85,28 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public void update(Answer answer) {
         answerMapper.update(answer);
+        // 更新Elasticsearch数据
+        Answer answerDoc = answerMapper.getById(answer.getAnswerId());
+        UpdateRequest request = new UpdateRequest("clms_answer_index", answerDoc.getAnswerId().toString());
+        request.timeout("5s");
+        request.doc(JSON.toJSONString(answerDoc), XContentType.JSON);
+        try {
+            client.update(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void deleteById(Integer id) {
         answerMapper.deletedById(id);
+        DeleteRequest request = new DeleteRequest("clms_answer_index", id.toString());
+        request.timeout("5s");
+        try {
+            client.delete(request, RequestOptions.DEFAULT);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -99,5 +142,10 @@ public class AnswerServiceImpl implements AnswerService {
         // 设置答复状态码,未采纳
         int mark = StateEnum.NO_ADOPT_ANSWER.getCode();
         answerMapper.changeAdopt(id, mark);
+    }
+
+    @Override
+    public List<Answer> getList() {
+        return answerMapper.getList();
     }
 }

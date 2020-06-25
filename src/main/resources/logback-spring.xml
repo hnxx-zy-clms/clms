@@ -5,7 +5,7 @@
     <property name="log.other.level" value="INFO"/> <!-- 其他日志级别 -->
     <property name="log.base"
               value="logs"/> <!-- 日志路径，这里是相对路径，web项目eclipse下会输出到eclipse的安装目录下，如果部署到linux上的tomcat下，会输出到tomcat/bin目录 下 -->
-    <property name="log.moduleName" value="blog"/>  <!-- 模块名称， 影响日志配置名，日志文件名 -->
+    <property name="log.moduleName" value="clms"/>  <!-- 模块名称， 影响日志配置名，日志文件名 -->
     <property name="log.max.size" value="20MB"/> <!-- 日志文件大小 -->
 
     <!--控制台输出 -->
@@ -17,7 +17,6 @@
             <level>debug</level>
         </filter>
     </appender>
-
     <!-- info文件输出 -->
     <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${log.base}/${log.moduleName}-info.log

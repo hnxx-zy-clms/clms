@@ -97,6 +97,7 @@ public interface ReportService {
      */
     ReportStatistics  getTodayStatistics(Page<ReportStatistics> page , Integer i);
 
+
     List<ReportStatistics> getMainReportInfo(Page<ReportStatistics> page,Integer i);
 
     /**
@@ -111,4 +112,30 @@ public interface ReportService {
      * @return
      */
     Integer getTime();
+
+    /**
+     * 设置截止时间
+     * @param i
+     */
+    void setTime(Integer i);
+
+    /**
+     * 获取未提交名单
+     * @param date
+     * @return
+     */
+    List<String> getNotReport(Integer group,String date);
+
+    /**
+     *
+     *  获取报告可提交时间
+     * @return
+     */
+    String[] getReportTime();
+
+    /**
+     * 设置报告提交日期
+     * @param reportTime
+     */
+    void setReportTime(String[] reportTime);
 }

@@ -322,8 +322,6 @@ public interface ReportMapper {
             "<if test='page.params.reportType  == 1' > \n" +
             "and b.created_time &gt;= #{page.params.time[0]} \n" +
             "and b.created_time &lt;= #{page.params.time[1]} \n" +
-            "</if> \n"+
-            "\t\t\t) b\n" +
             "\t\t\t\tUNION\n" +
             "SELECT   '组长批阅' AS  type , 组长批阅 as  value ,'已提交' as state\n" +
             "FROM \n" +
@@ -332,6 +330,8 @@ public interface ReportMapper {
             "\t\t\tSUM( CASE b.is_checked WHEN 1 THEN 1 ELSE 0 END ) AS '组长批阅'\n" +
             "\t\tFROM\n" +
             "\t\t\tcl_user_report a\n" +
+            "</if> \n"+
+            "\t\t\t) b\n" +
             "\t\t\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
             "\t\t\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
             "WHERE\n" +
@@ -406,10 +406,73 @@ public interface ReportMapper {
     List<Report> getMinReportInfo(Integer userId);
 
     /**
+     * 获取日报提交时间范围
+     * @return
+     */
+    @Select("select codename from cl_dict where type='report' and typename='日报提交范围' and code = 1")
+    String getDailyTime();
+
+    /**
+     * 获取周报提交时间范围
+     * @return
+     */
+    @Select("select codename from cl_dict where type='report' and typename='周报提交范围' and code = 2")
+    String getWeeklyTime();
+
+    /**
+     * 设置日报提交时间范围
+     * @param dailyTime
+     * @return
+     */
+    @Update("update cl_dict set codename=#{dailyTime} where type='report' and typename='日报提交范围' and code = 1")
+    void setDailyTime(String dailyTime);
+
+    /**
+     * 设置周报提交时间范围
+     * @param weeklyTime
+     * @return
+     */
+    @Update("update cl_dict set codename=#{weeklyTime} where type='report' and typename='周报提交范围' and code = 2")
+    void setWeeklyTime(String weeklyTime);
+
+    /**
      * 获取日报截止时间
      * @return
      */
     @Select("select code from cl_dict where type='report' and typename='报告截止时间' and codename='日报截止时间' ")
     Integer getTime();
+
+    /**
+     * 设置截止时间
+     * @param i
+     */
+    @Update("update cl_dict set code = #{i} where type='report' and typename='报告截止时间' and codename='日报截止时间'")
+    void setTime(Integer i);
+
+    /**
+     * 获取指定日期报告提交者名单
+     * @param group
+     * @param date
+     * @return
+     */
+    @Select({"<script> \n"+
+            "SELECT\n" +
+            "\tc.name\n" +
+            "FROM\n" +
+            "\tcl_user_report a\n" +
+            "\tLEFT JOIN cl_report b ON a.report_id = b.report_id\n" +
+            "\tLEFT JOIN cl_user c ON a.user_id = c.user_id\n" +
+            "WHERE\n" +
+            "\tdate_format( b.created_time, '%Y-%m-%d' ) = #{date} \n" +
+            "\tAND c.is_enabled = 1 \n" +
+            "\tAND c.is_deleted = 0 \n" +
+            "\tAND b.is_enabled = 1 \n" +
+            "\tAND b.is_deleted = 0 \n" +
+            "\tAND b.report_type = 0\n" +
+            "<if test='group != 0' > \n" +
+            "\tAND c.user_group_id = #{group}"+
+            "</if> \n"+
+            "</script>"})
+    String[] getUpNames(@Param("group") Integer group,String date);
 }
 

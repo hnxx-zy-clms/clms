@@ -111,7 +111,7 @@ public interface CollectionMapper {
      * @return
      */
     @Select("<script>" +
-            "        select c.*, a.article_title from cl_collection c left join cl_article a on c.article_id = a.article_id\n" +
+            "        select c.*, a.article_title, q.question_description from cl_collection c left join cl_article a on c.article_id = a.article_id left join cl_question q on c.question_id = q.question_id\n" +
             "        where c.is_deleted = 0 \n" +
             "        <if test=\"params.userId!=null\">\n" +
             "            and c.user_id = #{params.userId}\n" +

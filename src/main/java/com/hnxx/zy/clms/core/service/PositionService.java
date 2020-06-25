@@ -11,7 +11,15 @@ public interface PositionService {
 
     void updateClasses(int id , int type);
 
-    PageInfo findAllByPage(int page , int size);
+    PageInfo findAllByPage(int page , int size,String positionName);
 
     void updateIdsClasses(List<Integer> ids);
+
+    void deleteClassesById(int id);
+
+    Position findClassById(int id);
+
+    List<Position> findAll();
+
+    void alter(Position position);
 }
