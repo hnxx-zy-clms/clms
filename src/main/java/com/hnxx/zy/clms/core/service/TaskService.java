@@ -118,6 +118,18 @@ public interface TaskService {
      */
     void setLevel(Integer level,Integer id);
 
-
+    /**
+     * @Description: 获取教师发布任务数
+     * @Param: [teacherId]
+     * @return: java.lang.Integer
+     */
     Integer getTeacherTaskNum(Integer teacherId);
+
+    /**
+     * @Description: 获取任务完成人数
+     * @Param:
+     * @return:
+     */
+
+    Integer getTaskDidNum(Integer taskId);
 }

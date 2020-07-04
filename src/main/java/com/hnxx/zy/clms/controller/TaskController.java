@@ -225,5 +225,11 @@ public class TaskController {
         return new Result(num);
     }
 
+    @GetMapping("getTaskDidNum/{taskId}")
+    public Result getTaskDidNum(@PathVariable Integer taskId) {
+         Integer num = taskService.getTaskDidNum(taskId);
+         return new Result(num);
+    }
+
 
 }

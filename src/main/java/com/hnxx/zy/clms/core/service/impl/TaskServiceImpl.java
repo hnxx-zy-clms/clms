@@ -127,4 +127,9 @@ public class TaskServiceImpl implements TaskService {
         return taskMapper.getTeacherTaskNum(teacherId);
     }
 
+    @Override
+    public Integer getTaskDidNum(Integer taskId) {
+        return taskMapper.selectnum(taskId);
+    }
+
 }
