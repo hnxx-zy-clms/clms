@@ -6,12 +6,12 @@
  */
 package com.hnxx.zy.clms.core.entity;
 
-        import com.fasterxml.jackson.annotation.JsonInclude;
-        import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 
-        import java.io.Serializable;
-        import java.util.ArrayList;
-        import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)

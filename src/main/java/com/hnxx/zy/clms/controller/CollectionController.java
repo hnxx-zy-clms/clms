@@ -61,74 +61,21 @@ public class CollectionController {
     @Transactional(rollbackFor = Exception.class)
     public Result<Object> save(@RequestBody Collection collection) {
         User user = userService.selectByName(SecurityContextHolder.getContext().getAuthentication().getName());
-        Message message = new Message();
-        message.setSendUser(user.getUserName());
-        message.setMessageState(StateEnum.MESSAGE_NO_READ.getCode());
         collection.setUserId(user.getUserId());
         // 获取收藏的用户id
         int uid = collection.getUserId();
-        // 获取用户收藏列表
-        List<Collection> collectionList = collectionMapper.getListByUserId(uid);
-        // 收藏类型判断
-        // 收藏类型为 文章
-        if (collection.getArticleId() != null) {
-            // 获取文章id
-            int aid = collection.getArticleId();
-            Article article = articleService.getById(aid);
-            for (Collection collectionItem : collectionList) {
-                if(collectionItem.getArticleId() == null) {
-                    continue;
-                } else {
-                    if(uid == collectionItem.getUserId() && aid == collectionItem.getArticleId()) {
-                        return new Result<>("文章已经收藏!(重复收藏)");
-                    }
-                }
+        if(collection.getArticleId() != null) {
+            if( collectionService.getCollectionCountForArticle(uid, collection.getArticleId()) != 0 ){
+                return new Result<>("文章已经收藏!(重复收藏)");
             }
-            message.setReceiveUser(article.getArticleAuthor());
-            message.setMessageContent(aid);
-            message.setMessageDesc(article.getArticleTitle());
-            message.setMessageType(StateEnum.ARTICLE_COLLECTION_MESSAGE.getCode());
-            collectionMapper.collectionArticle(aid);
-        }
-        else if (collection.getQuestionId() != null) {
-            // 获取问题id
-            int qid = collection.getQuestionId();
-            Question question = questionService.getById(qid);
-            for (Collection collectionItem : collectionList) {
-                if(collectionItem.getQuestionId() == null) {
-                    continue;
-                } else {
-                    if(uid == collectionItem.getUserId() && qid == collectionItem.getQuestionId()) {
-                        return new Result<>("问题已经收藏!(重复收藏)");
-                    }
-                }
+        } else if(collection.getQuestionId() != null) {
+            if( collectionService.getCollectionCountForArticle(uid, collection.getArticleId()) != 0 ){
+                return new Result<>("问题已经收藏!(重复收藏)");
             }
-            message.setReceiveUser(question.getQuestionAuthor());
-            message.setMessageContent(qid);
-            message.setMessageDesc(question.getQuestionDescription());
-            message.setMessageType(StateEnum.QUESTION_COLLECTION_MESSAGE.getCode());
-            collectionMapper.collectionQuestion(qid);
-        }
-        else if(collection.getVideoId() != null) {
-            // 获取视频id
-            int vid = collection.getVideoId();
-            for (Collection collectionItem : collectionList) {
-                if (collectionItem.getVideoId() == null) {
-                    continue;
-                } else {
-                    if (uid == collectionItem.getUserId() && vid == collectionItem.getVideoId()) {
-                        return new Result<>("视频收藏成功!(重复收藏)");
-                    }
-                }
+        } else if(collection.getVideoId() != null) {
+            if( collectionService.getCollectionCountForArticle(uid, collection.getArticleId()) != 0 ){
+                return new Result<>("视频收藏成功!(重复收藏)");
             }
-            collectionMapper.collectionVideo(vid);
-        }
-        // 保存消息
-        messageService.save(message);
-        try {
-            WebSocketServer.sendInfo(JSON.toJSONString(message));
-        }catch (Exception e){
-            e.printStackTrace();
         }
         collectionService.save(collection);
         return new Result<>("收藏成功!");
